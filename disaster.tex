@@ -79,6 +79,23 @@
   \begin{displaymath}
     d(f(x),f(y)) \leq d(f(x),f_i(x)) + d(f_i(x),f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
   \end{displaymath}
-  Folglich icht $F$ gleichgradig stetig.
+  Folglich ist $F$ gleichgradig stetig.
+
+  $(b) \Rightarrow (a)$
+  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y^X$ kompakt und hausdorff'sch.
+  Der Tychonoff-Satz für Kompaktheit besagt, dass dann auch $\prod_{x \in X} F(x)$ kompakt ist.
+  Die Voraussetzung, dass $F$ abgeschlossen in $Y^X$ bezüglich der Produkttopologie $\tau_p$ ist, liefert, dass $F$ auch abgeschlossen im Teilraum $\prod_{x \in X} F(x)$ ist.
+  Es fehlt zu zeigen, dass $F$ auch bezüglich der stärkeren, kompakt-offenen Topologie $\tau_{co}$ kompakt ist, d.h. dass $\tau_p \subset \tau_{co}$ gilt.
+  Dazu betrachte man ein Subbasiselement $V = (K,U) \cap F$ der kompakt-offenen Topologie auf dem Teilraum $F$ und ein $f \in V$.
+  Es gilt nun zu zeigen, dass $V$ auch in $\tau_p$ offen ist.
+  Da $f(K) \subset U$ und $U \in \sigma$ gilt für alle $x \in K$
+  \begin{displaymath}
+    r_x = \inf\{d(f(x),y) \mid y \in (Y \setminus U) \} > 0.
+  \end{displaymath}
+  Dann ist $U_x = \{ z \in X \mid d(f(x),f(z)) < \tfrac{r_x}{2}\}$ eine offene Umgebung von $x \in X$.
+  Denn für alle $z \in U_x$ gilt mit $\varepsilon := \tfrac{r_x}{2} - d(f(x),f(z)) > 0$, dass aufgrund der Stetigkeit von $f$ eine Umgebung $V$ von $x$ existiert, sodass für alle $y \in V$ gilt, dass $d(f(z),f(y)) < \varepsilon < \tfrac{r_x}{2}$.
+  Zudem bildet $\mathfrak{U} := \{U_x \mid x \in K\}$ eine offene Überdeckung von K. 
+  K ist nach Voraussetzung kompakt, daher existieren $x_1,\cdots,x_n \in K$, sodass $K \subset \cup_{i=1}^n U_{x_i}$.
+  Es sei $r:= \min\{r_{x_1},\cdots,r_{x_n}\}$, und für alle $x \in K$
 
 \end{proof}<++>
