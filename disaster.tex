@@ -1,0 +1,84 @@
+\chapter{Der Satz von Árzela-Áscoli}
+
+\begin{defn}
+  Gleichmäßige Stetigkeit.
+\end{defn}
+
+\begin{defn}[Satz von Árzela-Áscoli]
+  Sei $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
+  Für jeden Teilraum $(F,\tau_{co})$ von $C(X,Y)$ sind äquivalent:
+  \begin{enumerate}
+    \item[(a)] $F$ ist kompakt.
+    \item[(b)] \begin{enumerate}
+        \item[($\alpha$)] Für alle $x \in X$ ist die Menge $F(x) = \{f(x) \mid f \in F \}$ kompakt in $Y$.
+        \item[($\beta$)]  $F$ ist abgeschlossen in $Y$ bezüglich der Topologie der punktweisen Konvergenz $\tau_p$.
+        \item[($\gamma$)] $F$ ist gleichmäßig stetig auf $X$.
+      \end{enumerate}
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}
+  Äquivalent sind
+  \begin{enumerate}
+    \item Der Satz von Árzela-Áscoli.
+    \item Der Boolesche Primidealsatz.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  $(2) \Rightarrow (1)$: Es seien $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
+  Des Weiteren sei $(F,\tau_{co})$ ein Teilraum vom $C(X,Y)$.
+
+  $(a) \Rightarrow (b, \alpha)$: 
+  Nach Voraussetzung ist $F$ ein bezüglich der kompakt-offenen Topologie $\tau_{co}$ kompakter Teilraum von $C(X,Y)$.
+  Somit ist er insbesondere bezüglich der Spur der schwächeren Topologie der punktweisen Konvergenz $\tau_p$ ein kompakter Teilraum des Hausdorff-Raumes $Y^X$.
+  Die Topologie der punktweisen Konvergenz lässt sich als Initialtopologie bezüglich der kanonischen Projektionen $p_x : Y^X \to Y, f \mapsto f(x)$ beschreiben.
+  Als stetiges Bild eines Kompaktums ist somit auch $p_x(F) = F(x)$ kompakt.
+
+  $(a) \Rightarrow (b, \beta)$:  
+  Als kompakter Teilraum eines Hausdorff-Raumes ist $F$ bezüglich $\tau_p$ auch abgeschlossen in $Y^X$.
+
+  $(a) \Rightarrow (b, \gamma)$:
+  Es soll gezeigt werden, dass $F$ gleichgradig stetig ist.
+  Sei dazu $x \in X$ und $\varepsilon > 0$.
+  Für jedes $F$ ist die Menge
+  \begin{displaymath}
+    B_f := B_{\frac{\varepsilon}{2}} = \left\{ y \in Y \mid d(f(x),y) < \tfrac{\varepsilon}{2}\right\} 
+  \end{displaymath}
+  offen bezüglich der von der Metrik $d$ auf $Y$ induzierten Topologie.
+  Da $F \subset C(X,Y)$ ist das Urbild $f^{-1}(B_f)$ ebenfalls offen bezüglich $\tau$.
+  Nach Voraussetzung ist $X$ lokalkompakt.
+  Daher existiert eine kompakte Umgebung $K_f$ von $x$ mit $K_f \subset f^{-1}(B_f)$.
+  Damit gilt $f(K_f) \subset B_f$ und es definiert
+  \begin{displaymath}
+    U_f = F \cap (K_f, B_f) = \left\{g \in F \mid g(K_f) \subset B_f \right\} \tag{$\ast$}
+  \end{displaymath}
+  eine bezüglich der Teilraumtopologie auf $F$ offene Umgebung von $f$.
+  Man betrachte nun die Evaluationsabbildung $\omega: X \times F \to Y, (y,g) \mapsto g(y)$.
+  Unter Berücksichtigung von ($\ast$) folgt $\omega(K_f \times U_f) \subset B_f$.
+  Es definiere $\mathcal{C}$ die Menge aller Tripel $(f,K,U)$, wobei $f \in F$, $K$ eine Umgebung von $x$ in $X$ und $U$ eine offene Umgebung von $f$ in $F$ mit $\omega(K \times U) \subset B_f$ sei.
+  Dann liefert
+  \begin{displaymath}
+    \mathfrak{U} = \{ U \subset F \mid \text{es existieren $f \in F$, $K \subset X$ mit $(f,K,U) \in \mathcal C$} \}
+  \end{displaymath}
+  eine offene Überdeckung von $F$.
+  Nach Voraussetzung ist $F$ kompakt, daher existiert eine endliche Teilüberdeckung durch $U_1,\dots,U_n \in \mathfrak{U}$.
+  Für alle $i = 1,\cdots,n$ wähle man nun $f_i \in F$ und $K_i \subset X$ mit $(f_i, K_i, U_i) \in \mathcal{C}$
+  Des Weiteren definiere man $U := \cap_{i = 1}^n K_i$.
+  Es ist $U$ eine (nicht notwendig offene) Umgebung von $x \in X$.
+  Nun soll gezeigt werden, dass für diese Wahl von $U$ die Voraussetzung der gleichgradigen Stetigkeit erfüllt ist:
+  Für jedes $f \in F$ existiert aufgrund der Überdeckungseigenschaft ein $i = 1,\cdots,n$ mit $f \in U_i$.
+  Sei des Weiteren $y \in U$ gegeben.
+  Dann gilt
+  \begin{displaymath}
+    f(y) = \omega(y,f) \in \omega(U \times U_i) \subset \omega(K_i \times U_i) \subset B_{f_i},
+  \end{displaymath}
+  also $d(f_i(x),f(y)) < \tfrac{\varepsilon}{2}$.
+  Insbesondere gilt für $x \in U$, nach Voraussetzung gilt $x \in K_i$ für alle $i = 1,\cdots,n$, dass $d(f_i(x),f(x)) < \tfrac{\varepsilon}{2}$.
+  Unter Verwendung der Dreiecksungleichung folgt
+  \begin{displaymath}
+    d(f(x),f(y)) \leq d(f(x),f_i(x)) + d(f_i(x),f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+  \end{displaymath}
+  Folglich icht $F$ gleichgradig stetig.
+
+\end{proof}<++>
