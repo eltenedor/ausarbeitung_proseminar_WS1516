@@ -1,22 +1,42 @@
-\section{Der Satz von Árzela-Áscoli}
+\section{Áscoli-Sätze und das Auswahlaxiom}
 
-Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels ``Disasters in Topology III: Function Spaces (The Ascoli Theorem)'' aus dem Buch von Horst Herrlich.
+Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels \textit{Disasters in Topology III: Function Spaces (The Ascoli Theorem)} aus dem Buch von Horst Herrlich.
+
 \begin{defn}
-  Gleichmäßige Stetigkeit.
+  Es seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume. Eine Abbildung $f \colon X \to Y$ heißt \textit{gleichmäßig stetig}, wenn gilt:
+  \begin{addmargin}[2em]{2em}% 1em left, 2em right
+  Zu jedem $\varepsilon > 0$ existiert ein $\delta > 0$, sodass \\
+  für alle $x,x' \in X$ mit $d_X(x,x') < \delta$ gilt, dass $d_Y(f(x),f(x')) < \varepsilon$.
+  \end{addmargin}
 \end{defn}
 
-\begin{defn}[Satz von Árzela-Áscoli]
+\begin{defn}
+  Es sei $(X,\tau)$ ein topologischer Raum und $(Y,d)$ ein metrischer Raum. Eine Teilmenge $F \subseteq Y^X$ heißt \textit{gleichgradig stetig}, wenn gilt:
+  \begin{addmargin}[2em]{2em}% 1em left, 2em right
+    Für alle $x \in X$ und $\varepsilon > 0$ existiert ein $V \in \dot{x} \cap \tau$, sodass \\
+    für alle $f \in F$ gilt, dass $f(V) \subseteq U_\varepsilon(f(x))$.
+  \end{addmargin}
+\end{defn}
+
+Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden $C_{co}(X,Y)$ den topologischen Funktionenraum $(C(X,Y),\tau_{co})$ der stetigen Funktionen von $X$ nach $Y$ ausgestattet mit der kompakt-offenen Topologie.
+
+Áscoli-Sätze gelten bezeichnend für Aussagen, die es gestatten Kompaktheit von Teilmengen von Funktionenräumen bezüglich starker Topologien aus der Kompaktheit bezüglich einer schwächeren Topologie unter zusätzlichen Annahmen zu folgern. Dabei existieren unterschiedliche Formulierungen.
+
+Eine topologische Version des Áscoli Satzes lautet:
+\begin{defn}[Topologischer Áscoli Satz]
   Sei $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
-  Für jeden Teilraum $(F,\tau_{co})$ von $C(X,Y)$ sind äquivalent:
+  Für jeden Teilraum $(F,\tau_{co})$ von $C_{co}(X,Y)$ sind äquivalent:
   \begin{enumerate}
     \item[(a)] $F$ ist kompakt.
     \item[(b)] \begin{enumerate}
         \item[($\alpha$)] Für alle $x \in X$ ist die Menge $F(x) = \{f(x) \mid f \in F \}$ kompakt in $Y$.
         \item[($\beta$)]  $F$ ist abgeschlossen in $Y$ bezüglich der Topologie der punktweisen Konvergenz $\tau_p$.
-        \item[($\gamma$)] $F$ ist gleichmäßig stetig auf $X$.
+        \item[($\gamma$)] $F$ ist gleichgradig stetig auf $X$.
       \end{enumerate}
   \end{enumerate}
 \end{defn}
+
+Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum Auswahlaxiom ist.
 
 \begin{thm}
   Äquivalent sind
@@ -27,14 +47,17 @@ Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels ``Disasters in 
 \end{thm}
 
 \begin{proof}
+  $(1) \Rightarrow (2)$: Sei $X$ eine Menge und $\mathfrak{2}$ die zweielementige Menge $\{0,1\}$ und seien beide mit der diskreten Topologie ausgestattet. Die diskrete Topologie lässt sich auch als die von der \textit{diskreten Metrik} induzierte Topologie auffassen, somit kann $\mathfrak{2}$ auch als metrischer Raum betrachtet werden. Es sei $F := C(X, \mathfrak{2}) = \mathfrak{2}^X$.
+
+  Damit sind die Bedingungen (b) des Áscoli-Satzes erfüllt und es folgt, dass $\mathfrak{2}$ kompakt ist. Dies ist äquivalent zum Booleschen Primidealsatz.
   $(2) \Rightarrow (1)$: Es seien $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
-  Des Weiteren sei $(F,\tau_{co})$ ein Teilraum vom $C(X,Y)$.
+  Des Weiteren sei $F$ ein Teilraum vom $C_{co}(X,Y)$.
 
   $(a) \Rightarrow (b, \alpha)$: 
   Nach Voraussetzung ist $F$ ein bezüglich der kompakt-offenen Topologie $\tau_{co}$ kompakter Teilraum von $C(X,Y)$.
   Somit ist er insbesondere bezüglich der Spur der schwächeren Topologie der punktweisen Konvergenz $\tau_p$ ein kompakter Teilraum des Hausdorff-Raumes $Y^X$.
   Die Topologie der punktweisen Konvergenz lässt sich als Initialtopologie bezüglich der kanonischen Projektionen $p_x : Y^X \to Y, f \mapsto f(x)$ beschreiben.
-  Als stetiges Bild eines Kompaktums ist somit auch $p_x(F) = F(x)$ kompakt.
+  Als stetiges Bild eines Kompaktums ist somit auch $p_x(F) = F(x)$ kompakt in $(Y,\tau_d)$.
 
   $(a) \Rightarrow (b, \beta)$:  
   Als kompakter Teilraum eines Hausdorff-Raumes ist $F$ bezüglich $\tau_p$ auch abgeschlossen in $Y^X$.
@@ -42,76 +65,77 @@ Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels ``Disasters in 
   $(a) \Rightarrow (b, \gamma)$:
   Es soll gezeigt werden, dass $F$ gleichgradig stetig ist.
   Sei dazu $x \in X$ und $\varepsilon > 0$.
-  Für jedes $F$ ist die Menge
+  Für jedes $f \in F$ ist die Menge
   \begin{displaymath}
     B_f := B_{\frac{\varepsilon}{2}} = \left\{ y \in Y \mid d(f(x),y) < \tfrac{\varepsilon}{2}\right\} 
   \end{displaymath}
   offen bezüglich der von der Metrik $d$ auf $Y$ induzierten Topologie.
-  Da $F \subset C(X,Y)$ ist das Urbild $f^{-1}(B_f)$ ebenfalls offen bezüglich $\tau$.
+  Da $F \subseteq C(X,Y)$, ist das Urbild $f^{-1}(B_f)$ ebenfalls offen bezüglich $\tau$.
   Nach Voraussetzung ist $X$ lokalkompakt.
-  Daher existiert eine kompakte Umgebung $K_f$ von $x$ mit $K_f \subset f^{-1}(B_f)$.
-  Damit gilt $f(K_f) \subset B_f$ und es definiert
+  Daher existiert eine kompakte Umgebung $K_f$ von $x$ mit $K_f \subseteq f^{-1}(B_f)$.
+  Damit gilt $f(K_f) \subseteq B_f$ und es definiert
   \begin{displaymath}
-    U_f = F \bigcap (K_f, B_f) = \left\{g \in F \mid g(K_f) \subset B_f \right\} \tag{$\ast$}
+    U_f := F \cap (K_f, B_f) = \left\{g \in F \mid g(K_f) \subseteq B_f \right\} \tag{$\ast$}
   \end{displaymath}
   eine bezüglich der Teilraumtopologie auf $F$ offene Umgebung von $f$.
   Man betrachte nun die Evaluationsabbildung $\omega: X \times F \to Y, (y,g) \mapsto g(y)$.
-  Unter Berücksichtigung von ($\ast$) folgt $\omega(K_f \times U_f) \subset B_f$.
-  Es definiere $\mathcal{C}$ die Menge aller Tripel $(f,K,U)$, wobei $f \in F$, $K$ eine Umgebung von $x$ in $X$ und $U$ eine offene Umgebung von $f$ in $F$ mit $\omega(K \times U) \subset B_f$ sei.
+  Unter Berücksichtigung von ($\ast$) folgt $\omega(K_f \times U_f) \subseteq B_f$.
+  Es definiere $\mathcal{C}$ die Menge aller Tripel $(f,K,U)$, wobei $f \in F$, $K$ eine Umgebung von $x$ in $X$ und $U$ eine offene Umgebung von $f$ in $F$ mit $\omega(K \times U) \subseteq B_f$ sei.
   Dann liefert
   \begin{displaymath}
-    \mathfrak{U} = \{ U \subset F \mid \text{es existieren $f \in F$, $K \subset X$ mit $(f,K,U) \in \mathcal C$} \}
+    \mathfrak{U} = \{ U \subseteq F \mid \text{es existieren $f \in F$, $K \subseteq X$ mit $(f,K,U) \in \mathcal C$} \}
   \end{displaymath}
-  eine offene Überdeckung von $F$.
+  eine offene Überdeckung von $F$, da für alle $f \in F$ nach Konstruktion $(f,K_f,U_f) \in \mathfrak{U}$ gilt.
   Nach Voraussetzung ist $F$ kompakt, daher existiert eine endliche Teilüberdeckung durch $U_1,\dots,U_n \in \mathfrak{U}$.
-  Für alle $i = 1,\dots,n$ wähle man nun $f_i \in F$ und $K_i \subset X$ mit $(f_i, K_i, U_i) \in \mathcal{C}$
+  Für alle $i = 1,\dots,n$ wähle man nun $f_i \in F$ und $K_i \subseteq X$ mit $(f_i, K_i, U_i) \in \mathcal{C}$.
   Des Weiteren definiere man $U := \bigcap_{i = 1}^n K_i$.
   Es ist $U$ eine (nicht notwendig offene) Umgebung von $x \in X$.
-  Nun soll gezeigt werden, dass für diese Wahl von $U$ die Voraussetzung der gleichgradigen Stetigkeit erfüllt ist:
+  Nun soll gezeigt werden, dass für diese Wahl von $U$ die Voraussetzung der gleichgradigen Stetigkeit erfüllt ist, also dass für alle $f \in F$ folgt, dass $f(U) \subseteq U_\varepsilon(f(x))$ gilt.
   Für jedes $f \in F$ existiert aufgrund der Überdeckungseigenschaft ein $i = 1,\dots,n$ mit $f \in U_i$.
   Sei des Weiteren $y \in U$ gegeben.
   Dann gilt
   \begin{displaymath}
-    f(y) = \omega(y,f) \in \omega(U \times U_i) \subset \omega(K_i \times U_i) \subset B_{f_i},
+    f(y) = \omega(y,f) \in \omega(U \times U_i) \subseteq \omega(K_i \times U_i) \subseteq B_{f_i},
   \end{displaymath}
   also $d(f_i(x),f(y)) < \tfrac{\varepsilon}{2}$.
-  Insbesondere gilt für $x \in U$, nach Voraussetzung gilt $x \in K_i$ für alle $i = 1,\dots,n$, dass $d(f_i(x),f(x)) < \tfrac{\varepsilon}{2}$.
-  Unter Verwendung der Dreiecksungleichung folgt
+  Insbesondere gilt für $x \in U$, da nach Voraussetzung $x \in K_i$ für alle $i = 1,\dots,n$, dass $d(f_i(x),f(x)) < \tfrac{\varepsilon}{2}$.
+  Unter Verwendung der Dreiecksungleichung folgt letztlich
   \begin{displaymath}
-    d(f(x),f(y)) \leq d(f(x),f_i(x)) + d(f_i(x),f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+    d(f(x),f(y)) \leq d(f(x),f_i(x)) + d(f_i(x),f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon,
   \end{displaymath}
+  und damit $f(U) \subseteq U_\varepsilon(f(x))$.
   Folglich ist $F$ gleichgradig stetig.
 
   $(b) \Rightarrow (a)$
-  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y^X$ kompakt und hausdorff'sch.
+  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y^X$ kompakt und zudem hausdorff'sch.
   Der Tychonoff-Satz für Kompaktheit besagt, dass dann auch $\prod_{x \in X} F(x)$ kompakt ist.
   Die Voraussetzung, dass $F$ abgeschlossen in $Y^X$ bezüglich der Produkttopologie $\tau_p$ ist, liefert, dass $F$ auch abgeschlossen im Teilraum $\prod_{x \in X} F(x)$ ist.
   Als abgeschlossene Teilmenge eines Kompaktums ist somit $F$ auch kompakt bezüglich der Topologie der punktweisen Konvergenz.
   Es fehlt zu zeigen, dass $F$ ebenfalls bezüglich der stärkeren, kompakt-offenen Topologie $\tau_{co}$ kompakt ist.
-  Hierfür soll die Inklusion $\tau_{co} \subset \tau_p$ nachgewiesen werden.
+  Hierfür soll die Inklusion $\tau_{co} \subseteq \tau_p$ nachgewiesen werden.
   Dazu betrachte man ein Subbasiselement $V = (K,U) \cap F$ der kompakt-offenen Topologie auf dem Teilraum $F$ und ein $f \in V$.
   Es gilt nun zu zeigen, dass $V$ auch in $\tau_p$ offen ist.
-  Da $f(K) \subset U$ und $U \in \sigma$, gilt für alle $x \in K$
+  Da $f(K) \subseteq U$ und $U \in \sigma$ gilt, folgt für alle $x \in K$
   \begin{displaymath}
     r_x = \inf\{d(f(x),y) \mid y \in (Y \setminus U) \} > 0.
   \end{displaymath}
   Dann ist $U_x = \{ z \in X \mid d(f(x),f(z)) < \tfrac{r_x}{2}\}$ eine offene Umgebung von $x \in X$.
-  Denn für alle $z \in U_x$ mit $\varepsilon := \tfrac{r_x}{2} - d(f(x),f(z)) > 0$ gilt, dass aufgrund der Stetigkeit von $f$ eine Umgebung $U'$ von $z$ existiert, sodass $f(U') \subset U_\varepsilon(f(z))$ gilt.
+  Denn für alle $z \in U_x$ mit $\varepsilon := \tfrac{r_x}{2} - d(f(x),f(z)) > 0$ gilt, dass aufgrund der Stetigkeit von $f$ eine Umgebung $U' \in \tau$ von $z$ existiert, sodass $f(U') \subseteq U_\varepsilon(f(z))$ gilt.
   Daraus folgt für alle $u \in U'$ mit der Dreiecksungleichung
   \begin{align*}
-    d(f(x),f(u)) &< d(f(x),f(z)) + d(f(z),f(u)) \\
-                 &< \varepsilon + d(f(z),f(u)) = \tfrac{r_x}{2} - d(f(x),f(z)) + d(f(x),f(z)) =  \tfrac{r_x}{2}
+    d(f(x),f(u)) &\leq d(f(x),f(z)) + d(f(z),f(u)) \\
+                 &< \varepsilon + d(f(z),f(u)) = \frac{r_x}{2} - d(f(x),f(z)) + d(f(x),f(z)) =  \frac{r_x}{2}
   \end{align*}
-  und damit schließlich $U' \subset U_x$, also die Offenheit von $U_x$ in $X$.
-  Zudem bildet $\mathfrak{U} := \{U_x \mid x \in K\}$ eine offene Überdeckung von K. 
-  Nach Voraussetzung ist $K$ kompakt, daher existieren $x_1,\dots,x_n \in K$, sodass $K \subset \bigcup_{i=1}^n U_{x_i}$.
+  und damit schließlich $U' \subseteq U_x$, also die Offenheit von $U_x$ in $X$.
+  Zudem bildet $\mathfrak{U} := \{U_x \mid x \in K\}$ eine offene Überdeckung von $K$. 
+  Nach Voraussetzung ist $K$ kompakt, daher existieren $x_1,\dots,x_n \in K$, sodass $K \subseteq \bigcup_{i=1}^n U_{x_i}$.
   Es sei $r:= \min\{r_{x_1},\dots,r_{x_n}\}$. 
   Damit ergibt sich für alle $x \in K$ und alle $y \in (Y \setminus U)$ die Ungleichung $d(f(x),y) \geq \tfrac{r}{2}$.
   Ist $x \in K$ und $d(f(x),y) < \tfrac{r}{2}$ so folgt daraus $y \in U$.
   Da $F$ nach Voraussetzung gleichgradig stetig auf $X$ ist, existiert für alle $x \in X$ eine offene Umgebung $W$ von $x$ in $X$, sodass für alle $g \in F$ und alle $z \in W$ gilt, dass $d(g(x),g(z)) < \tfrac{r}{4}$.
   Betrachtet man nun die auf obige Weise erzeugte Menge $\mathcal{C}$ aller geordneten Paare $(x,W)$, so bildet
   \begin{displaymath}
-    \mathfrak{W} := \{W \subset X \mid \text{Es existiert ein $x \in K$ mit $(x,W) \in \mathcal{C}$} \}
+    \mathfrak{W} := \{W \subseteq X \mid \text{Es existiert ein $x \in K$ mit $(x,W) \in \mathcal{C}$} \}
   \end{displaymath}
   eine offene Überdeckung von $K$.
   Aufgrund der Kompaktheit von $K$ lässt sich eine endliche Teilüberdeckung $W_1,\dots,W_m \in \mathfrak{W}$ von $K$ auswählen.
@@ -121,17 +145,19 @@ Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels ``Disasters in 
     B_f := \{ g \in F \mid d(f(x_i),g(x_i)) < \tfrac{r}{4} \text{ für } i = 1,\dots,m\}
   \end{displaymath}
   eine offene Umgebung von $f$ bezüglich $\tau_p$.
-  Es soll nun gezeigt werden, dass $B_f \subset V$ gilt.
-  Dann ist nämlich $V = \bigcup_{f \in V} B_f$ als Vereinigung offener Mengen offen bezüglich $\tau_p$ und die Behauptung $\tau_{co} \subset \tau_p$ folgt, da $V$ beliebig war.
+  Es soll nun gezeigt werden, dass $B_f \subseteq V$ gilt.
+  Dann ist nämlich $V = \bigcup_{f \in V} B_f$ als Vereinigung offener Mengen offen bezüglich $\tau_p$ und die Behauptung $\tau_{co} \subseteq \tau_p$ folgt, da $V$ beliebig war.
   Sei dazu also $g \in B_f$.
   Für jedes $x \in K$ existiert ein $i \in \{1,\dots,m\}$ mit $x \in W_i$.
   Nach Konstruktion der $W_i$ gilt $d(g(x_i),g(x)) < \tfrac{r}{4}$.
   Da $g \in B_f$ gilt zudem die Ungleichung $d(f(x_i),g(x_i)) < \tfrac{r}{4}$.
   Daraus folgert man
   \begin{displaymath}
-    d(f(x_i),g(x)) \leq d(f(x_i),g(x_i)) + d(g(x_i),g(x)) < \tfrac{r}{2}.
+    d(f(x_i),g(x)) \leq d(f(x_i),g(x_i)) + d(g(x_i),g(x)) < \frac{r}{2},
   \end{displaymath}
-  Daraus folgt $g(x) \in U$ und damit $g(K) \subset U$. 
-  Also ist $g \in (K,U)$ woraus $g \in V$ folgt.
+  was wiederum $g(x) \in U$ und damit $g(K) \subseteq U$ impliziert. 
+  Also ist $g \in (K,U)$, woraus $g \in V$ folgt.
   Damit ist der Beweis vollständig.
 \end{proof}
+
+
