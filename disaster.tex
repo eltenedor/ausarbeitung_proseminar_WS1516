@@ -36,20 +36,27 @@ Eine topologische Version des Áscoli Satzes lautet:
   \end{enumerate}
 \end{defn}
 
-Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum Auswahlaxiom ist.
+Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum Booleschen Primideal ist.
 
 \begin{thm}
   Äquivalent sind
   \begin{enumerate}
-    \item Der Satz von Árzela-Áscoli.
+    \item Der topologische Áscoli-Satz.
     \item Der Boolesche Primidealsatz.
   \end{enumerate}
 \end{thm}
 
 \begin{proof}
-  $(1) \Rightarrow (2)$: Sei $X$ eine Menge und $\mathfrak{2}$ die zweielementige Menge $\{0,1\}$ und seien beide mit der diskreten Topologie ausgestattet. Die diskrete Topologie lässt sich auch als die von der \textit{diskreten Metrik} induzierte Topologie auffassen, somit kann $\mathfrak{2}$ auch als metrischer Raum betrachtet werden. Es sei $F := C(X, \mathfrak{2}) = \mathfrak{2}^X$.
+  $(1) \Rightarrow (2)$: Sei $X$ eine Menge und $\mathbf{2}$ die zweielementige Menge $\{0,1\}$ und seien beide mit der diskreten Topologie ausgestattet. 
+  Die diskrete Topologie lässt sich auch als die von der \textit{diskreten Metrik} induzierte Topologie auffassen, somit kann $\mathbf{2}$ auch als metrischer Raum betrachtet werden. 
 
-  Damit sind die Bedingungen (b) des Áscoli-Satzes erfüllt und es folgt, dass $\mathfrak{2}$ kompakt ist. Dies ist äquivalent zum Booleschen Primidealsatz.
+  Es sei $F := C(X, \mathbf{2})$.
+  Dann gilt $C(X, \mathbf{2}) = \mathbf{2}^X$, da $X$ nach Voraussetzung diskret ist.
+  Es folgt, dass $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum kompakt ist.
+  Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen in jeder Topologie, also insbesondere auch in der punktweisen Topologie $\tau_p$.
+  Zuletzt ist $F$ auch gleichgradig stetig, $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
+  Damit sind die Bedingungen (b) des Áscoli-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt ist. Dies ist äquivalent zum Booleschen Primidealsatz.
+
   $(2) \Rightarrow (1)$: Es seien $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
   Des Weiteren sei $F$ ein Teilraum vom $C_{co}(X,Y)$.
 
@@ -160,4 +167,81 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum A
   Damit ist der Beweis vollständig.
 \end{proof}
 
+Es soll nun untersucht werden, inwiefern der Áscoli Satz auch unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
+
+\begin{lem}
+  \label{lem:filterclusterpoint}
+  Es sei $(X,\tau)$ ein topologischer Raum, sodass die darin offen-abgeschlossenen Mengen einen Basis für die Topologie $\tau$ bilden.
+
+  Ist $\mathcal{F}$ ein Filter ohne Häufungspunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen-abgeschlossenen Elemente 
+  \begin{displaymath}
+    \bigcap_{F \in \mathfrak{A}} F = \emptyset.
+  \end{displaymath}
+\end{lem}
+
+\begin{proof}
+  Nach Voraussetzung besitzt $\mathcal{F}$ keinen Häufungspunkt.
+  Dies bedeutet, dass
+  \begin{displaymath}
+    \bigcap_{F \in \mathcal{F}} \overline F = \emptyset.
+  \end{displaymath}
+  Für alle $x \in X$ gilt nun, da $x$ kein Häufungspunkt von $\mathcal{F}$ ist, dass ein $F \in \mathcal{F}$ existiert, sodass $x \not\in \overline{F}$.
+  Da die offen-abgeschlossenen Mengen eine Basis für $\tau$ bilden, existiert eine Umgebung $U_x \in \mathfrak{A}$ von $x$, mit 
+  \begin{displaymath}
+    U \cap F = \emptyset.
+  \end{displaymath}
+  Damit ist $X \setminus U \supset F$ und wegen des Abschlusses gegen Obermengenbildung
+  \begin{displaymath}
+    X \setminus U \in \mathcal{F}.
+  \end{displaymath}
+  Es existiert also eine offen-abgeschlossene Menge in $\mathcal{F}$, die $x$ nicht enthält. 
+  Dies impliziert
+  \begin{displaymath}
+    x \not\in \bigcap_{F \in \mathfrak{A}} F
+  \end{displaymath}
+  Da $x$ beliebig gewählt war folgt 
+  \begin{displaymath}
+   \bigcap_{F \in \mathfrak{A}} F = \emptyset
+  \end{displaymath}
+  und damit die Behauptung.
+\end{proof}
+
+\begin{thm}
+  Äquivalent sind:
+  \begin{enumerate}
+    \item Der Áscoli Satz bezüglich Ultrafilter-Kompaktheit.
+    \item Der Boolesche Primidealsatz.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  $(1)\Rightarrow(2) $: Es reicht aus zu zeigen, dass $(1)$ bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ kompakt sind.
+  Angenommen, es existiert eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
+  Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
+  Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Häufungspunkt.
+
+  %Die Menge aller offen-abgeschlossenen Elemente von $\mathcal{F}$ besitzt zunächst eine endliche Durchschnittseigenschaft.
+  Der mit der Produkttopologie ausgestattete Raum $\mathbf{2}^I$ besitzt eine Basis aus offen-ab\-ge\-schlossenen Mengen.
+  Dies folgt daraus, dass bereits jedes Subbasiselement $S$ per Definition offen ist und, da $\mathbf{2}$ diskret ist, auch ein offenes Komplement besitzt.
+  Damit ist $S$ aber als Komplement einer offenen Menge definitionsgemäß abgeschlossen.
+  Insgesamt ist $S$ also offen-abgeschlossen.
+  Da die Menge der der offen-abgeschlossenen Mengen eine endlichen Durchschnittseigenschaft besitzt, ist auch jedes von der Subbasis erzeugte Basiselement eine offen-abgeschlossene Menge.
+  Damit lässt sich nun Lemma \ref{lem:filterclusterpoint} auf $\mathcal{F}$ anwenden und es folgt für die Menge $\mathfrak{A}$ aller offen-abgeschlossenen Elemente von $\mathcal{F}$
+  \begin{displaymath}
+   \bigcap_{F \in \mathfrak{A}} F = \emptyset.
+  \end{displaymath}
+
+  Damit lässt sich nun für alle $A \in \mathfrak{A}$ eine Funktion
+  \begin{displaymath}
+    f_A \colon P \to \mathbf{2}, \quad
+    f_A(x) := 
+    \begin{cases}
+      1 &\text{, falls } x \in A \\
+      0 &\text{, falls } x \not\in A
+    \end{cases}
+  \end{displaymath}
+  Da alle $A$ offen-abgeschlossen sind, folgt sofort die Stetigkeit von $f_A$ für alle $A \in \mathfrak{A}$.
+  Somit induziert die Familie $(f_A)_{A \in \mathfrak{A}}$ eine stetige Abbildung $f \colon P \to \mathbf{2}^I$.
+
+\end{proof}
 
