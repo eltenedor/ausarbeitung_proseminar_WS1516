@@ -1,4 +1,4 @@
-\section{Áscoli-Sätze und das Auswahlaxiom}
+\section{Der Áscoli-Satz und das Auswahlaxiom}
 
 Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels \textit{Disasters in Topology III: Function Spaces (The Ascoli Theorem)} aus dem Buch von Horst Herrlich.
 
@@ -39,6 +39,7 @@ Eine topologische Version des Áscoli Satzes lautet:
 Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum Booleschen Primideal ist.
 
 \begin{thm}
+  \label{thm:ascoliPIT}
   Äquivalent sind
   \begin{enumerate}
     \item Der topologische Áscoli-Satz.
@@ -114,7 +115,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum B
   Folglich ist $F$ gleichgradig stetig.
 
   $(b) \Rightarrow (a)$
-  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y^X$ kompakt und zudem hausdorff'sch.
+  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y^X$ kompakt und besitzt zudem die Hausdorff-Eigenschaft.
   Der Tychonoff-Satz für Kompaktheit besagt, dass dann auch $\prod_{x \in X} F(x)$ kompakt ist.
   Die Voraussetzung, dass $F$ abgeschlossen in $Y^X$ bezüglich der Produkttopologie $\tau_p$ ist, liefert, dass $F$ auch abgeschlossen im Teilraum $\prod_{x \in X} F(x)$ ist.
   Als abgeschlossene Teilmenge eines Kompaktums ist somit $F$ auch kompakt bezüglich der Topologie der punktweisen Konvergenz.
@@ -170,65 +171,118 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum B
 Es soll nun untersucht werden, inwiefern der Áscoli Satz auch unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
 
 \begin{lem}
-  \label{lem:filterclusterpoint}
-  Es sei $(X,\tau)$ ein topologischer Raum, sodass die darin offen-abgeschlossenen Mengen einen Basis für die Topologie $\tau$ bilden.
-
-  Ist $\mathcal{F}$ ein Filter ohne Häufungspunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen-abgeschlossenen Elemente 
-  \begin{displaymath}
-    \bigcap_{F \in \mathfrak{A}} F = \emptyset.
-  \end{displaymath}
+  \label{lem:openmap}
+  Es seien $(X,\tau)$ und $(Y,\sigma)$ topologische Räume und es sei $\mathfrak{S}$ eine Subbasis für $\tau$.  
+  Dann ist eine injektive Abbildung $f \colon X \to Y$ genau dann offen, wenn $f(\mathfrak{S}) \subseteq \sigma$.
 \end{lem}
 
 \begin{proof}
-  Nach Voraussetzung besitzt $\mathcal{F}$ keinen Häufungspunkt.
-  Dies bedeutet, dass
+  Da $\mathfrak{S} \subseteq \tau$ folgt aus der Offenheit von $f$ sofort 
   \begin{displaymath}
-    \bigcap_{F \in \mathcal{F}} \overline F = \emptyset.
+    f(\mathfrak{S}) \subseteq f(\tau) \subseteq \sigma.
   \end{displaymath}
-  Für alle $x \in X$ gilt nun, da $x$ kein Häufungspunkt von $\mathcal{F}$ ist, dass ein $F \in \mathcal{F}$ existiert, sodass $x \not\in \overline{F}$.
-  Da die offen-abgeschlossenen Mengen eine Basis für $\tau$ bilden, existiert eine Umgebung $U_x \in \mathfrak{A}$ von $x$, mit 
+  Sei andererseits $f$ eine injektive Abbildung und $O \in \tau$ beliebig.
+  So ist $O$ die Vereinigung endlicher Schnitte von Subbasislementen.
+  Für zwei beliebige Mengen $O_1,O_2$ gilt nun 
   \begin{displaymath}
-    U \cap F = \emptyset.
+    f(O_1 \cap O_2) = f(O_1) \cap f(O_n)
   \end{displaymath}
-  Damit ist $X \setminus U \supset F$ und wegen des Abschlusses gegen Obermengenbildung
+  aufgrund der Injektivität von $f$, sowie 
   \begin{displaymath}
-    X \setminus U \in \mathcal{F}.
+    f \left(\bigcup_{i \in I} O_i \right) = \bigcup_{i \in I} f(O_i)
   \end{displaymath}
-  Es existiert also eine offen-abgeschlossene Menge in $\mathcal{F}$, die $x$ nicht enthält. 
-  Dies impliziert
-  \begin{displaymath}
-    x \not\in \bigcap_{F \in \mathfrak{A}} F
-  \end{displaymath}
-  Da $x$ beliebig gewählt war folgt 
-  \begin{displaymath}
-   \bigcap_{F \in \mathfrak{A}} F = \emptyset
-  \end{displaymath}
-  und damit die Behauptung.
+  für eine beliebige Familie offener Mengen.
+  Damit ist auch $f(O)$ offen und die Behauptung folgt.
+\end{proof}
+
+\begin{lem}
+  \label{lem:filterclusterpoint}
+  Es sei $(X,\tau)$ ein topologischer Raum, sodass die darin offen-abgeschlossenen Mengen einen Basis für die Topologie $\tau$ bilden.
+
+  \begin{itemize}
+    \item[(i)] Ist $\mathcal{F}$ ein Filter ohne Häufungspunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen-abgeschlossenen Elemente 
+     \begin{displaymath}
+       \bigcap_{F \in \mathfrak{A}} F = \emptyset.
+     \end{displaymath}
+   \item[(ii)] Erfüllt $(X,\tau)$ zusätzlich das T1-Axiom, so existiert zu je zwei unterschiedlichen Punkten $x,y \in X$ ein $A_{(x,y)} \in \mathfrak{A}$ mit 
+     \begin{displaymath}
+       \{x,y\} \cap A_{(x,y)} = \{y\}.
+     \end{displaymath}
+  \end{itemize}
+\end{lem}
+
+\begin{proof}
+  \begin{itemize}
+    \item[(i)]
+      Nach Voraussetzung besitzt $\mathcal{F}$ keinen Häufungspunkt.
+      Dies bedeutet, dass
+      \begin{displaymath}
+        \bigcap_{F \in \mathcal{F}} \overline F = \emptyset.
+      \end{displaymath}
+      Für alle $x \in X$ gilt damit, dass ein $F \in \mathcal{F}$ existiert, sodass $x \not\in \overline{F}$.
+      Das bedeutet, dass $X \setminus \overline{F}$ eine offene Umgebung von $x$ ist.
+      Da die offen-abgeschlossenen Mengen nach Voraussetzung eine Basis für $\tau$ bilden, existiert eine offen-abgeschlossene Umgebung $U$ von $x$, mit $U \subseteq X \setminus \overline{F}$ und damit
+      \begin{displaymath}
+        U \cap F = \emptyset.
+      \end{displaymath}
+      Folglich ist $X \setminus U \supseteq F$ und wegen des Abschlusses gegen Obermengenbildung
+      \begin{displaymath}
+        X \setminus U \in \mathcal{F}.
+      \end{displaymath}
+      Es existiert also eine offen-abgeschlossene Menge in $\mathcal{F}$, die $x$ nicht enthält. 
+      Dies impliziert
+      \begin{displaymath}
+        x \not\in \bigcap_{F \in \mathfrak{A}} F.
+      \end{displaymath}
+      Da $x$ beliebig gewählt war, folgt 
+      \begin{displaymath}
+       \bigcap_{F \in \mathfrak{A}} F = \emptyset
+      \end{displaymath}
+      und damit die Behauptung.
+    \item[(ii)] Unter der Voraussetzung, dass $(X,\tau)$ das T1-Axiom erfüllt, lässt sich zur offenen Umgebung $X \setminus \overline{F}$ aus Teil (i) des Beweises eine offene Umgebung 
+      \begin{displaymath}
+        U_x \subseteq X \setminus \overline{F}
+      \end{displaymath}
+      von $x$ finden, die zusätzlich $y$ nicht enthält. 
+      Da die offen-abgeschlossenen Mengen eine Basis von $\tau$ bilden, kann man zudem annehmen, dass $U_x$ offen-abgeschlossen ist.
+      Man prüft nach, dass für
+      \begin{displaymath}
+        A_{(x,y)} := X \setminus U
+      \end{displaymath}
+      die in (ii) geforderten Eigenschaften erfüllt sind:
+      Als Komplement einer offen-abgeschlossenen Menge, ist auch $A_{(x,y)}$ offen und abgeschlossen.
+      Nach Konstruktion ist 
+      \begin{displaymath}
+        x \not\in A_{(x,y)} \text{ sowie } y \in A_{(x,y)}.
+      \end{displaymath}
+      Zudem gilt, wie schon in (i) gezeigt, $A_{(x,y)} \in \mathcal{F}$.
+      Daraus ergibt sich die Behauptung.
+  \end{itemize}
 \end{proof}
 
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item Der Áscoli Satz bezüglich Ultrafilter-Kompaktheit.
+    \item Der Áscoli Satz bezüglich Ultrafilterkompaktheit.
     \item Der Boolesche Primidealsatz.
   \end{enumerate}
 \end{thm}
 
 \begin{proof}
-  $(1)\Rightarrow(2) $: Es reicht aus zu zeigen, dass $(1)$ bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ kompakt sind.
+  $(1)\Rightarrow(2) $: Es reicht aus zu zeigen, dass $(1)$ bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
   Angenommen, es existiert eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
   Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
   Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Häufungspunkt.
 
-  %Die Menge aller offen-abgeschlossenen Elemente von $\mathcal{F}$ besitzt zunächst eine endliche Durchschnittseigenschaft.
   Der mit der Produkttopologie ausgestattete Raum $\mathbf{2}^I$ besitzt eine Basis aus offen-ab\-ge\-schlossenen Mengen.
   Dies folgt daraus, dass bereits jedes Subbasiselement $S$ per Definition offen ist und, da $\mathbf{2}$ diskret ist, auch ein offenes Komplement besitzt.
   Damit ist $S$ aber als Komplement einer offenen Menge definitionsgemäß abgeschlossen.
   Insgesamt ist $S$ also offen-abgeschlossen.
-  Da die Menge der der offen-abgeschlossenen Mengen eine endlichen Durchschnittseigenschaft besitzt, ist auch jedes von der Subbasis erzeugte Basiselement eine offen-abgeschlossene Menge.
-  Damit lässt sich nun Lemma \ref{lem:filterclusterpoint} auf $\mathcal{F}$ anwenden und es folgt für die Menge $\mathfrak{A}$ aller offen-abgeschlossenen Elemente von $\mathcal{F}$
+  Da die Menge der offen-abgeschlossenen Mengen abgeschlossen unter endlichen Durchschnitten ist, ist auch jedes von der Subbasis erzeugte Basiselement eine offen-abgeschlossene Menge.
+
+  Damit lässt sich nun Lemma \ref{lem:filterclusterpoint}(i) auf $\mathcal{F}$ anwenden und es folgt für die Menge $\mathfrak{A}$ aller offen-abgeschlossenen Elemente von $\mathcal{F}$
   \begin{displaymath}
-   \bigcap_{F \in \mathfrak{A}} F = \emptyset.
+    \bigcap_{F \in \mathfrak{A}} F = \emptyset \tag{$\ast$}.
   \end{displaymath}
 
   Damit lässt sich nun für alle $A \in \mathfrak{A}$ eine Funktion
@@ -241,7 +295,88 @@ Es soll nun untersucht werden, inwiefern der Áscoli Satz auch unter Verwendung 
     \end{cases}
   \end{displaymath}
   Da alle $A$ offen-abgeschlossen sind, folgt sofort die Stetigkeit von $f_A$ für alle $A \in \mathfrak{A}$.
-  Somit induziert die Familie $(f_A)_{A \in \mathfrak{A}}$ eine stetige Abbildung $f \colon P \to \mathbf{2}^I$.
+  Somit induziert die Familie $(f_A)_{A \in \mathfrak{A}}$ eine Abbildung 
+  \begin{displaymath}
+    f \colon P \to \mathbf{2}^\mathfrak{A}, \quad
+    x \mapsto (f_A(x))_{A \in \mathfrak{A}},
+  \end{displaymath}
+  welche bezüglich der Produkttopologie auf $P$ stetig ist.
 
+  Es bezeichne $F := f[P]$ das Bild von $P$ unter der obigen Abbildung $f$.
+  Es soll nun gezeigt werden, dass $f$ eine Einbettung ist, also ein Homöomorphismus auf $F$:
+  Die Abbildung $f$ ist injektiv, denn für $x,y \in P$ mit $x \neq y$ gilt mit $A_{(x,y)} \in \mathfrak{A}$ aus Lemma \ref{lem:filterclusterpoint}(ii) 
+  \begin{displaymath}
+    f_{A_{(x,y)}}(x) = 0 \neq 1 = f_{A_{(x,y)}}(y).
+  \end{displaymath}
+
+  Zudem ist $f$ offen bezüglich der Spurtopologie auf $F$.
+  Um Lemma \ref{lem:openmap} anwenden zu können sei nun $O = \pi_{i_0}^{-1}[\{j\}]$ mit $i_0 \in I$ und $j \in \{0,1\}$ eine beliebige offene Subbasismenge der Produkttopologie auf $P$.
+  Es ist $O$ eine offen abgeschlossene Menge. 
+  Fall des Weiteren $O \in \mathcal{F}$, also insbesondere $O \in \mathfrak{A}$ gilt, so ist für alle $x \in O$
+  \begin{displaymath}
+    \pi_O(f(x)) = f_O(x) = 1,
+  \end{displaymath}
+  Daraus folgt 
+  \begin{displaymath}
+    f(O) = \pi_O^{-1}[\{1\}] \cap f[P]
+  \end{displaymath}
+  und folglich ist $f(O)$ offen bezüglich der Teilraumtopologie auf $f[P]$.
+
+  Sei im anderen Fall $O \not\in \mathcal{F}$, so gilt entweder, dass für alle $F \in \mathcal{F}$
+  \begin{displaymath}
+    F \cap O \neq \emptyset
+  \end{displaymath}
+  oder $P \setminus O \in \mathcal{F}$
+  Im zweiten Fall ist damit insbesondere $P \setminus O \in \mathfrak{A}$ und analog zum ersten Teil folgt für alle $x \in O$
+  \begin{displaymath}
+    \pi_{P \setminus O}(f(x)) = 0
+  \end{displaymath}
+  und damit 
+  \begin{displaymath}
+    f[O] = \pi_{P \setminus O}^{-1}[\{0\}] \cap f[P].
+  \end{displaymath}
+  Im anderen Fall gilt zudem für alle $F \in \mathcal{F}$
+  \begin{displaymath}
+    F \cap P \setminus O \neq \emptyset
+  \end{displaymath}
+  und damit 
+  \begin{displaymath}
+    F[O] = F[P].
+  \end{displaymath}
+
+  Damit ist gezeigt, dass $f$ eine offene Abbildung auf ihr Bild ist.
+  Folglich ist $f$ ein Homöomorphismus auf $f[P]$.
+
+  Jeder endliche diskrete Raum ist ultrafilterkompakt, da dort die einzigen Ultrafilter, die Einpunktfilter sind, welche immer konvergieren.
+  Es ist daher $\mathbf{2}^I$ als Produkt ultrafilterkompakter Räume wiederum ultrafilterkompakt.
+  Damit ist $F$ als homöomorphes Bild eines ultrafilterkompakten Raumes ebenso ultrafilterkompakt.
+
+  Wendet man nun den Áscoli-Satz bezüglich Ultrafilterkompaktheit auf $F$ an, wobei $\mathfrak{A}$ als diskreter topologischer Raum und $\mathbf{2}$ als diskreter metrischer Raum betrachtet wird, so ist die Aussage $(b, \beta)$ nicht erfüllt:
+  Es ist nämlich $p := (1)_{A \in \mathfrak{A}} \in \mathbf{2}^\mathfrak{A}$ im Abschluss von $F$ in $\mathbf{2}^\mathfrak{A}$ enthalten.
+  Sei $U_p \subseteq \mathbf{2}^\mathfrak{A}$ eine beliebige Umgebung von $p$.
+  Dann existieren Subbasiselemente $B_{A_1},\dots,B_{A_n}$ mit
+  \begin{displaymath}
+    p \in \bigcap_{i=1}^n B_{A_i} \subseteq U_p.
+  \end{displaymath}
+  Es ist
+  \begin{displaymath}
+    \bigcap_{i=1}^n B_{A_i} \cap f[P] \neq \emptyset.
+  \end{displaymath}
+  Denn für 
+  \begin{displaymath}
+    x \in \bigcap_{i=1}^n A_i \in \mathcal{F}
+  \end{displaymath}
+  gilt $f_{A_i}(x) = 1$, da offen-abgeschlossene Mengen sowie Filter eine endliche Durchschnittseigenschaft besitzen, ist
+  \begin{displaymath}
+  \end{displaymath}
+  
+  Andererseits ist $p$ jedoch nicht in $F$ enthalten. 
+  Gälte nämlich $p \in F$, so existiert ein $x \in P$ mit $f_A(x) = 1$ für alle $A \in \mathfrak{A}$, was gleichbedeutend ist mit 
+  $x \in \cup_{A \in \mathfrak{A}}$.
+  Dies steht jedoch im Widerspruch dazu, dass der Schnitt über alle in $\mathcal{F}$ enthaltenen offen-abgeschlossenen Mengen leer ist.
+  Also gilt $F \neq \overline{F}$, ein Widerspruch zum Áscoli-Satz bezüglich Ultrafilterkompaktheit.
+  Die Annahme, dass $\mathbf{2}^I$ nicht kompakt war, muss also verworfen werden.
+
+  $(2)\Rightarrow(1)$: Der Boolesche Primidealsatz impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Ultrafilterkompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
