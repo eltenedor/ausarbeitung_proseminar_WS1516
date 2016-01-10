@@ -424,6 +424,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli Satz auch unter Verwendung 
 Wie die vorangehenden Ausführungen gezeigt haben, versagt der Áscoli-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des Áscoli-Satzes die Anforderungen senkt.
 
 \begin{defn}
+  \label{def:klassisch}
   Der klassische Áscoli-Satz besagt, dass für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ die folgenden Bedingungen äquivalent sind:
   \begin{itemize}
     \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert, d.h.
@@ -439,18 +440,33 @@ Wie die vorangehenden Ausführungen gezeigt haben, versagt der Áscoli-Satz bei 
   \end{itemize}
 \end{defn}
 
-Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die stetige Konvergenz genannt werden:
+Dass die in Definition \ref{def:klassisch} auftretende Grenzfunktion $g$ eindeutig bestimmt ist, sieht man über ein Folgenmischungsargument ein:
+Sind nämlich $(x_n)_{n \in \N}$ und $(y_n)_{n \in \N}$ zwei Folgen in $\R$ mit Grenzwert $x$, so lässt sich eine dritte Folge $(z_n)_{n \in \N}$ konstruieren mit $z_{2n-1} := x_{2n-1}$ und $z_{2n} := y_{2n}$.
+Diese konvergiert weiterhin gegen $x$ und es gilt 
+\begin{displaymath}
+   \lim_{n \to \infty} f_{n}(x_n) 
+  =\lim_{n \to \infty} f_{2n-1}(x_{2n-1}) 
+  =\lim_{n \to \infty} f_{2n-1}(z_{2n-1}) 
+  =\lim_{n \to \infty} f_n(z_n) = f(x),
+\end{displaymath}
+da jede Teilfolge einer konvergenten Folge gegen denselben Grenzwert konvergiert.
+
+Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die stetige Konvergenz festgehalten werden:
 
 \begin{prop}
   \begin{itemize}
-    \item[a)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so ist auch $g$ stetig.
-    \item[b)] Falls $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $g$ konvergiert, so konviergiert $(f_n)_{n \in \N}$ auch stetig gegen $g$.
-    \item[c)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch punktweise gegen $g$.
+    \item[a)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch punktweise gegen $g$.
+    \item[b)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so ist auch $g$ stetig.
+    \item[c)] Falls $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $g$ konvergiert, so konviergiert $(f_n)_{n \in \N}$ auch stetig gegen $g$.
   \end{itemize}
 \end{prop}
 
 \begin{proof}
-  a): Es soll die Stetigkeit der Grenzfunktion $g$ mittels Folgenstetigkeit gezeigt werden. 
+  a): 
+  Dies folgt direkt aus der Definition unter Betrachtung konstanter Folgen $(x_n)_{n \in \N}$ mit $x_n = x$ für alle $n \in N$.
+
+  b): 
+  Es soll die Stetigkeit der Grenzfunktion $g$ mittels Folgenstetigkeit gezeigt werden. 
   Es sei dazu $(x_n)_{n \in \N}$ eine Folge in $\R$ mit Grenzwert $x$ und $\varepsilon > 0$ gegeben.
   Wie in c) noch gezeigt wird konvergiert $(f_n)_{n \in \mathbb{N}}$ punktweise.
   Daraus lässt sich nun induktiv eine Teilfolge $(f_{n_k})_{k \in \mathbb{N}}$ gewinnen mit
@@ -489,9 +505,28 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     \leq \varepsilon.
   \end{displaymath}
 
-  b):
+  c): 
+  Es sei $(x_n)_{n \in \N}$ eine Folge in $\R$ mit Grenzwert $x$.
+  Des Weiteren sei $\varepsilon > 0$ gegeben.
+  Da nach Voraussetzung $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $f$ konvergiert existiert eine Umgebung $U$ von $x$, sodass ${f_n}_{|U}$ gleichmäßig konvergiert.
+  Es existiert somit ein $n_\varepsilon$, sodass für alle $y \in U$ gilt 
+  \begin{displaymath}
+    | f_n(y) - f_n(x) | \leq \frac{\varepsilon}{2}, \text{ für alle $n \geq n_\varepsilon$}.
+  \end{displaymath}
+  Da $(x_n)_{n \in \N}$ voraussetzungsgemäß gegen $x$ konvergiert, existiert ein $N \in \N$, sodass $x_n \in U$ für alle $n \geq N$.
+  Zuletzt existiert aufgrund der punktweisen Konvergenz von $(f_n)_{n \in \N}$ ein $n_p \in \N$, sodass
+  \begin{displaymath}
+    | f_n(x) - f(x) | \leq \frac{\varepsilon}{2}, \text{ für alle $n \geq n_p$}.
+  \end{displaymath}
 
-  c): Dies folgt direkt aus der Definition unter Betrachtung konstanter Folgen $(x_n)_{n \in \N}$ mit $x_n = x$ für alle $n \in N$.
+  Setzt man nun $n':= \max(n_\varepsilon, N, n_p)$, so folgt unter Anwendung der Dreiecksungleichung
+  \begin{displaymath}
+    | f_n(x_n) - f(x) |
+    \leq
+    | f_n(x_n) - f(x_n) | + | f(x_n) - f(x) | 
+    \leq \varepsilon \text{, für alle $n \geq n'$}.
+  \end{displaymath}
+
 \end{proof}
 
 \begin{thm}
@@ -522,7 +557,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     F_n := \{ f \in F \mid |f(x)| \geq m \}
   \end{displaymath}
   für alle $n \in N$ nichtleer.
-  $CC(\R)$ impliziert folglich die Existenz einer Folge 
+  $\mathbf{CC}(\R)$ impliziert folglich die Existenz einer Folge 
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in N} F_n.
   \end{displaymath}
@@ -545,6 +580,6 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in N} F_n.
   \end{displaymath}
-  Für obiges $x \in \R$ und $\varepsilon$ 
+  Für obiges $x \in \R$ und $\varepsilon$...
   Dies widerspricht jedoch Bedingung (a).
 \end{proof}<++>
