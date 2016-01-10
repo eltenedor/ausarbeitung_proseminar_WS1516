@@ -22,8 +22,8 @@ Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden
 
 Áscoli-Sätze gelten bezeichnend für Aussagen, die es gestatten Kompaktheit von Teilmengen von Funktionenräumen bezüglich starker Topologien aus der Kompaktheit bezüglich einer schwächeren Topologie unter zusätzlichen Annahmen zu folgern. Dabei existieren unterschiedliche Formulierungen.
 
-Eine topologische Version des Áscoli Satzes lautet:
-\begin{defn}[Topologischer Áscoli Satz]
+Eine topologische Version des Áscoli-Satzes lautet:
+\begin{defn}[Topologischer Áscoli-Satz]
   Sei $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
   Für jeden Teilraum $(F,\tau_{co})$ von $C_{co}(X,Y)$ sind äquivalent:
   \begin{enumerate}
@@ -168,7 +168,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum B
   Damit ist der Beweis vollständig.
 \end{proof}
 
-Es soll nun untersucht werden, inwiefern der Áscoli Satz auch unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
+Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
 
 \begin{lem}
   \label{lem:openmap}
@@ -263,7 +263,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli Satz auch unter Verwendung 
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item Der Áscoli Satz bezüglich Ultrafilterkompaktheit.
+    \item Der Áscoli-Satz bezüglich Ultrafilterkompaktheit.
     \item Der Boolesche Primidealsatz.
   \end{enumerate}
 \end{thm}
@@ -384,7 +384,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli Satz auch unter Verwendung 
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item Der Áscoli Satz bezüglich Tychonoffkompaktheit.
+    \item Der Áscoli-Satz bezüglich Tychonoffkompaktheit.
     \item Der Boolesche Primidealsatz.
   \end{enumerate}
 \end{thm}
@@ -404,7 +404,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli Satz auch unter Verwendung 
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item Der Áscoli Satz bezüglich Alexandroff-Urysohn-Kompaktheit.
+    \item Der Áscoli-Satz bezüglich Alexandroff-Urysohn-Kompaktheit.
     \item Der Boolesche Primidealsatz.
   \end{enumerate}
 \end{thm}
@@ -454,6 +454,7 @@ da jede Teilfolge einer konvergenten Folge gegen denselben Grenzwert konvergiert
 Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die stetige Konvergenz festgehalten werden:
 
 \begin{prop}
+  \label{prop:stetigkonv}
   \begin{itemize}
     \item[a)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch punktweise gegen $g$.
     \item[b)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so ist auch $g$ stetig.
@@ -473,7 +474,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     | f_{n_k}(x_k) - f(x_k) | \leq \frac{\varepsilon}{2}, \text{ für alle $k \in \N$}.
   \end{displaymath}
-  Denn aufgrund der Punktweisen Konvergenz existiert zu $x_1$ ein $n_1$, sodass
+  Denn aufgrund der punktweisen Konvergenz existiert zu $x_1$ ein $n_1$, sodass
   \begin{displaymath}
     | f_{n}(x_1) - f(x_1) | \leq \frac{\varepsilon}{2}, \text{ für alle $n \geq n_1$}
   \end{displaymath}
@@ -576,10 +577,90 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     F_n := \{ f \in F \mid \text{Es existiert ein } y \in U_{\frac{1}{n+1}}(x) \text{ mit } f(y) \not\in U_\varepsilon(f(x)) \}
   \end{displaymath}
   nicht leer sind.
-  Wie zuvor impliziert $CC(\R)$ die Existenz einer Folge 
+  Wie zuvor impliziert $\mathbf{CC}(\R)$ die Existenz einer Folge 
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in N} F_n.
   \end{displaymath}
-  Für obiges $x \in \R$ und $\varepsilon$...
-  Dies widerspricht jedoch Bedingung (a).
-\end{proof}<++>
+  Nimmt man an, dass diese Folge eine stetig konvergente Teilfolge $f_{\nu(n)}$ besitzt, so konvergiert diese nach Proposition \ref{prop:stetigkonv} auch Punktweise.
+  Zu dem anfangs gegebenen $x$ und $\varepsilon > 0$ existiert also insbesondere ein $N \in \N$, sodass
+  \begin{displaymath}
+    | f_{\nu(n)}(x) - g(x) | \leq \frac{\varepsilon}{2}.
+  \end{displaymath}
+  Andererseits existiert nach der Definition von $F_n$ eine Folge $(y_n)_{n \in N}$ mit Grenzwert $x$ mit jedoch gilt 
+  \begin{displaymath}
+    | f_{\nu(n)}(x) -  f_{\nu(n)}(y_n) | \geq \varepsilon
+  \end{displaymath}
+  Unter Verwendung der inversen Dreiecksungleichung folgt damit für alle $n \geq N$
+  \begin{displaymath}
+    | f_{\nu(n)}(y_n) - g(x) | 
+    \geq 
+    | f_{\nu(n)}(y_n) - f_{\nu(n)}(x) | - | f_{\nu(n)}(x) - g(x)  | 
+    \geq \frac{\varepsilon}{2}.
+  \end{displaymath}
+  Dies steht jedoch im Widerspruch zur stetigen Konvergenz von $(f_{\nu(n)})_{n \in N}$.
+
+  $(b) \Rightarrow (a)$:
+  Sei $(f_n)_{n \in \N}$ eine Folge in $F$.
+  Des Weiteren sei $(r_n)_{n \in \N}$ eine Abzählung der rationalen Zahlen.
+  Im Folgenden soll induktiv eine Folge von geordneten Paaren $(a_n, s_n)_{n \in \N}$ mit $a_n \in \R$ für alle $n \in \N$ und eine Folge $s_n = (g_m^n)_{m \in \N}$ in $F$:
+  \begin{enumerate}
+    \item 
+      Nach $(b)$ ist $F(x)$ für alle $x \in \R$ beschränkt. 
+      Somit ist auch 
+      \begin{displaymath}
+        \{f_n(r_0) \mid n \in \N\} \subseteq F(r_0)
+      \end{displaymath}
+      beschränkt.
+      Man setze nun $a_0 := \liminf_{n \to \infty} f_n(r_0)$.
+      Weiterhin definiere man $s_0 = (g_n^0)_{n \in \N}$ induktiv als Teilfolge $(f_{\nu(n)})_{n \in \N}$ von $(f_n)_{n \in \N}$:
+      \begin{itemize}
+
+        \item[$a)$] $\nu(0) := \min\{m \in \N \mid |f_m(r_0) - a_0 | < 1\}$
+
+          $\nu(0)$ ist wohldefiniert, denn die Menge auf der rechten Seite der Gleicheit ist nicht leer, da nach Voraussetzung $a_0$ ein Häufungspunkt von $(f_n(r_0))_{n \in \N}$ ist und somit eine gegen $r_0$ konvergente Teilfolge ebendieser existiert.
+          Daher besitzt sie aufgrund der natürlichen Wohlordnung der natürlichen Zahlen als nichtleere Teilmenge ein Minimum.
+
+        \item[$b)$] $\nu(n+1) :=  \min\{m \in \N \mid \nu(n) < m \text{ und }  |f_m(r_0) - a_0| < \frac{1}{n+1}\}$
+
+          Wie in $a)$ sieht man ein, dass $\nu(n+1)$ wohldefiniert ist.
+      \end{itemize}
+      Folglich ist $s_0:= (g_n^0)_{n \in \N} = (f_{\nu(n)})_{n \in \N}$ eine Teilfolge von $(f_n)_{n \in \N}$ und es gilt $\lim_{n \to \infty}(g_n^0(r_0)) = a_0$.
+
+    \item 
+      Seien nun $a_n$ und $s_n = (g_m^n)_{m \in N}$ definiert.
+      Es sei nun $a_{n + 1} := \liminf_{m \to \infty} g_m^n(r_{n+1})$.
+      Analog zu $1.$ definiere man nun induktiv $s_{n+1} := (g_m^{n + 1})_{m \in N}$ als Teilfolge von $s_n = (g_m^n)_{m \in N}$, sodass $\lim_{m \to \infty} g_m^{n + 1}(r_{n+1}) = a_{n + 1}$.
+  \end{enumerate}
+
+  Hierauf aufbauend betrachte man nun die Diagonalfolge $s := (g_n^n)_{n \in \N}$.
+  Dann ist $s$ eine Teilfolge von $(f_n)_{n \in N}$ und kofinal zu jeder der Folgen $s_n$.
+  Also konvergiert für jedes $n \in \N$ die Folge $(s(r_n))_{n \in \N} = (g_m^m(r_n))_{m \in \N}$ gegen $a_n$.
+  Folglich konvergiert für jedes $x \in \Q$ die Folge $(s(x))_{n \in \N} = (g_m^m(x))_{m \in \N}$.
+
+  Es soll nun gezeigt werden, dass $s$ lokal gleichmäßig auf $\R$ konvergiert.
+  Sei dazu $x \in \R$ und $\varepsilon > 0$ gegeben.
+  Da $G$ gleichgradig stetig ist, existiert eine offene Umgebung $U$ von $x$, sodass
+  \begin{displaymath}
+    f[U] \subseteq U_\frac{\varepsilon}{3}(f(x))
+  \end{displaymath}
+  für alle $f \in G$ gilt.
+  Da $\Q$ dicht in $\R$ liegt existiert ein $y \in U \cup \Q$.
+  Nach Konstruktion konvergiert für alle $g_m^m \in G$ die Folge $g_m^m(y)$, ist also insbesondere eine Cauchyfolge.
+  Es existiert also ein $N \in \N$, sodass für alle $m,n \geq N$
+  \begin{displaymath}
+    | g_m^m(y) - g_n^n(y) | \leq \frac{\varepsilon}{3}
+  \end{displaymath}
+  gilt.
+  Damit gilt für alle $m, n \geq N$
+  \begin{displaymath}
+    | g_m^m(x) - g_n^n(x) |
+    \leq 
+    | g_m^m(x) - g_m^m(y) | +  | g_m^m(y) - g_n^n(y) | +  | g_n^n(y) - g_n^n(x) |
+    \leq
+    \frac{\varepsilon}{3}.
+  \end{displaymath}
+  Also ist $s$ lokal gleichmäßige Cauchyfolge auf $\R$.
+  Da $\R$ vollständig ist, konvergiert $s$ auch lokal gleichmäßig auf $\R$. 
+  Aufgrund von Proposition \ref{prop:stetigkonv} konvergiert $s$ auch stetig gegen eine Abbildung $g \colon \R \to \R$ mit $g(r_n) = a_n$ für alle $n \in \N$.
+  Daraus folgt $(a)$.
+\end{proof}
