@@ -2,13 +2,13 @@
 
 Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels \textit{Disasters in Topology III: Function Spaces (The Ascoli Theorem)} aus dem Buch von Horst Herrlich.
 
-\begin{defn}
-  Es seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume. Eine Abbildung $f \colon X \to Y$ heißt \textit{gleichmäßig stetig}, wenn gilt:
-  \begin{addmargin}[2em]{2em}% 1em left, 2em right
-  Zu jedem $\varepsilon > 0$ existiert ein $\delta > 0$, sodass \\
-  für alle $x,x' \in X$ mit $d_X(x,x') < \delta$ gilt, dass $d_Y(f(x),f(x')) < \varepsilon$.
-  \end{addmargin}
-\end{defn}
+%\begin{defn}
+%  Es seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume. Eine Abbildung $f \colon X \to Y$ heißt \textit{gleichmäßig stetig}, wenn gilt:
+%  \begin{addmargin}[2em]{2em}% 1em left, 2em right
+%  Zu jedem $\varepsilon > 0$ existiert ein $\delta > 0$, sodass \\
+%  für alle $x,x' \in X$ mit $d_X(x,x') < \delta$ gilt, dass $d_Y(f(x),f(x')) < \varepsilon$.
+%  \end{addmargin}
+%\end{defn}
 
 \begin{defn}
   Es sei $(X,\tau)$ ein topologischer Raum und $(Y,d)$ ein metrischer Raum. Eine Teilmenge $F \subseteq Y^X$ heißt \textit{gleichgradig stetig}, wenn gilt:
@@ -36,7 +36,7 @@ Eine topologische Version des Áscoli-Satzes lautet:
   \end{enumerate}
 \end{defn}
 
-Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum Booleschen Primideal ist.
+Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum Booleschen Primidealsatz ist.
 
 \begin{thm}
   \label{thm:ascoliPIT}
@@ -55,8 +55,10 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum B
   Dann gilt $C(X, \mathbf{2}) = \mathbf{2}^X$, da $X$ nach Voraussetzung diskret ist.
   Es folgt, dass $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum kompakt ist.
   Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen in jeder Topologie, also insbesondere auch in der punktweisen Topologie $\tau_p$.
-  Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
-  Damit sind die Bedingungen (b) des Áscoli-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt ist. Dies ist äquivalent zum Booleschen Primidealsatz.
+  Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. 
+  Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
+  Damit sind die Bedingungen aus $(b)$ des Áscoli-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt ist. 
+  Dies ist äquivalent zum Booleschen Primidealsatz.
 
   $(2) \Rightarrow (1)$: Es seien $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
   Des Weiteren sei $F$ ein Teilraum vom $C_{co}(X,Y)$.
@@ -64,8 +66,8 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum B
   $(a) \Rightarrow (b, \alpha)$: 
   Nach Voraussetzung ist $F$ ein bezüglich der kompakt-offenen Topologie $\tau_{co}$ kompakter Teilraum von $C(X,Y)$.
   Somit ist er insbesondere bezüglich der Spur der schwächeren Topologie der punktweisen Konvergenz $\tau_p$ ein kompakter Teilraum des Hausdorff-Raumes $Y^X$.
-  Die Topologie der punktweisen Konvergenz lässt sich als Initialtopologie bezüglich der kanonischen Projektionen $p_x : Y^X \to Y, f \mapsto f(x)$ beschreiben.
-  Als stetiges Bild eines Kompaktums ist somit auch $p_x(F) = F(x)$ kompakt in $(Y,\tau_d)$.
+  Die Topologie der punktweisen Konvergenz lässt sich als Initialtopologie bezüglich der kanonischen Projektionen $\pi_x : Y^X \to Y, f \mapsto f(x)$ beschreiben.
+  Als stetiges Bild eines Kompaktums ist somit auch $\pi_x(F) = F(x)$ kompakt in $(Y,\tau_d)$.
 
   $(a) \Rightarrow (b, \beta)$:  
   Als kompakter Teilraum eines Hausdorff-Raumes ist $F$ bezüglich $\tau_p$ auch abgeschlossen in $Y^X$.
@@ -86,7 +88,10 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum B
     U_f := F \cap (K_f, B_f) = \left\{g \in F \mid g(K_f) \subseteq B_f \right\} \tag{$\ast$}
   \end{displaymath}
   eine bezüglich der Teilraumtopologie auf $F$ offene Umgebung von $f$.
-  Man betrachte nun die Evaluationsabbildung $\omega: X \times F \to Y, (y,g) \mapsto g(y)$.
+  Man betrachte nun die Evaluationsabbildung 
+  \begin{displaymath}
+    \omega: X \times F \to Y, \quad (y,g) \mapsto g(y).
+  \end{displaymath}
   Unter Berücksichtigung von ($\ast$) folgt $\omega(K_f \times U_f) \subseteq B_f$.
   Es definiere $\mathcal{C}$ die Menge aller Tripel $(f,K,U)$, wobei $f \in F$, $K$ eine Umgebung von $x$ in $X$ und $U$ eine offene Umgebung von $f$ in $F$ mit $\omega(K \times U) \subseteq B_f$ sei.
   Dann liefert
@@ -96,7 +101,10 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum B
   eine offene Überdeckung von $F$, da für alle $f \in F$ nach Konstruktion $(f,K_f,U_f) \in \mathfrak{U}$ gilt.
   Nach Voraussetzung ist $F$ kompakt, daher existiert eine endliche Teilüberdeckung durch $U_1,\dots,U_n \in \mathfrak{U}$.
   Für alle $i = 1,\dots,n$ wähle man nun $f_i \in F$ und $K_i \subseteq X$ mit $(f_i, K_i, U_i) \in \mathcal{C}$.
-  Des Weiteren definiere man $U := \bigcap_{i = 1}^n K_i$.
+  Des Weiteren definiere man 
+  \begin{displaymath}
+    U := \bigcap_{i = 1}^n K_i.
+  \end{displaymath}
   Es ist $U$ eine (nicht notwendig offene) Umgebung von $x \in X$.
   Nun soll gezeigt werden, dass für diese Wahl von $U$ die Voraussetzung der gleichgradigen Stetigkeit erfüllt ist, also dass für alle $f \in F$ folgt, dass $f(U) \subseteq U_\varepsilon(f(x))$ gilt.
   Für jedes $f \in F$ existiert aufgrund der Überdeckungseigenschaft ein $i = 1,\dots,n$ mit $f \in U_i$.
@@ -121,13 +129,21 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum B
   Als abgeschlossene Teilmenge eines Kompaktums ist somit $F$ auch kompakt bezüglich der Topologie der punktweisen Konvergenz.
   Es fehlt zu zeigen, dass $F$ ebenfalls bezüglich der stärkeren, kompakt-offenen Topologie $\tau_{co}$ kompakt ist.
   Hierfür soll die Inklusion $\tau_{co} \subseteq \tau_p$ nachgewiesen werden.
-  Dazu betrachte man ein Subbasiselement $V = (K,U) \cap F$ der kompakt-offenen Topologie auf dem Teilraum $F$ und ein $f \in V$.
+  Dazu betrachte man ein Subbasiselement 
+  \begin{displaymath}
+    V = (K,U) \cap F
+  \end{displaymath}
+  der kompakt-offenen Topologie auf dem Teilraum $F$ und ein $f \in V$.
   Es gilt nun zu zeigen, dass $V$ auch in $\tau_p$ offen ist.
   Da $f(K) \subseteq U$ und $U \in \sigma$ gilt, folgt für alle $x \in K$
   \begin{displaymath}
     r_x = \inf\{d(f(x),y) \mid y \in (Y \setminus U) \} > 0.
   \end{displaymath}
-  Dann ist $U_x = \{ z \in X \mid d(f(x),f(z)) < \tfrac{r_x}{2}\}$ eine offene Umgebung von $x \in X$.
+  Dann ist 
+  \begin{displaymath}
+    U_x = \{ z \in X \mid d(f(x),f(z)) < \tfrac{r_x}{2}\}
+  \end{displaymath} 
+  eine offene Umgebung von $x \in X$.
   Denn für alle $z \in U_x$ mit $\varepsilon := \tfrac{r_x}{2} - d(f(x),f(z)) > 0$ gilt, dass aufgrund der Stetigkeit von $f$ eine Umgebung $U' \in \tau$ von $z$ existiert, sodass $f(U') \subseteq U_\varepsilon(f(z))$ gilt.
   Daraus folgt für alle $u \in U'$ mit der Dreiecksungleichung
   \begin{align*}
@@ -429,7 +445,7 @@ Wie die vorangehenden Ausführungen gezeigt haben, versagt der Áscoli-Satz bei 
   \begin{itemize}
     \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert, d.h.
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
-        Für alle $x \in \R$ und alle $(x_n)_{n \in N} \in \R^\N$ gilt: \\
+        Für alle $x \in \R$ und alle $(x_n)_{n \in \N} \in \R^\N$ gilt: \\
         Aus $\lim_{n \to \infty} x_n = x$ folgt $\lim_{n \to \infty} f_{\nu(n)}(x_n) = g(x)$.
       \end{addmargin}
     \item[(b)]
@@ -464,7 +480,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
 \begin{proof}
   a): 
-  Dies folgt direkt aus der Definition unter Betrachtung konstanter Folgen $(x_n)_{n \in \N}$ mit $x_n = x$ für alle $n \in N$.
+  Dies folgt direkt aus der Definition unter Betrachtung konstanter Folgen $(x_n)_{n \in \N}$ mit $x_n = x$ für alle $n \in \N$.
 
   b): 
   Es soll die Stetigkeit der Grenzfunktion $g$ mittels Folgenstetigkeit gezeigt werden. 
@@ -525,7 +541,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     | f_n(x_n) - f(x) |
     \leq
     | f_n(x_n) - f(x_n) | + | f(x_n) - f(x) | 
-    \leq \varepsilon \text{, für alle $n \geq n'$}.
+    \leq \varepsilon \text{, für alle $n \geq n'$}. \qedhere
   \end{displaymath}
 
 \end{proof}
@@ -557,10 +573,10 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     F_n := \{ f \in F \mid |f(x)| \geq m \}
   \end{displaymath}
-  für alle $n \in N$ nichtleer.
+  für alle $n \in \N$ nichtleer.
   $\mathbf{CC}(\R)$ impliziert folglich die Existenz einer Folge 
   \begin{displaymath}
-    (f_n)_{n \in \N} \in \prod_{n \in N} F_n.
+    (f_n)_{n \in \N} \in \prod_{n \in \N} F_n.
   \end{displaymath}
   Für obiges $x \in \R$ gilt also insbesondere $|f_{n_k}(x)| \geq n_k \geq n$ für alle $k \in \N$, sodass die Funktionenfolge $(f_n)_{n \in \N}$ in $x$ nicht punktweise, folglich auch nicht stetig konvergiert.
   Dies widerspricht jedoch Bedingung (a).
@@ -572,21 +588,21 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     f[U_\delta(x)] \subseteq U_\varepsilon(f(x)).
   \end{displaymath}
-  Schließlich gilt für alle $n \in N$, dass die Mengen
+  Schließlich gilt für alle $n \in \N$, dass die Mengen
   \begin{displaymath}
     F_n := \{ f \in F \mid \text{Es existiert ein } y \in U_{\frac{1}{n+1}}(x) \text{ mit } f(y) \not\in U_\varepsilon(f(x)) \}
   \end{displaymath}
   nicht leer sind.
   Wie zuvor impliziert $\mathbf{CC}(\R)$ die Existenz einer Folge 
   \begin{displaymath}
-    (f_n)_{n \in \N} \in \prod_{n \in N} F_n.
+    (f_n)_{n \in \N} \in \prod_{n \in \N} F_n.
   \end{displaymath}
   Nimmt man an, dass diese Folge eine stetig konvergente Teilfolge $f_{\nu(n)}$ besitzt, so konvergiert diese nach Proposition \ref{prop:stetigkonv} auch Punktweise.
   Zu dem anfangs gegebenen $x$ und $\varepsilon > 0$ existiert also insbesondere ein $N \in \N$, sodass
   \begin{displaymath}
     | f_{\nu(n)}(x) - g(x) | \leq \frac{\varepsilon}{2}.
   \end{displaymath}
-  Andererseits existiert nach der Definition von $F_n$ eine Folge $(y_n)_{n \in N}$ mit Grenzwert $x$ mit jedoch gilt 
+  Andererseits existiert nach der Definition von $F_n$ eine Folge $(y_n)_{n \in \N}$ mit Grenzwert $x$ mit jedoch gilt 
   \begin{displaymath}
     | f_{\nu(n)}(x) -  f_{\nu(n)}(y_n) | \geq \varepsilon
   \end{displaymath}
@@ -597,7 +613,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     | f_{\nu(n)}(y_n) - f_{\nu(n)}(x) | - | f_{\nu(n)}(x) - g(x)  | 
     \geq \frac{\varepsilon}{2}.
   \end{displaymath}
-  Dies steht jedoch im Widerspruch zur stetigen Konvergenz von $(f_{\nu(n)})_{n \in N}$.
+  Dies steht jedoch im Widerspruch zur stetigen Konvergenz von $(f_{\nu(n)})_{n \in \N}$.
 
   $(b) \Rightarrow (a)$:
   Sei $(f_n)_{n \in \N}$ eine Folge in $F$.
@@ -627,13 +643,13 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
       Folglich ist $s_0:= (g_n^0)_{n \in \N} = (f_{\nu(n)})_{n \in \N}$ eine Teilfolge von $(f_n)_{n \in \N}$ und es gilt $\lim_{n \to \infty}(g_n^0(r_0)) = a_0$.
 
     \item 
-      Seien nun $a_n$ und $s_n = (g_m^n)_{m \in N}$ definiert.
+      Seien nun $a_n$ und $s_n = (g_m^n)_{m \in \N}$ definiert.
       Es sei nun $a_{n + 1} := \liminf_{m \to \infty} g_m^n(r_{n+1})$.
-      Analog zu $1.$ definiere man nun induktiv $s_{n+1} := (g_m^{n + 1})_{m \in N}$ als Teilfolge von $s_n = (g_m^n)_{m \in N}$, sodass $\lim_{m \to \infty} g_m^{n + 1}(r_{n+1}) = a_{n + 1}$.
+      Analog zu $1.$ definiere man nun induktiv $s_{n+1} := (g_m^{n + 1})_{m \in \N}$ als Teilfolge von $s_n = (g_m^n)_{m \in \N}$, sodass $\lim_{m \to \infty} g_m^{n + 1}(r_{n+1}) = a_{n + 1}$.
   \end{enumerate}
 
   Hierauf aufbauend betrachte man nun die Diagonalfolge $s := (g_n^n)_{n \in \N}$.
-  Dann ist $s$ eine Teilfolge von $(f_n)_{n \in N}$ und kofinal zu jeder der Folgen $s_n$.
+  Dann ist $s$ eine Teilfolge von $(f_n)_{n \in \N}$ und kofinal zu jeder der Folgen $s_n$.
   Also konvergiert für jedes $n \in \N$ die Folge $(s(r_n))_{n \in \N} = (g_m^m(r_n))_{m \in \N}$ gegen $a_n$.
   Folglich konvergiert für jedes $x \in \Q$ die Folge $(s(x))_{n \in \N} = (g_m^m(x))_{m \in \N}$.
 
@@ -663,4 +679,28 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   Da $\R$ vollständig ist, konvergiert $s$ auch lokal gleichmäßig auf $\R$. 
   Aufgrund von Proposition \ref{prop:stetigkonv} konvergiert $s$ auch stetig gegen eine Abbildung $g \colon \R \to \R$ mit $g(r_n) = a_n$ für alle $n \in \N$.
   Daraus folgt $(a)$.
+\end{proof}
+
+Zusammenfassend lässt sich also erkennen, dass weder der topologische Áscoli-Satz noch der klassische Áscoli Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen Áscoli-Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt:
+
+\begin{thm}
+  Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
+  \begin{itemize}
+
+    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert.
+
+    \item[(b)]
+      \begin{itemize}
+        \item[($\alpha$)] Für alle $x \in \R$ und jede abzählbare Teilmenge $G \subseteq F$ ist die Menge $G(x) = \{ g(x) \mid g \in G \}$ beschränkt.
+        \item[($\beta$)] Jede abzählbare Teilmenge von $F$ ist gleichgradig stetig.
+      \end{itemize}
+  \end{itemize}
+\end{thm}
+
+\begin{proof}
+  $(a) \Rightarrow (b,\alpha)$
+
+  $(a) \Rightarrow (b,\beta)$
+
+  $(b) \Rightarrow (a)$
 \end{proof}
