@@ -400,7 +400,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item Der Áscoli-Satz bezüglich Tychonoffkompaktheit.
+    \item Der Áscoli-Satz bezüglich Tychonoff-Kompaktheit.
     \item Der Boolesche Primidealsatz.
   \end{enumerate}
 \end{thm}
@@ -411,7 +411,9 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
   Hierbei sei das abgeschlossene Einheitsintervall $[0,1]$ mit der euklidischen Topologie ausgestattet.
   Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Häufungspunkt.
 
-  $(2)\Rightarrow(1)$: Der Boolesche Primidealsatz impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Tychonoffkompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+  UNVOLLSTÄNDIG
+
+  $(2)\Rightarrow(1)$: Der Boolesche Primidealsatz impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Tychonoff-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
 
@@ -421,7 +423,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
   Äquivalent sind:
   \begin{enumerate}
     \item Der Áscoli-Satz bezüglich Alexandroff-Urysohn-Kompaktheit.
-    \item Der Boolesche Primidealsatz.
+    \item Das Auswahlaxiom $\mathbf{AC}$.
   \end{enumerate}
 \end{thm}
 
@@ -597,14 +599,14 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in \N} F_n.
   \end{displaymath}
-  Nimmt man an, dass diese Folge eine stetig konvergente Teilfolge $f_{\nu(n)}$ besitzt, so konvergiert diese nach Proposition \ref{prop:stetigkonv} auch Punktweise.
+  Nimmt man an, dass diese Folge eine stetig konvergente Teilfolge $(f_{\nu(n)})_{n \in \N}$ besitzt, so konvergiert diese nach Proposition \ref{prop:stetigkonv}$a)$ auch punktweise.
   Zu dem anfangs gegebenen $x$ und $\varepsilon > 0$ existiert also insbesondere ein $N \in \N$, sodass
   \begin{displaymath}
     | f_{\nu(n)}(x) - g(x) | \leq \frac{\varepsilon}{2}.
   \end{displaymath}
-  Andererseits existiert nach der Definition von $F_n$ eine Folge $(y_n)_{n \in \N}$ mit Grenzwert $x$ mit jedoch gilt 
+  Andererseits existiert nach der Definition von $F_n$ eine Folge $(y_n)_{n \in \N}$ mit Grenzwert $x$ mit 
   \begin{displaymath}
-    | f_{\nu(n)}(x) -  f_{\nu(n)}(y_n) | \geq \varepsilon
+    | f_{\nu(n)}(x) -  f_{\nu(n)}(y_n) | \geq \varepsilon.
   \end{displaymath}
   Unter Verwendung der inversen Dreiecksungleichung folgt damit für alle $n \geq N$
   \begin{displaymath}
@@ -633,7 +635,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
         \item[$a)$] $\nu(0) := \min\{m \in \N \mid |f_m(r_0) - a_0 | < 1\}$
 
-          $\nu(0)$ ist wohldefiniert, denn die Menge auf der rechten Seite der Gleicheit ist nicht leer, da nach Voraussetzung $a_0$ ein Häufungspunkt von $(f_n(r_0))_{n \in \N}$ ist und somit eine gegen $r_0$ konvergente Teilfolge ebendieser existiert.
+          $\nu(0)$ ist wohldefiniert, denn die Menge auf der rechten Seite der Gleicheit ist nicht leer, da nach Voraussetzung $a_0$ ein Häufungspunkt von $(f_n(r_0))_{n \in \N}$ ist und somit eine gegen $r_0$ konvergente Teilfolge existiert.
           Daher besitzt sie aufgrund der natürlichen Wohlordnung der natürlichen Zahlen als nichtleere Teilmenge ein Minimum.
 
         \item[$b)$] $\nu(n+1) :=  \min\{m \in \N \mid \nu(n) < m \text{ und }  |f_m(r_0) - a_0| < \frac{1}{n+1}\}$
@@ -650,8 +652,8 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
   Hierauf aufbauend betrachte man nun die Diagonalfolge $s := (g_n^n)_{n \in \N}$.
   Dann ist $s$ eine Teilfolge von $(f_n)_{n \in \N}$ und kofinal zu jeder der Folgen $s_n$.
-  Also konvergiert für jedes $n \in \N$ die Folge $(s(r_n))_{n \in \N} = (g_m^m(r_n))_{m \in \N}$ gegen $a_n$.
-  Folglich konvergiert für jedes $x \in \Q$ die Folge $(s(x))_{n \in \N} = (g_m^m(x))_{m \in \N}$.
+  Also konvergiert für jedes $n \in \N$ die Folge $s(r_n) = (g_m^m(r_n))_{m \in \N}$ gegen $a_n$.
+  Folglich konvergiert für jedes $x \in \Q$ die Folge $s(x) = (g_m^m(x))_{m \in \N}$.
 
   Es soll nun gezeigt werden, dass $s$ lokal gleichmäßig auf $\R$ konvergiert.
   Sei dazu $x \in \R$ und $\varepsilon > 0$ gegeben.
@@ -660,8 +662,9 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     f[U] \subseteq U_\frac{\varepsilon}{3}(f(x))
   \end{displaymath}
   für alle $f \in G$ gilt.
-  Da $\Q$ dicht in $\R$ liegt existiert ein $y \in U \cup \Q$.
-  Nach Konstruktion konvergiert für alle $g_m^m \in G$ die Folge $g_m^m(y)$, ist also insbesondere eine Cauchyfolge.
+  Da $\Q$ dicht in $\R$ liegt existiert ein $y \in U \cap \Q$.
+  Nach Konstruktion konvergiert für alle $g_m^m \in G$ die Folge $g_m^m(y)$.
+  Sie ist damit also insbesondere eine Cauchyfolge.
   Es existiert also ein $N \in \N$, sodass für alle $m,n \geq N$
   \begin{displaymath}
     | g_m^m(y) - g_n^n(y) | \leq \frac{\varepsilon}{3}
@@ -675,9 +678,9 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     \leq
     \frac{\varepsilon}{3}.
   \end{displaymath}
-  Also ist $s$ lokal gleichmäßige Cauchyfolge auf $\R$.
+  Also ist $s$ eine lokal gleichmäßige Cauchyfolge auf $\R$.
   Da $\R$ vollständig ist, konvergiert $s$ auch lokal gleichmäßig auf $\R$. 
-  Aufgrund von Proposition \ref{prop:stetigkonv} konvergiert $s$ auch stetig gegen eine Abbildung $g \colon \R \to \R$ mit $g(r_n) = a_n$ für alle $n \in \N$.
+  Aufgrund von Proposition \ref{prop:stetigkonv}$c)$ konvergiert $s$ auch stetig gegen eine Abbildung $g \colon \R \to \R$ mit $g(r_n) = a_n$ für alle $n \in \N$.
   Daraus folgt $(a)$.
 \end{proof}
 
