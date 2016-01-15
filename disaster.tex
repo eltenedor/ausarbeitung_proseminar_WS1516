@@ -277,6 +277,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
 \end{proof}
 
 \begin{thm}
+  \label{thm:ultrafiltercompact}
   Äquivalent sind:
   \begin{enumerate}
     \item Der Áscoli-Satz bezüglich Ultrafilterkompaktheit.
@@ -302,14 +303,15 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
   \end{displaymath}
 
   Es lässt sich nun für alle $A \in \mathfrak{A}$ eine Funktion
-  \begin{displaymath}
+  \begin{equation}
+    \label{eq:clopenmap}
     f_A \colon P \to \mathbf{2}, \quad
     f_A(x) := 
     \begin{cases}
       1 &\text{, falls } x \in A \\
       0 &\text{, falls } x \not\in A
     \end{cases}
-  \end{displaymath}
+  \end{equation}
   definieren.
   Da alle $A$ offen-abgeschlossen sind, folgt sofort die Stetigkeit von $f_A$ für alle $A \in \mathfrak{A}$.
   Somit induziert die Familie $(f_A)_{A \in \mathfrak{A}}$ eine Abbildung 
@@ -395,6 +397,32 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
   $(2)\Rightarrow(1)$: Der Boolesche Primidealsatz impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Ultrafilterkompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
+\begin{prop}
+  \label{prop:cartesianclosed}
+  Sei $(X_i,\tau_i)_{i \in I}$ eine Familie topologischer Räume. 
+  Zudem sei $\mathcal{A} := (A_i)_{i \in I}$ mit  $A_i \subset X_i$ eine Familie abgeschlossener Teilmengen.
+  Dann ist 
+  \begin{displaymath}
+    \prod_{i \in I} A_i \subseteq \prod_{i \in I} X_i
+  \end{displaymath}
+  abgeschlossen bezüglich der Produkttopologie.
+\end{prop}
+
+\begin{proof}
+  Es soll gezeigt werden, dass $\mathcal{A}$ ein offenes Komplement besitzt.
+  Sei dazu $x$ ein Punkt, welcher nicht in $\mathcal{A}$ liegt.
+  Dann existiert ein $i_0$, sodass $x_{i_0} \not\in A_i$.
+  Damit ist $O_{i_0} := X_i \setminus A_i$ eine offene Umgebung von $x$ in $X_i$.
+  Folglich ist
+  \begin{displaymath}
+    U:= \prod_{i \in I} O_i
+  \end{displaymath}
+  mit $O_i = X_i$ für $i \not= i_0$ eine offene Umgebung von $x$ in $\prod_{i \in I} X_i$.
+  Nach Konstruktion gilt $U \cap \mathcal{A} = \emptyset$.
+  Also ist $x$ ein innerer Punkt und das Komplement von $\mathcal{A}$ somit offen.
+  Folglich ist $\mathcal{A}$ abgeschlossen.
+\end{proof}
+
 Ähnlich gilt für den nächsten Kompaktheitsbegriff
 
 \begin{thm}
@@ -406,16 +434,22 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
 \end{thm}
 
 \begin{proof}
-  $(1)\Rightarrow(2) $: Es reicht aus zu zeigen, dass $(1)$ bereits impliziert, dass die Hilbert-Würfel $[0,1]^I$ im gewöhnlichen Sinne kompakt sind.
-  Angenommen, es existiert eine Menge $I$, sodass $P:= [0,1]^I$ nicht kompakt ist.
-  Hierbei sei das abgeschlossene Einheitsintervall $[0,1]$ mit der euklidischen Topologie ausgestattet.
+  $(1)\Rightarrow(2) $: Es reicht aus zu zeigen, dass $(1)$ bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
+  Angenommen, es existiert eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
+  Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
   Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Häufungspunkt.
 
-  UNVOLLSTÄNDIG
+  Da das Intervall $[0,1]$ ausgestattet mit euklidischer Topologie insbesondere ein $T1$-Raum ist, sind Einpunktmengen abgeschlossen.
+  Betrachtet man nun $P$ als Teilraum des Hilbert-Würfels $[0,1]^I$, so folgt nach Proposition \ref{prop:cartesianclosed}, dass $P$ abgeschlossen im Hilbert-Würfel ist.
+  Definitionsgemäß ist also $P$ Tychonoff-Kompakt.
+
+  Wie aus dem Beweis von Satz \ref{thm:ultrafiltercompact} folgt, ist $P$ homöomorph zu $F:= f[P]$, wobei $f$ die auf der Menge der offen-abgeschlossenen Elemente von $\mathcal{F}$ Funktion aus Gleichung (\ref{eq:clopenmap}) ist.
+  Somit ist $F$ auch Tychonoff-Kompakt.
+
+  Wendet man nun den Áscoli-Satz bezüglich Tychonoff-Kompaktheit auf $F$ an, so folgt anlog zu Satz \ref{thm:ultrafiltercompact}, dass die Aussage $(b, \beta)$ nicht erfüllt ist.
 
   $(2)\Rightarrow(1)$: Der Boolesche Primidealsatz impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Tychonoff-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
-
 
 Ähnlich gilt für den nächsten Kompaktheitsbegriff
 
@@ -427,6 +461,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
   \end{enumerate}
 \end{thm}
 
+\begin{proof}
   $(1) \Rightarrow (2)$: Sei $X$ eine Menge und $\mathbf{2}$ die zweielementige Menge $\{0,1\}$ und seien beide mit der diskreten Topologie ausgestattet. 
   Die diskrete Topologie lässt sich auch als die von der \textit{diskreten Metrik} induzierte Topologie auffassen, somit kann $\mathbf{2}$ auch als metrischer Raum betrachtet werden. 
 
@@ -438,6 +473,7 @@ Es soll nun untersucht werden, inwiefern der Áscoli-Satz auch unter Verwendung 
   Damit sind die Bedingungen (b) des Áscoli-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ Alexandroff-Urysohn-kompakt ist. Dies ist äquivalent zum Auswahlaxiom.
 
   $(2)\Rightarrow(1)$: Das Auswahlaxiom impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Alexandroff-Urysohn-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+\end{proof}
 
 Wie die vorangehenden Ausführungen gezeigt haben, versagt der Áscoli-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des Áscoli-Satzes die Anforderungen senkt.
 
