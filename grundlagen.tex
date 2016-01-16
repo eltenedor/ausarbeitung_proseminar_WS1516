@@ -1,10 +1,6 @@
 \chapter{Mengentheoretische und topologische Grundlagen}
 
-%\subsection{Das Auswahlaxiom}
-
-%\subsection{Der \textsc{Boole}sche Primidealsatz}
-
-\section{Kompaktheitsbegriffe auf topologischen Räumen}
+\section{Kompaktheitsbegriffe für topologische Räumen}
 
 Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik, indem sie ihre Äquivalenz zeigen. 
 Ein für die vorliegende Ausarbeitung zentrales Konzept ist das der Kompaktheit topologischer Räume. 
@@ -97,9 +93,10 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
   Aufgrund der Konvergenz des Filters $\psi$ folgt $O_i \in \psi$.
   Dies steht jedoch im Widerspruch zu $\psi \supseteq \mathfrak{B}$, denn deswegen gilt bereits $X \setminus O_i \in \psi$.
 
-  $(2)$: Da Ultrafilter bereits bezüglich Inklusion maximal sind, also keine echten Oberfilter besitzen, impliziert filterkompaktheit bereits ultrafilterkompaktheit.
+  $(2)$: Da Ultrafilter bereits bezüglich Inklusion maximal sind, also keine echten Oberfilter besitzen, impliziert Filterkompaktheit bereits Ultrafilterkompaktheit.
 \end{proof}
 
+Eine wichtige Folgerung aus dem Auswahlaxiom ist der folgende Satz:
 \begin{defn}
     \UFT, der Ultrafiltersatz: 
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
@@ -107,9 +104,12 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
       \end{addmargin}
 \end{defn}
 
+Ein Beweis dazu wird in Satz \ref{thm:acpit} für Ideale auf \textsc{Boole}schen Algebren erbracht. 
+Zunächst soll die Beziehung der Gültigkeit von \UFT zur Übereinstimmung gewisser Kompaktheitsbegriffe analysiert werden.
+
 \begin{thm}
   Es sind äquivalent:
-  \begin{enumerate}
+  \begin{enumerate}[(1)]
     \item Ein topologischer Raum ist genau dann kompakt, wenn er ultrafilterkompakt ist.
     \item \UFT.
   \end{enumerate}
