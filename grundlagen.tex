@@ -2,21 +2,37 @@
 
 %\subsection{Das Auswahlaxiom}
 
-%\subsection{Der Boolesche Primidealsatz}
+%\subsection{Der \textsc{Boole}sche Primidealsatz}
 
-%\subsection{Kompaktheitsbegriffe auf topologischen Räumen}
-%\subsection{Zum Booleschen Primidealsatz äquivalente Aussagen}
+\section{Kompaktheitsbegriffe auf topologischen Räumen}
+
+Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik indem sie ihre Äquivalenz zeigen. 
+Ein für die vorliegende Ausarbeitung zentrales Konzept ist das der Kompaktheit topologischer Räume. 
+Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{ZF} nicht notwendig äquivalent sind.
+
+\begin{defn}
+  Ein topologischer Raum $(X,\tau)$ heißt
+  \begin{enumerate}[(1)]
+    \item kompakt, \textit{falls sich aus jeder offenen Überdeckung von $X$ eine Teilüberdeckung auswählen lässt.}
+    \item filterkompakt, \textit{falls jeder Filter auf $X$ einen Häufungspunkt oder äquivalent einen konvergenten Oberfilter besitzt.}
+    \item ultrafilterkompakt, \textit{falls jeder Ultrafilter auf $X$ konvergiert.}
+    \item \textsc{Alexandroff}-\textsc{Urysohn}-kompakt, \textit{falls jede unendliche Teilmenge von $X$ einen vollständigen Häufungspunkt besitzt.}
+    \item \textsc{Tychonoff}-kompakt, \textit{falls $X$ homöomorph zu einem abgeschlossenen Teilraum eines Hilbert-Würfels $[0,1]^I$ ist.}
+  \end{enumerate}
+\end{defn}<++>
+
+\section{Der \textsc{Boole}sche Primidealsatz}
 
 \begin{defn}
  \item \AC, das \textit{Auswahlaxiom}.
- \item Lemma von Zorn.
+ \item Lemma von \textsc{Zorn}.
 \end{defn}
 
 \begin{defn}
   \begin{enumerate}[(1)]
-    \item \PIT, der \textit{Boolesche Primidealsatz}:
+    \item \PIT, der \textit{\textsc{Boole}sche Primidealsatz}:
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
-        \textit{Jede Boolesche Algebra besitzt ein maximales Ideal.}
+        \textit{Jede \textsc{Boole}sche Algebra besitzt ein maximales Ideal.}
       \end{addmargin}
     \item \UFT, der Ultrafiltersatz: 
       
@@ -32,12 +48,12 @@
 \end{thm}
 
 \begin{proof}
-  Sei $X$ eine Boolesche Algebra und $I$ ein Ideal. 
+  Sei $X$ eine \textsc{Boole}sche Algebra und $I$ ein Ideal. 
   Man betrachte die Menge
   \begin{displaymath}
     \mathcal{A} := \{J \subsetneq X \mid \text{ $J$ ist ein $I$ umfassendes Ideal } \}.
   \end{displaymath}
-  Um das Zornsche Lemma anwenden zu können, betrachtet man nun eine Kette $\mathcal{K} \subseteq \mathcal{A}$.
+  Um das \textsc{Zorn}sche Lemma anwenden zu können, betrachtet man nun eine Kette $\mathcal{K} \subseteq \mathcal{A}$.
   Es sei 
   \begin{displaymath}
     B := \bigcup_{J \in \mathcal{K}} J.
@@ -52,7 +68,7 @@
   Also ist $B$ ein Ideal, welches $I$ umfasst, das bedeutet $B \in \mathcal{A}$.
 
   Nach Konstruktion gilt $J \subseteq B$ für alle $J \in \mathcal{K}$, und damit ist $B$ eine obere Schranke von $\mathcal{K}$ in $\mathcal{A}$.
-  Das Zornsche Lemma garantiert nun die Existenz maximaler Elemente in $\mathcal{A}$, also die Existenz eines maximalen, $I$ umfassenden Ideals.
+  Das \textsc{Zorn}sche Lemma garantiert nun die Existenz maximaler Elemente in $\mathcal{A}$, also die Existenz eines maximalen, $I$ umfassenden Ideals.
 \end{proof}
 
 \begin{bem}
@@ -63,7 +79,7 @@
 
 \begin{proof}
   
-  Um zu zeigen, dass aus \PIT bereits zu jedem Ideal die Existenz maximaler umfassender Ideale folgt, betrachte man eine Boolesche Algebra $X$ mit Ideal $I$.
+  Um zu zeigen, dass aus \PIT bereits zu jedem Ideal die Existenz maximaler umfassender Ideale folgt, betrachte man eine \textsc{Boole}sche Algebra $X$ mit Ideal $I$.
   
   Es induziert $I$ folgendermaßen eine Äquivalenzrelation auf $X$.
   Es soll für $x,y \in X$ gelten, dass 
@@ -81,7 +97,7 @@
     [x] \cdot [y] := [x \cdot y], \quad
     -[x] := [-x]
   \end{displaymath}
-  Damit wird $X/I$ zu einer Booleschen Algebra.
+  Damit wird $X/I$ zu einer \textsc{Boole}schen Algebra.
   Setzt man \PIT voraus, so existiert ein maximales Ideal $K \subseteq X/I$
   Betrachtet man nun die Menge
   \begin{displaymath}
@@ -104,7 +120,7 @@
   Also ist $J$ maximales $I$ umfassendes Ideal.
 \end{proof}
 
-In Boolschen Algebren existiert das zum Ideal duale Konzept des Filters. 
+In \textsc{Boole}schen Algebren existiert das zum Ideal duale Konzept des Filters. 
 
 \begin{defn}
   Filter
@@ -112,7 +128,7 @@ In Boolschen Algebren existiert das zum Ideal duale Konzept des Filters.
 
 Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für Filter finden:
   \begin{addmargin}[2em]{2em}% 1em left, 2em right
-   \textit{Jede Boolesche Algebra besitzt einen maximalen Filter.}
+    \textit{Jede \textsc{Boole}sche Algebra besitzt einen maximalen Filter.}
   \end{addmargin}
 
 Dass \PIT schwächer ist als \AC, kann man in QUELLE nachlesen.
@@ -123,20 +139,22 @@ Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE
 \begin{enumerate}[(1)]
     \item \PIT.
     \item \UFT.
-    \item Tychonoff-Satz für Hausdorff-Räume: 
+    \item \textsc{Tychonoff}-Satz für \textsc{Hausdorff}-Räume: 
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
-        Produkte kompakter Hausdorff-Räume sind kompakt.
+        Produkte kompakter \textsc{Hausdorff}-Räume sind kompakt.
       \end{addmargin}
-    \item Tychonoff-Satz für endliche diskrete Räume: 
+    \item \textsc{Tychonoff}-Satz für endliche diskrete Räume: 
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         Produkte endlicher diskreter Räume sind kompakt.
       \end{addmargin}
-    \item Hilbert-Würfel $[0,1]^I$ sind kompakt.
-    \item Kantor-Würfel $\mathbf{2}^I$ sind kompakt.
+    \item \textsc{Hilbert}-Würfel $[0,1]^I$ sind kompakt.
+    \item \textsc{Kantor}-Würfel $\mathbf{2}^I$ sind kompakt.
   \end{enumerate}
 
   \begin{proof}
-    $(1)\Rightarrow(2)$:
+    $(1)\Rightarrow(2)$: Interpretiert man \PIT im Sinne von Filtern, so folgt dies sofort, da jede Potenzmengenalgebra eine \textsc{Boole}sche Algebra ist.
+
+    $(2)\Rightarrow(3)$:
   \end{proof}<++>
 
 \end{thm}
