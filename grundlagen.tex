@@ -1,9 +1,86 @@
-\section{Mengentheoretische und topologische Grundlagen}
+\chapter{Mengentheoretische und topologische Grundlagen}
 
-\subsection{Das Auswahlaxiom}
+%\subsection{Das Auswahlaxiom}
 
-\subsection{Der Boolesche Primidealsatz}
+%\subsection{Der Boolesche Primidealsatz}
 
-\subsection{Kompaktheitsbegriffe auf topologischen Räumen}
-\subsection{Zum Booleschen Primidealsatz äquivalente Aussagen}
+%\subsection{Kompaktheitsbegriffe auf topologischen Räumen}
+%\subsection{Zum Booleschen Primidealsatz äquivalente Aussagen}
+
+\begin{defn}
+ \item \AC, das \textit{Auswahlaxiom}.
+ \item Lemma von Zorn.
+\end{defn}
+
+\begin{defn}
+  \begin{enumerate}[(1)]
+    \item \PIT, der \textit{Boolesche Primidealsatz}:
+      \begin{addmargin}[2em]{2em}% 1em left, 2em right
+        \textit{Jede Boolesche Algebra besitzt ein maximales Ideal.}
+      \end{addmargin}
+    \item \UFT, der Ultrafiltersatz: 
+      
+      \begin{addmargin}[2em]{2em}% 1em left, 2em right
+        \textit{Jeder Filter auf einer Menge lässt sich zu einem Ultrafilter erweitern.}
+      \end{addmargin}
+  \end{enumerate}
+\end{defn}
+
+In Boolschen Algebren existiert das zum Ideal duale Konzept des Filters. Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für Filter finden.
+
+\begin{thm}
+  \label{thm:acpit}
+  \AC impliziert \PIT.
+\end{thm}
+
+\begin{proof}
+  Sei $X$ eine Boolesche Algebra und $I$ ein Ideal. 
+  Man betrachte die Menge
+  \begin{displaymath}
+    \mathcal{A} := \{J \subsetneq X \mid \text{ $J$ ist ein $I$ umfassendes Ideal} \}.
+  \end{displaymath}
+  Um das Zorn'sche Lemma anwenden zu können, betrachtet man nun eine Kette $\mathcal{K} \subseteq \mathcal{A}$.
+  Es sei 
+  \begin{displaymath}
+    B := \bigcup_{J \in \mathcal{K}} J.
+  \end{displaymath}
+
+  Es soll nun gezeigt werden, dass $B \in \mathcal{A}$ gilt.
+  Da nach Voraussetzung $\mathcal{K}$ nur aus $I$ umfassenden Idealen besteht, gilt auch $I \subseteq B$.
+  Sind $x,y \in B$ so existieren $J_x, J_y \in \mathcal{K}$ mit $x \in J_x$ und $y \in J_y$.
+  Da $\mathcal{K}$ eine Kette ist, kann man aus Symmetriegründen ohne Beschränkung der Allgemeinheit annehmen $J_x \subseteq J_y$ und damit $x \in J_y$.
+  Da $J_y$ nach Voraussetzung ein Ideal ist gilt $x + y \in J_y \subseteq B$.
+  Ist andererseits $x \in B$ und $a \in X$ mit $a \leq x$, so existiert wie zuvor ein $J \in \mathcal{K}$ mit $x \in J$ und, da $J$ ein Ideal ist, gilt auch $a \in J$ und damit $a \in B$.
+  Also ist $B$ ein Ideal, welches $I$ umfasst, das bedeutet $B \in \mathcal{A}$.
+
+  Nach Konstruktion gilt $J \subseteq B$ für alle $J \in \mathcal{K}$, und damit ist $B$ eine obere Schranke von $\mathcal{K}$ in $\mathcal{A}$.
+  Das Zorn'sche Lemma garantiert nun die Existenz maximaler Elemente in $\mathcal{A}$, also die Existenz eines maximalen, $I$ umfassenden Ideals.
+\end{proof}
+
+Auf den ersten Blick scheint der bewiesene Satz \ref{thm:acpit} stärker zu sein als \PIT. Es hätte bereits genügt, statt $\mathcal{A}$ die Menge aller echten Ideale in $X$ zu betrachten.
+
+Dass die Umkehrung nicht gilt, und somit \PIT echt schwächer als \AC ist, kann man in QUELLE nachlesen.
+
+\begin{thm}
+  Äquivalent sind
+\begin{enumerate}[(1)]
+    \item \PIT.
+    \item \UFT.
+    \item Tychonoff-Satz für Hausdorff-Räume: 
+      \begin{addmargin}[2em]{2em}% 1em left, 2em right
+        Produkte kompakter Hausdorff-Räume sind kompakt.
+      \end{addmargin}
+    \item Tychonoff-Satz für endliche diskrete Räume: 
+      \begin{addmargin}[2em]{2em}% 1em left, 2em right
+        Produkte endlicher diskreter Räume sind kompakt.
+      \end{addmargin}
+    \item Hilbert-Würfel $[0,1]^I$ sind kompakt.
+    \item Kantor-Würfel $\mathbf{2}^I$ sind kompakt.
+  \end{enumerate}
+
+  \begin{proof}
+    $(1)\Rightarrow(2)$:
+  \end{proof}<++>
+
+\end{thm}
 
