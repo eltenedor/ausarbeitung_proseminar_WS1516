@@ -26,8 +26,6 @@
   \end{enumerate}
 \end{defn}
 
-In Boolschen Algebren existiert das zum Ideal duale Konzept des Filters. Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für Filter finden.
-
 \begin{thm}
   \label{thm:acpit}
   \AC impliziert \PIT.
@@ -37,9 +35,9 @@ In Boolschen Algebren existiert das zum Ideal duale Konzept des Filters. Es läs
   Sei $X$ eine Boolesche Algebra und $I$ ein Ideal. 
   Man betrachte die Menge
   \begin{displaymath}
-    \mathcal{A} := \{J \subsetneq X \mid \text{ $J$ ist ein $I$ umfassendes Ideal} \}.
+    \mathcal{A} := \{J \subsetneq X \mid \text{ $J$ ist ein $I$ umfassendes Ideal } \}.
   \end{displaymath}
-  Um das Zorn'sche Lemma anwenden zu können, betrachtet man nun eine Kette $\mathcal{K} \subseteq \mathcal{A}$.
+  Um das Zornsche Lemma anwenden zu können, betrachtet man nun eine Kette $\mathcal{K} \subseteq \mathcal{A}$.
   Es sei 
   \begin{displaymath}
     B := \bigcup_{J \in \mathcal{K}} J.
@@ -54,12 +52,71 @@ In Boolschen Algebren existiert das zum Ideal duale Konzept des Filters. Es läs
   Also ist $B$ ein Ideal, welches $I$ umfasst, das bedeutet $B \in \mathcal{A}$.
 
   Nach Konstruktion gilt $J \subseteq B$ für alle $J \in \mathcal{K}$, und damit ist $B$ eine obere Schranke von $\mathcal{K}$ in $\mathcal{A}$.
-  Das Zorn'sche Lemma garantiert nun die Existenz maximaler Elemente in $\mathcal{A}$, also die Existenz eines maximalen, $I$ umfassenden Ideals.
+  Das Zornsche Lemma garantiert nun die Existenz maximaler Elemente in $\mathcal{A}$, also die Existenz eines maximalen, $I$ umfassenden Ideals.
 \end{proof}
 
-Auf den ersten Blick scheint der bewiesene Satz \ref{thm:acpit} stärker zu sein als \PIT. Es hätte bereits genügt, statt $\mathcal{A}$ die Menge aller echten Ideale in $X$ zu betrachten.
+\begin{bem}
+  Auf den ersten Blick scheint der bewiesene Satz \ref{thm:acpit} stärker zu sein als \PIT.
+  Es hätte bereits genügt, anstatt $\mathcal{A}$ die Menge aller echten Ideale in $X$ zu betrachten.
+  Tatsächlich sind die beiden Aussagen jedoch äquivalent.
+\end{bem}
 
-Dass die Umkehrung nicht gilt, und somit \PIT echt schwächer als \AC ist, kann man in QUELLE nachlesen.
+\begin{proof}
+  
+  Um zu zeigen, dass aus \PIT bereits zu jedem Ideal die Existenz maximaler umfassender Ideale folgt, betrachte man eine Boolesche Algebra $X$ mit Ideal $I$.
+  
+  Es induziert $I$ folgendermaßen eine Äquivalenzrelation auf $X$.
+  Es soll für $x,y \in X$ gelten, dass 
+  \begin{displaymath}
+    x \sim y \quad \text{genau dann, wenn} \quad (x \cdot -y) + (y \cdot -x) \in I
+  \end{displaymath}
+  gilt.
+  Auf der Menge der Restklassen 
+  \begin{displaymath}
+    X / I := \{[x] \mid x \in X\}
+  \end{displaymath}
+  lassen sich nun über die Repräsentanten folgende Operationen definieren:
+  \begin{displaymath}
+    [x] + [y] := [x+y], \quad
+    [x] \cdot [y] := [x \cdot y], \quad
+    -[x] := [-x]
+  \end{displaymath}
+  Damit wird $X/I$ zu einer Booleschen Algebra.
+  Setzt man \PIT voraus, so existiert ein maximales Ideal $K \subseteq X/I$
+  Betrachtet man nun die Menge
+  \begin{displaymath}
+    J := \{x \in X \mid [x] \in K\},
+  \end{displaymath}
+  so zeigt man nun, dass $J$ ein maximales Ideal in $X$ ist, welches $I$ umfasst.
+  
+  Dass $J$ ein Ideal ist, folgt sofort aus der Definition der Verknüpfungsoperationen auf $X/I$ und der Tatsache, dass $K$ ein Ideal ist.
+  Für alle $x \in I$ gilt zudem $[x] = [0] \in X/I$. 
+  Da $K$ als Ideal definitionsgemäß $[0]$ enthält, folgt $[x] \in K$, also $I \subseteq J$.
+  
+  Angenommen $J$ sei nicht maximal. Sei $J' \subsetneq X$ ein $J$ umfassendes Ideal.
+  Dann gilt 
+  \begin{displaymath}
+    K \subseteq J'/I := \{[x] \mid x \in J\},
+  \end{displaymath}
+  denn für $[x] \in K$ ist $x \in J \subseteq J'$ und damit $[x] \in J'/X$.
+  Aufgrund der Maximalität von $K$ folgt sofort $K := J/I$ und damit $J' = J$.
+
+  Also ist $J$ maximales $I$ umfassendes Ideal.
+\end{proof}
+
+In Boolschen Algebren existiert das zum Ideal duale Konzept des Filters. 
+
+\begin{defn}
+  Filter
+\end{defn}
+
+Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für Filter finden:
+  \begin{addmargin}[2em]{2em}% 1em left, 2em right
+   \textit{Jede Boolesche Algebra besitzt einen maximalen Filter.}
+  \end{addmargin}
+
+Dass \PIT schwächer ist als \AC, kann man in QUELLE nachlesen.
+Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE
 
 \begin{thm}
   Äquivalent sind
