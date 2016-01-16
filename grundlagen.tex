@@ -6,20 +6,123 @@
 
 \section{Kompaktheitsbegriffe auf topologischen Räumen}
 
-Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik indem sie ihre Äquivalenz zeigen. 
+Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik, indem sie ihre Äquivalenz zeigen. 
 Ein für die vorliegende Ausarbeitung zentrales Konzept ist das der Kompaktheit topologischer Räume. 
 Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{ZF} nicht notwendig äquivalent sind.
 
 \begin{defn}
+  Sei $(X,\tau)$ ein topologischer Raum.
+  Ein Punkt $x \in X$ heißt Adhärenzpunkt eines Filters $\varphi \in \mathcal{F}(X)$, falls es einen gegen $x$ bezüglich $\tau$ konvergenten Oberfilter $\psi \supseteq \varphi$ gibt.
+\end{defn}
+
+\begin{prop}
+  \label{prop:adherence}
+  Sei $(X,\tau)$ ein topologischer Raum.
+  Ein Punkt $x \in X$ ist genau dann Adhärenzpunkt eines Filters $\varphi \in \mathcal{F}(X)$, falls
+  \begin{displaymath}
+    x \in \bigcap_{F \in \varphi} \overline{F}.
+  \end{displaymath}
+\end{prop}
+
+\begin{proof}
+  Sei zunächst $x$ Adhärenzpunkt eines Filters $\varphi$ auf $X$.
+  Nach Definition existiert ein gegen $x$ konvergenter Oberfilter $\psi \supseteq \varphi$, also gilt $\psi \supseteq \dot x \cap \tau$
+  Somit gilt aufgrund der Filtereigenschaft von $\psi$ für alle $F \in \varphi$ und alle $U \in x \cap \tau$, dass  $F \cap U \neq \emptyset$.
+  Also besitzt jede Umgebung $U$ von $x$ mit allen $F \in \varphi$ einen nichtleeren Schnitt, was bedeutet, dass $x \in \overline F$ für alle $F  \in \varphi$
+
+  Sei andererseits $x \in \bigcap_{F \in \varphi} \overline F$.
+  Nach Definition des Abschlusses einer Menge, gilt somit für alle $U \in \dot x \cap \tau$, dass $F \cap U \neq \emptyset$.
+  Es ist also $\varphi \cup (\dot x \cap \tau)$ eine Filtersubbasis.
+  Man bezeichne mit $\psi$ den davon erzeugten Filter.
+  Nach Konstruktion gelten $\psi \supseteq \varphi$ und $\psi \overset{\tau}{\to} x$.
+
+\end{proof}
+
+\begin{defn}
   Ein topologischer Raum $(X,\tau)$ heißt
   \begin{enumerate}[(1)]
-    \item kompakt, \textit{falls sich aus jeder offenen Überdeckung von $X$ eine Teilüberdeckung auswählen lässt.}
-    \item filterkompakt, \textit{falls jeder Filter auf $X$ einen Häufungspunkt oder äquivalent einen konvergenten Oberfilter besitzt.}
-    \item ultrafilterkompakt, \textit{falls jeder Ultrafilter auf $X$ konvergiert.}
-    \item \textsc{Alexandroff}-\textsc{Urysohn}-kompakt, \textit{falls jede unendliche Teilmenge von $X$ einen vollständigen Häufungspunkt besitzt.}
-    \item \textsc{Tychonoff}-kompakt, \textit{falls $X$ homöomorph zu einem abgeschlossenen Teilraum eines Hilbert-Würfels $[0,1]^I$ ist.}
+    \item kompakt, \textit{falls sich aus jeder offenen Überdeckung von $X$ eine Teilüberdeckung auswählen lässt},
+    \item filterkompakt, \textit{falls jeder Filter auf $X$ einen Häufungspunkt besitzt},
+    \item ultrafilterkompakt, \textit{falls jeder Ultrafilter auf $X$ konvergiert},
+    \item \textsc{Alexandroff}-\textsc{Urysohn}-kompakt, \textit{falls jede unendliche Teilmenge von $X$ einen vollständigen Häufungspunkt besitzt},
+    \item \textsc{Tychonoff}-kompakt, \textit{falls $X$ homöomorph zu einem abgeschlossenen Teilraum eines Hilbert-Würfels $[0,1]^I$ ist}.
   \end{enumerate}
-\end{defn}<++>
+\end{defn}
+
+
+\begin{thm}
+\label{thm:compactness}
+  Sei $(X,\tau)$ ein topologischer Raum. Dann gilt:
+  \begin{enumerate}[(1)]
+    \item Der Raum $X$ ist genau dann kompakt, wenn er filterkompakt ist. 
+    \item Ist $X$ filterkompakt, dann auch ultrafilterkompakt.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  $(1)$: 
+  Sei $(X,\tau)$ kompakt und $\varphi$ ein Filter auf $X$.
+  Angenommen, $\varphi$ besitze keinen Häufungspunkt.
+  Dann gilt nach Proposition \ref{prop:adherence}
+  \begin{displaymath}
+    \bigcap_{F \in \varphi} \overline{F} = \emptyset.
+  \end{displaymath}
+  Folglich ist 
+  \begin{displaymath}
+    X = \bigcup_{F \in \varphi} X \setminus \overline{F} \subseteq \bigcup_{F \in \varphi} X \setminus F 
+  \end{displaymath}
+  eine offene Überdeckung von $X$.
+  Da $X$ als kompakt vorausgesetzt wird, existieren $F_1,\dots,F_n \in \varphi$ mit
+  \begin{displaymath}
+    \bigcup_{i = 1}^n X \setminus F_i = X
+  \end{displaymath}
+  woraus wiederum
+  \begin{displaymath}
+    X \setminus \bigcup_{i = 1}^n F_i = \bigcap_{i = 1}^n F_i = \emptyset
+  \end{displaymath}
+  folgt. 
+  Dies steht jedoch im Widerspruch zur Filtereigenschaft.
+
+  Sei umgekehrt $X$ filterkompakt und $(O_i)_{i \in I}$ eine offene Überdeckung von $X$.
+  Angenommen es existiere keine Teilüberdeckung.
+  Man betrachte nun die Familie
+  \begin{displaymath}
+    \mathfrak{B} := \left\{ X \setminus \mathcal{O} \mid \mathcal{O} = \bigcup_{k = 1}^n O_{i_k}\right\}.
+  \end{displaymath}
+  Diese Familie ist nichtler, da $X \setminus O_i \in \mathcal{O}$ für alle $i \in I$ gilt und zudem abgeschlossen unter endlichen Schnitten.
+
+  Folglich ist $\mathfrak{B}$ eine Filterbasis und es bezeichne $\varphi$ den durch Obermengenbildung davon erzeugten Filter.
+  Nach Voraussetzung existiert ein Oberfilter $\psi \supseteq \varphi$ der bezüglich der Topologie $\tau$ gegen ein $x \in X$ konvergiert.
+  Aus der Überdeckungseigenschaft folgt, dass zusätzlich ein $i_0 \in I$ existiert mit $x \in O_i$.
+  Aufgrund der Konvergenz des Filters $\psi$ folgt $O_i \in \psi$.
+  Dies steht jedoch im Widerspruch zu $\psi \supseteq \mathfrak{B}$, denn deswegen gilt bereits $X \setminus O_i \in \psi$.
+
+  $(2)$: Da Ultrafilter bereits bezüglich Inklusion maximal sind, also keine echten Oberfilter besitzen, impliziert filterkompaktheit bereits ultrafilterkompaktheit.
+\end{proof}
+
+\begin{defn}
+    \UFT, der Ultrafiltersatz: 
+      \begin{addmargin}[2em]{2em}% 1em left, 2em right
+        \textit{Jeder Filter auf einer Menge lässt sich zu einem Ultrafilter erweitern.}
+      \end{addmargin}
+\end{defn}
+
+\begin{thm}
+  Es sind äquivalent:
+  \begin{enumerate}
+    \item Ein topologischer Raum ist genau dann kompakt, wenn er ultrafilterkompakt ist.
+    \item \UFT.
+  \end{enumerate}
+\end{thm}
+
+\begin{thm}
+  Es sind äquivalent:
+  \begin{enumerate}[(1)]
+    \item Ein topologischer Raum ist genau dann kompakt, wenn er \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist.
+    \item Ein topologischer Raum ist genau dann ultrafilterkompakt, wenn er \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist.
+    \item \UFT.
+  \end{enumerate}
+\end{thm}
 
 \section{Der \textsc{Boole}sche Primidealsatz}
 
@@ -29,17 +132,10 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
 \end{defn}
 
 \begin{defn}
-  \begin{enumerate}[(1)]
-    \item \PIT, der \textit{\textsc{Boole}sche Primidealsatz}:
+    \PIT, der \textit{\textsc{Boole}sche Primidealsatz}:
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         \textit{Jede \textsc{Boole}sche Algebra besitzt ein maximales Ideal.}
       \end{addmargin}
-    \item \UFT, der Ultrafiltersatz: 
-      
-      \begin{addmargin}[2em]{2em}% 1em left, 2em right
-        \textit{Jeder Filter auf einer Menge lässt sich zu einem Ultrafilter erweitern.}
-      \end{addmargin}
-  \end{enumerate}
 \end{defn}
 
 \begin{thm}
@@ -152,10 +248,12 @@ Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE
   \end{enumerate}
 
   \begin{proof}
-    $(1)\Rightarrow(2)$: Interpretiert man \PIT im Sinne von Filtern, so folgt dies sofort, da jede Potenzmengenalgebra eine \textsc{Boole}sche Algebra ist.
+    $(1)\Rightarrow(2)$: 
+    Interpretiert man \PIT im Sinne von Filtern, so folgt dies sofort, da jede Potenzmengenalgebra eine \textsc{Boole}sche Algebra ist.
 
     $(2)\Rightarrow(3)$:
-  \end{proof}<++>
+
+  \end{proof}
 
 \end{thm}
 
