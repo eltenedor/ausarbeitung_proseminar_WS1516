@@ -8,7 +8,7 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
 
 \begin{defn}
   Sei $(X,\tau)$ ein topologischer Raum.
-  Ein Punkt $x \in X$ heißt Adhärenzpunkt eines Filters $\varphi \in \mathcal{F}(X)$, falls es einen gegen $x$ bezüglich $\tau$ konvergenten Oberfilter $\psi \supseteq \varphi$ gibt.
+  Ein Punkt $x \in X$ heißt \textit{Adhärenzpunkt} eines Filters $\varphi \in \mathcal{F}(X)$, falls es einen gegen $x$ bezüglich $\tau$ konvergenten Oberfilter $\psi \supseteq \varphi$ gibt.
 \end{defn}
 
 \begin{prop}
@@ -30,15 +30,22 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
   Nach Definition des Abschlusses einer Menge, gilt somit für alle $U \in \dot x \cap \tau$, dass $F \cap U \neq \emptyset$.
   Es ist also $\varphi \cup (\dot x \cap \tau)$ eine Filtersubbasis.
   Man bezeichne mit $\psi$ den davon erzeugten Filter.
-  Nach Konstruktion gelten $\psi \supseteq \varphi$ und $\psi \overset{\tau}{\to} x$.
-
+  Nach Konstruktion gelten 
+  \begin{displaymath}
+    \psi \supseteq \varphi \quad\text{und}\quad \psi \overset{\tau}{\to} x.\qedhere
+  \end{displaymath}
 \end{proof}
+
+\begin{defn}
+  Sei $(X,\tau)$ ein topologischer Raum.
+  Dann heißt $x \in X$ \textit{vollständiger Häufungspunkt} einer Teilmenge $A \subseteq X$, wenn für alle Umgebungen $U$ von $x$, die Mengen $A$ und $A \cap U$ dieselbe Kardinalzahl besitzen.
+\end{defn}
 
 \begin{defn}
   Ein topologischer Raum $(X,\tau)$ heißt
   \begin{enumerate}[(1)]
     \item kompakt, \textit{falls sich aus jeder offenen Überdeckung von $X$ eine Teilüberdeckung auswählen lässt},
-    \item filterkompakt, \textit{falls jeder Filter auf $X$ einen Häufungspunkt besitzt},
+    \item filterkompakt, \textit{falls jeder Filter auf $X$ einen Adhärenzpunkt besitzt},
     \item ultrafilterkompakt, \textit{falls jeder Ultrafilter auf $X$ konvergiert},
     \item \textsc{Alexandroff}-\textsc{Urysohn}-kompakt, \textit{falls jede unendliche Teilmenge von $X$ einen vollständigen Häufungspunkt besitzt},
     \item \textsc{Tychonoff}-kompakt, \textit{falls $X$ homöomorph zu einem abgeschlossenen Teilraum eines Hilbert-Würfels $[0,1]^I$ ist}.
@@ -58,7 +65,7 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
 \begin{proof}
   $(1)$: 
   Sei $(X,\tau)$ kompakt und $\varphi$ ein Filter auf $X$.
-  Angenommen, $\varphi$ besitze keinen Häufungspunkt.
+  Angenommen, $\varphi$ besitze keinen Adhärenzpunkt.
   Dann gilt nach Proposition \ref{prop:adherence}
   \begin{displaymath}
     \bigcap_{F \in \varphi} \overline{F} = \emptyset.
@@ -105,9 +112,23 @@ Eine wichtige Folgerung aus dem Auswahlaxiom ist der folgende Satz:
 \end{defn}
 
 Ein Beweis dazu wird in Satz \ref{thm:acpit} für Ideale auf \textsc{Boole}schen Algebren erbracht. 
-Zunächst soll die Beziehung der Gültigkeit von \UFT zur Übereinstimmung gewisser Kompaktheitsbegriffe analysiert werden.
+Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung gewisser Kompaktheitsbegriffe analysiert werden.
+
+\begin{lem}
+  \label{lem:uftprod}
+  Sei $(X_i,\tau_i)_{i \in I}$ eine Familie ultrafilterkompakter Räume. 
+  Dann ist ihr Produkt $\prod_{i \in I} X_i$ wiederum ultrafilterkompakt.
+\end{lem}
+
+\begin{proof}
+  Es sei $\varphi \in \mathcal{F}_0(\prod_{i \in I} X_i)$.
+  Dann sind auch die Bilder $\pi_i(\varphi)$ Ultrafilter auf $X_i$.
+  Aufgrund der Ultrafilterkompaktheit der einzelnen Faktoren konvergiert jeder Bildfilter gegen ein $x_i \in X_i$.
+  Dies impliziert jedoch, dass $\varphi$ gegen $(x_i)_{i \in I}$ konvergiert.
+\end{proof}
 
 \begin{thm}
+  \label{thm:uftcompact}
   Es sind äquivalent:
   \begin{enumerate}[(1)]
     \item Ein topologischer Raum ist genau dann kompakt, wenn er ultrafilterkompakt ist.
@@ -115,14 +136,52 @@ Zunächst soll die Beziehung der Gültigkeit von \UFT zur Übereinstimmung gewis
   \end{enumerate}
 \end{thm}
 
+\begin{proof}
+  (1)$\Rightarrow$(2):
+  Nach Satz \ref{thm:pitequivalence}((4)$\Rightarrow$(3)), dies ist gerade die Implikation, welche nicht Bezug auf Satz \ref{thm:uftcompact} nimmt, reicht es zu zeigen, dass Produkte kompakter \textsc{Hausdorff}-Räume kompakt sind. 
+  Produkte ultrafilterkompakter \textsc{Hausdorff}-Räume sind jedoch nach Lemma \ref{lem:uftprod} wieder ultrafilterkompakt, was nach Voraussetzung bedeutet, dass das Produkt kompakt ist.
+
+  (2)$\Rightarrow$(1):
+  Nach Satz \ref{thm:compactness}(1) genügt es zu zeigen, dass jeder Filter $\varphi$ auf einem ultrafilterkompakten Raum $X$ einen Adhärenzpunkt besitzt.
+  Nach Voraussetzung existiert ein $\varphi$ umfassender Ultrafilter, welcher aufgrund der Ultrafilterkompaktheit von $X$ konvergiert.
+  Damit ist ein konvergenter Oberfilter von $\varphi$ gefunden, also besitzt $\varphi$ einen Adhärenzpunkt.
+\end{proof}
+
 \begin{thm}
   Es sind äquivalent:
   \begin{enumerate}[(1)]
     \item Ein topologischer Raum ist genau dann kompakt, wenn er \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist.
     \item Ein topologischer Raum ist genau dann ultrafilterkompakt, wenn er \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist.
-    \item \UFT.
+    \item \AC.
   \end{enumerate}
 \end{thm}
+
+\begin{proof}
+  (1),(2)$\Rightarrow$(3):
+  Man betrachte zwei unendliche Kardinalzahlen $a,b$.
+  Dann existieren disjunkte Mengen $A,B$ mit $|A| = a$ und $|B| = b$.
+  Man betrachte $X := A \cup B$ als topologischen Raum mit Topologie $\tau := \{\emptyset, A, B, A \cup B\}$.
+  Dieser Raum ist sowohl kompakt, da die Topologie nur aus endlich vielen Mengen besteht, als auch ultrafilterkompakt. 
+  Somit implizieren sowohl (1) als auch (2), dass $X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist.
+  Folglich besitzt $A \cup B$ einen vollständigen Häufungspunkt $x$.
+  Angenommen $x \in A$, dann ist $a = |A| = |A \cup B| \geq b$. 
+  Ist andererseits $x \in B$, dann ist $b = |B| = |A \cup B| \geq a$.
+
+  (3)$\Rightarrow$(1),(2):
+  Mit Satz \ref{thm:uftcompact} folgt aus \UFT bereits die Äquivalenz der Begriffe Kompaktheit und Ultrafilterkompaktheit.
+  Es reicht also bereits zu zeigen, dass (1) gilt.
+
+  Angenommen $X$ sei \textsc{Alexandroff}-\textsc{Urysohn}-kompakt aber nicht kompakt.
+  Dann ist die Menge $\mathfrak{M}$ aller offenen Überdeckungen, die keine endliche Teilüberdeckung enthalten nicht leer und es existiert nach 1.3.5 Bartsch eine bezüglich Mächtigkeit minimale offene Überdeckung $\mathcal{O} = (O_i)_{i \in I}$.
+
+  Nach dem Wohlordnungssatz lässt sich $I$ wohlordnen. 
+  Man betrachte nun für $i \in I$ die Menge
+  \begin{displaymath}
+    A_i := \bigcup \,\{O_j \mid j < i, j \in I\}.
+  \end{displaymath}
+  Es gilt $A_i \neq X$ für alle $i \in I$, um nicht der Minimalität von $\mathcal{O}$ zu widersprechen.
+  Weiterhin muss gelten $|X \setminus A_i| \geq |\mathcal{O}|$
+\end{proof}
 
 \section{Der \textsc{Boole}sche Primidealsatz}
 
@@ -231,8 +290,9 @@ Dass \PIT schwächer ist als \AC, kann man in QUELLE nachlesen.
 Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE
 
 \begin{thm}
+  \label{thm:pitequivalence}
   Äquivalent sind
-\begin{enumerate}[(1)]
+  \begin{enumerate}[(1)]
     \item \PIT.
     \item \UFT.
     \item \textsc{Tychonoff}-Satz für \textsc{Hausdorff}-Räume: 
@@ -246,6 +306,7 @@ Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE
     \item \textsc{Hilbert}-Würfel $[0,1]^I$ sind kompakt.
     \item \textsc{Kantor}-Würfel $\mathbf{2}^I$ sind kompakt.
   \end{enumerate}
+\end{thm}
 
   \begin{proof}
     $(1)\Rightarrow(2)$: 
@@ -255,5 +316,4 @@ Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE
 
   \end{proof}
 
-\end{thm}
 
