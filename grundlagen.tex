@@ -1,6 +1,6 @@
-\chapter{Mengentheoretische und topologische Grundlagen}
+\chapter{Grundlagen aus Mengenlehre und Topologie}
 
-\section{Kompaktheitsbegriffe für topologische Räumen}
+\section{Kompaktheitsbegriffe für topologische Räume}
 
 Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik, indem sie ihre Äquivalenz zeigen. 
 Ein für die vorliegende Ausarbeitung zentrales Konzept ist das der Kompaktheit topologischer Räume. 
@@ -38,7 +38,7 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
 
 \begin{defn}
   Sei $(X,\tau)$ ein topologischer Raum.
-  Dann heißt $x \in X$ \textit{vollständiger Häufungspunkt} einer Teilmenge $A \subseteq X$, wenn für alle Umgebungen $U$ von $x$, die Mengen $A$ und $A \cap U$ dieselbe Kardinalzahl besitzen.
+  Dann heißt $x \in X$ \textit{vollständiger Häufungspunkt} einer Teilmenge $A \subseteq X$, wenn für alle Umgebungen $U$ von $x$, die Mengen $A$ und $A \cap U$ dieselbe Kardinalzahl besitzen, also $|A| = | A \cap U |$.
 \end{defn}
 
 \begin{defn}
@@ -52,7 +52,7 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
   \end{enumerate}
 \end{defn}
 
-Im Folgenden sollen nun die Zusammenhänge der unterschiedlichen Kompaktheitsbegriffe, gegebenenfalls unter Zusatzannahmen erörtert werden.
+Im Folgenden sollen nun die Zusammenhänge der unterschiedlichen Kompaktheitsbegriffe, gegebenenfalls unter Hinznahme weiterer Annahmen, erörtert werden.
 
 \begin{thm}
 \label{thm:compactness}
@@ -78,7 +78,7 @@ Im Folgenden sollen nun die Zusammenhänge der unterschiedlichen Kompaktheitsbeg
   eine offene Überdeckung von $X$.
   Da $X$ als kompakt vorausgesetzt wird, existieren $F_1,\dots,F_n \in \varphi$ mit
   \begin{displaymath}
-    \bigcup_{i = 1}^n X \setminus F_i = X
+    \bigcup_{i = 1}^n X \setminus F_i = X,
   \end{displaymath}
   woraus wiederum
   \begin{displaymath}
@@ -93,9 +93,9 @@ Im Folgenden sollen nun die Zusammenhänge der unterschiedlichen Kompaktheitsbeg
   \begin{displaymath}
     \mathfrak{B} := \left\{ X \setminus \mathcal{O} \mid \mathcal{O} = \bigcup_{k = 1}^n O_{i_k}\right\}.
   \end{displaymath}
-  Diese Familie ist nichtler, da $X \setminus O_i \in \mathcal{O}$ für alle $i \in I$ gilt und zudem abgeschlossen unter endlichen Schnitten.
+  Diese Familie ist nichtleer, da sie $X \setminus O_i$ für alle $i \in I$ enthält, und zudem abgeschlossen unter endlichen Schnitten.
 
-  Folglich ist $\mathfrak{B}$ eine Filterbasis und es bezeichne $\varphi$ den durch Obermengenbildung davon erzeugten Filter.
+  Folglich ist $\mathfrak{B}$ eine Filterbasis und es bezeichne $\varphi$ den durch Obermengenbildung erzeugten Filter.
   Nach Voraussetzung existiert ein Oberfilter $\psi \supseteq \varphi$ der bezüglich der Topologie $\tau$ gegen ein $x \in X$ konvergiert.
   Aus der Überdeckungseigenschaft folgt, dass zusätzlich ein $i_0 \in I$ existiert mit $x \in O_i$.
   Aufgrund der Konvergenz des Filters $\psi$ folgt $O_i \in \psi$.
@@ -148,6 +148,22 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
   Damit ist ein konvergenter Oberfilter von $\varphi$ gefunden, also besitzt $\varphi$ einen Adhärenzpunkt.
 \end{proof}
 
+Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt man den folgenden
+
+\begin{thm}
+  \label{thm:comparablecardinal}
+  Die folgenden Aussagen sind äquivalent:
+  \begin{enumerate}[(1)]
+    \item Je zwei Kardinalzahlen sind bezüglich $\leq$ vergleichbar.
+    \item Je zwei Kardinalzahlen sind bezüglich $\leq^*$ vergleichbar.
+    \item \AC
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  
+\end{proof}
+
 \begin{thm}
   Es sind äquivalent:
   \begin{enumerate}[(1)]
@@ -167,6 +183,8 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
   Folglich besitzt $A \cup B$ einen vollständigen Häufungspunkt $x$.
   Angenommen $x \in A$, dann ist $a = |A| = |A \cup B| \geq b$. 
   Ist andererseits $x \in B$, dann ist $b = |B| = |A \cup B| \geq a$.
+  Folglich gilt $a \leq b$ oder $b \leq a$.
+  Zusammen mit Satz \ref{thm:comparablecardinal} und der Tatsache, dass je zwei endliche Kardinalzahlen vergleichbar sind folgt \AC.
 
   (3)$\Rightarrow$(1),(2):
   Mit Satz \ref{thm:uftcompact} folgt aus \UFT bereits die Äquivalenz der Begriffe Kompaktheit und Ultrafilterkompaktheit.
@@ -175,47 +193,57 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
   Angenommen $X$ sei \textsc{Alexandroff}-\textsc{Urysohn}-kompakt aber nicht kompakt.
   Dann ist die Menge $\mathfrak{M}$ aller offenen Überdeckungen, die keine endliche Teilüberdeckung enthalten nicht leer und es existiert nach Übergang zu den korrespondierenden Kardinalzahlen eine bezüglich Mächtigkeit minimale offene Überdeckung $\mathcal{O} = (O_i)_{i \in I}$ mit Kardinalzahl $\mathcal{C}$, da die Menge aller Ordinalzahlen wohlgeordnet ist.
 
-  Es bezeichne nun $f$ den Ordnungsisomorphismus $\mathcal{C} \to \mathcal{O}$ und für alle $b \in \mathcal{C}$ sei 
+  Es bezeichne nun $f$ die zur Kardinalzahl korrespondierende Bijektion $\mathcal{C} \to \mathcal{O}$ und für alle $b \in \mathcal{C}$ sei 
   \begin{displaymath}
-    \mathcal{A}_b := \{ f(a) \mid a < b\}
+    \mathcal{A}_b := \{ f(a) \mid a < b\} \subseteq \mathcal{O}.
   \end{displaymath}
-  eine Teilüberdeckung von $\mathcal{O}$.
-  Dann folgt für alle $b \in \mathcal{C}$, dass $A_b$ keine Überdeckung von $X$ sein kann.
-  Angenommen $\bigcup A_b \supseteq X$, dann ergibt sich sofort $A_b \in \mathfrak{M}$, denn als Teilüberdeckung von $\mathcal{O}$ kann auch $A_b$ keine endliche Teilüberdeckung von $X$ besitzen.
-  Dies widerspricht jedoch der Wahl von $\mathcal{C}$, da $|A_b| < \mathcal{C}$ für alle $b \in \mathcal{C}$ vorausgesetzt wurde.
+  Es gilt zudem
+  \begin{displaymath}
+    | \{ a \in \mathcal{C} \mid a < b \} | = b < \mathcal{C}
+  \end{displaymath}
+  und folglich auch $| \mathcal{A}_b | < \mathcal{C}$, da es sich hierbei um das Bild unter einer bijektiven Abbildung $f$ handelt.
 
-  Des Weiteren gilt für alle $b \in \mathcal{C}$ und
-  \begin{displaymath}
-    U_b := \bigcup A_b
-  \end{displaymath}
-  zudem $|X \setminus U_b| \geq \mathcal{C}$.
+  Dann folgt für alle $b \in \mathcal{C}$, dass $\mathcal{A}_b$ keine Überdeckung von $X$ sein kann.
+  Angenommen $\bigcup \mathcal{A}_b \supseteq X$, dann ergibt sich sofort $\mathcal{A}_b \in \mathfrak{M}$, denn als Teilmenge von $\mathcal{O}$ kann auch $\mathcal{A}_b$ keine endliche Teilüberdeckung von $X$ besitzen.
+  Dies widerspricht jedoch der Wahl von $\mathcal{C}$, da $|\mathcal{A}_b| < \mathcal{C}$ für alle $b \in \mathcal{C}$ vorausgesetzt wird.
+
+  Für alle $b \in \mathcal{C}$ und $U_b := \bigcup \mathcal{A}_b$ gilt des Weiteren $|X \setminus U_b| \geq \mathcal{C}$.
   Nimmt man an, es gelte $|X \setminus U_{b'}| < \mathcal{C}$ für ein $b' \in \mathcal{C}$, so lässt sich für alle $x \in X \setminus U_{b'}$ ein $O_x \in \mathcal{O}$ auswählen, welches $x$ enthält.
-  Dann ist jedoch
+  Dann ist für $\mathcal{O}' := \{O_x \mid x \in X \setminus U_{b'}\}$ jedoch
   \begin{displaymath}
-    A_{b'} \cup \{O_x \mid x \in X \setminus U_{b'}\} 
+    \mathcal{A}_{b'} \cup  \mathcal{O}'
   \end{displaymath}
   eine Überdeckung von $X$, die aus demselben Grund wie oben keine endliche Teilüberdeckung enthalten kann.
-  Diese Überdeckung besitzt jedoch eine Kardinalität kleiner $\mathcal{C}$ was der Wahl von $\mathcal{O}$ widerspricht.
+  Diese Überdeckung besitzt jedoch eine Kardinalität kleiner $\mathcal{C}$, denn $| \mathcal{O}' | = | X \setminus U_{b'} |$, und damit besitzt die Vereinigung von $\mathcal{A}_{b'}$ und $\mathcal{O}'$ die größere der zugehörigen Kardinalitäten, welche weiterhin kleiner ist als $\mathcal{C}$.
+  Dies widerspricht jedoch der Wahl von $\mathcal{O}$ als Überdeckung mit minimaler Kardinalität.
 
-  Es ist nun möglich für alle $b \in \mathcal{C}$ ein $x_b \in X \setminus U_b$ mit $x_a \neq x_b$ für alle $a < b$ zu wählen.
-  Denn für alle $b \in \mathcal{C}$ gilt $|\{x_a \mid a < b\}| < \mathcal{C}$ und, da $|X \setminus U_b| \geq \mathcal{C}$, folgt dann
+  Es ist nun möglich für alle $b \in \mathcal{C}$ ein $x_b \in X \setminus U_b$ mit $x_a \neq x_b$ für alle $a < b$ zu wählen. 
+  Für alle $b \in \mathcal{C}$ gilt nämlich $|\{x_a \mid a < b\}| < \mathcal{C}$ und, da $|X \setminus U_b| \geq \mathcal{C}$, folgt dann
   \begin{displaymath}
-    S := X \setminus (U_b \cup \{x_a \mid a < b\}) \neq \emptyset.
+    S := X \setminus (U_b \cup \{x_a \mid a < b\}) \neq \emptyset,
   \end{displaymath}
-  Es lässt sich also ein zu allen $x_a$ mit $a < b$ verschiedenes $x_b \in S$ auswählen.
+  denn es ist
+  \begin{displaymath}
+    | S | = | (X \setminus U_b) \setminus \{x_a \mid a < b\}) | \geq C.
+  \end{displaymath}
+  Es kann $| S | < C$ nicht gelten, denn sonst ist $ |( X \setminus U_b )| = |S \cup \{x_a \mid a < b\}| < \mathcal{C}$ im Widerspruch zur Voraussetzung.
+  Insbesondere ist also $S \neq \emptyset$ und man kann somit für alle $b \in \mathcal{C}$ ein zu allen $x_a$ mit $a < b$ verschiedenes $x_b \in S$ auswählen.
 
   Man betrachte nun die Menge
   \begin{displaymath}
     M := \{ x_b \mid b \in \mathcal{C} \}.
   \end{displaymath}
-  Sie besitzt keinen vollständigen Häufungspunkt, denn für alle $x \in X$ existiert ein minimales $b \in \mathcal{C}$ sodass $x \in U_b$. 
+  Es soll nun gezeigt werden, dass sie keinen vollständigen Häufungspunkt besitzt. 
+  Aufgrund der Überdeckungseigenschaft von $\mathcal{O}$ existiert zunächst für alle $x \in X$ ein $b \in \mathcal{C}$ mit $x \in U_b$.
+  Die Menge aller $b$ mit ebendieser Eigenschaft ist demnach nicht leer und besitzt als Teilmenge der wohlgeordneten Menge $\mathcal{C}$ ein minimales Element.
+  Im Folgenden bezeichne nun $b$ dieses minimale Element.
   Es ist $U_b$ dann eine offene Umgebung von $x$ und es gilt 
   \begin{displaymath}
     U_b \cap M \subseteq \{x_a \mid a < b\}
   \end{displaymath}
-  also
+  also auch
   \begin{displaymath}
-    |U_b \cap M| < \mathcal{C}.
+    |U_b \cap M| \leq b < \mathcal{C}.
   \end{displaymath}
   Dies Widerspricht jedoch der Annahme $X$ sei \textsc{Alexandroff}-\textsc{Urysohn}-kompakt.
 
@@ -224,14 +252,14 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
   Dann existiert eine unendliche Teilmenge $A \subseteq X$ ohne vollständigen Häufungspunkt.
   Das bedeutet, dass für alle $x \in X$ eine offene Umgebung $U_x$ existiert mit
   \begin{displaymath}
-    | A \cap U | < | A | \tag{$\ast$}
+    | A \cap U_x | < | A | \tag{$\ast$}
   \end{displaymath}
-  Die Familie $\{U_x \mid x \in X\}$ ist nach Konstruktion eine Überdeckung von $X$, aufgrund der vorausgesetzten Kompaktheit existiert eine endliche Teilüberdeckung $\{U_{x_1},\dots,U_{x_n}\}$.
+  Die Familie $\{U_x \mid x \in X\}$ ist nach Konstruktion eine Überdeckung von $X$ und aufgrund der vorausgesetzten Kompaktheit existiert eine endliche Teilüberdeckung $\{U_{x_1},\dots,U_{x_n}\}$.
   Es gilt somit
   \begin{displaymath}
-    A = \bigcup_{i = 1}^n A \cap U_{x_i}.
+    A = \bigcup_{i = 1}^n (A \cap U_{x_i}).
   \end{displaymath}
-  Dies Widerspricht jedoch ($\ast$), denn dann wäre $A$ die endliche Vereinigung von Mengen echt kleinerer Kardinalität. 
+  Dies widerspricht jedoch ($\ast$), denn dann wäre $A$ die endliche Vereinigung von Mengen echt kleinerer Kardinalität. 
 \end{proof}
 
 \section{Der \textsc{Boole}sche Primidealsatz}
