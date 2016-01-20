@@ -29,7 +29,7 @@ Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden
 
 Eine topologische Version des \textsc{Áscoli}-Satzes lautet:
 \begin{defn}[Topologischer \textsc{Áscoli}-Satz]
-  Sei $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
+  Sei $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
   Für jeden Teilraum $(F,\tau_{co})$ von $C_{co}(X,Y)$ sind äquivalent:
   \begin{enumerate}
     \item[(a)] $F$ ist kompakt.
@@ -65,12 +65,12 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Damit sind die Bedingungen aus $(b)$ des \textsc{Áscoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt ist. 
   Dies ist äquivalent zum \textsc{Boole}schen Primidealsatz.
 
-  $(2) \Rightarrow (1)$: Es seien $(X,\tau)$ ein lokalkompakter Hausdorff-Raum und $(Y,d)$ ein metrischer Raum.
+  $(2) \Rightarrow (1)$: Es seien $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
   Des Weiteren sei $F$ ein Teilraum vom $C_{co}(X,Y)$.
 
   $(a) \Rightarrow (b, \alpha)$: 
   Nach Voraussetzung ist $F$ ein bezüglich der kompakt-offenen Topologie $\tau_{co}$ kompakter Teilraum von $C(X,Y)$.
-  Somit ist er insbesondere bezüglich der Spur der schwächeren Topologie der punktweisen Konvergenz $\tau_p$ ein kompakter Teilraum des Hausdorff-Raumes $Y^X$.
+  Somit ist er insbesondere bezüglich der Spur der schwächeren Topologie der punktweisen Konvergenz $\tau_p$ ein kompakter Teilraum des \textsc{Hausdorff}-Raumes $Y^X$.
   Die Topologie der punktweisen Konvergenz lässt sich als Initialtopologie bezüglich der kanonischen Projektionen 
   \begin{displaymath}
     \pi_x : Y^X \to Y, f \mapsto f(x)
@@ -79,7 +79,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Als stetiges Bild eines Kompaktums ist somit auch $\pi_x(F) = F(x)$ kompakt in $(Y,\tau_d)$.
 
   $(a) \Rightarrow (b, \beta)$:  
-  Als kompakter Teilraum eines Hausdorff-Raumes ist $F$ bezüglich $\tau_p$ auch abgeschlossen in $Y^X$.
+  Als kompakter Teilraum eines \textsc{Hausdorff}-Raumes ist $F$ bezüglich $\tau_p$ auch abgeschlossen in $Y^X$.
 
   $(a) \Rightarrow (b, \gamma)$:
   Es soll gezeigt werden, dass $F$ gleichgradig stetig ist.
@@ -132,8 +132,8 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Folglich ist $F$ gleichgradig stetig.
 
   $(b) \Rightarrow (a)$
-  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y^X$ kompakt und besitzt zudem die Hausdorff-Eigenschaft.
-  Der Tychonoff-Satz für Kompaktheit besagt, dass dann auch $\prod_{x \in X} F(x)$ kompakt ist.
+  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y^X$ kompakt und besitzt zudem die \textsc{Hausdorff}-Eigenschaft.
+  Der \textsc{Tychonoff}-Satz für Kompaktheit besagt, dass dann auch $\prod_{x \in X} F(x)$ kompakt ist.
   Die Voraussetzung, dass $F$ abgeschlossen in $Y^X$ bezüglich der Produkttopologie $\tau_p$ ist, liefert, dass $F$ auch abgeschlossen im Teilraum $\prod_{x \in X} F(x)$ ist.
   Als abgeschlossene Teilmenge eines Kompaktums ist somit $F$ auch kompakt bezüglich der Topologie der punktweisen Konvergenz.
   Es fehlt zu zeigen, dass $F$ ebenfalls bezüglich der stärkeren, kompakt-offenen Topologie $\tau_{co}$ kompakt ist.
@@ -164,7 +164,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Nach Voraussetzung ist $K$ kompakt, daher existieren $x_1,\dots,x_n \in K$, sodass $K \subseteq \bigcup_{i=1}^n U_{x_i}$.
   Es sei $r:= \min\{r_{x_1},\dots,r_{x_n}\}$. 
   Damit ergibt sich für alle $x \in K$ und alle $y \in (Y \setminus U)$ die Ungleichung $d(f(x),y) \geq \tfrac{r}{2}$.
-  Ist $x \in K$ und $d(f(x),y) < \tfrac{r}{2}$ so folgt daraus $y \in U$.
+  Ist $x \in K$ und $d(f(x),y) < \tfrac{r}{2}$, so folgt daraus $y \in U$.
   Da $F$ nach Voraussetzung gleichgradig stetig auf $X$ ist, existiert für alle $x \in X$ eine offene Umgebung $W$ von $x$ in $X$, sodass für alle $g \in F$ und alle $z \in W$ gilt, dass $d(g(x),g(z)) < \tfrac{r}{4}$.
   Betrachtet man nun die auf obige Weise erzeugte Menge $\mathcal{C}$ aller geordneten Paare $(x,W)$, so bildet
   \begin{displaymath}
@@ -332,7 +332,7 @@ Es soll nun untersucht werden, inwiefern der \textsc{Áscoli}-Satz auch unter Ve
 
   Es bezeichne $F := f(P)$ das Bild von $P$ unter der obigen Abbildung $f$.
   Es soll nun gezeigt werden, dass $f$ eine Einbettung ist, also ein Homöomorphismus auf $F$:
-  Die Abbildung $f$ ist injektiv, denn für $x,y \in P$ mit $x \neq y$ gilt, da $P$ als Hausdorff-Raum insbesondere das $T1$-Axiom erfüllt mit $A_{(x,y)} \in \mathfrak{A}$ aus Lemma \ref{lem:filterclusterpoint}(2) 
+  Die Abbildung $f$ ist injektiv, denn für $x,y \in P$ mit $x \neq y$ gilt, da $P$ als \textsc{Hausdorff}-Raum insbesondere das $T1$-Axiom erfüllt mit $A_{(x,y)} \in \mathfrak{A}$ aus Lemma \ref{lem:filterclusterpoint}(2) 
   \begin{displaymath}
     f_{A_{(x,y)}}(x) = 0 \neq 1 = f_{A_{(x,y)}}(y).
   \end{displaymath}
@@ -437,7 +437,7 @@ Es soll nun untersucht werden, inwiefern der \textsc{Áscoli}-Satz auch unter Ve
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item[(1)] Der \textsc{Áscoli}-Satz bezüglich \textsc{Tychonoff}-Kompaktheit.
+    \item[(1)] Der \textsc{Áscoli}-Satz bezüglich \textsc{\textsc{Tychonoff}}-Kompaktheit.
     \item[(2)] \PIT.
   \end{enumerate}
 \end{thm}
@@ -449,15 +449,15 @@ Es soll nun untersucht werden, inwiefern der \textsc{Áscoli}-Satz auch unter Ve
   Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Häufungspunkt.
 
   Da das Intervall $[0,1]$ ausgestattet mit euklidischer Topologie insbesondere ein $T1$-Raum ist, sind Einpunktmengen abgeschlossen.
-  Betrachtet man nun $P$ als Teilraum des Hilbert-Würfels $[0,1]^I$, so folgt nach Proposition \ref{prop:cartesianclosed}, dass $P$ abgeschlossen im Hilbert-Würfel ist.
-  Definitionsgemäß ist also $P$ Tychonoff-kompakt.
+  Betrachtet man nun $P$ als Teilraum des \textsc{Hilbert}-Würfels $[0,1]^I$, so folgt nach Proposition \ref{prop:cartesianclosed}, dass $P$ abgeschlossen im \textsc{Hilbert}-Würfel ist.
+  Definitionsgemäß ist also $P$ \textsc{Tychonoff}-kompakt.
 
   Wie aus dem Beweis von Satz \ref{thm:ultrafiltercompact} folgt, ist $P$ homöomorph zu $F:= f(P)$, wobei $f$ die auf der Menge der offen-abgeschlossenen Elemente von $\mathcal{F}$ Funktion aus Gleichung (\ref{eq:clopenmap}) ist.
-  Somit ist $F$ auch Tychonoff-kompakt.
+  Somit ist $F$ auch \textsc{Tychonoff}-kompakt.
 
   Wendet man nun den \textsc{Áscoli}-Satz bezüglich \textsc{Tychonoff}-Kompaktheit auf $F$ an, so folgt anlog zu Satz \ref{thm:ultrafiltercompact}, dass die Aussage $(b, \beta)$ nicht erfüllt ist.
 
-  $(2)\Rightarrow(1)$: \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Tychonoff-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+  $(2)\Rightarrow(1)$: \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
 Ähnlich gilt für den nächsten Kompaktheitsbegriff
@@ -476,12 +476,12 @@ Es soll nun untersucht werden, inwiefern der \textsc{Áscoli}-Satz auch unter Ve
 
   Es sei $F := C(X, \mathbf{2})$.
   Dann gilt $C(X, \mathbf{2}) = \mathbf{2}^X$, da $X$ nach Voraussetzung diskret ist.
-  Da $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum keine unendliche Teilmenge besitzt, folgt sofort die Alexandroff-Urysohn-Kompaktheit von $F(x)$.
+  Da $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum keine unendliche Teilmenge besitzt, folgt sofort die \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit von $F(x)$.
   Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen in jeder Topologie, also insbesondere auch in der punktweisen Topologie $\tau_p$.
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
-  Damit sind die Bedingungen (b) des \textsc{Áscoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ Alexandroff-Urysohn-kompakt ist. Dies ist äquivalent zum Auswahlaxiom.
+  Damit sind die Bedingungen (b) des \textsc{Áscoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist. Dies ist äquivalent zum Auswahlaxiom.
 
-  $(2)\Rightarrow(1)$: Das Auswahlaxiom impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Alexandroff-Urysohn-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+  $(2)\Rightarrow(1)$: Das Auswahlaxiom impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
 Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Áscoli}-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Áscoli}-Satzes die Anforderungen senkt.
@@ -490,7 +490,7 @@ Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Áscoli}-
   \label{def:klassisch}
   Der klassische \textsc{Áscoli}-Satz besagt, dass für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ die folgenden Bedingungen äquivalent sind:
   \begin{itemize}
-    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert, d.h.
+    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$, die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert, d.h.
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         Für alle $x \in \R$ und alle $(x_n)_{n \in \N} \in \R^\N$ gilt: \\
         Aus $\lim_{n \to \infty} x_n = x$ folgt $\lim_{n \to \infty} f_{\nu(n)}(x_n) = g(x)$.
