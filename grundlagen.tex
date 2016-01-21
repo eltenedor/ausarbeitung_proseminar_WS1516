@@ -4,11 +4,12 @@
 
 Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik, indem sie ihre Äquivalenz zeigen. 
 Ein für die vorliegende Ausarbeitung zentrales Konzept ist das der Kompaktheit topologischer Räume. 
-Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{ZF} nicht notwendig äquivalent sind.
+Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \ZF nicht notwendig äquivalent sind.
+Es soll in allen aufgeführten Aussagen und den dazugehörigen Beweisen stets von \ZF ausgegangen werden, falls eine Erweiterung des Axiomensystems nicht explizit als Voraussetzung aufgeführt wurde.
 
 \begin{defn}
   Sei $(X,\tau)$ ein topologischer Raum.
-  Ein Punkt $x \in X$ heißt \textit{Adhärenzpunkt} eines Filters $\varphi \in \mathcal{F}(X)$, falls es einen gegen $x$ bezüglich $\tau$ konvergenten Oberfilter $\psi \supseteq \varphi$ gibt.
+  Ein Punkt $x \in X$ heißt \textit{Adhärenzpunkt} eines Filters $\varphi \in \mathcal{F}(X)$, falls ein bezüglich $\tau$ gegen $x$ konvergenter Oberfilter $\psi \supseteq \varphi$ existiert.
 \end{defn}
 
 \begin{prop}
@@ -24,7 +25,7 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
   Sei zunächst $x$ Adhärenzpunkt eines Filters $\varphi$ auf $X$.
   Nach Definition existiert ein gegen $x$ konvergenter Oberfilter $\psi \supseteq \varphi$, also gilt $\psi \supseteq \dot x \cap \tau$
   Somit gilt aufgrund der Filtereigenschaft von $\psi$ für alle $F \in \varphi$ und alle $U \in x \cap \tau$, dass  $F \cap U \neq \emptyset$.
-  Also besitzt jede Umgebung $U$ von $x$ mit allen $F \in \varphi$ einen nichtleeren Schnitt, was bedeutet, dass $x \in \overline F$ für alle $F  \in \varphi$
+  Also besitzt jede Umgebung $U$ von $x$ mit allen $F \in \varphi$ einen nichtleeren Schnitt, was bedeutet, dass $x \in \overline F$ für alle $F  \in \varphi$.
 
   Sei andererseits $x \in \bigcap_{F \in \varphi} \overline F$.
   Nach Definition des Abschlusses einer Menge, gilt somit für alle $U \in \dot x \cap \tau$, dass $F \cap U \neq \emptyset$.
@@ -38,7 +39,7 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
 
 \begin{defn}
   Sei $(X,\tau)$ ein topologischer Raum.
-  Dann heißt $x \in X$ \textit{vollständiger Häufungspunkt} einer Teilmenge $A \subseteq X$, wenn für alle Umgebungen $U$ von $x$, die Mengen $A$ und $A \cap U$ dieselbe Kardinalzahl besitzen, also $|A| = | A \cap U |$.
+  Dann heißt $x \in X$ \textit{vollständiger Häufungspunkt} einer Teilmenge $A \subseteq X$, wenn für alle Umgebungen $U$ von $x$ die Mengen $A$ und $A \cap U$ dieselbe Kardinalzahl besitzen, also $|A| = | A \cap U |$.
 \end{defn}
 
 \begin{defn}
@@ -52,7 +53,7 @@ Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \textbf{Z
   \end{enumerate}
 \end{defn}
 
-Im Folgenden sollen nun die Zusammenhänge der unterschiedlichen Kompaktheitsbegriffe, gegebenenfalls unter Hinznahme weiterer Annahmen, erörtert werden.
+Im Folgenden sollen die Zusammenhänge der unterschiedlichen Kompaktheitsbegriffe, gegebenenfalls unter Hinzunahme weiterer Annahmen, erörtert werden.
 
 \begin{thm}
 \label{thm:compactness}
