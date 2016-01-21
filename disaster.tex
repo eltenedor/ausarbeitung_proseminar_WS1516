@@ -778,5 +778,26 @@ Zusammenfassend l채sst sich also erkennen, dass weder der topologische \textsc{�
   Dies widerspricht jedoch (1).
 
   (a) $\Rightarrow$ (b,$\beta$):
+  Es sei $G$ die der Folge $(f_n)_{n \in \N}$ in $F$ zugrunde liegende Menge.
+  Angenommen $G$ f체r ein $x \in \R$ nicht gleichgradig stetig.
+  Dann existiert ein $\varepsilon > 0$, sodass f체r alle $\delta > 0$ ein $n \in \N$ und $y \in \R$ existiert mit
+  \begin{displaymath}
+     |x - y| < \delta \quad\text{und}\quad |f_n(x) - f_n(y)| \geq \varepsilon.
+  \end{displaymath}
+  F체r alle $n \in \N$ lassen sich nun
+  \begin{align*}
+    \nu(n) &:= \min \{ m \in \N \mid \text{ Es existiert ein } y \in [x - 2^{-n}, x + 2^{-n}] \text{ mit } |f_m(x) - f_m(y)| \geq \varepsilon\}, \\
+    g_n &:= f_{\nu(n)} \quad\text{und}\\
+    x_n &:= \min\{ y \in [x - 2^{-n}, x + 2^{-n}] \mid |f_m(x) - f_m(y)| \geq \varepsilon \}
+  \end{align*}
+  definieren.
+  Dann gelten
+  \begin{displaymath}
+    \lim_{n \in \N} x_n = x \quad\text{und}\quad|g_n(x) - g_n(x_n)| \geq \varepsilon
+  \end{displaymath}
+  f체r alle $n \in \N$.
+  Somit kann keine Teilfolge von $(g_n)_{n \in \N}$ stetig in $x$ konvergieren, was jedoch (1) widerspricht.
+
+  (b) $\Rightarrow$ (a):
   Dies folgt bereits aus der entsprechenden Implikation in Satz \ref{thm:classicalascoli}.
 \end{proof}
