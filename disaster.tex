@@ -54,7 +54,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
 \end{thm}
 
 \begin{proof}
-  $(1) \Rightarrow (2)$: Sei $X$ eine Menge und $\mathbf{2}$ die zweielementige Menge $\{0,1\}$. Beide Mengen seien  mit der diskreten Topologie ausgestattet. 
+  (1) $\Rightarrow$ (2): Sei $X$ eine Menge und $\mathbf{2}$ die zweielementige Menge $\{0,1\}$. Beide Mengen seien  mit der diskreten Topologie ausgestattet. 
   Die diskrete Topologie lässt sich auch als die von der \textit{diskreten Metrik} induzierte Topologie auffassen, somit kann $\mathbf{2}$ insbesondere als metrischer Raum betrachtet werden. 
 
   Es sei $F := C(X, \mathbf{2})$.
@@ -66,10 +66,10 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Damit sind alle Bedingungen aus $(b)$ des \textsc{Áscoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt ist. 
   Dies ist nach Satz \ref{thm:pitequivalence} äquivalent zu \PIT.
 
-  $(2) \Rightarrow (1)$: Es seien $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
+  (2) $\Rightarrow$ (1): Es seien $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
   Des Weiteren sei $F$ ein Teilraum vom $C_{\co}(X,Y)$.
 
-  $(a) \Rightarrow (b, \alpha)$: 
+  (a) $\Rightarrow$ (b, $\alpha$): 
   Nach Voraussetzung ist $F$ ein bezüglich der kompakt-offenen Topologie $\tau_{\co}$ kompakter Teilraum von $C(X,Y)$.
   Somit ist er insbesondere bezüglich der Spur der schwächeren Topologie der punktweisen Konvergenz $\tau_p$ ein kompakter Teilraum des \textsc{Hausdorff}-Raumes $Y^X$.
   Die Topologie der punktweisen Konvergenz lässt sich als Initialtopologie bezüglich der für alle $x \in X$ definierten kanonischen Projektionen 
@@ -79,10 +79,10 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   beschreiben.
   Als stetiges Bild eines Kompaktums ist somit auch $\pi_x(F) = F(x)$ kompakt in $(Y,\tau_d)$.
 
-  $(a) \Rightarrow (b, \beta)$:  
+  (a) $\Rightarrow$ (b, $\beta$):  
   Als kompakter Teilraum eines \textsc{Hausdorff}-Raumes ist $F$ bezüglich $\tau_p$ auch abgeschlossen in $Y^X$.
 
-  $(a) \Rightarrow (b, \gamma)$:
+  (a) $\Rightarrow$ (b, $\gamma$):
   Es soll gezeigt werden, dass $F$ gleichgradig stetig ist.
   Sei dazu $x \in X$ und $\varepsilon > 0$.
   Für jedes $f \in F$ ist die Menge
@@ -132,7 +132,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   und damit auch $f(U) \subseteq U_\varepsilon(f(x))$.
   Folglich ist $F$ gleichgradig stetig.
 
-  $(b) \Rightarrow (a)$
+  (b) $\Rightarrow$ (a)
   Nach Voraussetzung ist $F(x)$ als Teilraum von $Y$ kompakt und besitzt zudem die \textsc{Hausdorff}-Eigenschaft.
   %%%%%%%% PIT %%%%%%%%
   Der \textsc{Tychonoff}-Satz für \textsc{Hausdorff}-Räume \ref{thm:pitequivalence}(4) besagt, dass dann auch $\prod_{x \in X} F(x) \subseteq Y^X$ kompakt ist.
@@ -210,7 +210,6 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
 \begin{lem}
   \label{lem:filterclusterpoint}
   Es sei $(X,\tau)$ ein topologischer Raum, sodass die darin offen-abgeschlossenen Mengen einen Basis für die Topologie $\tau$ bilden.
-
   \begin{itemize}
     \item[(1)] Ist $\mathcal{F}$ ein Filter ohne Häufungspunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen-abgeschlossenen Elemente 
      \begin{displaymath}
@@ -423,23 +422,25 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
   $(2)\Rightarrow(1)$: \PIT impliziert nach Satz \ref{thm:uftcompact} die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Ultrafilterkompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
+Ähnliches gilt nun auch für den nächsten Kompaktheitsbegriff der \textsc{Tychonoff}-Kompaktheit wie mit den nächsten Aussagen gezeigt werden soll.
+
 \begin{prop}
   \label{prop:cartesianclosed}
   Sei $(X_i,\tau_i)_{i \in I}$ eine Familie topologischer Räume. 
-  Zudem sei $\mathcal{A} := (A_i)_{i \in I}$ mit  $A_i \subset X_i$ eine Familie abgeschlossener Teilmengen.
+  Zudem sei $(A_i)_{i \in I}$ mit  $A_i \subseteq X_i$ eine Familie abgeschlossener Teilmengen.
   Dann ist 
   \begin{displaymath}
-    \prod_{i \in I} A_i \subseteq \prod_{i \in I} X_i
+    \mathcal{A} := \prod_{i \in I} A_i \subseteq \prod_{i \in I} X_i
   \end{displaymath}
   abgeschlossen bezüglich der Produkttopologie.
-  STÄRKERE AUSSAGE VIELLECHT BEWEISEN?
+  %STÄRKERE AUSSAGE VIELLECHT BEWEISEN?
 \end{prop}
 
 \begin{proof}
   Es soll gezeigt werden, dass $\mathcal{A}$ ein offenes Komplement besitzt.
   Sei dazu $x$ ein Punkt, welcher nicht in $\mathcal{A}$ liegt.
-  Dann existiert ein $i_0$, sodass $x_{i_0} \not\in A_i$.
-  Damit ist $O_{i_0} := X_i \setminus A_i$ eine offene Umgebung von $x$ in $X_i$.
+  Dann existiert ein $i_0 \in I$, sodass $x_{i_0} \not\in A_{i_0}$.
+  Damit ist $O_{i_0} := X_{i_0} \setminus A_{i_0}$ eine offene Umgebung von $x$ in $X_{i_0}$.
   Folglich ist
   \begin{displaymath}
     U:= \prod_{i \in I} O_i
@@ -450,8 +451,6 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
   Folglich ist $\mathcal{A}$ abgeschlossen.
 \end{proof}
 
-Ähnlich gilt für den nächsten Kompaktheitsbegriff:
-
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
@@ -461,7 +460,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
 \end{thm}
 
 \begin{proof}
-  $(1)\Rightarrow(2) $: Es reicht aus zu zeigen, dass $(1)$ bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
+  (1) $\Rightarrow$ (2): Es reicht aus zu zeigen, dass (1) bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
   Angenommen, es existiert eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
   Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
   Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Häufungspunkt.
@@ -470,12 +469,12 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
   Betrachtet man nun $P$ als Teilraum des \textsc{Hilbert}-Würfels $[0,1]^I$, so folgt nach Proposition \ref{prop:cartesianclosed}, dass $P$ abgeschlossen im \textsc{Hilbert}-Würfel ist.
   Definitionsgemäß ist also $P$ \textsc{Tychonoff}-kompakt.
 
-  Wie aus dem Beweis von Satz \ref{thm:ultrafiltercompact} folgt, ist $P$ homöomorph zu $F:= f(P)$, wobei $f$ die auf der Menge der offen-abgeschlossenen Elemente von $\mathcal{F}$ Funktion aus Gleichung (\ref{eq:clopenmap}) ist.
-  Somit ist $F$ auch \textsc{Tychonoff}-kompakt.
+  Wie aus dem Beweis von Satz \ref{thm:ultrafiltercompact} folgt, ist $P$ homöomorph zu $F:= f(P)$, wobei $f$ die auf der Menge der offen-abgeschlossenen Elemente von $\mathcal{F}$ definierte Funktion aus Gleichung (\ref{eq:clopenmap}) sei.
+  Somit ist $F$ ebenfalls \textsc{Tychonoff}-kompakt.
 
-  Wendet man nun den \textsc{Áscoli}-Satz bezüglich \textsc{Tychonoff}-Kompaktheit auf $F$ an, so folgt anlog zu Satz \ref{thm:ultrafiltercompact}, dass die Aussage $(b, \beta)$ nicht erfüllt ist.
+  Wendet man nun den \textsc{Áscoli}-Satz bezüglich \textsc{Tychonoff}-Kompaktheit auf $F$ an, so folgt anlog zu Satz \ref{thm:ultrafiltercompact}, dass zwar die Bedingung (a) gilt aber die Aussage (b, $\beta$) nicht erfüllt ist.
 
-  $(2)\Rightarrow(1)$: \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+  (2) $\Rightarrow$ (1): \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
 Ähnlich gilt für den nächsten Kompaktheitsbegriff
@@ -504,11 +503,11 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
 
 Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Áscoli}-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Áscoli}-Satzes die Anforderungen senkt.
 
-\begin{defn}
+\begin{defn}[Klassischer \textsc{Áscoli}-Satz] 
   \label{def:klassisch}
-  Der klassische \textsc{Áscoli}-Satz besagt, dass für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ die folgenden Bedingungen äquivalent sind:
+  Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
-    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$, die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert, d.h.
+    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$, die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert. Das bedeutet:
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         Für alle $x \in \R$ und alle $(x_n)_{n \in \N} \in \R^\N$ gilt: \\
         Aus $\lim_{n \to \infty} x_n = x$ folgt $\lim_{n \to \infty} f_{\nu(n)}(x_n) = g(x)$.
@@ -528,9 +527,9 @@ Diese konvergiert weiterhin gegen $x$ und es gilt
    \lim_{n \to \infty} f_{n}(x_n) 
   =\lim_{n \to \infty} f_{2n-1}(x_{2n-1}) 
   =\lim_{n \to \infty} f_{2n-1}(z_{2n-1}) 
-  =\lim_{n \to \infty} f_n(z_n) = f(x),
+  =\lim_{n \to \infty} f_n(z_n) = g(x)
 \end{displaymath}
-da jede Teilfolge einer konvergenten Folge gegen denselben Grenzwert konvergiert.
+und eine für $(y_n)_{n \in \N}$ analoge Gleichung, da jede Teilfolge einer konvergenten Folge gegen denselben Grenzwert konvergiert.
 
 Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die stetige Konvergenz festgehalten werden:
 
@@ -559,27 +558,29 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     | f_{n}(x_1) - f(x_1) | \leq \frac{\varepsilon}{2}, \text{ für alle $n \geq n_1$}.
   \end{displaymath}
-  Analog findet man für $x_k$ ein $n_k > n_{k-1}$ mit derselben Eigenschaft.
-  Die so konstruierte Teilfolge besitzt nach wie vor denselben Grenzwert, d.h.
+  Analog findet man für $x_k$ ein $n_k > n_{k-1}$ mit einer analogen Eigenschaft.
+
+  Die so konstruierte Teilfolge besitzt nach wie vor denselben Grenzwert
   \begin{displaymath}
     \lim_{k \to \infty} f_{n_k}(x_k) = f(x).
   \end{displaymath}
-  Man sieht dies ein, indem man eine neue Folge $(y_k)_{k \in \N}$ definiert über $y_m:=x_1$ für $1 \leq m \leq n_1$ und $y_m:=x_n$ für $n_{m-1} \leq m \leq n_{m}$.
+  Man sieht dies ein, indem man eine neue Folge $(y_m)_{m \in \N}$ definiert über $y_m:=x_1$ für $1 \leq m \leq n_1$ und $y_m:=x_k$ für $n_{k-1} < m \leq n_{k}$ für $k > 1$, sodass $\lim_{m \to \infty} y_m = x$.
   Damit gilt nun
   \begin{displaymath}
-    \lim_{m \to \infty} f_m(x_m) = f(x)
+    \lim_{m \to \infty} f_m(y_m) = f(x)
   \end{displaymath}
-  und somit
+  aufgrund der stetigen Konvergenz der Folge $(f_n)_{n \in \N}$ und somit
   \begin{displaymath}
-    \lim_{k \to \infty} f_{n_k}(y_{n_k}) 
-    = \lim_{k \to \infty} f_{n_k}(x_{k}) = f(x).
-  \end{displaymath}
-  
-  Aufgrund der stetigen Konvergenz der Folge $(f_n)_{n \in \N}$ existiert nun ein $n_\varepsilon \in \N$, sodass für alle $n \geq n_\varepsilon$ gilt
+    \lim_{k \to \infty} f_{n_k}(x_{k}) 
+    = \lim_{k \to \infty} f_{n_k}(y_{n_k}) 
+    = f(x).
+  \end{displaymath} 
+
+  Es existiert also ein $n_\varepsilon \in \N$, sodass für alle $n_k \geq n_\varepsilon$ gilt
   \begin{displaymath}
     | f_{n_k}(x_k) - f(x) | \leq \frac{\varepsilon}{2}.
   \end{displaymath}
-  Daraus folgt nun unter Anwendung der Dreiecksungleichung
+  Daraus folgt nun unter Anwendung der Dreiecksungleichung für alle $n \geq n_\varepsilon$
   \begin{displaymath}
     | f(x_k) - f(x) |
     \leq
@@ -590,15 +591,15 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   (3): 
   Es sei $(x_n)_{n \in \N}$ eine Folge in $\R$ mit Grenzwert $x$.
   Des Weiteren sei $\varepsilon > 0$ gegeben.
-  Da nach Voraussetzung $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $f$ konvergiert existiert eine Umgebung $U$ von $x$, sodass ${f_n}_{|U}$ gleichmäßig konvergiert.
+  Da nach Voraussetzung $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $f$ konvergiert existiert eine Umgebung $U$ von $x$, sodass ${f_n}_{| U}$ gleichmäßig konvergiert.
   Es existiert somit ein $n_\varepsilon$, sodass für alle $y \in U$ gilt 
   \begin{displaymath}
-    | f_n(y) - f_n(x) | \leq \frac{\varepsilon}{2}, \text{ für alle $n \geq n_\varepsilon$}.
+    | f_n(y) - f_n(x) | \leq \frac{\varepsilon}{2} \quad \text{ für alle $n \geq n_\varepsilon$}.
   \end{displaymath}
   Da $(x_n)_{n \in \N}$ voraussetzungsgemäß gegen $x$ konvergiert, existiert ein $N \in \N$, sodass $x_n \in U$ für alle $n \geq N$.
-  Zuletzt existiert aufgrund der punktweisen Konvergenz von $(f_n)_{n \in \N}$ ein $n_p \in \N$, sodass
+  Zuletzt existiert aufgrund der punktweisen Konvergenz von $(f_n)_{n \in \N}$, welche aus (1) folgt, ein $n_p \in \N$, sodass
   \begin{displaymath}
-    | f_n(x) - f(x) | \leq \frac{\varepsilon}{2}, \text{ für alle $n \geq n_p$}.
+    | f_n(x) - f(x) | \leq \frac{\varepsilon}{2} \quad \text{ für alle $n \geq n_p$}.
   \end{displaymath}
 
   Setzt man nun $n':= \max(n_\varepsilon, N, n_p)$, so folgt unter Anwendung der Dreiecksungleichung
@@ -606,12 +607,13 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     | f_n(x_n) - f(x) |
     \leq
     | f_n(x_n) - f(x_n) | + | f(x_n) - f(x) | 
-    \leq \varepsilon \text{, für alle $n \geq n'$}. \qedhere
+    \leq \varepsilon \text{ für alle $n \geq n'$}. \qedhere
   \end{displaymath}
 
 \end{proof}
 
 \begin{thm}
+  \label{thm:classicalascoli}
   Äquivalent sind:
   \begin{enumerate}
     \item[(1)] Der klassische \textsc{Áscoli}-Satz.
@@ -620,20 +622,20 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 \end{thm}
 
 \begin{proof}
-  $(1) \Rightarrow (2)$:
-  Es genügt zu zeigen, dass jede unbeschränkte Teilmenge $B$ von $\R$ eine unbeschränkte Folge enthält.
+  (1) $\Rightarrow$ (2):
+  Nach \ref{} genügt zu zeigen, dass jede unbeschränkte Teilmenge $B$ von $\R$ eine unbeschränkte Folge enthält.
   Dazu sei $B \subseteq \R$ unbeschränkt.
   Für ein $b \in B$ lassen sich die konstante Abbildung $f_b \colon \R \to \R, f(x):= b$ und die Menge $F := \{f_b \mid b \in B\}$ definieren.
-  Für $x \in \R$ gilt $F(x) = \{f_b(x) \mid b \in B\} = B$ und diese Menge ist nach Voraussetzung unbeschränkt
+  Für $x \in \R$ gilt $F(x) = \{f_b(x) \mid b \in B\} = B$ und diese Menge ist nach Voraussetzung unbeschränkt.
   Also ist Teil (b, $\alpha$) des klassischen \textsc{Áscoli}-Satzes verletzt.
   Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Áscoli}-Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ ohne stetig konvergente Teilfolge.
 
-  $(2) \Rightarrow (1)$:
+  (2) $\Rightarrow$ (1):
   Es sei $F$ eine Menge stetiger Abbildungen $f \colon \R \to \R$.
 
-  $(a) \Rightarrow (b,\alpha)$:
-  Angenommen $(b,\alpha)$ gilt nicht. So existiert ein $x \in \R$, sodass $F(x)$ unbeschränkt ist.
-  Nach Definition existiert also für alle $C \in R$ ein $f \in F$ mit $|f(x)| \geq C$.
+  (a) $\Rightarrow$ (b,$\alpha$):
+  Angenommen (b,$\alpha$) gelte nicht. So existiert ein $x \in \R$, sodass $F(x)$ unbeschränkt ist.
+  Nach Definition existiert also für alle $C \in \R$ ein $f \in F$ mit $|f(x)| \geq C$.
   Insbesondere sind also die Mengen 
   \begin{displaymath}
     F_n := \{ f \in F \mid |f(x)| \geq m \}
@@ -646,8 +648,8 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   Für obiges $x \in \R$ gilt also insbesondere $|f_{n_k}(x)| \geq n_k \geq n$ für alle $k \in \N$, sodass die Funktionenfolge $(f_n)_{n \in \N}$ in $x$ nicht punktweise, folglich auch nicht stetig konvergiert.
   Dies widerspricht jedoch Bedingung (a).
 
-  $(a) \Rightarrow (b,\beta)$:
-  Angenommen $(b, \beta)$ gilt nicht.
+  (a) $\Rightarrow$ (b,$\beta$):
+  Angenommen (b, $\beta$) gelte nicht.
   So existiert ein $x \in \R$ und $\varepsilon > 0$, sodass das Bild keiner offenen Umgebung von $x$ in $U_\varepsilon(f(x))$ enthalten ist.
   Insbesondere gilt also auch, dass für kein $\delta > 0$ gilt, dass
   \begin{displaymath}
@@ -667,7 +669,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     | f_{\nu(n)}(x) - g(x) | \leq \frac{\varepsilon}{2}.
   \end{displaymath}
-  Andererseits existiert nach der Definition von $F_n$ eine Folge $(y_n)_{n \in \N}$ mit Grenzwert $x$ mit 
+  Andererseits existiert nach der Definition von $F_n$ eine Folge $(y_n)_{n \in \N}$ mit Grenzwert $x$ und
   \begin{displaymath}
     | f_{\nu(n)}(x) -  f_{\nu(n)}(y_n) | \geq \varepsilon.
   \end{displaymath}
@@ -680,10 +682,10 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \end{displaymath}
   Dies steht jedoch im Widerspruch zur stetigen Konvergenz von $(f_{\nu(n)})_{n \in \N}$.
 
-  $(b) \Rightarrow (a)$:
+  (b) $\Rightarrow$ (a):
   Sei $(f_n)_{n \in \N}$ eine Folge in $F$.
   Des Weiteren sei $(r_n)_{n \in \N}$ eine Abzählung der rationalen Zahlen.
-  Im Folgenden soll induktiv eine Folge von geordneten Paaren $(a_n, s_n)_{n \in \N}$ mit $a_n \in \R$ für alle $n \in \N$ und eine Folge $s_n = (g_m^n)_{m \in \N}$ in $F$:
+  Im Folgenden soll induktiv eine Folge von geordneten Paaren $(a_n, s_n)_{n \in \N}$ mit $a_n \in \R$ für alle $n \in \N$ und eine Folge $s_n = (g_m^n)_{m \in \N}$ in $F$ definiert werden:
   \begin{enumerate}
     \item 
       Nach $(b)$ ist $F(x)$ für alle $x \in \R$ beschränkt. 
@@ -727,7 +729,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   für alle $f \in G$ gilt.
   Da $\Q$ dicht in $\R$ liegt existiert ein $y \in U \cap \Q$.
   Nach Konstruktion konvergiert für alle $g_m^m \in G$ die Folge $g_m^m(y)$.
-  Sie ist damit also insbesondere eine Cauchyfolge.
+  Sie ist damit also insbesondere eine \textsc{Cauchy}-Folge.
   Es existiert also ein $N \in \N$, sodass für alle $m,n \geq N$
   \begin{displaymath}
     | g_m^m(y) - g_n^n(y) | \leq \frac{\varepsilon}{3}
@@ -741,7 +743,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     \leq
     \frac{\varepsilon}{3}.
   \end{displaymath}
-  Also ist $s$ eine lokal gleichmäßige Cauchyfolge auf $\R$.
+  Also ist $s$ eine lokal gleichmäßige \textsc{Cauchy}-Folge auf $\R$.
   Da $\R$ vollständig ist, konvergiert $s$ auch lokal gleichmäßig auf $\R$. 
   Aufgrund von Proposition \ref{prop:stetigkonv}(c) konvergiert $s$ auch stetig gegen eine Abbildung $g \colon \R \to \R$ mit $g(r_n) = a_n$ für alle $n \in \N$.
   Daraus folgt $(a)$.
@@ -749,10 +751,9 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
 Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Áscoli}-Satz noch der klassische \textsc{Áscoli} Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Áscoli}-Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt:
 
-\begin{thm}
+\begin{thm}[Modifizierter \textsc{Áscoli}-Satz]
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
-
     \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert.
 
     \item[(b)]
@@ -764,9 +765,18 @@ Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{�
 \end{thm}
 
 \begin{proof}
-  $(a) \Rightarrow (b,\alpha)$
+  (a) $\Rightarrow$ (b,$\alpha$):
+  Sei $G := \{f_n \in F \mid n \in \N\}$ eine abzählbare Teilmenge von $F$.
+  Angenommen $G(x)$ sei unbeschränkt für ein $x \in X$.
+  Dann lässt sich für alle $n \in \N$
+  \begin{displaymath}
+    \nu(n) := \min \{ m \in \N \mid n < |f_m(x)| \}
+  \end{displaymath}
+  definieren, da zu jeder nichtleeren Teilmenge natürlicher Zahlen ein Minimum existiert.
+  Dann ist jedoch die Folge $(f_{\nu(n)})_{n \in \N}$ dergestalt, dass keine der Teilfolgen von $(f_{\nu(n)}(x))_{n \in \N}$ konvergiert.
+  Die Folge $(f_{\nu(n)})_{n \in \N}$ konvergiert somit in $x$ nicht Punktweise also nach Proposition \ref{prop:stetigkonv}(1) auch nicht stetig.
+  Dies widerspricht jedoch (1).
 
-  $(a) \Rightarrow (b,\beta)$
-
-  $(b) \Rightarrow (a)$
+  (a) $\Rightarrow$ (b,$\beta$):
+  Dies folgt bereits aus der entsprechenden Implikation in Satz \ref{thm:classicalascoli}.
 \end{proof}
