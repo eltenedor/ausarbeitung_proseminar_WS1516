@@ -424,33 +424,6 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
 
 Ähnliches gilt nun auch für den nächsten Kompaktheitsbegriff der \textsc{Tychonoff}-Kompaktheit wie mit den nächsten Aussagen gezeigt werden soll.
 
-\begin{prop}
-  \label{prop:cartesianclosed}
-  Sei $(X_i,\tau_i)_{i \in I}$ eine Familie topologischer Räume. 
-  Zudem sei $(A_i)_{i \in I}$ mit  $A_i \subseteq X_i$ eine Familie abgeschlossener Teilmengen.
-  Dann ist 
-  \begin{displaymath}
-    \mathcal{A} := \prod_{i \in I} A_i \subseteq \prod_{i \in I} X_i
-  \end{displaymath}
-  abgeschlossen bezüglich der Produkttopologie.
-  %STÄRKERE AUSSAGE VIELLECHT BEWEISEN?
-\end{prop}
-
-\begin{proof}
-  Es soll gezeigt werden, dass $\mathcal{A}$ ein offenes Komplement besitzt.
-  Sei dazu $x$ ein Punkt, welcher nicht in $\mathcal{A}$ liegt.
-  Dann existiert ein $i_0 \in I$, sodass $x_{i_0} \not\in A_{i_0}$.
-  Damit ist $O_{i_0} := X_{i_0} \setminus A_{i_0}$ eine offene Umgebung von $x$ in $X_{i_0}$.
-  Folglich ist
-  \begin{displaymath}
-    U:= \prod_{i \in I} O_i
-  \end{displaymath}
-  mit $O_i = X_i$ für $i \not= i_0$ eine offene Umgebung von $x$ in $\prod_{i \in I} X_i$.
-  Nach Konstruktion gilt $U \cap \mathcal{A} = \emptyset$.
-  Also ist $x$ ein innerer Punkt und das Komplement von $\mathcal{A}$ somit offen.
-  Folglich ist $\mathcal{A}$ abgeschlossen.
-\end{proof}
-
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
@@ -623,12 +596,13 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
 \begin{proof}
   (1) $\Rightarrow$ (2):
-  Nach \ref{} genügt zu zeigen, dass jede unbeschränkte Teilmenge $B$ von $\R$ eine unbeschränkte Folge enthält.
+  Nach \ref{} genügt es zu zeigen, dass jede unbeschränkte Teilmenge $B$ von $\R$ eine unbeschränkte Folge enthält.
   Dazu sei $B \subseteq \R$ unbeschränkt.
   Für ein $b \in B$ lassen sich die konstante Abbildung $f_b \colon \R \to \R, f(x):= b$ und die Menge $F := \{f_b \mid b \in B\}$ definieren.
   Für $x \in \R$ gilt $F(x) = \{f_b(x) \mid b \in B\} = B$ und diese Menge ist nach Voraussetzung unbeschränkt.
   Also ist Teil (b, $\alpha$) des klassischen \textsc{Áscoli}-Satzes verletzt.
-  Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Áscoli}-Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ ohne stetig konvergente Teilfolge.
+  Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Áscoli}-Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ mit $f_{b_n} = b_n$ ohne stetig konvergente Teilfolge.
+  Daraus folgt, dass die Folge $(b_n)_{n \in \N}$ unbeschränkt ist.
 
   (2) $\Rightarrow$ (1):
   Es sei $F$ eine Menge stetiger Abbildungen $f \colon \R \to \R$.
@@ -774,7 +748,7 @@ Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{�
   \end{displaymath}
   definieren, da zu jeder nichtleeren Teilmenge natürlicher Zahlen ein Minimum existiert.
   Dann ist jedoch die Folge $(f_{\nu(n)})_{n \in \N}$ dergestalt, dass keine der Teilfolgen von $(f_{\nu(n)}(x))_{n \in \N}$ konvergiert.
-  Die Folge $(f_{\nu(n)})_{n \in \N}$ konvergiert somit in $x$ nicht Punktweise also nach Proposition \ref{prop:stetigkonv}(1) auch nicht stetig.
+  Die Folge $(f_{\nu(n)})_{n \in \N}$ konvergiert somit in $x$ nicht punktweise also nach Proposition \ref{prop:stetigkonv}(1) auch nicht stetig.
   Dies widerspricht jedoch (1).
 
   (a) $\Rightarrow$ (b,$\beta$):

@@ -140,7 +140,7 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
 
 \begin{proof}
   (1)$\Rightarrow$(2):
-  Nach Satz \ref{thm:pitequivalence}((4)$\Rightarrow$(3)), dies ist gerade die Implikation, welche nicht Bezug auf Satz \ref{thm:uftcompact} nimmt, reicht es zu zeigen, dass Produkte kompakter \textsc{Hausdorff}-Räume kompakt sind. 
+  Nach Satz \ref{thm:pitequivalence}((4) $\Rightarrow$ (3)), dies ist gerade die Implikation, welche nicht Bezug auf Satz \ref{thm:uftcompact} nimmt, reicht es zu zeigen, dass Produkte kompakter \textsc{Hausdorff}-Räume kompakt sind. 
   Produkte ultrafilterkompakter \textsc{Hausdorff}-Räume sind jedoch nach Lemma \ref{lem:uftprod} wieder ultrafilterkompakt, was nach Voraussetzung bedeutet, dass das Produkt kompakt ist.
 
   (2)$\Rightarrow$(1):
@@ -157,12 +157,64 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   \begin{enumerate}[(1)]
     \item Je zwei Kardinalzahlen sind bezüglich $\leq$ vergleichbar.
     \item Je zwei Kardinalzahlen sind bezüglich $\leq^*$ vergleichbar.
-    \item \AC
+    \item \AC.
   \end{enumerate}
+  Hierbei gelte für zwei Mengen $X,Y$ die Relation $X \leq Y$ falls eine Injektion $f \colon X \to Y$ existiert und es gelte die Relation $X \leq^* Y$, falls $X = \emptyset$ gilt oder eine Surjektion $g \colon Y \to X$ existiert.
 \end{thm}
 
 \begin{proof}
-  
+  (1) $\Rightarrow$ (2):
+  Es sei $f \colon X \to Y$ die nach (1) existierende injektive Abbildung
+  Ist $X \neq \emptyset$, so existiert ein $x_0 \in X$ und es lässt sich für alle $y \in Y$ die surjektive Abbildung
+  \begin{displaymath}
+    g \colon Y \to X, \quad g(x) := 
+    \begin{cases}
+      f^{-1}(y), \text{ falls } y \in f(X)\\
+      x_0, \text{ sonst}
+    \end{cases}
+  \end{displaymath}
+  definieren.
+
+  (2) $\Rightarrow$ (3):
+  Sei $X$ eine Menge.
+  Es soll gezeigt werden, dass auf $X$ eine Wohlordnung existiert.
+
+  Allgemein gilt für eine weitere Menge $Y$, dass $|Y| \leq^* |X|$ impliziert, dass $|Y| \leq |\mathcal{P}(X)|$
+  Denn angenommen es gälte $|Y| \not\leq |\mathcal{P}(X)| $
+
+  UNVOLLSTÄNDIG
+
+  Es bezeiche $\aleph$ nach dem Satz von \textsc{Hartogs} zur Potenzmenge $\mathcal{P}(X)$ kleinste existierende Kardinalzahl mit $\aleph \not\leq \mathcal{P}(X)$
+  Man beachte, dass die Existenz von $\aleph$ bereits in \ZF gilt.
+  Dann gilt nach dem zuvor Bewiesenen auch $\aleph \not\leq^* |X|$ was zusammen mit (2) $|X|\leq^* \aleph$ impliziert.
+  Also existiert im Falle $X \neq \emptyset$ eine Surjektion $f \colon \aleph \to X$.
+  Es lässt sich aufgrund der Wohlordnung auf $\aleph$ eine Abbildung
+  \begin{displaymath}
+    g \colon X \to \aleph, \quad g(x) := \min f^{-1}(\{x\})
+  \end{displaymath}
+  definieren.
+  Diese Abbildung ist injektiv, denn für $x,y \in X$ mit $g(x) = g(y)$ gilt
+  \begin{displaymath}
+    f^{-1}(\{x\}) \subseteq f^{-1}(\{y\}) \quad\text{oder}\quad f^{-1}(\{y\}) \subseteq f^{-1}(\{x\})
+  \end{displaymath}
+  woraus mit der Surjektivität von $f$ bereits
+  \begin{displaymath}
+    \{x\} \subseteq \{y\} \quad\text{oder}\quad \{y\} \subseteq \{x\}
+  \end{displaymath}
+  folgt.
+  Auf $X$ existiert damit eine Wohlordnung $\leq_X$ indem man 
+  \begin{displaymath}
+    x \leq_X y, \quad\text{ falls }\quad g(x) \leq g(y)
+  \end{displaymath}
+  gilt, setzt und für eine nichtleere Teilmenge von $T \subseteq X$ das aufgrund der Injektivität von $g$ eindeutig bestimmte $x \in g(T)$ wählt mit $g(x) = \min f^{-1}(\{x\}) = \min g(T)$.
+
+  Die Existenz einer Wohlordnung auf einer beliebigen Menge $X$ ist impliziert jedoch \AC.
+
+  (3) $\Rightarrow$ (1):
+  Seien $X,Y$ Mengen. Nach (3) lassen sich $X$ und $Y$ wohlordnen.
+  Als wohlgeordnete Mengen sind sie entweder ordnungsisomorph oder es ist eine der Mengen isomorph zu einem initialen Intervall der anderen Menge.
+  Im Ersten Fall gilt $|X| = |Y|$.
+  Ist $X$ isomorph zu einem initialen Intervall von $Y$, so gilt $|X| \leq |Y|$ oder, falls $Y$ isomorph zu einem initialen Intervall von $X$ ist, gilt $|Y| \leq |X|$.
 \end{proof}
 
 \begin{thm}
@@ -266,11 +318,6 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 \section{Der \textsc{Boole}sche Primidealsatz}
 
 \begin{defn}
- \item \AC, das \textit{Auswahlaxiom}.
- \item Lemma von \textsc{Zorn}.
-\end{defn}
-
-\begin{defn}
     \PIT, der \textit{\textsc{Boole}sche Primidealsatz}:
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         \textit{Jede \textsc{Boole}sche Algebra besitzt ein maximales Ideal.}
@@ -369,6 +416,37 @@ Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für
 Dass \PIT schwächer ist als \AC, kann man in QUELLE nachlesen.
 Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE.
 
+Bevor der für das Folgekapitel zentrale Satz vorgestellt wird, soll eine in dieser Arbeit mehrfach verwendete Aussage bewiesen werden.
+
+\begin{prop}
+  \label{prop:cartesianclosed}
+  Sei $(X_i,\tau_i)_{i \in I}$ eine Familie topologischer Räume. 
+  Zudem sei $(A_i)_{i \in I}$ mit  $A_i \subseteq X_i$ eine Familie abgeschlossener Teilmengen.
+  Dann ist 
+  \begin{displaymath}
+    \mathcal{A} := \prod_{i \in I} A_i \subseteq \prod_{i \in I} X_i
+  \end{displaymath}
+  abgeschlossen bezüglich der Produkttopologie.
+  %STÄRKERE AUSSAGE VIELLECHT BEWEISEN?
+\end{prop}
+
+\begin{proof}
+  Es soll gezeigt werden, dass $\mathcal{A}$ ein offenes Komplement besitzt.
+  Sei dazu $x$ ein Punkt, welcher nicht in $\mathcal{A}$ liegt.
+  Dann existiert ein $i_0 \in I$, sodass $x_{i_0} \not\in A_{i_0}$.
+  Damit ist $O_{i_0} := X_{i_0} \setminus A_{i_0}$ eine offene Umgebung von $x$ in $X_{i_0}$.
+  Folglich ist
+  \begin{displaymath}
+    U:= \prod_{i \in I} O_i
+  \end{displaymath}
+  mit $O_i = X_i$ für $i \not= i_0$ eine offene Umgebung von $x$ in $\prod_{i \in I} X_i$.
+  Nach Konstruktion gilt $U \cap \mathcal{A} = \emptyset$.
+  Also ist $x$ ein innerer Punkt und das Komplement von $\mathcal{A}$ somit offen.
+  Folglich ist $\mathcal{A}$ abgeschlossen.
+\end{proof}
+
+Nun zu dem Satz, welcher \PIT mit unterschiedlichen topologischen Aussagen in Verbindung setzt.
+
 \begin{thm}
   \label{thm:pitequivalence}
   Äquivalent sind
@@ -379,21 +457,69 @@ Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE.
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         Produkte kompakter \textsc{Hausdorff}-Räume sind kompakt.
       \end{addmargin}
+    \item \textsc{Hilbert}-Würfel $[0,1]^I$ sind kompakt.
+    \item \textsc{Kantor}-Würfel $\mathbf{2}^I$ sind kompakt.
     \item \textsc{Tychonoff}-Satz für endliche diskrete Räume: 
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         Produkte endlicher diskreter Räume sind kompakt.
       \end{addmargin}
-    \item \textsc{Hilbert}-Würfel $[0,1]^I$ sind kompakt.
-    \item \textsc{Kantor}-Würfel $\mathbf{2}^I$ sind kompakt.
   \end{enumerate}
 \end{thm}
 
-  \begin{proof}
-    $(1)\Rightarrow(2)$: 
-    Interpretiert man \PIT im Sinne von Filtern, so folgt dies sofort, da jede Potenzmengenalgebra eine \textsc{Boole}sche Algebra ist.
+\begin{proof}
+  (1) $\Rightarrow$ (2): 
+  Interpretiert man \PIT im Sinne von Filtern, so folgt dies sofort, da jede Potenzmengenalgebra eine \textsc{Boole}sche Algebra ist.
 
-    $(2)\Rightarrow(3)$:
+  (2) $\Rightarrow$ (3):
+  Nach Satz \ref{thm:uftcompact} folgt aus \UFT die Übereinstimmung von Kompaktheit mit Ultrafilterkompaktheit.
+  Sei nun $(X_i)_{i \in I}$ eine Familie kompakter \textsc{Hausdorff}-Räume mit Produktraum $X := \prod_{i \in I} X_i$.
+  Sei $\psi$ ein Ultrafilter auf diesem Produktraum.
+  Dann ist für alle $i \in I$ der Bildfilter $\psi_i = \pi_i(\psi)$ wiederum ein Ultrafilter, wobei die kanonischen Projektionen mit $\pi_i$ bezeichnet seien.
+  Nach Voraussetzung ist jedoch jeder der Faktoren $X_i$ kompakt, es konvergiert also jede Projektion $\psi$ des Ultrafilters gegen ein $x_i \in X_i$.
+  Also konvergiert, da die Produkttopologie initial bezüglich $(\pi_i)_{i \in I}$ ist der Filter $\psi$ gegen $(x_i)_{i \in I}$.
+  Damit ist $X$ ultrafilterkompakt und folglich auch kompakt.
 
-  \end{proof}
+  (3) $\Rightarrow$ (4):
+  Dies ist eine Spezialisierung von (3), da das abgeschlossene Intervall $[0,1]$ mit euklidischer Topologie insbesondere ein \textsc{Hausdorff}-Raum ist.
+
+  (4) $\Rightarrow$ (5):
+  Da in \textsc{Hausdorff}-Räumen insbesondere das $T1$-Axiom gilt und damit Einpunktmengen abgeschlossen sind, liefert Proposition \ref{prop:cartesianclosed}, dass man \textsc{Kantor}-Würfel als abgeschlossene Teilräume von \textsc{Hilbert}-Würfeln auffassen kann. 
+  Als solche sind sind sie aber auch kompakt.
+
+  (5) $\Rightarrow$ (6):
+  Sei $(X_i)_{i \in I}$ eine Familie endlicher diskreter Räume.
+  Es bezeichne
+  \begin{displaymath}
+    f_i \colon X_i \to \mathbf{2}^{C(X_i,\mathbf{2})}
+  \end{displaymath}
+  die kanonische Einbettung, die jedem  $y \in X_i$ die enstprechende Evaluationsabbildung
+  \begin{displaymath}
+    \omega_i(y,\cdot) \colon C(X_i,\mathbf{2}) \to \mathbf{2}, \quad \omega_i(y,g) := g(y)
+  \end{displaymath}
+  zuordnet.
+  Sei $X := \prod_{i \in I} X_i$.
+  Dann ist jedes $f_i$ und die Abildung
+  \begin{displaymath}
+    f(x) := (f_i(x_i))_{i \in I} \colon X \to \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})}
+  \end{displaymath}
+  eine abgeschlossene Einbettung.
+  Es gilt 
+  \begin{displaymath}
+    \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})} \simeq \mathbf{2}^{C(X_i,\mathbf{2}) \times \{i\}}.
+  \end{displaymath}
+  Daraus folgt die Kompaktheit von $X$, weil man $X$ als abgeschlossenen Teilraum eines nach (5) kompakten Raumes auffassen kann.
+
+  (6) $\Rightarrow$ (1):
+  Sei $B$ eine \textsc{Boole}sche Algebra.
+  Man betrachte die Menge $\mathcal{A}$ aller endlichen \textsc{Boole}schen Subalgebren auf $B$.
+  Für alle $A \in \mathcal{A}$ ist die Menge $X_A$ aller \textsc{Boole}schen Homomorphismen von $A$ nach $\mathbf{2}$ nichtleer, da jede endliche \textsc{Boole}sche Algebra einen maximalen Filter besitzt.
+  Man fasse $X_A$ nun auf als diskreten topologischen Raum.
+  Dann ist der Produktraum $X = \prod_{A \in \mathcal{A}} X_A$ nach (6) kompakt und nichtleer.
+  Für alle Paare $(A,B)$ mit $A,B \in \mathcal{A}$ und $A \subseteq B$ ist die Menge
+  \begin{displaymath}
+    M(A,B) := \{ 
+  \end{displaymath}
+  UNVOLLSTÄNDIG
+\end{proof}
 
 
