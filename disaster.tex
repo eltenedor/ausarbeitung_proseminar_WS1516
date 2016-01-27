@@ -35,7 +35,7 @@ Eine topologische Version des \textsc{Áscoli}-Satzes lautet:
     \item[(a)] $F$ ist $\tau_{\co}$-kompakt.
     \item[(b)] \begin{enumerate}
         \item[($\alpha$)] Für alle $x \in X$ ist die Menge $F(x) = \{f(x) \mid f \in F \}$ kompakt in $Y$.
-        \item[($\beta$)]  $F$ ist abgeschlossen in $Y$ bezüglich der Topologie der punktweisen Konvergenz $\tau_p$.
+        \item[($\beta$)]  $F$ ist abgeschlossen in $Y^X$ bezüglich der Topologie der punktweisen Konvergenz $\tau_p$.
         \item[($\gamma$)] $F$ ist gleichgradig stetig auf $X$.
       \end{enumerate}
   \end{enumerate}
@@ -135,7 +135,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   (b) $\Rightarrow$ (a)
   Nach Voraussetzung ist $F(x)$ als Teilraum von $Y$ kompakt und besitzt zudem die \textsc{Hausdorff}-Eigenschaft.
   %%%%%%%% PIT %%%%%%%%
-  Der \textsc{Tychonoff}-Satz für \textsc{Hausdorff}-Räume \ref{thm:pitequivalence}(4) besagt, dass dann auch $\prod_{x \in X} F(x) \subseteq Y^X$ kompakt ist.
+  Der \textsc{Tychonoff}-Satz für \textsc{Hausdorff}-Räume \ref{thm:pitequivalence}(3) besagt, dass dann auch $\prod_{x \in X} F(x) \subseteq Y^X$ kompakt ist.
   %%%%%%%%%%%%%%%%%%%%%
   Die Voraussetzung, dass $F$ abgeschlossen in $Y^X$ bezüglich der Produkttopologie $\tau_p$ ist, liefert, dass $F$ auch abgeschlossen im Teilraum $\prod_{x \in X} F(x)$ ist, da $F \subseteq \prod_{x \in X} F(x)$ gilt.
   Als abgeschlossene Teilmenge eines Kompaktums ist somit $F$ auch kompakt bezüglich der Topologie der punktweisen Konvergenz.
@@ -203,8 +203,8 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
 \end{proof}
 
 Es fällt auf, dass die Implikation (a) $\Rightarrow$ (b) bereits im Rahmen von \ZF gültig ist.
-Im Beweis vom vorangehenden Satz wird lediglich einer Stelle der Beweisrichtung (b) $\Rightarrow$ (a) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}-Satz für kompakte \textsc{Hausdorff}-Räume.
-Unter der Verwendung der Kompaktheitsbegriffs der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
+Der Beweis des vorangehenden Satzes verwendet lediglich einer Stelle der Beweisrichtung (b) $\Rightarrow$ (a) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}-Satz für kompakte \textsc{Hausdorff}-Räume.
+Unter der Verwendung des Kompaktheitsbegriffs der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
 Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Áscoli}-Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
 
 \begin{lem}
@@ -220,6 +220,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
        \{x,y\} \cap A_{(x,y)} = \{y\}.
      \end{displaymath}
   \end{itemize}
+  %FUNKTIONIERT AUCH BEREITS MIT T0!!! S.a. Bartsch S.246
 \end{lem}
 
 \begin{proof}

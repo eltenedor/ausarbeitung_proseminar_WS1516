@@ -1,6 +1,6 @@
 \chapter{Grundlagen aus Mengenlehre und Topologie}
 
-\section{Kompaktheitsbegriffe für topologische Räume}
+\section{Kompaktheitsbegriffe auf topologischen Räumen}
 
 Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik, indem sie ihre Äquivalenz zeigen. 
 Ein für die vorliegende Ausarbeitung zentrales Konzept ist das der Kompaktheit topologischer Räume. 
@@ -23,8 +23,8 @@ Es soll in allen aufgeführten Aussagen und den dazugehörigen Beweisen stets vo
 
 \begin{proof}
   Sei zunächst $x$ Adhärenzpunkt eines Filters $\varphi$ auf $X$.
-  Nach Definition existiert ein gegen $x$ konvergenter Oberfilter $\psi \supseteq \varphi$, also gilt $\psi \supseteq \dot x \cap \tau$
-  Somit gilt aufgrund der Filtereigenschaft von $\psi$ für alle $F \in \varphi$ und alle $U \in x \cap \tau$, dass  $F \cap U \neq \emptyset$.
+  Nach Definition existiert ein gegen $x$ konvergenter Oberfilter $\psi \supseteq \varphi$, also gilt $\psi \supseteq \dot x \cap \tau$.
+  Somit gilt aufgrund der Filtereigenschaft von $\psi$ für alle $F \in \varphi$ und alle $U \in \dot x \cap \tau$, dass  $F \cap U \neq \emptyset$.
   Also besitzt jede Umgebung $U$ von $x$ mit allen $F \in \varphi$ einen nichtleeren Schnitt, was bedeutet, dass $x \in \overline F$ für alle $F  \in \varphi$.
 
   Sei andererseits $x \in \bigcap_{F \in \varphi} \overline F$.
@@ -57,7 +57,7 @@ Im Folgenden sollen die Zusammenhänge der unterschiedlichen Kompaktheitsbegriff
 
 \begin{thm}
 \label{thm:compactness}
-  Sei $(X,\tau)$ ein topologischer Raum. Dann gilt:
+  Sei $(X,\tau)$ ein topologischer Raum. Dann gelten:
   \begin{enumerate}[(1)]
     \item Der Raum $X$ ist genau dann kompakt, wenn er filterkompakt ist. 
     \item Ist $X$ filterkompakt, dann auch ultrafilterkompakt.
@@ -89,18 +89,19 @@ Im Folgenden sollen die Zusammenhänge der unterschiedlichen Kompaktheitsbegriff
   Dies steht jedoch im Widerspruch zur Filtereigenschaft.
 
   Sei umgekehrt $X$ filterkompakt und $(O_i)_{i \in I}$ eine offene Überdeckung von $X$.
-  Angenommen es existiere keine Teilüberdeckung.
+  Angenommen es existiere keine endliche Teilüberdeckung.
   Man betrachte nun die Familie
   \begin{displaymath}
     \mathfrak{B} := \left\{ X \setminus \mathcal{O} \mid \mathcal{O} = \bigcup_{k = 1}^n O_{i_k}\right\}.
   \end{displaymath}
   Diese Familie ist nichtleer, da sie $X \setminus O_i$ für alle $i \in I$ enthält, und zudem abgeschlossen unter endlichen Schnitten.
 
-  Folglich ist $\mathfrak{B}$ eine Filterbasis und es bezeichne $\varphi$ den durch Obermengenbildung erzeugten Filter.
+  Folglich ist $\mathfrak{B}$ eine Filterbasis.
+  Es bezeichne $\varphi$ den aus dieser Basis durch Obermengenbildung erzeugten Filter.
   Nach Voraussetzung existiert ein Oberfilter $\psi \supseteq \varphi$ der bezüglich der Topologie $\tau$ gegen ein $x \in X$ konvergiert.
-  Aus der Überdeckungseigenschaft folgt, dass zusätzlich ein $i_0 \in I$ existiert mit $x \in O_i$.
-  Aufgrund der Konvergenz des Filters $\psi$ folgt $O_i \in \psi$.
-  Dies steht jedoch im Widerspruch zu $\psi \supseteq \mathfrak{B}$, denn deswegen gilt bereits $X \setminus O_i \in \psi$.
+  Aus der Überdeckungseigenschaft folgt, dass zusätzlich ein $i_0 \in I$ existiert mit $x \in O_{i_0}$.
+  Aufgrund der Konvergenz des Filters $\psi$ folgt $O_{i_0} \in \psi$.
+  Dies steht jedoch im Widerspruch zu $\psi \supseteq \mathfrak{B}$, denn deswegen gilt bereits $X \setminus O_{i_0} \in \psi$.
 
   $(2)$: Da Ultrafilter bereits bezüglich Inklusion maximal sind, also keine echten Oberfilter besitzen, impliziert Filterkompaktheit bereits Ultrafilterkompaktheit.
 \end{proof}
@@ -113,7 +114,7 @@ Eine wichtige Folgerung aus dem Auswahlaxiom ist der folgende Satz:
       \end{addmargin}
 \end{defn}
 
-Ein Beweis dazu wird in Satz \ref{thm:acpit} für Ideale auf \textsc{Boole}schen Algebren erbracht. 
+Ein Beweis dieser Aussage im Rahmen von \ZFC wird in Satz \ref{thm:acpit} für Ideale auf \textsc{Boole}schen Algebren erbracht. 
 Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung gewisser Kompaktheitsbegriffe analysiert werden.
 
 \begin{lem}
@@ -124,9 +125,9 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
 
 \begin{proof}
   Es sei $\varphi \in \mathcal{F}_0(\prod_{i \in I} X_i)$.
-  Dann sind auch die Bilder $\pi_i(\varphi)$ Ultrafilter auf $X_i$.
+  Dann sind auch die Bilder $\pi_i(\varphi)$ unter den kanonischen Projektionen $\pi_i$ Ultrafilter auf $X_i$.
   Aufgrund der Ultrafilterkompaktheit der einzelnen Faktoren konvergiert jeder Bildfilter gegen ein $x_i \in X_i$.
-  Dies impliziert jedoch, dass $\varphi$ gegen $(x_i)_{i \in I}$ konvergiert.
+  Die Eigenschaft der Initialtopologie impliziert jedoch, dass $\varphi$ gegen $(x_i)_{i \in I}$ konvergiert.
 \end{proof}
 
 \begin{thm}
@@ -140,7 +141,9 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
 
 \begin{proof}
   (1)$\Rightarrow$(2):
-  Nach Satz \ref{thm:pitequivalence}((4) $\Rightarrow$ (3)), dies ist gerade die Implikation, welche nicht Bezug auf Satz \ref{thm:uftcompact} nimmt, reicht es zu zeigen, dass Produkte kompakter \textsc{Hausdorff}-Räume kompakt sind. 
+  Nach Satz \ref{thm:pitequivalence}((4) $\Rightarrow$ (3)). 
+  Man beachte, dass dies gerade die Implikation ist, welche nicht Bezug auf Satz \ref{thm:uftcompact} nimmt.
+  Es reicht daher aus zu zeigen, dass Produkte kompakter \textsc{Hausdorff}-Räume wiederum kompakt sind. 
   Produkte ultrafilterkompakter \textsc{Hausdorff}-Räume sind jedoch nach Lemma \ref{lem:uftprod} wieder ultrafilterkompakt, was nach Voraussetzung bedeutet, dass das Produkt kompakt ist.
 
   (2)$\Rightarrow$(1):
@@ -149,7 +152,7 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
   Damit ist ein konvergenter Oberfilter von $\varphi$ gefunden, also besitzt $\varphi$ einen Adhärenzpunkt.
 \end{proof}
 
-Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt man den folgenden
+Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt man zunächst den folgenden Satz aus der Mengenlehre.
 
 \begin{thm}
   \label{thm:comparablecardinal}
@@ -177,16 +180,25 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 
   (2) $\Rightarrow$ (3):
   Sei $X$ eine Menge.
-  Es soll gezeigt werden, dass auf $X$ eine Wohlordnung existiert.
+  Es soll gezeigt werden, dass auf $X$ eine Wohlordnung existiert. 
+  Ist $X$ leer, so gibt es nichts zu zeigen. Im Folgenden werde also $X \neq \emptyset$ angenommen.
 
   Allgemein gilt für eine weitere Menge $Y$, dass $|Y| \leq^* |X|$ impliziert, dass $|Y| \leq |\mathcal{P}(X)|$
-  Denn angenommen es gälte $|Y| \not\leq |\mathcal{P}(X)| $
+  Wenn $f \colon X \to Y$ die ewähnte surjektive Abbildung bezeichnet, so lässt sich durch
+  \begin{displaymath}
+    g \colon Y \to \mathcal{P}(X), \quad y \mapsto f^{-1}(\{y\})
+  \end{displaymath}
+  eine Abbildung definieren, welche injektiv ist.
+  Gilt nämlich für $y,z \in Y$, dass $g(y) = g(z)$, so folgt daraus zunächst $f^{-1}(\{y\}) = f^{-1}(\{z\})$ und daraus über die Surjektivität von $f$, dass auch $\{y\} = \{x\}$ gilt.
 
-  UNVOLLSTÄNDIG
 
-  Es bezeiche $\aleph$ nach dem Satz von \textsc{Hartogs} zur Potenzmenge $\mathcal{P}(X)$ kleinste existierende Kardinalzahl mit $\aleph \not\leq \mathcal{P}(X)$
-  Man beachte, dass die Existenz von $\aleph$ bereits in \ZF gilt.
-  Dann gilt nach dem zuvor Bewiesenen auch $\aleph \not\leq^* |X|$ was zusammen mit (2) $|X|\leq^* \aleph$ impliziert.
+  Es bezeiche nun $\aleph$ die nach dem Satz von \textsc{Hartogs} 
+  \begin{addmargin}[2em]{2em}% 1em left, 2em right
+    \textit{Zu jeder Menge $A$ gibt es wenigstens eine wohlgeordnete Menge $B$, deren Kardinalität nicht durch die Kardinalität von $A$ beschränkt wird.} 
+  \end{addmargin}
+  bezüglich der Potenzmenge $\mathcal{P}(X)$ kleinste existierende Kardinalzahl mit $\aleph \not\leq \mathcal{P}(X)$.
+  Man beachte zudem, dass die Existenz von $\aleph$ bereits in \ZF gilt.
+  Dann folgt nach dem zuvor Bewiesenen auch $\aleph \not\leq^* |X|$ was zusammen mit (2) $|X|\leq^* \aleph$ impliziert.
   Also existiert im Falle $X \neq \emptyset$ eine Surjektion $f \colon \aleph \to X$.
   Es lässt sich aufgrund der Wohlordnung auf $\aleph$ eine Abbildung
   \begin{displaymath}
@@ -206,7 +218,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   \begin{displaymath}
     x \leq_X y, \quad\text{ falls }\quad g(x) \leq g(y)
   \end{displaymath}
-  gilt, setzt und für eine nichtleere Teilmenge von $T \subseteq X$ das aufgrund der Injektivität von $g$ eindeutig bestimmte $x \in g(T)$ wählt mit $g(x) = \min f^{-1}(\{x\}) = \min g(T)$.
+  gilt, setzt und für eine nichtleere Teilmenge von $T \subseteq X$ das aufgrund der Injektivität von $g$ eindeutig bestimmte $x \in X$ wählt mit $g(x) = \min f^{-1}(\{x\}) = \min g(T)$.
 
   Die Existenz einer Wohlordnung auf einer beliebigen Menge $X$ ist impliziert jedoch \AC.
 
@@ -305,7 +317,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   Dann existiert eine unendliche Teilmenge $A \subseteq X$ ohne vollständigen Häufungspunkt.
   Das bedeutet, dass für alle $x \in X$ eine offene Umgebung $U_x$ existiert mit
   \begin{displaymath}
-    | A \cap U_x | < | A | \tag{$\ast$}
+    | A \cap U_x | < | A |. \tag{$\ast$}
   \end{displaymath}
   Die Familie $\{U_x \mid x \in X\}$ ist nach Konstruktion eine Überdeckung von $X$ und aufgrund der vorausgesetzten Kompaktheit existiert eine endliche Teilüberdeckung $\{U_{x_1},\dots,U_{x_n}\}$.
   Es gilt somit
@@ -380,7 +392,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
     -[x] := [-x]
   \end{displaymath}
   Damit wird $X/I$ zu einer \textsc{Boole}schen Algebra.
-  Setzt man \PIT voraus, so existiert ein maximales Ideal $K \subseteq X/I$
+  Setzt man \PIT voraus, so existiert ein maximales Ideal $K \subseteq X/I$.
   Betrachtet man nun die Menge
   \begin{displaymath}
     J := \{x \in X \mid [x] \in K\},
@@ -484,7 +496,7 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen topologischen Aussagen in Ve
 
   (4) $\Rightarrow$ (5):
   Da in \textsc{Hausdorff}-Räumen insbesondere das $T1$-Axiom gilt und damit Einpunktmengen abgeschlossen sind, liefert Proposition \ref{prop:cartesianclosed}, dass man \textsc{Kantor}-Würfel als abgeschlossene Teilräume von \textsc{Hilbert}-Würfeln auffassen kann. 
-  Als solche sind sind sie aber auch kompakt.
+  Als solche sind sie aber auch kompakt.
 
   (5) $\Rightarrow$ (6):
   Sei $(X_i)_{i \in I}$ eine Familie endlicher diskreter Räume.
@@ -505,7 +517,7 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen topologischen Aussagen in Ve
   eine abgeschlossene Einbettung.
   Es gilt 
   \begin{displaymath}
-    \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})} \simeq \mathbf{2}^{C(X_i,\mathbf{2}) \times \{i\}}.
+    \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})} \simeq \mathbf{2}^{\bigcup_{i \in I} X_i,\mathbf{2}) \times \{i\}}.
   \end{displaymath}
   Daraus folgt die Kompaktheit von $X$, weil man $X$ als abgeschlossenen Teilraum eines nach (5) kompakten Raumes auffassen kann.
 
