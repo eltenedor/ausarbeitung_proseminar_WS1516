@@ -1,7 +1,7 @@
 %\section{Der \textsc{Áscoli}-Satz und das Auswahlaxiom}
-\chapter{Der \textsc{Áscoli}-Satz und das Auswahlaxiom}
+\chapter{Der \textsc{Ascoli}-Satz und das Auswahlaxiom}
 
-\textsc{Áscoli}-Sätze gelten bezeichnend für Aussagen, die es gestatten Kompaktheit von Teilmengen von Funktionenräumen bezüglich starker Topologien aus der Kompaktheit bezüglich einer schwächeren Topologie unter zusätzlichen Annahmen zu folgern. Dabei existieren unterschiedliche Formulierungen.
+\textsc{Ascoli}-Sätze gelten bezeichnend für Aussagen, die es gestatten Kompaktheit von Teilmengen von Funktionenräumen bezüglich starker Topologien aus der Kompaktheit bezüglich einer schwächeren Topologie unter zusätzlichen Annahmen zu folgern. Dabei existieren unterschiedliche Formulierungen.
 
 Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels  
 \begin{addmargin}[2em]{2em}% 1em left, 2em right
@@ -27,8 +27,8 @@ aus \cite{herrlich2006axiom}.
 
 Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden $C_{\co}(X,Y)$ den topologischen Funktionenraum $(C(X,Y),\tau_{\co})$ der stetigen Funktionen von $X$ nach $Y$ ausgestattet mit der kompakt-offenen Topologie.
 
-Eine topologische Version des \textsc{Áscoli}-Satzes lautet:
-\begin{defn}[Topologischer \textsc{Áscoli}-Satz]
+Eine topologische Version des \textsc{Ascoli}-Satzes lautet:
+\begin{defn}[Topologischer \textsc{Ascoli}-Satz]
   Sei $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
   Für jeden Teilraum $(F,\tau_{\co})$ von $C_{\co}(X,Y)$ sind äquivalent:
   \begin{enumerate}
@@ -48,7 +48,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   \label{thm:ascoliPIT}
   Äquivalent sind
   \begin{enumerate}
-    \item[(1)] Der topologische \textsc{Áscoli}-Satz.
+    \item[(1)] Der topologische \textsc{Ascoli}-Satz.
     \item[(2)] \PIT.
   \end{enumerate}
 \end{thm}
@@ -63,7 +63,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen in jeder Topologie, also insbesondere auch in der punktweisen Topologie $\tau_p$.
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind und man daher für alle $x \in X$ und $\varepsilon > 0$ die Menge $\{x\}$ als offene Umgebung von $x$ wählen kann.
   Dann gilt nämlich für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 < \varepsilon$.
-  Damit sind alle Bedingungen aus $(b)$ des \textsc{Áscoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt ist. 
+  Damit sind alle Bedingungen aus $(b)$ des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt ist. 
   Dies ist nach Satz \ref{thm:pitequivalence} äquivalent zu \PIT.
 
   (2) $\Rightarrow$ (1): Es seien $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
@@ -205,7 +205,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
 Es fällt auf, dass die Implikation (a) $\Rightarrow$ (b) bereits im Rahmen von \ZF gültig ist.
 Der Beweis des vorangehenden Satzes verwendet lediglich einer Stelle der Beweisrichtung (b) $\Rightarrow$ (a) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}-Satz für kompakte \textsc{Hausdorff}-Räume.
 Unter der Verwendung des Kompaktheitsbegriffs der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
-Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Áscoli}-Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
+Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}-Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
 
 \begin{lem}
   \label{lem:filterclusterpoint}
@@ -302,7 +302,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
   \label{thm:ultrafiltercompact}
   Äquivalent sind:
   \begin{enumerate}
-    \item[(1)] Der \textsc{Áscoli}-Satz bezüglich Ultrafilterkompaktheit.
+    \item[(1)] Der \textsc{Ascoli}-Satz bezüglich Ultrafilterkompaktheit.
     \item[(2)] \PIT.
   \end{enumerate}
 \end{thm}
@@ -397,7 +397,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
   Es ist daher $P$ nach Satz \ref{lem:uftprod} als Produkt ultrafilterkompakter Räume wiederum ultrafilterkompakt.
   Es folgt, dass $F = f(P)$ als homöomorphes Bild eines ultrafilterkompakten Raumes ebenso ultrafilterkompakt ist.
 
-  Wendet man nun den \textsc{Áscoli}-Satz bezüglich Ultrafilterkompaktheit auf $F$ an, wobei $\mathfrak{A}$ als diskreter topologischer Raum und $\mathbf{2}$ als diskreter metrischer Raum betrachtet werden, so ist Bedingung (a) von Satz \ref{thm:ascoliPIT} erfüllt.
+  Wendet man nun den \textsc{Ascoli}-Satz bezüglich Ultrafilterkompaktheit auf $F$ an, wobei $\mathfrak{A}$ als diskreter topologischer Raum und $\mathbf{2}$ als diskreter metrischer Raum betrachtet werden, so ist Bedingung (a) von Satz \ref{thm:ascoliPIT} erfüllt.
   Andererseits ist die Aussage $(b, \beta)$ nicht erfüllt:
   Es ist zwar $p := (1)_{A \in \mathfrak{A}} \in \mathbf{2}^\mathfrak{A}$ im Abschluss von $F$ in $\mathbf{2}^\mathfrak{A}$ enthalten, denn für eine beliebige Umgebung $U_p \subseteq \mathbf{2}^\mathfrak{A}$ von $p$, existieren Subbasiselemente $B_{A_1},\dots,B_{A_n}$ mit 
   \begin{displaymath}
@@ -428,7 +428,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item[(1)] Der \textsc{Áscoli}-Satz bezüglich \textsc{\textsc{Tychonoff}}-Kompaktheit.
+    \item[(1)] Der \textsc{Ascoli}-Satz bezüglich \textsc{\textsc{Tychonoff}}-Kompaktheit.
     \item[(2)] \PIT.
   \end{enumerate}
 \end{thm}
@@ -446,7 +446,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
   Wie aus dem Beweis von Satz \ref{thm:ultrafiltercompact} folgt, ist $P$ homöomorph zu $F:= f(P)$, wobei $f$ die auf der Menge der offen-abgeschlossenen Elemente von $\mathcal{F}$ definierte Funktion aus Gleichung (\ref{eq:clopenmap}) sei.
   Somit ist $F$ ebenfalls \textsc{Tychonoff}-kompakt.
 
-  Wendet man nun den \textsc{Áscoli}-Satz bezüglich \textsc{Tychonoff}-Kompaktheit auf $F$ an, so folgt anlog zu Satz \ref{thm:ultrafiltercompact}, dass zwar die Bedingung (a) gilt aber die Aussage (b, $\beta$) nicht erfüllt ist.
+  Wendet man nun den \textsc{Ascoli}-Satz bezüglich \textsc{Tychonoff}-Kompaktheit auf $F$ an, so folgt anlog zu Satz \ref{thm:ultrafiltercompact}, dass zwar die Bedingung (a) gilt aber die Aussage (b, $\beta$) nicht erfüllt ist.
 
   (2) $\Rightarrow$ (1): \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
@@ -456,7 +456,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item[(1)] Der \textsc{Áscoli}-Satz bezüglich \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit.
+    \item[(1)] Der \textsc{Ascoli}-Satz bezüglich \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit.
     \item[(2)] $\mathbf{AC}$.
   \end{enumerate}
 \end{thm}
@@ -470,14 +470,14 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Á
   Da $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum keine unendliche Teilmenge besitzt, folgt sofort die \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit von $F(x)$.
   Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen in jeder Topologie, also insbesondere auch in der punktweisen Topologie $\tau_p$.
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
-  Damit sind die Bedingungen (b) des \textsc{Áscoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist. Dies ist äquivalent zum Auswahlaxiom.
+  Damit sind die Bedingungen (b) des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist. Dies ist äquivalent zum Auswahlaxiom.
 
   $(2)\Rightarrow(1)$: Das Auswahlaxiom impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
-Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Áscoli}-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Áscoli}-Satzes die Anforderungen senkt.
+Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}-Satzes die Anforderungen senkt.
 
-\begin{defn}[Klassischer \textsc{Áscoli}-Satz] 
+\begin{defn}[Klassischer \textsc{Ascoli}-Satz] 
   \label{def:klassisch}
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
@@ -590,7 +590,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \label{thm:classicalascoli}
   Äquivalent sind:
   \begin{enumerate}
-    \item[(1)] Der klassische \textsc{Áscoli}-Satz.
+    \item[(1)] Der klassische \textsc{Ascoli}-Satz.
     \item[(2)] $\mathbf{CC}(\R)$.
   \end{enumerate}
 \end{thm}
@@ -601,8 +601,8 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   Dazu sei $B \subseteq \R$ unbeschränkt.
   Für ein $b \in B$ lassen sich die konstante Abbildung $f_b \colon \R \to \R, f(x):= b$ und die Menge $F := \{f_b \mid b \in B\}$ definieren.
   Für $x \in \R$ gilt $F(x) = \{f_b(x) \mid b \in B\} = B$ und diese Menge ist nach Voraussetzung unbeschränkt.
-  Also ist Teil (b, $\alpha$) des klassischen \textsc{Áscoli}-Satzes verletzt.
-  Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Áscoli}-Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ mit $f_{b_n} = b_n$ ohne stetig konvergente Teilfolge.
+  Also ist Teil (b, $\alpha$) des klassischen \textsc{Ascoli}-Satzes verletzt.
+  Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Ascoli}-Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ mit $f_{b_n} = b_n$ ohne stetig konvergente Teilfolge.
   Daraus folgt, dass die Folge $(b_n)_{n \in \N}$ unbeschränkt ist.
 
   (2) $\Rightarrow$ (1):
@@ -634,7 +634,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     F_n := \{ f \in F \mid \text{Es existiert ein } y \in U_{\frac{1}{n+1}}(x) \text{ mit } f(y) \not\in U_\varepsilon(f(x)) \}
   \end{displaymath}
-  nicht leer sind.
+  nichtleer sind.
   Wie zuvor impliziert $\mathbf{CC}(\R)$ die Existenz einer Folge 
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in \N} F_n.
@@ -675,7 +675,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
         \item[$a)$] $\nu(0) := \min\{m \in \N \mid |f_m(r_0) - a_0 | < 1\}$
 
-          $\nu(0)$ ist wohldefiniert, denn die Menge auf der rechten Seite der Gleicheit ist nicht leer, da nach Voraussetzung $a_0$ ein Häufungspunkt von $(f_n(r_0))_{n \in \N}$ ist und somit eine gegen $r_0$ konvergente Teilfolge existiert.
+          $\nu(0)$ ist wohldefiniert, denn die Menge auf der rechten Seite der Gleicheit ist nichtleer, da nach Voraussetzung $a_0$ ein Häufungspunkt von $(f_n(r_0))_{n \in \N}$ ist und somit eine gegen $r_0$ konvergente Teilfolge existiert.
           Daher besitzt sie aufgrund der natürlichen Wohlordnung der natürlichen Zahlen als nichtleere Teilmenge ein Minimum.
 
         \item[$b)$] $\nu(n+1) :=  \min\{m \in \N \mid \nu(n) < m \text{ und }  |f_m(r_0) - a_0| < \frac{1}{n+1}\}$
@@ -724,9 +724,9 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   Daraus folgt $(a)$.
 \end{proof}
 
-Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Áscoli}-Satz noch der klassische \textsc{Áscoli} Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Áscoli}-Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt:
+Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}-Satz noch der klassische \textsc{Ascoli} Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}-Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt:
 
-\begin{thm}[Modifizierter \textsc{Áscoli}-Satz]
+\begin{thm}[Modifizierter \textsc{Ascoli}-Satz]
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
     \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert.

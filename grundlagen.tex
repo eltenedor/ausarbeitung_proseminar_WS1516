@@ -1,11 +1,16 @@
 \chapter{Grundlagen aus Mengenlehre und Topologie}
 
+Dieses Kapitel schafft die nötigen Grundlagen für das Folgekapitel.
+Es soll in allen aufgeführten Aussagen und den dazugehörigen Beweisen stets von \ZF ausgegangen werden, falls eine Erweiterung des Axiomensystems nicht explizit als Voraussetzung aufgeführt wurde.
+
 \section{Kompaktheitsbegriffe auf topologischen Räumen}
 
-Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik, indem sie ihre Äquivalenz zeigen. 
+Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik, da sie oft eine zentrale Rolle im Beweis der Äquivalenz dieser Konzepte einnehmen. 
 Ein für die vorliegende Ausarbeitung zentrales Konzept ist das der Kompaktheit topologischer Räume. 
 Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \ZF nicht notwendig äquivalent sind.
-Es soll in allen aufgeführten Aussagen und den dazugehörigen Beweisen stets von \ZF ausgegangen werden, falls eine Erweiterung des Axiomensystems nicht explizit als Voraussetzung aufgeführt wurde.
+Diese Konzepte sollen zunächst unabhängig voneinander eingeführt werden. 
+Anschließend wird basierend auf \cite{herrlich2006axiom} dargestellt, unter welchen Bedingungen die Äquivalenz der Konzepte gegeben ist.
+Zuvor werden die im Folgenden benötigten Begriffe definiert. 
 
 \begin{defn}
   Sei $(X,\tau)$ ein topologischer Raum.
@@ -25,16 +30,14 @@ Es soll in allen aufgeführten Aussagen und den dazugehörigen Beweisen stets vo
   Sei zunächst $x$ Adhärenzpunkt eines Filters $\varphi$ auf $X$.
   Nach Definition existiert ein gegen $x$ konvergenter Oberfilter $\psi \supseteq \varphi$, also gilt $\psi \supseteq \dot x \cap \tau$.
   Somit gilt aufgrund der Filtereigenschaft von $\psi$ für alle $F \in \varphi$ und alle $U \in \dot x \cap \tau$, dass  $F \cap U \neq \emptyset$.
-  Also besitzt jede Umgebung $U$ von $x$ mit allen $F \in \varphi$ einen nichtleeren Schnitt, was bedeutet, dass $x \in \overline F$ für alle $F  \in \varphi$.
+  Also besitzt jede offene Umgebung $U$ von $x$ mit allen $F \in \varphi$ einen nichtleeren Schnitt, was bedeutet, dass $x \in \overline F$ für alle $F  \in \varphi$.
 
   Sei andererseits $x \in \bigcap_{F \in \varphi} \overline F$.
-  Nach Definition des Abschlusses einer Menge, gilt somit für alle $U \in \dot x \cap \tau$, dass $F \cap U \neq \emptyset$.
+  Nach Definition des Abschlusses einer Menge, gilt somit für alle $F \in \varphi$ und $U \in \dot x \cap \tau$, dass $F \cap U \neq \emptyset$.
   Es ist also $\varphi \cup (\dot x \cap \tau)$ eine Filtersubbasis.
   Man bezeichne mit $\psi$ den davon erzeugten Filter.
-  Nach Konstruktion gelten 
-  \begin{displaymath}
-    \psi \supseteq \varphi \quad\text{und}\quad \psi \overset{\tau}{\to} x.\qedhere
-  \end{displaymath}
+  Nach Konstruktion gelten dann $ \psi \supseteq \varphi $ und $ \psi \overset{\tau}{\to} x$
+  Also ist $x$ ein Adhärenzpunkt von $\varphi$.
 \end{proof}
 
 \begin{defn}
@@ -42,6 +45,7 @@ Es soll in allen aufgeführten Aussagen und den dazugehörigen Beweisen stets vo
   Dann heißt $x \in X$ \textit{vollständiger Häufungspunkt} einer Teilmenge $A \subseteq X$, wenn für alle Umgebungen $U$ von $x$ die Mengen $A$ und $A \cap U$ dieselbe Kardinalzahl besitzen, also $|A| = | A \cap U |$.
 \end{defn}
 
+Es folgen nun einige Kompaktheitsbegriffe, welche im Rahmen von \ZFC für gewöhnlich synonym verwendet werden.
 \begin{defn}
   Ein topologischer Raum $(X,\tau)$ heißt
   \begin{enumerate}[(1)]
@@ -74,12 +78,14 @@ Im Folgenden sollen die Zusammenhänge der unterschiedlichen Kompaktheitsbegriff
   \end{displaymath}
   Folglich ist 
   \begin{displaymath}
-    X = \bigcup_{F \in \varphi} X \setminus \overline{F} \subseteq \bigcup_{F \in \varphi} X \setminus F 
+    %X = \bigcup_{F \in \varphi} X \setminus \overline{F} \subseteq \bigcup_{F \in \varphi} X \setminus F 
+    X = \bigcup_{F \in \varphi} X \setminus \overline{F} 
   \end{displaymath}
   eine offene Überdeckung von $X$.
   Da $X$ als kompakt vorausgesetzt wird, existieren $F_1,\dots,F_n \in \varphi$ mit
   \begin{displaymath}
-    \bigcup_{i = 1}^n X \setminus F_i = X,
+    %\bigcup_{i = 1}^n X \setminus F_i = X,
+    X = \bigcup_{i = 1}^n X \setminus \overline{F_i} \subseteq \bigcup_{i = 1}^n X \setminus F_i,
   \end{displaymath}
   woraus wiederum
   \begin{displaymath}
@@ -95,7 +101,6 @@ Im Folgenden sollen die Zusammenhänge der unterschiedlichen Kompaktheitsbegriff
     \mathfrak{B} := \left\{ X \setminus \mathcal{O} \mid \mathcal{O} = \bigcup_{k = 1}^n O_{i_k}\right\}.
   \end{displaymath}
   Diese Familie ist nichtleer, da sie $X \setminus O_i$ für alle $i \in I$ enthält, und zudem abgeschlossen unter endlichen Schnitten.
-
   Folglich ist $\mathfrak{B}$ eine Filterbasis.
   Es bezeichne $\varphi$ den aus dieser Basis durch Obermengenbildung erzeugten Filter.
   Nach Voraussetzung existiert ein Oberfilter $\psi \supseteq \varphi$ der bezüglich der Topologie $\tau$ gegen ein $x \in X$ konvergiert.
@@ -115,7 +120,7 @@ Eine wichtige Folgerung aus dem Auswahlaxiom ist der folgende Satz:
 \end{defn}
 
 Ein Beweis dieser Aussage im Rahmen von \ZFC wird in Satz \ref{thm:acpit} für Ideale auf \textsc{Boole}schen Algebren erbracht. 
-Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung gewisser Kompaktheitsbegriffe analysiert werden.
+Zuvor soll jedoch die Rolle von \UFT im Rahmen der Übereinstimmung gewisser Kompaktheitsbegriffe analysiert werden.
 
 \begin{lem}
   \label{lem:uftprod}
@@ -127,7 +132,7 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
   Es sei $\varphi \in \mathcal{F}_0(\prod_{i \in I} X_i)$.
   Dann sind auch die Bilder $\pi_i(\varphi)$ unter den kanonischen Projektionen $\pi_i$ Ultrafilter auf $X_i$.
   Aufgrund der Ultrafilterkompaktheit der einzelnen Faktoren konvergiert jeder Bildfilter gegen ein $x_i \in X_i$.
-  Die Eigenschaft der Initialtopologie impliziert jedoch, dass $\varphi$ gegen $(x_i)_{i \in I}$ konvergiert.
+  Die Eigenschaft der Initialtopologie impliziert dann jedoch, dass auch $\varphi$ gegen $(x_i)_{i \in I}$ konvergiert.
 \end{proof}
 
 \begin{thm}
@@ -141,7 +146,7 @@ Zuvor soll jedoch die Beziehung der Gültigkeit von \UFT zur Übereinstimmung ge
 
 \begin{proof}
   (1)$\Rightarrow$(2):
-  Nach Satz \ref{thm:pitequivalence}((4) $\Rightarrow$ (3)). 
+  Es soll hierzu Satz \ref{thm:pitequivalence}((4) $\Rightarrow$ (3)) verwendet werden.
   Man beachte, dass dies gerade die Implikation ist, welche nicht Bezug auf Satz \ref{thm:uftcompact} nimmt.
   Es reicht daher aus zu zeigen, dass Produkte kompakter \textsc{Hausdorff}-Räume wiederum kompakt sind. 
   Produkte ultrafilterkompakter \textsc{Hausdorff}-Räume sind jedoch nach Lemma \ref{lem:uftprod} wieder ultrafilterkompakt, was nach Voraussetzung bedeutet, dass das Produkt kompakt ist.
@@ -162,37 +167,37 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
     \item Je zwei Kardinalzahlen sind bezüglich $\leq^*$ vergleichbar.
     \item \AC.
   \end{enumerate}
-  Hierbei gelte für zwei Mengen $X,Y$ die Relation $X \leq Y$ falls eine Injektion $f \colon X \to Y$ existiert und es gelte die Relation $X \leq^* Y$, falls $X = \emptyset$ gilt oder eine Surjektion $g \colon Y \to X$ existiert.
+  Hierbei gelte für zwei Mengen $X,Y$ die Relation $X \leq Y$, falls eine Injektion $f \colon X \to Y$ existiert und es gelte die Relation $X \leq^* Y$, falls $X = \emptyset$ gilt oder eine Surjektion $g \colon Y \to X$ existiert.
 \end{thm}
 
 \begin{proof}
-  (1) $\Rightarrow$ (2):
-  Es sei $f \colon X \to Y$ die nach (1) existierende injektive Abbildung
+  (1)$\Rightarrow$(2):
+  Es sei $f \colon X \to Y$ die nach (1) existierende injektive Abbildung.
   Ist $X \neq \emptyset$, so existiert ein $x_0 \in X$ und es lässt sich für alle $y \in Y$ die surjektive Abbildung
   \begin{displaymath}
     g \colon Y \to X, \quad g(x) := 
     \begin{cases}
-      f^{-1}(y), \text{ falls } y \in f(X)\\
+      f^{-1}(\{y\}), \text{ falls } y \in f(X)\\
       x_0, \text{ sonst}
     \end{cases}
   \end{displaymath}
-  definieren.
+  definieren. Aufgrund der Injektivität von $f$ besteht $f^{-1}(\{y\})$ aus nur einem Punkt, daher ist $g$ wohldefiniert.
 
-  (2) $\Rightarrow$ (3):
+  (2)$\Rightarrow$(3):
   Sei $X$ eine Menge.
   Es soll gezeigt werden, dass auf $X$ eine Wohlordnung existiert. 
   Ist $X$ leer, so gibt es nichts zu zeigen. Im Folgenden werde also $X \neq \emptyset$ angenommen.
 
-  Allgemein gilt für eine weitere Menge $Y$, dass $|Y| \leq^* |X|$ impliziert, dass $|Y| \leq |\mathcal{P}(X)|$
-  Wenn $f \colon X \to Y$ die ewähnte surjektive Abbildung bezeichnet, so lässt sich durch
+  Allgemein gilt für eine weitere Menge $Y$, dass $|Y| \leq^* |X|$ impliziert, dass $|Y| \leq |\mathcal{P}(X)|$.
+  Denn, ist $f \colon X \to Y$ die entsprechende surjektive Abbildung, so lässt sich durch
   \begin{displaymath}
     g \colon Y \to \mathcal{P}(X), \quad y \mapsto f^{-1}(\{y\})
   \end{displaymath}
   eine Abbildung definieren, welche injektiv ist.
-  Gilt nämlich für $y,z \in Y$, dass $g(y) = g(z)$, so folgt daraus zunächst $f^{-1}(\{y\}) = f^{-1}(\{z\})$ und daraus über die Surjektivität von $f$, dass auch $\{y\} = \{x\}$ gilt.
+  Falls nämlich für $y,z \in Y$ gilt, dass $g(y) = g(z)$, so folgt daraus zunächst $f^{-1}(\{y\}) = f^{-1}(\{z\})$ und daraus über die Surjektivität von $f$, dass auch $\{y\} = \{z\}$ gilt.
 
 
-  Es bezeiche nun $\aleph$ die nach dem Satz von \textsc{Hartogs} 
+  Es bezeiche nun $\aleph$ die nach dem \textit{Satz von \textsc{Hartogs} }
   \begin{addmargin}[2em]{2em}% 1em left, 2em right
     \textit{Zu jeder Menge $A$ gibt es wenigstens eine wohlgeordnete Menge $B$, deren Kardinalität nicht durch die Kardinalität von $A$ beschränkt wird.} 
   \end{addmargin}
@@ -205,30 +210,42 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
     g \colon X \to \aleph, \quad g(x) := \min f^{-1}(\{x\})
   \end{displaymath}
   definieren.
-  Diese Abbildung ist injektiv, denn für $x,y \in X$ mit $g(x) = g(y)$ gilt
+  Fasst man $\aleph$ als Ordinalzahl mit der Inklusion $\subseteq$ als Ordnungsrelation auf, so ist diese Abbildung injektiv, denn für $x,y \in X$ mit $g(x) = g(y)$ gilt
   \begin{displaymath}
-    f^{-1}(\{x\}) \subseteq f^{-1}(\{y\}) \quad\text{oder}\quad f^{-1}(\{y\}) \subseteq f^{-1}(\{x\})
+    f^{-1}(\{x\}) \subseteq f^{-1}(\{y\}) \quad\text{oder}\quad f^{-1}(\{y\}) \subseteq f^{-1}(\{x\}),
   \end{displaymath}
   woraus mit der Surjektivität von $f$ bereits
   \begin{displaymath}
     \{x\} \subseteq \{y\} \quad\text{oder}\quad \{y\} \subseteq \{x\}
   \end{displaymath}
   folgt.
-  Auf $X$ existiert damit eine Wohlordnung $\leq_X$ indem man 
+  Auf $X$ existiert damit eine Ordnung $\leq_X$, indem man 
   \begin{displaymath}
-    x \leq_X y, \quad\text{ falls }\quad g(x) \leq g(y)
+    x \leq_X y, \quad\text{ falls }\quad g(x) \subseteq g(y)
   \end{displaymath}
-  gilt, setzt und für eine nichtleere Teilmenge von $T \subseteq X$ das aufgrund der Injektivität von $g$ eindeutig bestimmte $x \in X$ wählt mit $g(x) = \min f^{-1}(\{x\}) = \min g(T)$.
+  gilt, als Ordnungsrelation verwendet. 
+  Bezüglich dieser Relation ist $X$ wohlgeordnet.
+  Ist nämlich $T \subseteq X$ nichtleer, so ist auch $g(T) \subseteq \aleph$ nichtleer und besitzt ein minimales Element $m \in g(T)$. Aufgrund der Injektivität von $g$ korrespondiert hierzu ein eindeutig bestimmtes $x \in X$, sodass 
+  \begin{displaymath}
+    g(x) = m = \min g(T).
+  \end{displaymath}
+  Ist nun $y \in T$ mit $y \leq_X x$, so ist insbesondere $g(y) \in g(T)$, also gilt 
+  \begin{displaymath}
+    g(x) = \min g(T) \leq g(y),
+  \end{displaymath}
+  woraus über die Definition der Ordnungsrelation sofort $y \leq_X x$ also $y = x$ folgt.
+  Damit ist $x$ das minimale Element von $T$.
 
-  Die Existenz einer Wohlordnung auf einer beliebigen Menge $X$ ist impliziert jedoch \AC.
+  Die Existenz einer Wohlordnung auf einer beliebigen Menge $X$ impliziert \AC.
 
-  (3) $\Rightarrow$ (1):
+  (3)$\Rightarrow$(1):
   Seien $X,Y$ Mengen. Nach (3) lassen sich $X$ und $Y$ wohlordnen.
-  Als wohlgeordnete Mengen sind sie entweder ordnungsisomorph oder es ist eine der Mengen isomorph zu einem initialen Intervall der anderen Menge.
+  Als wohlgeordnete Mengen sind sie nach dem Vergleichbarkeitssatz (DEISER ZITAT) entweder ordnungsisomorph oder es ist eine der Mengen isomorph zu einem initialen Intervall der anderen Menge.
   Im Ersten Fall gilt $|X| = |Y|$.
   Ist $X$ isomorph zu einem initialen Intervall von $Y$, so gilt $|X| \leq |Y|$ oder, falls $Y$ isomorph zu einem initialen Intervall von $X$ ist, gilt $|Y| \leq |X|$.
 \end{proof}
 
+%\newpage
 \begin{thm}
   Es sind äquivalent:
   \begin{enumerate}[(1)]
@@ -256,9 +273,9 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   Es reicht also bereits zu zeigen, dass (1) gilt.
 
   Angenommen $X$ sei \textsc{Alexandroff}-\textsc{Urysohn}-kompakt aber nicht kompakt.
-  Dann ist die Menge $\mathfrak{M}$ aller offenen Überdeckungen, die keine endliche Teilüberdeckung enthalten nicht leer und es existiert nach Übergang zu den korrespondierenden Kardinalzahlen eine bezüglich Mächtigkeit minimale offene Überdeckung $\mathcal{O} = (O_i)_{i \in I}$ mit Kardinalzahl $\mathcal{C}$, da die Menge aller Ordinalzahlen wohlgeordnet ist.
+  Dann ist die Menge $\mathfrak{M}$ aller offenen Überdeckungen, die keine endliche Teilüberdeckung enthalten nichtleer und es existiert nach Übergang zu den korrespondierenden Kardinalzahlen eine bezüglich Mächtigkeit minimale offene Überdeckung $\mathcal{O} = (O_i)_{i \in I}$ mit Kardinalzahl $\mathcal{C}$, da die Menge aller Ordinalzahlen wohlgeordnet ist.
 
-  Es bezeichne nun $f$ die zur Kardinalzahl korrespondierende Bijektion $\mathcal{C} \to \mathcal{O}$ und für alle $b \in \mathcal{C}$ sei 
+  Es bezeichne nun $f$ die zur $\mathcal{C}$ korrespondierende Bijektion $\mathcal{C} \to \mathcal{O}$ und für alle $b \in \mathcal{C}$ sei 
   \begin{displaymath}
     \mathcal{A}_b := \{ f(a) \mid a < b\} \subseteq \mathcal{O}.
   \end{displaymath}
@@ -269,10 +286,14 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   und folglich auch $| \mathcal{A}_b | < \mathcal{C}$, da es sich hierbei um das Bild unter einer bijektiven Abbildung $f$ handelt.
 
   Dann folgt für alle $b \in \mathcal{C}$, dass $\mathcal{A}_b$ keine Überdeckung von $X$ sein kann.
-  Angenommen $\bigcup \mathcal{A}_b \supseteq X$, dann ergibt sich sofort $\mathcal{A}_b \in \mathfrak{M}$, denn als Teilmenge von $\mathcal{O}$ kann auch $\mathcal{A}_b$ keine endliche Teilüberdeckung von $X$ besitzen.
+  Angenommen, $\bigcup \mathcal{A}_b \supseteq X$, dann ergibt sich sofort $\mathcal{A}_b \in \mathfrak{M}$, denn als Teilmenge von $\mathcal{O}$ kann auch $\mathcal{A}_b$ keine endliche Teilüberdeckung von $X$ besitzen.
   Dies widerspricht jedoch der Wahl von $\mathcal{C}$, da $|\mathcal{A}_b| < \mathcal{C}$ für alle $b \in \mathcal{C}$ vorausgesetzt wird.
 
-  Für alle $b \in \mathcal{C}$ und $U_b := \bigcup \mathcal{A}_b$ gilt des Weiteren $|X \setminus U_b| \geq \mathcal{C}$.
+  Für alle $b \in \mathcal{C}$ und 
+  \begin{displaymath}
+  U_b := \bigcup \mathcal{A}_b 
+  \end{displaymath}
+  gilt des Weiteren $|X \setminus U_b| \geq \mathcal{C}$.
   Nimmt man an, es gelte $|X \setminus U_{b'}| < \mathcal{C}$ für ein $b' \in \mathcal{C}$, so lässt sich für alle $x \in X \setminus U_{b'}$ ein $O_x \in \mathcal{O}$ auswählen, welches $x$ enthält.
   Dann ist für $\mathcal{O}' := \{O_x \mid x \in X \setminus U_{b'}\}$ jedoch
   \begin{displaymath}
@@ -300,7 +321,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   \end{displaymath}
   Es soll nun gezeigt werden, dass sie keinen vollständigen Häufungspunkt besitzt. 
   Aufgrund der Überdeckungseigenschaft von $\mathcal{O}$ existiert zunächst für alle $x \in X$ ein $b \in \mathcal{C}$ mit $x \in U_b$.
-  Die Menge aller $b$ mit ebendieser Eigenschaft ist demnach nicht leer und besitzt als Teilmenge der wohlgeordneten Menge $\mathcal{C}$ ein minimales Element.
+  Die Menge aller $b$ mit ebendieser Eigenschaft ist demnach nichtleer und besitzt als Teilmenge der wohlgeordneten Menge $\mathcal{C}$ ein minimales Element.
   Im Folgenden bezeichne nun $b$ dieses minimale Element.
   Es ist $U_b$ dann eine offene Umgebung von $x$ und es gilt 
   \begin{displaymath}
@@ -328,6 +349,26 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 \end{proof}
 
 \section{Der \textsc{Boole}sche Primidealsatz}
+
+Der \textsc{Boole}sche Primidealsatz ist eine im Vergleich zum Auswahlaxiom schwächere Aussage, die jedoch zu vielen der noch zu besprechenden Kompaktheitsaussagen äquivalent ist. In diesem Kapitel stehen speziell Kompaktheitsaussagen über kartesische Produkte im Vordergrund. Diese Kompaktheitsaussagen werden im Folgekapitel die Verbindung der \textsc{Ascoli}-Sätze zu \PIT ermöglichen.
+
+Im Folgenden werde wie in \cite{jech2008axiom} eine \textit{\textsc{Boole}sche Algebra} aufgefasst als algebraische Struktur mit den binären Operationen $(+,\cdot)$, der unären Operation $-$ (Komplementbildung) und den Konstanten $0,1$. 
+Auf \textsc{Boole}schen Algebren lässt sich eine Halbordnung dadurch definieren, dass für für $x,y \in X$ 
+\begin{displaymath}
+  x \leq y \quad \text{gilt genau dann, wenn} \quad u + v = v.
+\end{displaymath}
+
+\begin{defn}
+  Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere Teilmenge $I \subseteq B$ als \textit{Ideal} in $B$, falls folgende Bedinungen gelten:
+  \begin{enumerate}[(1)]
+    \item Aus $u \in I$ und $v \leq u$ folgt  $v \in I$.
+    \item Aus $u \in I$ und $v \in I$ folgt $u + v \in I$.
+  \end{enumerate}
+  Ein Ideal $P$ in $B$ heißt \textit{Primideal} falls zusätzlich gilt:
+  \begin{enumerate}[(3)]
+    \item Für alle $u \in B$ ist entweder $u \in I$ oder $-u \in I$.
+  \end{enumerate}
+\end{defn}
 
 \begin{defn}
     \PIT, der \textit{\textsc{Boole}sche Primidealsatz}:
@@ -361,7 +402,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   Ist andererseits $x \in B$ und $a \in X$ mit $a \leq x$, so existiert wie zuvor ein $J \in \mathcal{K}$ mit $x \in J$ und, da $J$ ein Ideal ist, gilt auch $a \in J$ und damit $a \in B$.
   Also ist $B$ ein Ideal, welches $I$ umfasst, das bedeutet $B \in \mathcal{A}$.
 
-  Nach Konstruktion gilt $J \subseteq B$ für alle $J \in \mathcal{K}$, und damit ist $B$ eine obere Schranke von $\mathcal{K}$ in $\mathcal{A}$.
+  Nach Konstruktion gilt $J \subseteq B$ für alle $J \in \mathcal{K}$ und damit ist $B$ eine obere Schranke von $\mathcal{K}$ in $\mathcal{A}$.
   Das \textsc{Zorn}sche Lemma garantiert nun die Existenz maximaler Elemente in $\mathcal{A}$, also die Existenz eines maximalen, $I$ umfassenden Ideals.
 \end{proof}
 
