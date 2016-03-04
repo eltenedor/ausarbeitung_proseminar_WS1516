@@ -350,23 +350,36 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 
 \section{Der \textsc{Boole}sche Primidealsatz}
 
-Der \textsc{Boole}sche Primidealsatz ist eine im Vergleich zum Auswahlaxiom schwächere Aussage, die jedoch zu vielen der noch zu besprechenden Kompaktheitsaussagen äquivalent ist. In diesem Kapitel stehen speziell Kompaktheitsaussagen über kartesische Produkte im Vordergrund. Diese Kompaktheitsaussagen werden im Folgekapitel die Verbindung der \textsc{Ascoli}-Sätze zu \PIT ermöglichen.
+Der \textsc{Boole}sche Primidealsatz (\PIT) ist eine im Vergleich zum Auswahlaxiom schwächere Aussage, die jedoch zu vielen der noch zu besprechenden Kompaktheitsaussagen äquivalent ist. 
+Dass \PIT echt schwächer ist als \AC, kann man in \cite{halpern1971boolean} nachlesen.
+Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen eine Reihe zu \PIT äquivalenter Aussagen aus unterschiedlichen Gebieten der Mathematik findet man in \cite{dau1994diplom}.
+In diesem Kapitel stehen speziell Kompaktheitsaussagen über kartesische Produkte im Vordergrund. Diese Kompaktheitsaussagen werden im Folgekapitel die Verbindung der \textsc{Ascoli}-Sätze zu \PIT ermöglichen.
 
-Im Folgenden werde wie in \cite{jech2008axiom} eine \textit{\textsc{Boole}sche Algebra} aufgefasst als algebraische Struktur mit den binären Operationen $(+,\cdot)$, der unären Operation $-$ (Komplementbildung) und den Konstanten $0,1$. 
-Auf \textsc{Boole}schen Algebren lässt sich eine Halbordnung dadurch definieren, dass für für $x,y \in X$ 
+Im Folgenden werde wie in \cite{graetzer2003general} eine \textit{\textsc{Boole}sche Algebra} aufgefasst als ein \textit{\textsc{Boole}scher Verband} $(B; 1, \land, \lor, ', 1, 0)$, also ein komplementärer distributiver Verband. 
+Die Verträglichkeit von algebraischer Struktur und Verbandsstruktur ist gegeben durch 
 \begin{displaymath}
-  x \leq y \quad \text{gilt genau dann, wenn} \quad u + v = v.
+  x \land y = \inf\{x,y\} \quad \text{und} \quad x \lor y = \sup\{x,y\}
 \end{displaymath}
+beziehungsweise durch die Halbordnungsrelation 
+\begin{displaymath}
+  x \leq y \quad \text{gilt genau dann, wenn} \quad x \land y = x.
+\end{displaymath}
+Zusätlich gilt 
+\begin{displaymath}
+  x \land y = x \quad \text{genau dann, wenn} \quad x \lor y = y,
+\end{displaymath}
+denn falls $x \land y = y$, so gilt $x \leq y$, also ist $y = \sup\{x,y\} = x \lor y$. 
+Die Umkehrung folgt analog.
 
 \begin{defn}
-  Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere Teilmenge $I \subseteq B$ als \textit{Ideal} in $B$, falls folgende Bedinungen gelten:
+  Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere Teilmenge $I \subseteq B$ als \textit{Ideal} in $B$, falls folgende Bedingungen gelten:
   \begin{enumerate}[(1)]
-    \item Aus $u \in I$ und $v \leq u$ folgt  $v \in I$.
-    \item Aus $u \in I$ und $v \in I$ folgt $u + v \in I$.
+    \item Aus $u \in I$ und $v \in I$ folgt $u \lor v \in I$.
+    \item Für $u \in I$, $x \in B$ und $x \leq u$ folgt  $x \in I$.
   \end{enumerate}
-  Ein Ideal $P$ in $B$ heißt \textit{Primideal} falls zusätzlich gilt:
+  Ein Ideal $I$ in $B$ heißt \textit{Primideal}, falls zusätzlich gilt:
   \begin{enumerate}[(3)]
-    \item Für alle $u \in B$ ist entweder $u \in I$ oder $-u \in I$.
+    \item Für alle $x \in B$ ist entweder $x \in I$ oder $x' \in I$.
   \end{enumerate}
 \end{defn}
 
@@ -383,32 +396,32 @@ Auf \textsc{Boole}schen Algebren lässt sich eine Halbordnung dadurch definieren
 \end{thm}
 
 \begin{proof}
-  Sei $X$ eine \textsc{Boole}sche Algebra und $I$ ein Ideal. 
+  Sei $B$ eine \textsc{Boole}sche Algebra und $I$ ein Ideal. 
   Man betrachte die Menge
   \begin{displaymath}
-    \mathcal{A} := \{J \subsetneq X \mid \text{ $J$ ist ein $I$ umfassendes Ideal } \}.
+    \mathcal{A} := \{J \subsetneq B \mid \text{ $J$ ist ein $I$ umfassendes Ideal } \}.
   \end{displaymath}
   Um das \textsc{Zorn}sche Lemma anwenden zu können, betrachtet man nun eine Kette $\mathcal{K} \subseteq \mathcal{A}$.
   Es sei 
   \begin{displaymath}
-    B := \bigcup_{J \in \mathcal{K}} J.
+    S := \bigcup_{J \in \mathcal{K}} J.
   \end{displaymath}
 
-  Es soll nun gezeigt werden, dass $B \in \mathcal{A}$ gilt.
-  Da nach Voraussetzung $\mathcal{K}$ nur aus $I$ umfassenden Idealen besteht, gilt auch $I \subseteq B$.
-  Sind $x,y \in B$ so existieren $J_x, J_y \in \mathcal{K}$ mit $x \in J_x$ und $y \in J_y$.
-  Da $\mathcal{K}$ eine Kette ist, kann man aus Symmetriegründen ohne Beschränkung der Allgemeinheit annehmen $J_x \subseteq J_y$ und damit $x \in J_y$.
-  Da $J_y$ nach Voraussetzung ein Ideal ist gilt $x + y \in J_y \subseteq B$.
-  Ist andererseits $x \in B$ und $a \in X$ mit $a \leq x$, so existiert wie zuvor ein $J \in \mathcal{K}$ mit $x \in J$ und, da $J$ ein Ideal ist, gilt auch $a \in J$ und damit $a \in B$.
-  Also ist $B$ ein Ideal, welches $I$ umfasst, das bedeutet $B \in \mathcal{A}$.
+  Es soll nun gezeigt werden, dass $S \in \mathcal{A}$ gilt.
+  Da nach Voraussetzung $\mathcal{K}$ nur aus $I$ umfassenden Idealen besteht, gilt auch $I \subseteq S$.
+  Sind $u,v \in S$ so existieren $J_u, J_v \in \mathcal{K}$ mit $u \in J_u$ und $v \in J_v$.
+  Da $\mathcal{K}$ eine Kette ist, kann man aus Symmetriegründen ohne Beschränkung der Allgemeinheit annehmen $J_u \subseteq J_v$ und damit $u \in J_v$.
+  Da $J_v$ nach Voraussetzung ein Ideal ist, gilt $u \lor v \in J_v \subseteq S$.
+  Ist andererseits $u \in S$ und $x \in B$ mit $x \leq u$, so existiert wie zuvor ein $J \in \mathcal{K}$ mit $u \in J$ und, da $J$ ein Ideal ist, gilt auch $x \in J$ und damit $x \in S$.
+  Also ist $S$ ein Ideal, welches $I$ umfasst, das bedeutet $S \in \mathcal{A}$.
 
-  Nach Konstruktion gilt $J \subseteq B$ für alle $J \in \mathcal{K}$ und damit ist $B$ eine obere Schranke von $\mathcal{K}$ in $\mathcal{A}$.
+  Nach Konstruktion gilt $J \subseteq S$ für alle $J \in \mathcal{K}$ und damit ist $S$ eine obere Schranke von $\mathcal{K}$ in $\mathcal{A}$.
   Das \textsc{Zorn}sche Lemma garantiert nun die Existenz maximaler Elemente in $\mathcal{A}$, also die Existenz eines maximalen, $I$ umfassenden Ideals.
 \end{proof}
 
 \begin{bem}
   Auf den ersten Blick scheint der bewiesene Satz \ref{thm:acpit} stärker zu sein als \PIT.
-  Es hätte bereits genügt, anstatt $\mathcal{A}$ die Menge aller echten Ideale in $X$ zu betrachten.
+  Es hätte bereits genügt, anstatt $\mathcal{A}$ die Menge aller echten Ideale in $B$ zu betrachten.
   Tatsächlich sind die beiden Aussagen jedoch äquivalent.
 \end{bem}
 
@@ -419,20 +432,74 @@ Auf \textsc{Boole}schen Algebren lässt sich eine Halbordnung dadurch definieren
   Es induziert $I$ folgendermaßen eine Äquivalenzrelation auf $X$.
   Es soll für $x,y \in X$ gelten, dass 
   \begin{displaymath}
-    x \sim y \quad \text{genau dann, wenn} \quad (x \cdot -y) + (y \cdot -x) \in I
+    x \sim y \quad \text{genau dann, wenn} \quad x \bigtriangleup y := (x \land y') \lor (y \land x') \in I
   \end{displaymath}
   gilt.
+  Man bezeichnet die Operation $\bigtriangleup$ auch als \textit{symmetrische Differenz}.
+
+  Es ist klar, dass die so definierte Relation reflexiv und symmetrisch ist.
+  Für die Transitivität betrachte man $x,y,z \in X$ mit $x \sim y$ und $y \sim z$.
+  Dann gilt
+  \begin{align*}
+    ((x  \lor y  ) \land ((x \land y') \lor z' ),
+    &=  ((x \land y') \lor y  ) \land ((x \land y') \lor z' ) \\
+    &= (x \land y') \lor (y \land z') \in I
+  \end{align*}
+  aufgrund der Distributivität.
+  Zudem gelten $x \leq x \lor y$ und $z' \leq ((x \land y') \lor z')$, was wiederum
+  \begin{displaymath}
+    x \land z' \leq  ((x  \lor y  ) \land ((x \land y') \lor z' )
+  \end{displaymath}
+  impliziert.
+  Aufgrund der Idealeigenschaft (1) folgt damit $x \land z' \in I$.
+  Analog zeigt man $z \land x' \in I$.
+  Daraus folgt mit der Idealeigenschaft (2) dann $x \sim z$.
+  Also ist obige Relation tatsächlich eine Äquivalenzrelation.
+
   Auf der Menge der Restklassen 
   \begin{displaymath}
     X / I := \{[x] \mid x \in X\}
   \end{displaymath}
   lassen sich nun über die Repräsentanten folgende Operationen definieren:
   \begin{displaymath}
-    [x] + [y] := [x+y], \quad
-    [x] \cdot [y] := [x \cdot y], \quad
-    -[x] := [-x]
+    [x] \lor [y] := [x \lor y], \quad
+    [x] \land [y] := [x \land y], \quad
+    [x]' := [x']
   \end{displaymath}
-  Damit wird $X/I$ zu einer \textsc{Boole}schen Algebra.
+  Damit wird $X/I$ zu einer \textsc{Boole}schen Algebra, sofern die Operationen wohldefiniert sind.
+  Seien dazu $x \sim a$ und $y \sim b$ gegeben.
+  Dann gilt
+  \begin{align*}
+    (x \lor y) \land (a \lor b)'
+    &= (x \lor y) \land (a' \land b') \\
+    &= (x \land (a' \land b')) \lor (y \land (a' \land b')) \\
+    &\leq (x \land a') \lor (y \land b')  \in I,
+  \end{align*}
+  also gilt auch $(x \lor y) \land (a \lor b)' \in I$ aufgrund der Idealeigenschaft (2).
+  Analog zeigt man $ (a \lor b) \land (x \lor y)' \in I$.
+  Damit folgt dann $x \lor y \sim a \lor b$ mit Idealeigenschaft (1).
+
+  Des weiteren gilt
+  \begin{align*}
+    x' \bigtriangleup y'
+    = (x' \land y'') \lor (y' \land x'')
+    = (x' \land y) \lor (y' \land x)
+    = y \bigtriangleup x
+    = x \bigtriangleup y,
+  \end{align*}
+  also ist auch die Komplementoperation wohldefiniert.
+
+  Damit lässt sich nun auch die Wohldefiniertheit von $\land$ beweisen.
+  Denn für $x \sim a$ und $y \sim b$ gilt mit dem bereits Bewiesenen
+  \begin{displaymath}
+    [x \land y]
+    = [x'' \land y'']
+    = [(x' \lor y')']
+    = [x \lor y]',
+  \end{displaymath}
+  woraus schließlich $[x \land y] = [a \land b]$ folgt.
+  Die auf dem Quotienten definierten Operationen sind also wohldefiniert.
+
   Setzt man \PIT voraus, so existiert ein maximales Ideal $K \subseteq X/I$.
   Betrachtet man nun die Menge
   \begin{displaymath}
@@ -442,23 +509,31 @@ Auf \textsc{Boole}schen Algebren lässt sich eine Halbordnung dadurch definieren
   
   Dass $J$ ein Ideal ist, folgt sofort aus der Definition der Verknüpfungsoperationen auf $X/I$ und der Tatsache, dass $K$ ein Ideal ist.
   Für alle $x \in I$ gilt zudem $[x] = [0] \in X/I$. 
-  Da $K$ als Ideal definitionsgemäß $[0]$ enthält, folgt $[x] \in K$, also $I \subseteq J$.
+  Da $K$ als Ideal $[0]$ enthält, folgt $[x] \in K$, also $I \subseteq J$.
   
   Angenommen $J$ sei nicht maximal. Sei $J' \subsetneq X$ ein $J$ umfassendes Ideal.
   Dann gilt 
   \begin{displaymath}
     K \subseteq J'/I := \{[x] \mid x \in J\},
   \end{displaymath}
-  denn für $[x] \in K$ ist $x \in J \subseteq J'$ und damit $[x] \in J'/X$.
-  Aufgrund der Maximalität von $K$ folgt sofort $K := J/I$ und damit $J' = J$.
+  denn für $[x] \in K$ ist $x \in J \subseteq J'$ und damit $[x] \in J'/I$.
+  Aufgrund der Maximalität von $K$ folgt sofort $K := J'/I$ und damit $J' = J$.
 
-  Also ist $J$ maximales $I$ umfassendes Ideal.
+  Also ist $J$ ein maximales $I$ umfassendes Ideal.
 \end{proof}
 
 In \textsc{Boole}schen Algebren existiert das zum Ideal duale Konzept des Filters. 
 
 \begin{defn}
-  Filter
+  Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere Teilmenge $F \subseteq B$ als \textit{Filter} in $B$, falls folgende Bedingungen gelten:
+  \begin{enumerate}[(1)]
+    \item Aus $u \in F$ und $v \in I$ folgt $u \land v \in F$.
+    \item Für $u \in F$, $x \in B$ und $u \leq x$ folgt  $x \in F$.
+  \end{enumerate}
+  Ein Filter $F$ in $B$ heißt \textit{Ultrafilter}, falls zusätzlich gilt:
+  \begin{enumerate}[(3)]
+    \item Für alle $x \in B$ ist entweder $x \in F$ oder $x' \in F$.
+  \end{enumerate}
 \end{defn}
 
 Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für Filter finden:
@@ -466,8 +541,6 @@ Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für
     \textit{Jede \textsc{Boole}sche Algebra besitzt einen maximalen Filter.}
   \end{addmargin}
 
-Dass \PIT schwächer ist als \AC, kann man in QUELLE nachlesen.
-Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen QUELLE.
 
 Bevor der für das Folgekapitel zentrale Satz vorgestellt wird, soll eine in dieser Arbeit mehrfach verwendete Aussage bewiesen werden.
 
@@ -498,7 +571,7 @@ Bevor der für das Folgekapitel zentrale Satz vorgestellt wird, soll eine in die
   Folglich ist $\mathcal{A}$ abgeschlossen.
 \end{proof}
 
-Nun zu dem Satz, welcher \PIT mit unterschiedlichen topologischen Aussagen in Verbindung setzt.
+Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über topologische Produkträume in Verbindung setzt.
 
 \begin{thm}
   \label{thm:pitequivalence}
