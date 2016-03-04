@@ -372,7 +372,7 @@ denn falls $x \land y = y$, so gilt $x \leq y$, also ist $y = \sup\{x,y\} = x \l
 Die Umkehrung folgt analog.
 
 \begin{defn}
-  Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere Teilmenge $I \subseteq B$ als \textit{Ideal} in $B$, falls folgende Bedingungen gelten:
+  Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere echte Teilmenge $I \subsetneq B$ als \textit{Ideal} in $B$, falls folgende Bedingungen gelten:
   \begin{enumerate}[(1)]
     \item Aus $u \in I$ und $v \in I$ folgt $u \lor v \in I$.
     \item Für $u \in I$, $x \in B$ und $x \leq u$ folgt  $x \in I$.
@@ -525,7 +525,7 @@ Die Umkehrung folgt analog.
 In \textsc{Boole}schen Algebren existiert das zum Ideal duale Konzept des Filters. 
 
 \begin{defn}
-  Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere Teilmenge $F \subseteq B$ als \textit{Filter} in $B$, falls folgende Bedingungen gelten:
+  Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere echte Teilmenge $F \subsetneq B$ als \textit{Filter} in $B$, falls folgende Bedingungen gelten:
   \begin{enumerate}[(1)]
     \item Aus $u \in F$ und $v \in I$ folgt $u \land v \in F$.
     \item Für $u \in F$, $x \in B$ und $u \leq x$ folgt  $x \in F$.
@@ -535,6 +535,36 @@ In \textsc{Boole}schen Algebren existiert das zum Ideal duale Konzept des Filter
     \item Für alle $x \in B$ ist entweder $x \in F$ oder $x' \in F$.
   \end{enumerate}
 \end{defn}
+
+Es sollen als nächstes Ultrafilter in \textsc{Boole}schen Algebren charakterisiert werden.
+
+\begin{prop}
+  \label{prop:ultrafilterchar}
+  Es sei $F \subsetneq B$ ein Filter in der \textsc{Boole}schen Algebra $B$. Dann sind die folgenden Aussagen äquivalent
+  \begin{enumerate}[(1)]
+    \item Der Filter $F$ ist ein Ultrafilter.
+    \item Der Filter $F$ ist bezüglich mengentheoretischer Inklusion maximal.
+    \item Für alle $x,y \in B$ folgt aus $x \lor y \in F$, dass $x \in F$ oder $y \in F$. Einen solchen Filter bezeichnet man auch als \emph{Primfilter}.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  (1)$\Rightarrow$(2):
+  Angenommen der Ultrafilter $F$ ist nicht maximal. 
+  So existiert ein Filter $F' \supsetneq F$, also insbesondere ein $x \in F' \setminus F$.
+  Dann ist jedoch nach Voraussetzung $x' \in F$ und aufgrund der Inklusionsbeziehung $x' \in F'$.
+  Dies widerspricht jedoch der Filtereigenschaft, da $0 = x' \cap x \in F'$, also $F' = B$ gilt.
+
+  (2)$\Rightarrow$(3):
+  Angenommen, es existieren $x,y \in B$ mit $x \lor y \in F$ aber $x \not\in F$ und $y \not\in F$.
+  Man kann ohne Beschränkung der Allgemeinheit $x \neq 0$ annehmen.
+  Dann gilt $x \leq x \lor y$ und damit wäre $F \cup \{x\}$ ein echt größerer Filter im Widerspruch zur Voraussetzung.
+
+  (3)$\Rightarrow$(1):
+  Für alle $x \in B$ gilt $x \cap x' = 1$.
+  Zudem gilt für alle Filter $F$, dass $1 \in F$.
+  Nach Voraussetzung gilt dann für jeden Primfilter $x \in F$ oder $x' \in F$.
+\end{proof}
 
 Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für Filter finden:
   \begin{addmargin}[2em]{2em}% 1em left, 2em right
@@ -575,7 +605,7 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
 
 \begin{thm}
   \label{thm:pitequivalence}
-  Äquivalent sind
+  Die folgenden Aussagen sind äquivalent:
   \begin{enumerate}[(1)]
     \item \PIT.
     \item \UFT.
@@ -593,10 +623,10 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
 \end{thm}
 
 \begin{proof}
-  (1) $\Rightarrow$ (2): 
-  Interpretiert man \PIT im Sinne von Filtern, so folgt dies sofort, da jede Potenzmengenalgebra eine \textsc{Boole}sche Algebra ist.
+  (1)$\Rightarrow$(2): 
+  Interpretiert man \PIT im Sinne von Filtern, so folgt dies sofort, da sich jede Potenzmengenalgebra als \textsc{Boole}sche Algebra auffassen lässt.
 
-  (2) $\Rightarrow$ (3):
+  (2)$\Rightarrow$(3):
   Nach Satz \ref{thm:uftcompact} folgt aus \UFT die Übereinstimmung von Kompaktheit mit Ultrafilterkompaktheit.
   Sei nun $(X_i)_{i \in I}$ eine Familie kompakter \textsc{Hausdorff}-Räume mit Produktraum $X := \prod_{i \in I} X_i$.
   Sei $\psi$ ein Ultrafilter auf diesem Produktraum.
@@ -605,14 +635,14 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   Also konvergiert, da die Produkttopologie initial bezüglich $(\pi_i)_{i \in I}$ ist der Filter $\psi$ gegen $(x_i)_{i \in I}$.
   Damit ist $X$ ultrafilterkompakt und folglich auch kompakt.
 
-  (3) $\Rightarrow$ (4):
+  (3)$\Rightarrow$(4):
   Dies ist eine Spezialisierung von (3), da das abgeschlossene Intervall $[0,1]$ mit euklidischer Topologie insbesondere ein \textsc{Hausdorff}-Raum ist.
 
-  (4) $\Rightarrow$ (5):
+  (4)$\Rightarrow$(5):
   Da in \textsc{Hausdorff}-Räumen insbesondere das $T1$-Axiom gilt und damit Einpunktmengen abgeschlossen sind, liefert Proposition \ref{prop:cartesianclosed}, dass man \textsc{Kantor}-Würfel als abgeschlossene Teilräume von \textsc{Hilbert}-Würfeln auffassen kann. 
   Als solche sind sie aber auch kompakt.
 
-  (5) $\Rightarrow$ (6):
+  (5)$\Rightarrow$(6):
   Sei $(X_i)_{i \in I}$ eine Familie endlicher diskreter Räume.
   Es bezeichne
   \begin{displaymath}
@@ -624,23 +654,57 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   \end{displaymath}
   zuordnet.
   Sei $X := \prod_{i \in I} X_i$.
-  Dann ist jedes $f_i$ und die Abildung
+  Dann sind alle $f_i$  und
   \begin{displaymath}
     f(x) := (f_i(x_i))_{i \in I} \colon X \to \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})}
   \end{displaymath}
-  eine abgeschlossene Einbettung.
+  abgeschlossene Einbettungen.
+  Denn, da alle $X_i$ nach Voraussetzung diskrete Räume sind, folgt die Stetigkeit der $f_i$ automatisch.
+  Bezüglich der Produkttopologie auf $X$ ist nach Konstruktion dann auch $f$ stetig.
+  Zudem sind alle $f_i$ abgeschlossen, da jede abgeschlossene Teilmenge $A \subseteq X_i$ insbesondere endlich und damit kompakt ist, andererseits jedoch das Bild einer kompakten Menge unter einer stetigen Abbildung wiederum kompakt und als kompakte Teilmenge eines \textsc{Hausdorff}-Raumes abgeschlossen ist.  
+  Mit demselben Argument sieht man auch die Abgeschlossenheit von $f$ ein.
+  Ist nämlich $A \subseteq X$ eine abgeschlossene Menge, so besteht sie nach Konstruktion aus einem kartesischen Produkt endlicher, also kompakter Mengen.
+  Nach dem vorangehenden Argument ist das Bild jedes einzelnen der Faktoren des kartesischen Produkts eine kompakte, also auch abgeschlossene Menge.
+  Dann ist aber auch $f(A)$ als kartesisches Produkt abgeschlossener Mengen nach Proposition \ref{prop:cartesianclosed}.
+  Die Injektivität der $f_i$ ist klar, denn man kann, falls $y,z \in X_i$ mit $y \neq z$, eine Abbildung $c \in C(X_i,\mathbf{2})$ definieren durch $c(y) = 1$ und $c(z) = 0$ und $c(a)$ beliebig für alle $a \in X_i \setminus \{y,z\}$.
+  Damit ist auch klar, dass $f$ injektiv ist.
+   
   Es gilt 
   \begin{displaymath}
-    \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})} \simeq \mathbf{2}^{\bigcup_{i \in I} X_i,\mathbf{2}) \times \{i\}}.
+    \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})} \simeq \mathbf{2}^{\bigcup_{i \in I} (X_i,\mathbf{2}) \times \{i\}}.
   \end{displaymath}
   Daraus folgt die Kompaktheit von $X$, weil man $X$ als abgeschlossenen Teilraum eines nach (5) kompakten Raumes auffassen kann.
 
-  (6) $\Rightarrow$ (1):
+  (6)$\Rightarrow$(1):
   Sei $B$ eine \textsc{Boole}sche Algebra.
-  Man betrachte die Menge $\mathcal{A}$ aller endlichen \textsc{Boole}schen Subalgebren auf $B$.
+  Man betrachte die Menge $\mathcal{A}$ aller endlichen \textsc{Boole}schen Unteralgebren auf $B$.
   Für alle $A \in \mathcal{A}$ ist die Menge $X_A$ aller \textsc{Boole}schen Homomorphismen von $A$ nach $\mathbf{2}$ nichtleer, da jede endliche \textsc{Boole}sche Algebra einen maximalen Filter besitzt.
+  Ist nämlich $A$ eine endliche \textsc{Boole}sche Algebra und $x \neq 0$.
+  Da $A$ nur endlich viele Elemente enthält kann man annehmen, dass aus $a \leq x$ bereits $a = 0$ folgt.
+  Betrachtet man nun die Menge $\varphi := \{x \lor y \mid y \in A$, so ist $\varphi$ nach Konstruktion ein maximaler Filter.
+  Es lässt sich nun ein \textsc{Boole}scher Homomorphismus $f \colon A \to \mathbf{2}$ angeben, indem man 
+  \begin{displaymath}
+    f(x) := 
+    \begin{cases}
+      1, \text{ falls } x \in \varphi \\
+      0, \text{ falls } x \not\in \varphi
+    \end{cases}
+  \end{displaymath}
+  setzt.
+  Man prüft unter Verwendung von Proposition \ref{prop:ultrafilterchar} sofort nach, dass $f$ ein Homomorphismus ist, wenn man $\mathbf{2}$ in naheliegender Weise als \textsc{Boole}sche Algebra betrachtet.
+
   Man fasse $X_A$ nun auf als diskreten topologischen Raum.
-  Dann ist der Produktraum $X = \prod_{A \in \mathcal{A}} X_A$ nach (6) kompakt und nichtleer.
+  Dann ist der Produktraum $X = \prod_{A \in \mathcal{A}} X_A$ nach (6) kompakt.
+  Zudem ist $X$ nichtleer.
+  Dazu betrachte man die Familie diskreter topologischer Räume $(Y_A)_{A \in \mathcal{A}}$ mit $Y_A := X_A \cup \{\infty\}$.
+  Nach Voraussetzung ist auch $Y := \prod_{A \in \mathcal{A}} Y_A$ kompakt.
+  Für alle $A \in \mathcal{A}$ ist die das Urbild $U_A = \pi_A^{-1}(X_A)$ unter der kanonischen Projektion $\pi_A$ eine nichtleere, abgeschlossene Teilmenge von $Y$.
+  Es ist nämlich $U_A = \prod_{i \in \mathcal{A}} Z_i$ mit $Z_A = X_A$ und $Z_i = Y_i$ für alle $i \in \mathcal{A} \setminus \{A\}$.
+  In $U_A$ ist daher insbesondere eine Abbildung $f$ mit $f(i) = \infty$ für alle $i \in \mathcal{A} \setminus \{A\}$ und $f(A) \in X_A$ enhalten, da $X_A$ nach Voraussetzung nichtleer ist.
+  Die Familie $\mathfrak{U} := \{U_A \mid A \in \mathcal{A}\}$ besitzt die endliche Durchschnittseigenschaft, wie man mit demselben Argument zeigt.
+  Da $Y$ kompakt ist, folgt daraus $\bigcap_{A \in \mathcal{A}} U_A \neq \emptyset$.
+  Zudem gilt $X = \bigcap_{A \in \mathcal{A}} U_A$, also ist auch $X$ nichtleer.
+
   Für alle Paare $(A,B)$ mit $A,B \in \mathcal{A}$ und $A \subseteq B$ ist die Menge
   \begin{displaymath}
     M(A,B) := \{ 
