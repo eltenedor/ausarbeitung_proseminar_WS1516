@@ -1,23 +1,22 @@
 %\section{Der \textsc{Áscoli}-Satz und das Auswahlaxiom}
 \chapter{Der \textsc{Ascoli}-Satz und das Auswahlaxiom}
 
-\textsc{Ascoli}-Sätze gelten bezeichnend für Aussagen, die es gestatten Kompaktheit von Teilmengen von Funktionenräumen bezüglich starker Topologien aus der Kompaktheit bezüglich einer schwächeren Topologie unter zusätzlichen Annahmen zu folgern. Dabei existieren unterschiedliche Formulierungen.
+\textsc{Ascoli}-Sätze gelten bezeichnend für Aussagen, die es gestatten Kompaktheit von Teilmengen von Funktionenräumen bezüglich starker Topologien aus der Kompaktheit bezüglich einer schwächeren Topologie unter zusätzlichen Annahmen zu folgern. 
+Dabei existieren unterschiedliche Formulierungen.
 
 Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels  
 \begin{addmargin}[2em]{2em}% 1em left, 2em right
   \textit{Disasters in Topology III: Function Spaces (The Ascoli Theorem)}
 \end{addmargin}
-aus \cite{herrlich2006axiom}. 
+aus \cite{herrlich2006axiom}.
+Weitere allgemeinere Versionen des \textsc{Ascoli}-Satzes finden sich in \cite{bartsch2015allgemeine} oder \cite{poppe1974compactness}.
 
-%\begin{defn}
-%  Es seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume. Eine Abbildung $f \colon X \to Y$ heißt \textit{gleichmäßig stetig}, wenn gilt:
-%  \begin{addmargin}[2em]{2em}% 1em left, 2em right
-%  Zu jedem $\varepsilon > 0$ existiert ein $\delta > 0$, sodass \\
-%  für alle $x,x' \in X$ mit $d_X(x,x') < \delta$ gilt, dass $d_Y(f(x),f(x')) < \varepsilon$.
-%  \end{addmargin}
-%\end{defn}
+Ziel dieses Kapitels ist es zu untersuchen inwieweit sich \textsc{Ascoli}-Sätze im Rahmen von \ZF beweisen lassen und welche Erweiterungen des Axiomensystems \ZF gegebenenfalls für den Beweis benötigt werden.
+Eine wichtige Rolle für diese Beweise wird der \textsc{Boole}sche Primidealsatz \PIT spielen, dessen Gültigkeit, wie im vorangehenden Kapitel gezeigt, zu unterschiedlichen Kompaktheitsaussagen äquivalent ist.
 
 \section{Der topologische \textsc{Ascoli}-Satz}
+
+In diesem Abschnitt soll eine allgemeine topologische Version des \textsc{Ascoli}-Satzes behandelt werden.
 
 \begin{defn}
   Es sei $(X,\tau)$ ein topologischer Raum und $(Y,d)$ ein metrischer Raum versehen mit der durch die Metrik induzierten Topologie $\tau_d$. Eine Teilmenge $F \subseteq Y^X$ heißt \textit{gleichgradig stetig}, wenn gilt:
@@ -29,7 +28,6 @@ aus \cite{herrlich2006axiom}.
 
 Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden $C_{\co}(X,Y)$ den topologischen Funktionenraum $(C(X,Y),\tau_{\co})$ der stetigen Funktionen von $X$ nach $Y$ ausgestattet mit der kompakt-offenen Topologie.
 
-Eine topologische Version des \textsc{Ascoli}-Satzes lautet:
 \begin{defn}[Topologischer \textsc{Ascoli}-Satz]
   Sei $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
   Für jeden Teilraum $(F,\tau_{\co})$ von $C_{\co}(X,Y)$ sind äquivalent:
@@ -481,7 +479,8 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 
 \section{Der klassische \textsc{Ascoli}-Satz und eine Modifikation}
 
-Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}-Satzes die Anforderungen senkt.
+Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}-Satz bei allen vorgestellten Versionen von Kompaktheit falls lediglich \ZF vorausgesetzt wird. 
+Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}-Satzes die Anforderungen senkt.
 
 \begin{defn}[Klassischer \textsc{Ascoli}-Satz] 
   \label{def:klassisch}
@@ -511,7 +510,7 @@ Diese konvergiert weiterhin gegen $x$ und es gilt
 \end{displaymath}
 und eine für $(y_n)_{n \in \N}$ analoge Gleichung, da jede Teilfolge einer konvergenten Folge gegen denselben Grenzwert konvergiert.
 
-Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die stetige Konvergenz festgehalten werden:
+Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die stetige Konvergenz festgehalten werden.
 
 \begin{prop}
   \label{prop:stetigkonv}
@@ -598,11 +597,11 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   \label{thm:unboundedsubsetofR}
   Folgende Aussagen sind äquivalent:
   \begin{enumerate}[(1)]
-    \item $\mathbf{CC}(\R)$, das Axiom der abzählbaren Auswahl (Countable Choice) für Teilmengen reeller Zahlen:
+    \item \CCR, das Axiom der abzählbaren Auswahl (Countable Choice) für Teilmengen reeller Zahlen:
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         \textit{Für jede Folge $(X_n)_{n \in \N}$ nichtleerer Teilmengen $X_n \subseteq \R$ ist das kartesische Produkt $\prod_{n \in \N} X_n$ nichtleer.}
       \end{addmargin}
-    \item $\mathbf{PCC}(\R)$, das Axiom der partiellen abzählbaren Auswahl (Partial Countable Choice) für Teilmengen reeller Zahlen: 
+    \item \PCCR, das Axiom der partiellen abzählbaren Auswahl (Partial Countable Choice) für Teilmengen reeller Zahlen: 
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         \textit{Für jede Folge $(X_n)_{n \in \N}$ nichtleerer Teilmengen $X_n \subseteq \R$ existiert eine unendliche Teilmenge $M \subseteq \N$, sodass das kartesische Produkt $\prod_{m \in M} X_m$ nichtleer ist.}
       \end{addmargin}
@@ -612,11 +611,11 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
 
 \begin{proof}
   (1) $\Leftrightarrow$ (2):
-  Es ist klar, dass aus $\mathbf{CC}(\R)$ die Aussage $\mathbf{PCC}(\R)$ folgt.
+  Es ist klar, dass aus \CCR die Aussage \PCCR folgt.
   Sei umgekehrt eine Folge $(X_n)_{n \in \N}$ nichtleerer Teilmengen der reellen Zahlen gegeben.
   Man definiere nun $Y_n := \prod_{m \leq n} X_m$.
   Da endliche kartesische Produkte nichtleerer Mengen wiederum nichtleer sind, ist $(Y_n)_{n \in \N}$ eine Folge nichtleerer Mengen.
-  Nach $\mathbf{PCC}(\R)$ existiert eine unendliche Teilmenge $M \subseteq \N$ und ein Element $(y_m)_{m \in \N} \in \prod_{m \in M} Y_m$.
+  Nach \PCCR existiert eine unendliche Teilmenge $M \subseteq \N$ und ein Element $(y_m)_{m \in \N} \in \prod_{m \in M} Y_m$.
   Daher gilt $y_m \in Y_m = \prod_{k \leq m} X_k$, also $y_m = (x_{1,m},\dots,x_{m,m})$.
 
   Man definiere nun für alle $n \in \N$ die Funktion
@@ -631,7 +630,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Sei $X \subseteq \R$ eine nichtleere unbeschränkte Teilmenge der reellen Zahlen.
   Man betrachte die Mengenfolge $X_n := \{x \in X \mid x \geq n, n \in \N\}$.
   Nach Voraussetzung gilt $X_n \neq \emptyset$ für alle $n \in \N$.
-  Die Anwendung von $\mathbf{CC}(\R)$ ergibt folglich ein $(x_n)_{n \in \N} \in \prod_{n \in \N} X_n$.
+  Die Anwendung von \CCR ergibt folglich ein $(x_n)_{n \in \N} \in \prod_{n \in \N} X_n$.
   Nach Konstruktion ist $(x_n)_{n \in \N}$ eine unbeschränkte Folge in $X$.
 
   (3) $\Rightarrow$ (2):
@@ -658,11 +657,11 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Es bezeichne $(\tilde{y}_m)_{m \in M}$ ein Element aus $Y$.
   Aufgrund der Injektivität von $f$ und $\sigma_m$ existiert ein eindeutig bestimmtes Element $x_m \in X_m$ mit $\sigma_m(f(x_m)) = \tilde{y}_m$.
   Dann ist $(x_m)_{m \in M} \in \prod_{m \in M} X_m$.
-  Dies ist jedoch gerade die Aussage von $\mathbf{PCC}(\R)$.
+  Dies ist jedoch gerade die Aussage von \PCCR.
 \end{proof}
 
 \begin{bem}
-  Man erkennt, dass im Beweis von Satz \ref{thm:unboundedsubsetofR}((1) $\Leftrightarrow$ (2)) keine Eigenschaften der reellen Zahlen verwendet wurden. Der Äquivalenzbeweis von $\mathbf{CC}$ und $\mathbf{PCC}$ für beliebige abzählbare Mengenfamilien erfolgt daher analog.
+  Man erkennt, dass im Beweis von Satz \ref{thm:unboundedsubsetofR}((1) $\Leftrightarrow$ (2)) keine Eigenschaften der reellen Zahlen verwendet wurden. Der Äquivalenzbeweis von \CC und \PCC für beliebige abzählbare Mengenfamilien erfolgt daher analog.
 \end{bem}
 
 \begin{thm}
@@ -670,7 +669,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Äquivalent sind:
   \begin{enumerate}
     \item[(1)] Der klassische \textsc{Ascoli}-Satz.
-    \item[(2)] $\mathbf{CC}(\R)$.
+    \item[(2)] \CCR.
   \end{enumerate}
 \end{thm}
 
@@ -695,7 +694,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
     F_n := \{ f \in F \mid |f(x)| \geq m \}
   \end{displaymath}
   für alle $n \in \N$ nichtleer.
-  $\mathbf{CC}(\R)$ impliziert folglich die Existenz einer Folge 
+  \CCR impliziert folglich die Existenz einer Folge 
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in \N} F_n.
   \end{displaymath}
@@ -714,7 +713,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
     F_n := \{ f \in F \mid \text{Es existiert ein } y \in U_{\frac{1}{n+1}}(x) \text{ mit } f(y) \not\in U_\varepsilon(f(x)) \}
   \end{displaymath}
   nichtleer sind.
-  Wie zuvor impliziert $\mathbf{CC}(\R)$ die Existenz einer Folge 
+  Wie zuvor impliziert \CCR die Existenz einer Folge 
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in \N} F_n.
   \end{displaymath}
