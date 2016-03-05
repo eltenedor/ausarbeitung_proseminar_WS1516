@@ -17,6 +17,8 @@ aus \cite{herrlich2006axiom}.
 %  \end{addmargin}
 %\end{defn}
 
+\section{Der topologische \textsc{Ascoli}-Satz}
+
 \begin{defn}
   Es sei $(X,\tau)$ ein topologischer Raum und $(Y,d)$ ein metrischer Raum versehen mit der durch die Metrik induzierten Topologie $\tau_d$. Eine Teilmenge $F \subseteq Y^X$ heißt \textit{gleichgradig stetig}, wenn gilt:
   \begin{addmargin}[2em]{2em}% 1em left, 2em right
@@ -202,7 +204,9 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Damit ist der Beweis vollständig.
 \end{proof}
 
-Es fällt auf, dass die Implikation (a) $\Rightarrow$ (b) bereits im Rahmen von \ZF gültig ist.
+\section{Alternative Kompaktheitsbegriffe im \textsc{Ascoli}-Satz}
+
+Es fällt auf, dass die Implikation (a) $\Rightarrow$ (b) in Satz \ref{thm:ascoliPIT} bereits im Rahmen von \ZF gültig ist.
 Der Beweis des vorangehenden Satzes verwendet lediglich einer Stelle der Beweisrichtung (b) $\Rightarrow$ (a) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}-Satz für kompakte \textsc{Hausdorff}-Räume.
 Unter der Verwendung des Kompaktheitsbegriffs der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
 Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}-Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
@@ -475,6 +479,8 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   (2) $\Rightarrow$ (1): Das Auswahlaxiom impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
+\section{Der klassische \textsc{Ascoli}-Satz und eine Modifikation}
+
 Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}-Satzes die Anforderungen senkt.
 
 \begin{defn}[Klassischer \textsc{Ascoli}-Satz] 
@@ -621,7 +627,14 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Dann ist das Element $(x_{n,m(n)})_{n \in \N} \in \prod_{n \in \N} X_n$.
   Daraus folgt die Behauptung.
 
-  (3) $\Rightarrow$ (2)
+  (1) $\Rightarrow$ (3):
+  Sei $X \subseteq \R$ eine nichtleere unbeschränkte Teilmenge der reellen Zahlen.
+  Man betrachte die Mengenfolge $X_n := \{x \in X \mid x \geq n, n \in \N\}$.
+  Nach Voraussetzung gilt $X_n \neq \emptyset$ für alle $n \in \N$.
+  Die Anwendung von $\mathbf{CC}(\R)$ ergibt folglich ein $(x_n)_{n \in \N} \in \prod_{n \in \N} X_n$.
+  Nach Konstruktion ist $(x_n)_{n \in \N}$ eine unbeschränkte Folge in $X$.
+
+  (3) $\Rightarrow$ (2):
   Sei $(X_n)_{n \in \N}$ eine Folge nichtleerer Teilmengen reeller Zahlen.
   Sei zusätzlich $f \colon \R \to (0,1)$ eine fest gewählte Bijektion.
   Ein Beispiel hierfür liefert die Funktion $f(x) = \frac{2}{\pi}\arctan(x)$.
