@@ -308,7 +308,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 \end{thm}
 
 \begin{proof}
-  $(1)\Rightarrow(2) $: Nach Satz \ref{thm:pitequivalence} reicht es aus zu zeigen, dass $(1)$ bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
+  $(1) \Rightarrow(2) $: Nach Satz \ref{thm:pitequivalence} reicht es aus zu zeigen, dass $(1)$ bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
 
   Angenommen, es existiere eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
   Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
@@ -420,7 +420,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   Also gilt $F \neq \overline{F}$, ein Widerspruch zum \textsc{Áscoli}-Satz bezüglich Ultrafilterkompaktheit.
   Die Annahme, dass $\mathbf{2}^I$ nicht kompakt ist, muss also verworfen werden.
 
-  $(2)\Rightarrow(1)$: \PIT impliziert nach Satz \ref{thm:uftcompact} die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Ultrafilterkompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+  (2) $\Rightarrow$ (1): \PIT impliziert nach Satz \ref{thm:uftcompact} die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Ultrafilterkompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
 Ähnliches gilt nun auch für den nächsten Kompaktheitsbegriff der \textsc{Tychonoff}-Kompaktheit wie mit den nächsten Aussagen gezeigt werden soll.
@@ -462,7 +462,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 \end{thm}
 
 \begin{proof}
-  $(1) \Rightarrow (2)$: Sei $X$ eine Menge und $\mathbf{2}$ die zweielementige Menge $\{0,1\}$ und seien beide mit der diskreten Topologie ausgestattet. 
+  (1) $\Rightarrow$ (2): Sei $X$ eine Menge und $\mathbf{2}$ die zweielementige Menge $\{0,1\}$ und seien beide mit der diskreten Topologie ausgestattet. 
   Die diskrete Topologie lässt sich auch als die von der \textit{diskreten Metrik} induzierte Topologie auffassen, somit kann $\mathbf{2}$ auch als metrischer Raum betrachtet werden. 
 
   Es sei $F := C(X, \mathbf{2})$.
@@ -472,7 +472,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
   Damit sind die Bedingungen (b) des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist. Dies ist äquivalent zum Auswahlaxiom.
 
-  $(2)\Rightarrow(1)$: Das Auswahlaxiom impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+  (2) $\Rightarrow$ (1): Das Auswahlaxiom impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
 Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}-Satz bei allen vorgestellten Versionen von Kompaktheit. Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}-Satzes die Anforderungen senkt.
@@ -586,6 +586,72 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
 \end{proof}
 
+Für die anschließende mengentheoretische Charakterisierung des klassischen \textsc{Ascoli}-Satzes wird folgender Satz benötigt.
+
+\begin{thm}
+  \label{thm:unboundedsubsetofR}
+  Folgende Aussagen sind äquivalent:
+  \begin{enumerate}[(1)]
+    \item $\mathbf{CC}(\R)$, das Axiom der abzählbaren Auswahl (Countable Choice) für Teilmengen reeller Zahlen:
+      \begin{addmargin}[2em]{2em}% 1em left, 2em right
+        \textit{Für jede Folge $(X_n)_{n \in \N}$ nichtleerer Teilmengen $X_n \subseteq \R$ ist das kartesische Produkt $\prod_{n \in \N} X_n$ nichtleer.}
+      \end{addmargin}
+    \item $\mathbf{PCC}(\R)$, das Axiom der partiellen abzählbaren Auswahl (Partial Countable Choice) für Teilmengen reeller Zahlen: 
+      \begin{addmargin}[2em]{2em}% 1em left, 2em right
+        \textit{Für jede Folge $(X_n)_{n \in \N}$ nichtleerer Teilmengen $X_n \subseteq \R$ existiert eine unendliche Teilmenge $M \subseteq \N$, sodass das kartesische Produkt $\prod_{m \in M} X_m$ nichtleer ist.}
+      \end{addmargin}
+    \item Jede unbeschränkte Teilmenge der reellen Zahlen $\R$ enthält eine unbeschränkte Folge.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  (1) $\Leftrightarrow$ (2):
+  Es ist klar, dass aus $\mathbf{CC}(\R)$ die Aussage $\mathbf{PCC}(\R)$ folgt.
+  Sei umgekehrt eine Folge $(X_n)_{n \in \N}$ nichtleerer Teilmengen der reellen Zahlen gegeben.
+  Man definiere nun $Y_n := \prod_{m \leq n} X_m$.
+  Da endliche kartesische Produkte nichtleerer Mengen wiederum nichtleer sind, ist $(Y_n)_{n \in \N}$ eine Folge nichtleerer Mengen.
+  Nach $\mathbf{PCC}(\R)$ existiert eine unendliche Teilmenge $M \subseteq \N$ und ein Element $(y_m)_{m \in \N} \in \prod_{m \in M} Y_m$.
+  Daher gilt $y_m \in Y_m = \prod_{k \leq m} X_k$, also $y_m = (x_{1,m},\dots,x_{m,m})$.
+
+  Man definiere nun für alle $n \in \N$ die Funktion
+  \begin{displaymath}
+    m(n) := \min\{m \in M \mid n \leq m\}.
+  \end{displaymath}
+  Sie ist aufgrund der Wohlordnung der natürlichen Zahlen wohldefiniert.
+  Dann ist das Element $(x_{n,m(n)})_{n \in \N} \in \prod_{n \in \N} X_n$.
+  Daraus folgt die Behauptung.
+
+  (3) $\Rightarrow$ (2)
+  Sei $(X_n)_{n \in \N}$ eine Folge nichtleerer Teilmengen reeller Zahlen.
+  Sei zusätzlich $f \colon \R \to (0,1)$ eine fest gewählte Bijektion.
+  Ein Beispiel hierfür liefert die Funktion $f(x) = \frac{2}{\pi}\arctan(x)$.
+  Des Weiteren definiere für alle $n \in \N$
+  \begin{displaymath}
+    \sigma_n \colon \R \to \R, \quad \sigma_n(x) := n + x.
+  \end{displaymath}
+  Diese Abbildung ist injektiv.
+  Man setze nun $Y_n := \sigma_n(f(X_n))$. 
+  Dann folgt aus $X_n \subseteq \R$ sofort $Y_n \subseteq (n,n+1)$ und die Menge $Y:= \bigcup_{n \in \N} Y_n$ ist eine unbeschränkte nichtleere Teilmenge von $\R$, da aus $X_n \neq \emptyset$ stets $Y_n \neq \emptyset$ folgt.
+  Nach Voraussetzung existiert eine unbeschränkte Folge $(y_n)_{n \in \N}$ in $Y$.
+  Damit definiert
+  \begin{displaymath}
+    M := \{m \in \N \mid \text{Es existiert ein } n \in \N \text{ mit } y_n \in Y_m\}
+  \end{displaymath}
+  Es ist $M$ eine unendliche Teilmenge natürlicher Zahlen.
+  Angenommen, $M$ wäre endlich.
+  Dann würde ein $m = \max(M)$ existieren, sodass $m + 1$ eine obere Schranke für die Folge $(y_n)_{n \in \N}$ ist, was jedoch der Unbeschränktheit der Folge widerspricht.
+  Zudem ist $\N$ mit der natürlichen Ordnungsrelation wohlgeordnet.
+  Daraus folgt $Y := \prod_{m \in M} Y_m \neq \emptyset$, indem man $g(m) := \min\{n \in \N \mid y_n \in Y_m\}$ setzt.
+  Es bezeichne $(\tilde{y}_m)_{m \in M}$ ein Element aus $Y$.
+  Aufgrund der Injektivität von $f$ und $\sigma_m$ existiert ein eindeutig bestimmtes Element $x_m \in X_m$ mit $\sigma_m(f(x_m)) = \tilde{y}_m$.
+  Dann ist $(x_m)_{m \in M} \in \prod_{m \in M} X_m$.
+  Dies ist jedoch gerade die Aussage von $\mathbf{PCC}(\R)$.
+\end{proof}
+
+\begin{bem}
+  Man erkennt, dass im Beweis von Satz \ref{thm:unboundedsubsetofR}((1) $\Leftrightarrow$ (2)) keine Eigenschaften der reellen Zahlen verwendet wurden. Der Äquivalenzbeweis von $\mathbf{CC}$ und $\mathbf{PCC}$ für beliebige abzählbare Mengenfamilien erfolgt daher analog.
+\end{bem}
+
 \begin{thm}
   \label{thm:classicalascoli}
   Äquivalent sind:
@@ -597,7 +663,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
 \begin{proof}
   (1) $\Rightarrow$ (2):
-  Nach \ref{} genügt es zu zeigen, dass jede unbeschränkte Teilmenge $B$ von $\R$ eine unbeschränkte Folge enthält.
+  Nach Satz \ref{thm:unboundedsubsetofR} genügt es zu zeigen, dass jede unbeschränkte Teilmenge $B$ von $\R$ eine unbeschränkte Folge enthält.
   Dazu sei $B \subseteq \R$ unbeschränkt.
   Für ein $b \in B$ lassen sich die konstante Abbildung $f_b \colon \R \to \R, f(x):= b$ und die Menge $F := \{f_b \mid b \in B\}$ definieren.
   Für $x \in \R$ gilt $F(x) = \{f_b(x) \mid b \in B\} = B$ und diese Menge ist nach Voraussetzung unbeschränkt.

@@ -145,13 +145,13 @@ Zuvor soll jedoch die Rolle von \UFT im Rahmen der Übereinstimmung gewisser Kom
 \end{thm}
 
 \begin{proof}
-  (1)$\Rightarrow$(2):
+  (1)  $\Rightarrow$  (2):
   Es soll hierzu Satz \ref{thm:pitequivalence}((4) $\Rightarrow$ (3)) verwendet werden.
   Man beachte, dass dies gerade die Implikation ist, welche nicht Bezug auf Satz \ref{thm:uftcompact} nimmt.
   Es reicht daher aus zu zeigen, dass Produkte kompakter \textsc{Hausdorff}-Räume wiederum kompakt sind. 
   Produkte ultrafilterkompakter \textsc{Hausdorff}-Räume sind jedoch nach Lemma \ref{lem:uftprod} wieder ultrafilterkompakt, was nach Voraussetzung bedeutet, dass das Produkt kompakt ist.
 
-  (2)$\Rightarrow$(1):
+  (2) $\Rightarrow$ (1):
   Nach Satz \ref{thm:compactness}(1) genügt es zu zeigen, dass jeder Filter $\varphi$ auf einem ultrafilterkompakten Raum $X$ einen Adhärenzpunkt besitzt.
   Nach Voraussetzung existiert ein $\varphi$ umfassender Ultrafilter, welcher aufgrund der Ultrafilterkompaktheit von $X$ konvergiert.
   Damit ist ein konvergenter Oberfilter von $\varphi$ gefunden, also besitzt $\varphi$ einen Adhärenzpunkt.
@@ -171,7 +171,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 \end{thm}
 
 \begin{proof}
-  (1)$\Rightarrow$(2):
+  (1) $\Rightarrow$ (2):
   Es sei $f \colon X \to Y$ die nach (1) existierende injektive Abbildung.
   Ist $X \neq \emptyset$, so existiert ein $x_0 \in X$ und es lässt sich für alle $y \in Y$ die surjektive Abbildung
   \begin{displaymath}
@@ -183,7 +183,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   \end{displaymath}
   definieren. Aufgrund der Injektivität von $f$ besteht $f^{-1}(\{y\})$ aus nur einem Punkt, daher ist $g$ wohldefiniert.
 
-  (2)$\Rightarrow$(3):
+  (2) $\Rightarrow$ (3):
   Sei $X$ eine Menge.
   Es soll gezeigt werden, dass auf $X$ eine Wohlordnung existiert. 
   Ist $X$ leer, so gibt es nichts zu zeigen. Im Folgenden werde also $X \neq \emptyset$ angenommen.
@@ -238,7 +238,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 
   Die Existenz einer Wohlordnung auf einer beliebigen Menge $X$ impliziert \AC.
 
-  (3)$\Rightarrow$(1):
+  (3) $\Rightarrow$ (1):
   Seien $X,Y$ Mengen. Nach (3) lassen sich $X$ und $Y$ wohlordnen.
   Als wohlgeordnete Mengen sind sie nach dem Vergleichbarkeitssatz (DEISER ZITAT) entweder ordnungsisomorph oder es ist eine der Mengen isomorph zu einem initialen Intervall der anderen Menge.
   Im Ersten Fall gilt $|X| = |Y|$.
@@ -256,7 +256,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 \end{thm}
 
 \begin{proof}
-  (1),(2)$\Rightarrow$(3):
+  (1),(2) $\Rightarrow$ (3):
   Man betrachte zwei unendliche Kardinalzahlen $a,b$.
   Dann existieren disjunkte Mengen $A,B$ mit $|A| = a$ und $|B| = b$.
   Man betrachte $X := A \cup B$ als topologischen Raum mit Topologie $\tau := \{\emptyset, A, B, A \cup B\}$.
@@ -268,7 +268,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   Folglich gilt $a \leq b$ oder $b \leq a$.
   Zusammen mit Satz \ref{thm:comparablecardinal} und der Tatsache, dass je zwei endliche Kardinalzahlen vergleichbar sind folgt \AC.
 
-  (3)$\Rightarrow$(1),(2):
+  (3) $\Rightarrow$ (1),(2):
   Mit Satz \ref{thm:uftcompact} folgt aus \UFT bereits die Äquivalenz der Begriffe Kompaktheit und Ultrafilterkompaktheit.
   Es reicht also bereits zu zeigen, dass (1) gilt.
 
@@ -550,18 +550,18 @@ Es sollen als nächstes Ultrafilter in \textsc{Boole}schen Algebren charakterisi
 \end{prop}
 
 \begin{proof}
-  (1)$\Rightarrow$(2):
+  (1) $\Rightarrow$ (2):
   Angenommen der Ultrafilter $F$ ist nicht maximal. 
   So existiert ein Filter $F' \supsetneq F$, also insbesondere ein $x \in F' \setminus F$.
   Dann ist jedoch nach Voraussetzung $x' \in F$ und aufgrund der Inklusionsbeziehung $x' \in F'$.
   Dies widerspricht jedoch der Filtereigenschaft, da $0 = x' \cap x \in F'$, also $F' = B$ gilt.
 
-  (2)$\Rightarrow$(3):
+  (2) $\Rightarrow$ (3):
   Angenommen, es existieren $x,y \in B$ mit $x \lor y \in F$ aber $x \not\in F$ und $y \not\in F$.
   Man kann ohne Beschränkung der Allgemeinheit $x \neq 0$ annehmen.
   Dann gilt $x \leq x \lor y$ und damit wäre $F \cup \{x\}$ ein echt größerer Filter im Widerspruch zur Voraussetzung.
 
-  (3)$\Rightarrow$(1):
+  (3) $\Rightarrow$ (1):
   Für alle $x \in B$ gilt $x \cap x' = 1$.
   Zudem gilt für alle Filter $F$, dass $1 \in F$.
   Nach Voraussetzung gilt dann für jeden Primfilter $x \in F$ oder $x' \in F$.
@@ -650,10 +650,10 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
 \end{thm}
 
 \begin{proof}
-  (1)$\Rightarrow$(2): 
+  (1) $\Rightarrow$ (2): 
   Interpretiert man \PIT im Sinne von Filtern, so folgt dies sofort, da sich jede Potenzmengenalgebra als \textsc{Boole}sche Algebra auffassen lässt.
 
-  (2)$\Rightarrow$(3):
+  (2) $\Rightarrow$ (3):
   Nach Satz \ref{thm:uftcompact} folgt aus \UFT die Übereinstimmung von Kompaktheit mit Ultrafilterkompaktheit.
   Sei nun $(X_i)_{i \in I}$ eine Familie kompakter \textsc{Hausdorff}-Räume mit Produktraum $X := \prod_{i \in I} X_i$.
   Sei $\psi$ ein Ultrafilter auf diesem Produktraum.
@@ -662,14 +662,14 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   Also konvergiert, da die Produkttopologie initial bezüglich $(\pi_i)_{i \in I}$ ist der Filter $\psi$ gegen $(x_i)_{i \in I}$.
   Damit ist $X$ ultrafilterkompakt und folglich auch kompakt.
 
-  (3)$\Rightarrow$(4):
+  (3) $\Rightarrow$ (4):
   Dies ist eine Spezialisierung von (3), da das abgeschlossene Intervall $[0,1]$ mit euklidischer Topologie insbesondere ein \textsc{Hausdorff}-Raum ist.
 
-  (4)$\Rightarrow$(5):
+  (4) $\Rightarrow$ (5):
   Da in \textsc{Hausdorff}-Räumen insbesondere das $T1$-Axiom gilt und damit Einpunktmengen abgeschlossen sind, liefert Proposition \ref{prop:cartesianclosed}, dass man \textsc{Kantor}-Würfel als abgeschlossene Teilräume von \textsc{Hilbert}-Würfeln auffassen kann. 
   Als solche sind sie aber auch kompakt.
 
-  (5)$\Rightarrow$(6):
+  (5) $\Rightarrow$ (6):
   Sei $(X_i)_{i \in I}$ eine Familie endlicher diskreter Räume.
   Es bezeichne
   \begin{displaymath}
@@ -705,7 +705,7 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   da das Produkt $\mathbf{2}^{C(X_i,\mathbf{2})}$ bis auf Homöomorphie bereits durch die Kardinalität $|C( X_i, \mathbf{2} )|$ vollständig bestimmt ist.
   Daraus folgt die Kompaktheit von $X$, weil man $X$ als abgeschlossenen Teilraum eines nach (5) kompakten Raumes auffassen kann.
 
-  (6)$\Rightarrow$(1):
+  (6) $\Rightarrow$ (1):
   Sei $B$ eine \textsc{Boole}sche Algebra.
   Man betrachte die Menge $\mathcal{A}$ aller endlichen \textsc{Boole}schen Unteralgebren auf $B$.
   Für alle $A \in \mathcal{A}$ ist die Menge $X_A$ aller \textsc{Boole}schen Homomorphismen von $A$ nach $\mathbf{2}$ nichtleer, da jede endliche \textsc{Boole}sche Algebra einen maximalen Filter besitzt.
