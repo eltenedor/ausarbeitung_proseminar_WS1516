@@ -350,13 +350,14 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 
 \section{Der \textsc{Boole}sche Primidealsatz}
 
-Der \textsc{Boole}sche Primidealsatz (\PIT) ist eine im Vergleich zum Auswahlaxiom schwächere Aussage, die jedoch zu vielen der noch zu besprechenden Kompaktheitsaussagen äquivalent ist. 
-Dass \PIT echt schwächer ist als \AC, kann man in \cite{halpern1971boolean} nachlesen.
-Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen eine Reihe zu \PIT äquivalenter Aussagen aus unterschiedlichen Gebieten der Mathematik findet man in \cite{dau1994diplom}.
-In diesem Kapitel stehen speziell Kompaktheitsaussagen über kartesische Produkte im Vordergrund. Diese Kompaktheitsaussagen werden im Folgekapitel die Verbindung der \textsc{Ascoli}-Sätze zu \PIT ermöglichen.
+Der \textsc{Boole}sche Primidealsatz (\PIT) ist eine im Vergleich zum Auswahlaxiom schwächere Aussage, wie man in \cite{halpern1971boolean} nachlesen kann.
+Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen. Eine Reihe zu \PIT äquivalenter Aussagen aus unterschiedlichen Gebieten der Mathematik findet man in \cite{dau1994diplom}.
+Auch ist \PIT zu vielen der noch zu besprechenden Kompaktheitsaussagen äquivalent ist. 
+In diesem Kapitel stehen speziell Kompaktheitsaussagen über kartesische Produkte im Vordergrund. 
+Diese Kompaktheitsaussagen werden im Folgekapitel die Verbindung der \textsc{Ascoli}-Sätze zu \PIT ermöglichen.
 
-Im Folgenden werde wie in \cite{graetzer2003general} eine \textit{\textsc{Boole}sche Algebra} aufgefasst als ein \textit{\textsc{Boole}scher Verband} $(B; 1, \land, \lor, ', 1, 0)$, also ein komplementärer distributiver Verband. 
-Die Verträglichkeit von algebraischer Struktur und Verbandsstruktur ist gegeben durch 
+Im Folgenden werde wie in \cite{graetzer2003general} eine \textit{\textsc{Boole}sche Algebra} aufgefasst als ein \textit{\textsc{Boole}scher Verband} $(B; \;\land, \;\lor, \;', \;1, \;0)$, also ein komplementärer distributiver Verband. 
+Die Verträglichkeit der algebraischen Struktur mit der Verbandsstruktur ist gegeben durch 
 \begin{displaymath}
   x \land y = \inf\{x,y\} \quad \text{und} \quad x \lor y = \sup\{x,y\}
 \end{displaymath}
@@ -368,7 +369,7 @@ Zusätlich gilt
 \begin{displaymath}
   x \land y = x \quad \text{genau dann, wenn} \quad x \lor y = y,
 \end{displaymath}
-denn falls $x \land y = y$, so gilt $x \leq y$, also ist $y = \sup\{x,y\} = x \lor y$. 
+denn falls $x \land y = y$, so gilt $x \leq y$ also auch $y = \sup\{x,y\} = x \lor y$. 
 Die Umkehrung folgt analog.
 
 \begin{defn}
@@ -527,7 +528,7 @@ In \textsc{Boole}schen Algebren existiert das zum Ideal duale Konzept des Filter
 \begin{defn}
   Sei $B$ eine \textsc{Boole}sche Algebra. Dann bezeichnet man eine nichtleere echte Teilmenge $F \subsetneq B$ als \textit{Filter} in $B$, falls folgende Bedingungen gelten:
   \begin{enumerate}[(1)]
-    \item Aus $u \in F$ und $v \in I$ folgt $u \land v \in F$.
+    \item Aus $u \in F$ und $v \in F$ folgt $u \land v \in F$.
     \item Für $u \in F$, $x \in B$ und $u \leq x$ folgt  $x \in F$.
   \end{enumerate}
   Ein Filter $F$ in $B$ heißt \textit{Ultrafilter}, falls zusätzlich gilt:
@@ -536,7 +537,7 @@ In \textsc{Boole}schen Algebren existiert das zum Ideal duale Konzept des Filter
   \end{enumerate}
 \end{defn}
 
-Es sollen als nächstes Ultrafilter in \textsc{Boole}schen Algebren charakterisiert werden.
+Es sollen als nächstes Ultrafilter in \textsc{Boole}schen Algebren charakterisiert und ihr Verhalten im Hinblick auf \textsc{Boolesche} Homorphismen beschrieben werden.
 
 \begin{prop}
   \label{prop:ultrafilterchar}
@@ -565,6 +566,32 @@ Es sollen als nächstes Ultrafilter in \textsc{Boole}schen Algebren charakterisi
   Zudem gilt für alle Filter $F$, dass $1 \in F$.
   Nach Voraussetzung gilt dann für jeden Primfilter $x \in F$ oder $x' \in F$.
 \end{proof}
+
+\begin{lem}
+  \label{lem:boolehomfilters}
+  Es sei $f \colon A \to B$ ein Homomorphismus zwischen den \textsc{Boole}schen Algebren $A$ und $B$.
+  Dann gelten folgende Aussagen:
+  \begin{enumerate}[(1)]
+    \item Ist $F \subsetneq B$ ein Filter auf $B$, dann ist auch $f^{-1}(F)$ ein Filter auf $A$.
+    \item Ist $F$ sogar ein Ultrafilter, dann auch $f^{-1}$.
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  (1):
+  Sind $u,v \in f^{-1}(F)$ so sind $f(u),f(v) \in F$ und es gilt $f(u \land v) = f(u) \land f(v) \in F$, da $F$ ein Filter ist.
+  Damit folgt sofort $u \land v \in f^{-1}(F)$.
+  Man beachte, dass Homomorphismen aufgrund der Verträglichkeit der algebraischen Struktur mit Verbandsstruktur \textsc{Boole}scher Algebren isotone Abbildungen sind.
+  Für $x,y \in A$ mit $x \leq y$ gilt nämlich $x = x \land y$, also auch $f(x) = f(x\land y) = f(x) \land f(y)$ also auch $f(x) \leq f(y)$.
+  Daraus folgt für $u \in f^{-1}$ und $x \in A$, dass auch $x \in f^{-1}(F)$ gilt.
+
+  (2):
+  Sei $x \in A$ gegeben.
+  Dann gilt $f(x) \in F$ oder $f(x') = f(x)' \in F$.
+  Dies impliziert $x \in f^{-1}(F)$ oder $x' \in f^{-1}(F)$.
+\end{proof}
+
+
 
 Es lässt sich somit eine zu \PIT duale und damit äquivalente Formulierung für Filter finden:
   \begin{addmargin}[2em]{2em}% 1em left, 2em right
@@ -671,8 +698,11 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
    
   Es gilt 
   \begin{displaymath}
-    \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})} \simeq \mathbf{2}^{\bigcup_{i \in I} (X_i,\mathbf{2}) \times \{i\}}.
+    \prod_{i \in I} \mathbf{2}^{C(X_i,\mathbf{2})} 
+    \simeq \mathbf{2}^{\{(f,i) \mid f \in C(X_i,\mathbf{2}), i \in I\}}
+    = \mathbf{2}^{\bigcup_{i \in I} (X_i,\mathbf{2}) \times \{i\}},
   \end{displaymath}
+  da das Produkt $\mathbf{2}^{C(X_i,\mathbf{2})}$ bis auf Homöomorphie bereits durch die Kardinalität $|C( X_i, \mathbf{2} )|$ vollständig bestimmt ist.
   Daraus folgt die Kompaktheit von $X$, weil man $X$ als abgeschlossenen Teilraum eines nach (5) kompakten Raumes auffassen kann.
 
   (6)$\Rightarrow$(1):
@@ -707,9 +737,35 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
 
   Für alle Paare $(A,B)$ mit $A,B \in \mathcal{A}$ und $A \subseteq B$ ist die Menge
   \begin{displaymath}
-    M(A,B) := \{ 
+    M(A,B) := \{ (x_M)_{M \in \mathcal{A}} \in X \mid x_A \text{ ist die Einschränkung } {x_B}_{|A} \}
   \end{displaymath}
-  UNVOLLSTÄNDIG
+  abgeschlossen in $X$. 
+  Jedes Menge ist nämlich von der Form $M(A,B) = \prod_{i \in \mathcal{A}} Z_i$ mit $Z_i = X_i$ für alle $i \in \mathcal{A} \setminus \{A\}$ und $Z_A = r(X_B)$, wobei $r \colon X_B \to X_A$ die Restriktionsabbildung $r(x_B) := {x_B}_{|A}$ bezeichne.
+  Aufgrund der vorausgesetzten Diskretheit von $X_B$ ist $r$ stetig, und aufgrund der Diskretheit von $X_A$ sogar abgeschlossen.
+  Daher ist auch $M(A,B)$ nach Proposition \ref{prop:cartesianclosed} eine abgeschlossene Menge in $X$.
+
+  Zudem besitzt die Menge aller $M(A,B)$ die endliche Durchschnittseigenschaft, also existiert aufgrund der Kompaktheit auch ein Element $x := (x_M)_{M \in \mathcal{A}}$ im Durchschnitt aller $M(A,B)$.
+  Es bezeichne im Folgenden $B(a)$ die von $a \in B$ erzeugte Unteralgebra von $B$.
+  Dann ist die durch $f(a) = x_{B(a)}(a)$ bestimmte Abbildung von $B$ nach $\mathbf{2}$ ein \textsc{Boole}scher Homomorphismus.
+  Sind nämlich $a,b \in B$ so gilt zunächst 
+  \begin{displaymath}
+    x_{B(a \land b)}(a) = x_{B(a)}(a),
+  \end{displaymath}
+  da nach Voraussetzung $x$ im Schnitt aller $M(A,B)$, insbesondere also auch in $M(B(a),B(a \land b))$ enthalten ist, da $B(a) \subseteq B(a \land b)$.
+  Damit folgt
+  \begin{displaymath}
+    f(a \land b) 
+    = x_{B(a \land b)}(a \land b)
+    = x_{B(a \land b)}(a) \land x_{B(a \land b)}(b)
+    = x_{B(a)}(a) \land x_{B(b)}(b)
+    = f(a) \land f(b).
+  \end{displaymath}
+  Analog zeigt man $f(a \lor b) = f(a) \lor f(b)$.
+  Es gilt $B(a') = B(a)$ da \textsc{Boole}sche Unteralgebren unter anderem abgeschlossen unter Komplementbildung sind.
+  Damit folgt sofort $f(a') = f(a)'$.
+  Dass $f(1) = 1$ und $f(0) = 0$ folgt daraus, dass jede Komponente von $x$ ein \textsc{Boole}scher Homomorphismus ist.
+  Damit ist dann $f^{-1}(1)$ nach Lemma \ref{lem:boolehomfilters} ein Ultrafilter auf $B$.
+  Die Dualität von Idealen und Filtern in \textsc{Boole}schen Algebren liefert die Behauptung.
 \end{proof}
 
 
