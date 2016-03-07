@@ -204,10 +204,10 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
 
 \section{Alternative Kompaktheitsbegriffe im \textsc{Ascoli}-Satz}
 
-Es fällt auf, dass die Implikation (a) $\Rightarrow$ (b) in Satz \ref{thm:ascoliPIT} bereits im Rahmen von \ZF gültig ist.
-Der Beweis des vorangehenden Satzes verwendet lediglich einer Stelle der Beweisrichtung (b) $\Rightarrow$ (a) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}-Satz für kompakte \textsc{Hausdorff}-Räume.
+Betrachtet man den Beweis von Satz \ref{thm:ascoliPIT}, so fällt auf, dass die Implikation ((a) $\Rightarrow$ (b)) in Satz \ref{thm:ascoliPIT} bereits im Rahmen von \ZF gültig ist.
+Der Beweis dieses Satzes verwendet lediglich einer Stelle der Beweisrichtung ((b) $\Rightarrow$ (a)) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}-Satz für kompakte \textsc{Hausdorff}-Räume.
 Unter der Verwendung des Kompaktheitsbegriffs der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
-Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}-Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält.
+Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}-Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält und ob sich diese Versionen des \textsc{Ascoli}-Satzes bereits in \ZF beweisen lassen.
 
 \begin{lem}
   \label{lem:filterclusterpoint}
@@ -425,7 +425,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   (2) $\Rightarrow$ (1): \PIT impliziert nach Satz \ref{thm:uftcompact} die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Ultrafilterkompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
-Ähnliches gilt nun auch für den nächsten Kompaktheitsbegriff der \textsc{Tychonoff}-Kompaktheit wie mit den nächsten Aussagen gezeigt werden soll.
+Ähnliches gilt nun auch für den nächsten Kompaktheitsbegriff der \textsc{Tychonoff}-Kompaktheit wie der folgende Satz zeigt.
 
 \begin{thm}
   Äquivalent sind:
@@ -453,7 +453,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   (2) $\Rightarrow$ (1): \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
-Ähnlich gilt für den nächsten Kompaktheitsbegriff
+Die Substitution der Kompaktheit durch \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit führt sogar zu einer Verschärfung der benötigten Bedingungen für die Gültigkeit des \textsc{Ascoli}-Satzes man im nächsten Satz sieht.
 
 \begin{thm}
   Äquivalent sind:
@@ -472,14 +472,14 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   Da $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum keine unendliche Teilmenge besitzt, folgt sofort die \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit von $F(x)$.
   Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen in jeder Topologie, also insbesondere auch in der punktweisen Topologie $\tau_p$.
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
-  Damit sind die Bedingungen (b) des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist. Dies ist äquivalent zum Auswahlaxiom.
+  Damit sind die Bedingungen (b) des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist. Dies ist äquivalent zum Auswahlaxiom nach Satz \ref{thm:comparablecardinal}.
 
-  (2) $\Rightarrow$ (1): Das Auswahlaxiom impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+  (2) $\Rightarrow$ (1): Das Auswahlaxiom impliziert nach Satz \ref{thm:alexandroffUrysohnCompactAC} die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
 \section{Der klassische \textsc{Ascoli}-Satz und eine Modifikation}
 
-Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}-Satz bei allen vorgestellten Versionen von Kompaktheit falls lediglich \ZF vorausgesetzt wird. 
+Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}-Satz bei allen vorgestellten Versionen von Kompaktheit, falls lediglich \ZF vorausgesetzt wird. 
 Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}-Satzes die Anforderungen senkt.
 
 \begin{defn}[Klassischer \textsc{Ascoli}-Satz] 
@@ -802,7 +802,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Daraus folgt $(a)$.
 \end{proof}
 
-Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}-Satz noch der klassische \textsc{Ascoli} Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}-Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt:
+Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}-Satz noch der klassische \textsc{Ascoli} Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}-Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt.
 
 \begin{thm}[Modifizierter \textsc{Ascoli}-Satz]
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
