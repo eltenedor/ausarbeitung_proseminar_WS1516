@@ -19,14 +19,18 @@ Eine wichtige Rolle für diese Beweise wird der \textsc{Boole}sche Primidealsatz
 In diesem Abschnitt soll eine allgemeine topologische Version des \textsc{Ascoli}-Satzes behandelt werden.
 
 \begin{defn}
-  Es sei $(X,\tau)$ ein topologischer Raum und $(Y,d)$ ein metrischer Raum versehen mit der durch die Metrik induzierten Topologie $\tau_d$. Eine Teilmenge $F \subseteq Y^X$ heißt \textit{gleichgradig stetig}, wenn gilt:
+  Es sei $(X,\tau)$ ein topologischer Raum und $(Y,d)$ ein metrischer Raum versehen mit der durch die Metrik induzierte Topologie $\tau_d$. Eine Teilmenge $F \subseteq Y^X$ heißt \textit{gleichgradig stetig}, wenn gilt:
   \begin{addmargin}[2em]{2em}% 1em left, 2em right
     Für alle $x \in X$ und $\varepsilon > 0$ existiert ein $V \in \dot{x} \cap \tau$, sodass \\
     für alle $f \in F$ gilt, dass $f(V) \subseteq U_\varepsilon(f(x))$.
   \end{addmargin}
 \end{defn}
 
-Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden $C_{\co}(X,Y)$ den topologischen Funktionenraum $(C(X,Y),\tau_{\co})$ der stetigen Funktionen von $X$ nach $Y$ ausgestattet mit der kompakt-offenen Topologie.
+Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden $C_{\co}(X,Y)$ den topologischen Funktionenraum $(C(X,Y),\tau_{\co})$ der stetigen Funktionen von $X$ nach $Y$ ausgestattet mit der \textit{kompakt-offenen} Topologie.
+Diese Topologie wird erzeugt von Subbasiselementen der Form
+\begin{displaymath}
+  (K,O) := \{f \in C(X,Y) \mid K \subseteq X \text{ ist kompakt und } O \in \sigma\}.
+\end{displaymath}
 
 \begin{defn}[Topologischer \textsc{Ascoli}-Satz]
   Sei $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
@@ -41,7 +45,9 @@ Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden
   \end{enumerate}
 \end{defn}
 
-Man beachte, dass die auf dem Teilraum $F$ verwendete Topologie die Spur $\tau_{\co}$ der kompakt-offenen Topologie auf $C(X,Y)$ ist.
+Die Hauptaussage des Satzes ist also die Folgerung der Kompaktheit einer Menge stetiger Funktionen bezüglich einer starken Topologie, in diesem Fall der kompakt-offenen Topologie, aus der Kompaktheit bezüglich der schwächeren punktweisen Topologie.
+Eine verbreitete Variation des Satzes verzichtet auf Teil (b,$\beta$) und ersetzt die Kompaktheit in (a) durch relative Kompaktheit.
+Man beachte, dass die auf dem Teilraum $F$ verwendete Topologie $\tau_{\co}$ die Spur der kompakt-offenen Topologie auf $C(X,Y)$ ist.
 Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \textsc{Boole}schen Primidealsatz (\PIT) ist.
 
 \begin{thm}
@@ -60,10 +66,11 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Es sei $F := C(X, \mathbf{2})$.
   Dann gilt $C(X, \mathbf{2}) = \mathbf{2}^X$, da $X$ nach Voraussetzung diskret ist.
   Es folgt, dass $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum kompakt ist.
-  Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen in jeder Topologie, also insbesondere auch in der punktweisen Topologie $\tau_p$.
+  Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen bezüglich jeder Topologie, also insbesondere auch bezüglich der punktweisen Topologie $\tau_p$.
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind und man daher für alle $x \in X$ und $\varepsilon > 0$ die Menge $\{x\}$ als offene Umgebung von $x$ wählen kann.
   Dann gilt nämlich für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 < \varepsilon$.
-  Damit sind alle Bedingungen aus $(b)$ des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt ist. 
+  Damit sind alle Bedingungen aus $(b)$ des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt bezüglich der kompakt-offenen Topologie ist.
+  Da die kompakt-offene Topologie stärker als die punktweise Topologie ist, folgt damit die Kompaktheit von $\mathbf{2}^X$ bezüglich der punktweisen Topologie.
   Dies ist nach Satz \ref{thm:pitequivalence} äquivalent zu \PIT.
 
   (2) $\Rightarrow$ (1): Es seien $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
@@ -103,28 +110,31 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
     \omega: X \times F \to Y, \quad (y,g) \mapsto g(y).
   \end{displaymath}
   Unter Berücksichtigung von ($\ast$) folgt $\omega(K_f \times U_f) \subseteq B_f$.
-  Es definiere $\mathcal{C}$ die Menge aller Tripel $(f,K,U)$, wobei $f \in F$, $K$ eine Umgebung von $x$ in $X$ und $U$ eine offene Umgebung von $f$ in $F$ mit $\omega(K \times U) \subseteq B_f$ sei.
+  Es definiere $\mathcal{C}$ die Menge aller Tripel $(f,K,U)$, wobei $f \in F$, $K$ eine kompakte Umgebung von $x$ in $X$ und $U$ eine offene Umgebung von $f$ in $F$ mit $\omega(K \times U) \subseteq B_f$ sei.
   Dann liefert
   \begin{displaymath}
     \mathfrak{U} := \{ U \subseteq F \mid \text{es existieren $f \in F$, $K \subseteq X$ mit $(f,K,U) \in \mathcal C$} \}
   \end{displaymath}
-  eine offene Überdeckung von $F$, da für alle $f \in F$ nach Konstruktion $(f,K_f,U_f) \in \mathfrak{U}$ gilt.
+  eine offene Überdeckung von $F$, da für alle $f \in F$ nach Konstruktion $(f,K_f,U_f) \in \mathcal{C}$, also auch $U_f \in \mathfrak{U}$ gilt.
   Nach Voraussetzung ist $F$ kompakt, daher existiert eine endliche Teilüberdeckung durch $U_1,\dots,U_n \in \mathfrak{U}$.
-  Für alle $i = 1,\dots,n$ wähle man nun $f_i \in F$ und $K_i \subseteq X$ mit $(f_i, K_i, U_i) \in \mathcal{C}$.
+  Für alle $i \in \{ 1,\dots,n\}$ wähle man nun $f_i \in F$ und $K_i \subseteq X$ mit $(f_i, K_i, U_i) \in \mathcal{C}$.
   Des Weiteren definiere man 
   \begin{displaymath}
     U := \bigcap_{i = 1}^n K_i.
   \end{displaymath}
-  Es ist $U$ eine (nicht notwendig offene) Umgebung von $x \in X$.
-  Nun soll gezeigt werden, dass für diese Wahl von $U$ die Voraussetzung der gleichgradigen Stetigkeit erfüllt ist, also dass für alle $f \in F$ folgt, dass $f(U) \subseteq U_\varepsilon(f(x))$ gilt.
-  Für jedes $f \in F$ existiert aufgrund der Überdeckungseigenschaft ein $i = 1,\dots,n$ mit $f \in U_i$.
+  Es ist $U$ eine nicht notwendig offene aber als endlicher Durchschnitt kompakter Mengen eine kompakte Umgebung von $x \in X$.
+  Nun soll gezeigt werden, dass für alle $f \in F$ folgt, dass $f(U) \subseteq U_\varepsilon(f(x))$ gilt.
+  Da $X$ nach Voraussetzung lokalkompakt ist, enthält $U$ folglich auch eine offene Umgebung $V$ von $x$ für die dann entsprechend $f(V) \subseteq U_\varepsilon(f(x))$ gilt.
+  Damit ist dann $F$ gleichgradig stetig.
+
+  Für jedes $f \in F$ existiert aufgrund der Überdeckungseigenschaft ein $i \in \{ 1,\dots,n\}$ mit $f \in U_i$.
   Sei des Weiteren $y \in U$ gegeben.
   Dann gilt
   \begin{displaymath}
     f(y) = \omega(y,f) \in \omega(U \times U_i) \subseteq \omega(K_i \times U_i) \subseteq B_{f_i},
   \end{displaymath}
   also $d(f_i(x),f(y)) < \tfrac{\varepsilon}{2}$.
-  Insbesondere gilt für $x \in U$, da nach Voraussetzung $x \in K_i$ für alle $i = 1,\dots,n$, dass $d(f_i(x),f(x)) < \tfrac{\varepsilon}{2}$.
+  Insbesondere gilt für $x \in U$, da nach Voraussetzung $x \in K_i$ für alle $i \in \{ 1,\dots,n\}$, dass $d(f_i(x),f(x)) < \tfrac{\varepsilon}{2}$.
   Unter Verwendung der Dreiecksungleichung folgt letztlich
   \begin{displaymath}
     d(f(x),f(y)) \leq d(f(x),f_i(x)) + d(f_i(x),f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
@@ -133,7 +143,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Folglich ist $F$ gleichgradig stetig.
 
   (b) $\Rightarrow$ (a)
-  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y$ kompakt und besitzt zudem die \textsc{Hausdorff}-Eigenschaft.
+  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y$ kompakt und besitzt zudem als metrischer Raum die \textsc{Hausdorff}-Eigenschaft.
   %%%%%%%% PIT %%%%%%%%
   Der \textsc{Tychonoff}-Satz für \textsc{Hausdorff}-Räume \ref{thm:pitequivalence}(3) besagt, dass dann auch $\prod_{x \in X} F(x) \subseteq Y^X$ kompakt ist.
   %%%%%%%%%%%%%%%%%%%%%
@@ -180,10 +190,10 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   \end{displaymath}
   eine offene Überdeckung von $K$.
   Aufgrund der Kompaktheit von $K$ lässt sich eine endliche Teilüberdeckung $W_1,\dots,W_m \in \mathfrak{W}$ auswählen.
-  Für alle $i = 1,\dots,m$ wähle man entsprechend der Definition $\mathfrak{W}$ ein $x_i$ mit $(x_i,W_i) \in \mathcal{C}$.
+  Für alle $i \in \{ 1,\dots,m\}$ wähle man entsprechend der Definition $\mathfrak{W}$ ein $x_i$ mit $(x_i,W_i) \in \mathcal{C}$.
   Dann ist
   \begin{displaymath}
-    B_f := \{ g \in F \mid d(f(x_i),g(x_i)) < \tfrac{r}{4} \text{ für } i = 1,\dots,m\}
+    B_f := \{ g \in F \mid d(f(x_i),g(x_i)) < \tfrac{r}{4} \text{ für } i \in \{ 1,\dots,m\}\}
   \end{displaymath}
   als Basisumgebung von $\tau_p$ insbesondere eine offene Umgebung von $f$.
 
@@ -206,14 +216,14 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
 
 Betrachtet man den Beweis von Satz \ref{thm:ascoliPIT}, so fällt auf, dass die Implikation ((a) $\Rightarrow$ (b)) in Satz \ref{thm:ascoliPIT} bereits im Rahmen von \ZF gültig ist.
 Der Beweis dieses Satzes verwendet lediglich einer Stelle der Beweisrichtung ((b) $\Rightarrow$ (a)) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}-Satz für kompakte \textsc{Hausdorff}-Räume.
-Unter der Verwendung des Kompaktheitsbegriffs der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
+Unter der Verwendung des Kompaktheitsbegriffes der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
 Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}-Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält und ob sich diese Versionen des \textsc{Ascoli}-Satzes bereits in \ZF beweisen lassen.
 
 \begin{lem}
   \label{lem:filterclusterpoint}
   Es sei $(X,\tau)$ ein topologischer Raum, sodass die darin offen-abgeschlossenen Mengen einen Basis für die Topologie $\tau$ bilden.
   \begin{itemize}
-    \item[(1)] Ist $\mathcal{F}$ ein Filter ohne Häufungspunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen-abgeschlossenen Elemente 
+    \item[(1)] Ist $\mathcal{F}$ ein Filter ohne Adhärenzpunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen-abgeschlossenen Elemente von $\mathcal{F}$
      \begin{displaymath}
        \bigcap_{A \in \mathfrak{A}} A = \emptyset.
      \end{displaymath}
@@ -227,33 +237,19 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 
 \begin{proof}
   (1):
-  Nach Voraussetzung besitzt $\mathcal{F}$ keinen Häufungspunkt.
-  Dies bedeutet, dass
-  \begin{displaymath}
-    \bigcap_{F \in \mathcal{F}} \overline F = \emptyset.
-  \end{displaymath}
+  Nach Voraussetzung besitzt $\mathcal{F}$ keinen Adhärenzpunkt.
+  Gemäß Proposition \ref{prop:adherence} folgt $\bigcap_{F \in \mathcal{F}} \overline F = \emptyset$.
   Für alle $x \in X$ gilt damit, dass ein $F \in \mathcal{F}$ existiert, sodass $x \not\in \overline{F}$.
   Das bedeutet, dass $X \setminus \overline{F}$ eine offene Umgebung von $x$ ist.
-  Da die offen-abgeschlossenen Mengen nach Voraussetzung eine Basis für $\tau$ bilden, existiert eine offen-abgeschlossene Umgebung $U$ von $x$, mit $U \subseteq X \setminus \overline{F}$ und damit
-  \begin{displaymath}
-    U \cap F = \emptyset.
-  \end{displaymath}
-  Folglich ist $X \setminus U \supseteq F$ und wegen des Abschlusses gegen Obermengenbildung
-  \begin{displaymath}
-    X \setminus U \in \mathcal{F}.
-  \end{displaymath}
+
+  Da die offen-abgeschlossenen Mengen nach Voraussetzung eine Basis für $\tau$ bilden, existiert eine offen-abgeschlossene Umgebung $U$ von $x$, mit $U \subseteq X \setminus \overline{F}$ und damit $ U \cap F = \emptyset$.
+  Folglich ist $X \setminus U \supseteq F$ und wegen des Abschlusses gegen Obermengenbildung $X \setminus U \in \mathcal{F}$.
   Es existiert also eine offen-abgeschlossene Menge in $\mathcal{F}$, die $x$ nicht enthält. 
-  Dies impliziert
-  \begin{displaymath}
-    x \not\in \bigcap_{A \in \mathfrak{A}} A.
-  \end{displaymath}
-  Da $x$ beliebig gewählt war, folgt 
-  \begin{displaymath}
-   \bigcap_{A \in \mathfrak{A}} A = \emptyset
-  \end{displaymath}
-  und damit die Behauptung.
+  Dies impliziert $ x \not\in \bigcap_{A \in \mathfrak{A}} A$.
+  Da $x$ beliebig gewählt war, folgt $\bigcap_{A \in \mathfrak{A}} A = \emptyset$ und damit die Behauptung.
 
   (2):
+  Seien nun $x,y \in X$ mit $x \neq y$ gegeben.
   Unter der Voraussetzung, dass $(X,\tau)$ das T1-Axiom erfüllt, lässt sich zur offenen Umgebung $X \setminus \overline{F}$ aus Teil (1) des Beweises eine offene Umgebung 
   \begin{displaymath}
     U_x \subseteq X \setminus \overline{F}
@@ -314,7 +310,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 
   Angenommen, es existiere eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
   Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
-  Dann existiert nach Satz \ref{thm:compactness} ein Filter $\mathcal{F}$ auf $P$ ohne Häufungspunkt.
+  Dann existiert nach Satz \ref{thm:compactness} ein Filter $\mathcal{F}$ auf $P$ ohne Adhärenzpunkt.
 
   Der mit der Produkttopologie ausgestattete Raum $P$ besitzt eine Basis aus offen-ab\-ge\-schlossenen Mengen.
   Dies folgt daraus, dass bereits jedes Subbasiselement $S$ per Definition offen ist und, da $\mathbf{2}$ diskret ist, auch ein offenes Komplement besitzt.
@@ -439,7 +435,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   (1) $\Rightarrow$ (2): Es reicht aus zu zeigen, dass (1) bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
   Angenommen, es existiert eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
   Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
-  Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Häufungspunkt.
+  Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Adhärenzpunkt.
 
   Da das Intervall $[0,1]$ ausgestattet mit euklidischer Topologie insbesondere ein $T1$-Raum ist, sind Einpunktmengen abgeschlossen.
   Betrachtet man nun $P$ als Teilraum des \textsc{Hilbert}-Würfels $[0,1]^I$, so folgt nach Proposition \ref{prop:cartesianclosed}, dass $P$ abgeschlossen im \textsc{Hilbert}-Würfel ist.
@@ -470,7 +466,7 @@ Die Substitution der Kompaktheit durch \textsc{Alexandroff}-\textsc{Urysohn}-Kom
   Es sei $F := C(X, \mathbf{2})$.
   Dann gilt $C(X, \mathbf{2}) = \mathbf{2}^X$, da $X$ nach Voraussetzung diskret ist.
   Da $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum keine unendliche Teilmenge besitzt, folgt sofort die \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit von $F(x)$.
-  Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen in jeder Topologie, also insbesondere auch in der punktweisen Topologie $\tau_p$.
+  Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen bezüglich jeder Topologie, also insbesondere auch bezüglich der punktweisen Topologie $\tau_p$.
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
   Damit sind die Bedingungen (b) des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist. Dies ist äquivalent zum Auswahlaxiom nach Satz \ref{thm:comparablecardinal}.
 
