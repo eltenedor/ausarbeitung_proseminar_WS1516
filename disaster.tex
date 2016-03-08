@@ -544,20 +544,25 @@ Diese konvergiert weiterhin gegen $x$ und es gilt
    \lim_{n \to \infty} f_{n}(x_n) 
   =\lim_{n \to \infty} f_{2n-1}(x_{2n-1}) 
   =\lim_{n \to \infty} f_{2n-1}(z_{2n-1}) 
-  =\lim_{n \to \infty} f_n(z_n) = g(x)
+  =\lim_{n \to \infty} f_n(z_n),
 \end{displaymath}
-und eine für $(y_n)_{n \in \N}$ analoge Gleichung, da jede Teilfolge einer konvergenten Folge gegen denselben Grenzwert konvergiert.
+da jede Teilfolge einer konvergenten Folge gegen denselben Grenzwert konvergiert.
+Für $(y_n)_{n \in \N}$ gilt analoge Gleichung, was letztlich
+\begin{displaymath}
+   \lim_{n \to \infty} f_{n}(x_n) = \lim_{n \to \infty} f_{n}(y_n) 
+\end{displaymath}
+impliziert.
 
 Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die stetige Konvergenz festgehalten werden.
 
 \begin{prop}
   \label{prop:stetigkonv}
-  Es sei $(f_n)_{n \in \N}$ eine Folge stetiger Abbildungen von $\R$ nach $\R$ und $g$ eine stetige Abbildung mit demselben Definitions- und Wertebereich.
+  Es sei $(f_n)_{n \in \N}$ eine Folge stetiger Abbildungen von $\R$ nach $\R$ und $g$ eine stetige Abbildung mit demselben Definitionsbereich und derselben Zielmenge.
   Dann gelten folgende Aussagen:
   \begin{itemize}
-    \item[(1)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch punktweise gegen $g$.
-    \item[(2)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so ist auch $g$ stetig.
-    \item[(3)] Falls $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $g$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch stetig gegen $g$.
+    \item[(1)] Falls $(f_n)_{n \in \N}$ stetig gegen $f$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch punktweise gegen $f$.
+    \item[(2)] Falls $(f_n)_{n \in \N}$ stetig gegen $f$ konvergiert, so ist auch $f$ stetig.
+    \item[(3)] Falls $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $f$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch stetig gegen $f$.
   \end{itemize}
 \end{prop}
 
@@ -566,7 +571,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   Dies folgt direkt aus der Definition unter Betrachtung konstanter Folgen $(x_n)_{n \in \N}$ mit $x_n = x$ für alle $n \in \N$.
 
   (2): 
-  Es soll die Stetigkeit der Grenzfunktion $g$ mittels Folgenstetigkeit gezeigt werden. 
+  Es soll die Stetigkeit der Grenzfunktion $f$ mittels Folgenstetigkeit gezeigt werden. 
   Es sei dazu $(x_n)_{n \in \N}$ eine Folge in $\R$ mit Grenzwert $x$ und $\varepsilon > 0$ gegeben.
   Nach (1) konvergiert $(f_n)_{n \in \mathbb{N}}$ punktweise.
   Daraus lässt sich nun induktiv eine Teilfolge $(f_{n_k})_{k \in \mathbb{N}}$ gewinnen mit
@@ -610,18 +615,20 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   (3): 
   Es sei $(x_n)_{n \in \N}$ eine Folge in $\R$ mit Grenzwert $x$.
   Des Weiteren sei $\varepsilon > 0$ gegeben.
-  Da nach Voraussetzung $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $f$ konvergiert existiert eine Umgebung $U$ von $x$, sodass ${f_n}_{| U}$ gleichmäßig konvergiert.
-  Es existiert somit ein $n_\varepsilon$, sodass für alle $y \in U$ gilt 
+  Da nach Voraussetzung $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $f$ konvergiert existiert eine offene Umgebung $U_x$ von $x$, sodass ${f_n}_{| U_x}$ gleichmäßig konvergiert.
+  Es existiert somit ein $n_\varepsilon$, sodass für alle $y \in U_x$ gilt 
   \begin{displaymath}
-    | f_n(y) - f_n(x) | \leq \frac{\varepsilon}{2} \quad \text{ für alle $n \geq n_\varepsilon$}.
+    | f_n(y) - f(y) | \leq \frac{\varepsilon}{2} \quad \text{ für alle $n \geq n_\varepsilon$}.
   \end{displaymath}
-  Da $(x_n)_{n \in \N}$ voraussetzungsgemäß gegen $x$ konvergiert, existiert ein $N \in \N$, sodass $x_n \in U$ für alle $n \geq N$.
-  Zuletzt existiert aufgrund der punktweisen Konvergenz von $(f_n)_{n \in \N}$, welche aus (1) folgt, ein $n_p \in \N$, sodass
+  Als Grenzfunktion einer lokal gleichmäßig konvergenten Funktionenfolge ist $f$ zudem stetig in $x$.
+  Es existiert also ein $\delta > 0$, sodass für alle $y \in U_\delta(x)$
   \begin{displaymath}
-    | f_n(x) - f(x) | \leq \frac{\varepsilon}{2} \quad \text{ für alle $n \geq n_p$}.
+    | g(y) - g(x) | < \frac{\varepsilon}{2}
   \end{displaymath}
+  gilt.
+  Da $(x_n)_{n \in \N}$ voraussetzungsgemäß gegen $x$ konvergiert, existiert ein $N \in \N$, sodass $x_n \in U_\delta(x) \cap U_x$ für alle $n \geq N$.
 
-  Setzt man nun $n':= \max(n_\varepsilon, N, n_p)$, so folgt unter Anwendung der Dreiecksungleichung
+  Setzt man nun $n':= \max(n_\varepsilon, N)$, so folgt unter Anwendung der Dreiecksungleichung
   \begin{displaymath}
     | f_n(x_n) - f(x) |
     \leq
@@ -676,7 +683,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Sei $(X_n)_{n \in \N}$ eine Folge nichtleerer Teilmengen reeller Zahlen.
   Sei zusätzlich $f \colon \R \to (0,1)$ eine fest gewählte Bijektion.
   Ein Beispiel hierfür liefert die Funktion $f(x) = \frac{2}{\pi}\arctan(x)$.
-  Des Weiteren definiere für alle $n \in \N$
+  Des Weiteren definiere man für alle $n \in \N$
   \begin{displaymath}
     \sigma_n \colon \R \to \R, \quad \sigma_n(x) := n + x.
   \end{displaymath}
@@ -841,7 +848,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Daraus folgt $(a)$.
 \end{proof}
 
-Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}\hyp{}Satz noch der klassische \textsc{Ascoli} Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}\hyp{}Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt.
+Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}\hyp{}Satz noch der klassische \textsc{Ascoli}\hyp{}Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}\hyp{}Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt.
 
 \begin{thm}[Modifizierter \textsc{Ascoli}-Satz]
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
