@@ -455,7 +455,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   (2) $\Rightarrow$ (1): \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}\hyp{}Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
-Die Substitution der Kompaktheit durch \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit führt sogar zu einer Verschärfung der benötigten Bedingungen für die Gültigkeit des \textsc{Ascoli}\hyp{}Satzes man im nächsten Satz sieht.
+Die Substitution der Kompaktheit durch \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit führt sogar zu einer Verschärfung der benötigten Bedingungen für die Gültigkeit des \textsc{Ascoli}\hyp{}Satzes wie der nächste Satz zeigt.
 
 \begin{thm}
   Äquivalent sind:
@@ -473,8 +473,44 @@ Die Substitution der Kompaktheit durch \textsc{Alexandroff}\hyp{}\textsc{Urysohn
   Dann gilt $C(X, \mathbf{2}) = \mathbf{2}^X$, da $X$ nach Voraussetzung diskret ist.
   Da $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum keine unendliche Teilmenge besitzt, folgt sofort die \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit von $F(x)$.
   Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen bezüglich jeder Topologie, also insbesondere auch bezüglich der punktweisen Topologie $\tau_p$.
-  Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
-  Damit sind die Bedingungen (b) des \textsc{Ascoli}\hyp{}Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt ist. Dies ist äquivalent zum Auswahlaxiom nach Satz \ref{thm:comparablecardinal}.
+  Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. 
+  Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
+  Damit sind die Bedingungen (b) des \textsc{Ascoli}\hyp{}Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt ist. 
+
+  Es soll Satz \ref{thm:comparablecardinal} angewendet werden, um zu folgern, dass \AC gilt.
+  Dazu seien $A$ und $B$ zwei unendliche Mengen mit Kardinalitäten $|A| = a$ und $|B| = b$.
+  Sei $\infty$ ein Element, welches nicht in $A \cup B$ enthalten ist.
+  Setze $I := \{\infty\} \cup A \cup B$ und betrachte den \textsc{Kantor}\hyp{}Würfel $\mathbf{2}^I$.
+  Nach dem vorangehenden Beweis ist dieser \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt.
+  Für jede Teilmenge $C \subseteq I$ sei nun 
+  \begin{equation}
+    \chi_C \colon I \to \mathbf{2}, \quad
+    \chi_C(i) := 
+    \begin{cases}
+      1 &\text{, falls } i \in C \\
+      0 &\text{, falls } i \not\in C
+    \end{cases}
+  \end{equation}
+  die zu $C$ gehörige charakteristische Funktion.
+  Dan besitzt die Teilmenge
+  \begin{displaymath}
+    M := \{\chi_{\{a\}} \mid a \in A\} \cup \{\chi_{\{\infty,b\}} \mid b \in B\} \subseteq \mathbf{2}^I
+  \end{displaymath}
+  als unendliche Menge einen vollständigen Häufungspunkt $x := (x_i)_{i \in I} \in \mathbf{2}^I$.
+
+  Man unterscheide nun zwei Fälle:
+  Ist $x_\infty = 0$, so ist das Subbasiselement $U := \prod_{i \in I} U_i$ mit $U_\infty = \{0\}$ und $U_i = \mathbf{2}$ für alle $i \neq \infty$ eine offene Umgebung von $x$. 
+  Des Weiteren gilt
+  \begin{displaymath}
+    |A|
+    = |\{\chi_{\{a\}} \mid a \in A\}|
+    = | M \cap U |
+    = | M |
+  \end{displaymath}
+  da $x$ ein vollständiger Häufungspunkt von $M$ ist.
+  Es existiert also eine Bijektion von $A$ nach $M$, insbesondere existiert eine Injektion von $\{\chi_{\{\infty,b\}} \mid b \in B\}$ nach $A$, und damit gilt definitionsgemäß $b \leq a$. 
+  Gilt andererseits $x_\infty = 1$, so zeigt man analog $a \leq b$.
+  Da $a$ und $b$ beliebige unendliche Kardinalitäten waren und endliche Kardinalitäten immer vergleichbar sind, findet Satz \ref{thm:comparablecardinal} Anwendung.
 
   (2) $\Rightarrow$ (1): Das Auswahlaxiom impliziert nach Satz \ref{thm:alexandroffUrysohnCompactAC} die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
@@ -488,7 +524,7 @@ Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulier
   \label{def:klassisch}
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
-    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$, die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert. Das bedeutet:
+    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$, die \textit{stetig gegen} eine nicht notwendig in $F$ liegende Funktion $g$ \textit{konvergiert}. Das bedeutet:
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         Für alle $x \in \R$ und alle $(x_n)_{n \in \N} \in \R^\N$ gilt: \\
         Aus $\lim_{n \to \infty} x_n = x$ folgt $\lim_{n \to \infty} f_{\nu(n)}(x_n) = g(x)$.
@@ -516,6 +552,8 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
 
 \begin{prop}
   \label{prop:stetigkonv}
+  Es sei $(f_n)_{n \in \N}$ eine Folge stetiger Abbildungen von $\R$ nach $\R$ und $g$ eine stetige Abbildung mit demselben Definitions- und Wertebereich.
+  Dann gelten folgende Aussagen:
   \begin{itemize}
     \item[(1)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch punktweise gegen $g$.
     \item[(2)] Falls $(f_n)_{n \in \N}$ stetig gegen $g$ konvergiert, so ist auch $g$ stetig.
