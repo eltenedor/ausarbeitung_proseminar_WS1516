@@ -53,7 +53,7 @@ Es folgen nun einige Kompaktheitsbegriffe, welche im Rahmen von \ZFC für gewöh
     \item filterkompakt, \textit{falls jeder Filter auf $X$ einen Adhärenzpunkt besitzt},
     \item ultrafilterkompakt, \textit{falls jeder Ultrafilter auf $X$ konvergiert},
     \item \textsc{Alexandroff}-\textsc{Urysohn}-kompakt, \textit{falls jede unendliche Teilmenge von $X$ einen vollständigen Häufungspunkt besitzt},
-    \item \textsc{Tychonoff}-kompakt, \textit{falls $X$ homöomorph zu einem abgeschlossenen Teilraum eines Hilbert-Würfels $[0,1]^I$ ist}.
+    \item \textsc{Tychonoff}-kompakt, \textit{falls $X$ homöomorph zu einem abgeschlossenen Teilraum eines \textsc{Hilbert}-Würfels $[0,1]^I$ ist}.
   \end{enumerate}
 \end{defn}
 
@@ -148,8 +148,8 @@ Zuvor soll jedoch die Rolle von \UFT im Rahmen der Übereinstimmung gewisser Kom
   (1)  $\Rightarrow$  (2):
   Es soll hierzu Satz \ref{thm:pitequivalence}((4) $\Rightarrow$ (3)) verwendet werden.
   Man beachte, dass dies gerade die Implikation ist, welche nicht Bezug auf Satz \ref{thm:uftcompact} nimmt.
-  Es reicht daher aus zu zeigen, dass Produkte kompakter \textsc{Hausdorff}-Räume wiederum kompakt sind. 
-  Produkte ultrafilterkompakter \textsc{Hausdorff}-Räume sind jedoch nach Lemma \ref{lem:uftprod} wieder ultrafilterkompakt, was nach Voraussetzung bedeutet, dass das Produkt kompakt ist.
+  Es reicht daher aus zu zeigen, dass Produkte kompakter \textsc{Hausdorff}\hyp{}Räume wiederum kompakt sind. 
+  Produkte ultrafilterkompakter \textsc{Hausdorff}\hyp{}Räume sind jedoch nach Lemma \ref{lem:uftprod} wieder ultrafilterkompakt, was nach Voraussetzung bedeutet, dass das Produkt kompakt ist.
 
   (2) $\Rightarrow$ (1):
   Nach Satz \ref{thm:compactness}(1) genügt es zu zeigen, dass jeder Filter $\varphi$ auf einem ultrafilterkompakten Raum $X$ einen Adhärenzpunkt besitzt.
@@ -250,8 +250,8 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   \label{thm:alexandroffUrysohnCompactAC}
   Es sind äquivalent:
   \begin{enumerate}[(1)]
-    \item Ein topologischer Raum ist genau dann kompakt, wenn er \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist.
-    \item Ein topologischer Raum ist genau dann ultrafilterkompakt, wenn er \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist.
+    \item Ein topologischer Raum ist genau dann kompakt, wenn er \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt ist.
+    \item Ein topologischer Raum ist genau dann ultrafilterkompakt, wenn er \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt ist.
     \item \AC.
   \end{enumerate}
 \end{thm}
@@ -262,7 +262,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   Dann existieren disjunkte Mengen $A,B$ mit $|A| = a$ und $|B| = b$.
   Man betrachte $X := A \cup B$ als topologischen Raum mit Topologie $\tau := \{\emptyset, A, B, A \cup B\}$.
   Dieser Raum ist sowohl kompakt, da die Topologie nur aus endlich vielen Mengen besteht, als auch ultrafilterkompakt. 
-  Somit implizieren sowohl (1) als auch (2), dass $X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist.
+  Somit implizieren sowohl (1) als auch (2), dass $X$ \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt ist.
   Folglich besitzt $A \cup B$ einen vollständigen Häufungspunkt $x$.
   Angenommen $x \in A$, dann ist $a = |A| = |A \cup B| \geq b$. 
   Ist andererseits $x \in B$, dann ist $b = |B| = |A \cup B| \geq a$.
@@ -273,7 +273,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   Mit Satz \ref{thm:uftcompact} folgt aus \UFT bereits die Äquivalenz der Begriffe Kompaktheit und Ultrafilterkompaktheit.
   Es reicht also bereits zu zeigen, dass (1) gilt.
 
-  Angenommen $X$ sei \textsc{Alexandroff}-\textsc{Urysohn}-kompakt aber nicht kompakt.
+  Angenommen $X$ sei \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt aber nicht kompakt.
   Dann ist die Menge $\mathfrak{M}$ aller offenen Überdeckungen, die keine endliche Teilüberdeckung enthalten nichtleer und es existiert nach Übergang zu den korrespondierenden Kardinalzahlen eine bezüglich Mächtigkeit minimale offene Überdeckung $\mathcal{O} = (O_i)_{i \in I}$ mit Kardinalzahl $\mathcal{C}$, da die Menge aller Ordinalzahlen wohlgeordnet ist.
 
   Es bezeichne nun $f$ die zur $\mathcal{C}$ korrespondierende Bijektion $\mathcal{C} \to \mathcal{O}$ und für alle $b \in \mathcal{C}$ sei 
@@ -332,10 +332,10 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   \begin{displaymath}
     |U_b \cap M| \leq b < \mathcal{C}.
   \end{displaymath}
-  Dies Widerspricht jedoch der Annahme $X$ sei \textsc{Alexandroff}-\textsc{Urysohn}-kompakt.
+  Dies Widerspricht jedoch der Annahme $X$ sei \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt.
 
   Sei nun umgekehrt $X$ kompakt.
-  Angenommen, $X$ sei nicht \textsc{Alexandroff}-\textsc{Urysohn}-kompakt.
+  Angenommen, $X$ sei nicht \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt.
   Dann existiert eine unendliche Teilmenge $A \subseteq X$ ohne vollständigen Häufungspunkt.
   Das bedeutet, dass für alle $x \in X$ eine offene Umgebung $U_x$ existiert mit
   \begin{displaymath}
@@ -355,7 +355,7 @@ Der \textsc{Boole}sche Primidealsatz (\PIT) ist eine im Vergleich zum Auswahlaxi
 Die Bedeutung von \PIT ist jedoch nicht zu unterschätzen. Eine Reihe zu \PIT äquivalenter Aussagen aus unterschiedlichen Gebieten der Mathematik findet man in \cite{dau1994diplom}.
 Auch ist \PIT zu vielen der noch zu besprechenden Kompaktheitsaussagen äquivalent ist. 
 In diesem Kapitel stehen speziell Kompaktheitsaussagen über kartesische Produkte im Vordergrund. 
-Diese Kompaktheitsaussagen werden im Folgekapitel die Verbindung der \textsc{Ascoli}-Sätze zu \PIT ermöglichen.
+Diese Kompaktheitsaussagen werden im Folgekapitel die Verbindung der \textsc{Ascoli}\hyp{}Sätze zu \PIT ermöglichen.
 
 Im Folgenden werde wie in \cite{graetzer2003general} eine \textit{\textsc{Boole}sche Algebra} aufgefasst als ein \textit{\textsc{Boole}scher Verband} $(B; \;\land, \;\lor, \;', \;1, \;0)$, also ein komplementärer distributiver Verband. 
 Die Verträglichkeit der algebraischen Struktur mit der Verbandsstruktur ist gegeben durch 
@@ -656,7 +656,7 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
 
   (2) $\Rightarrow$ (3):
   Nach Satz \ref{thm:uftcompact} folgt aus \UFT die Übereinstimmung von Kompaktheit mit Ultrafilterkompaktheit.
-  Sei nun $(X_i)_{i \in I}$ eine Familie kompakter \textsc{Hausdorff}-Räume mit Produktraum $X := \prod_{i \in I} X_i$.
+  Sei nun $(X_i)_{i \in I}$ eine Familie kompakter \textsc{Hausdorff}\hyp{}Räume mit Produktraum $X := \prod_{i \in I} X_i$.
   Sei $\psi$ ein Ultrafilter auf diesem Produktraum.
   Dann ist für alle $i \in I$ der Bildfilter $\psi_i = \pi_i(\psi)$ wiederum ein Ultrafilter, wobei die kanonischen Projektionen mit $\pi_i$ bezeichnet seien.
   Nach Voraussetzung ist jedoch jeder der Faktoren $X_i$ kompakt, es konvergiert also jede Projektion $\psi$ des Ultrafilters gegen ein $x_i \in X_i$.
@@ -664,10 +664,10 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   Damit ist $X$ ultrafilterkompakt und folglich auch kompakt.
 
   (3) $\Rightarrow$ (4):
-  Dies ist eine Spezialisierung von (3), da das abgeschlossene Intervall $[0,1]$ mit euklidischer Topologie insbesondere ein \textsc{Hausdorff}-Raum ist.
+  Dies ist eine Spezialisierung von (3), da das abgeschlossene Intervall $[0,1]$ mit euklidischer Topologie insbesondere ein \textsc{Hausdorff}\hyp{}Raum ist.
 
   (4) $\Rightarrow$ (5):
-  Da in \textsc{Hausdorff}-Räumen insbesondere das $T1$-Axiom gilt und damit Einpunktmengen abgeschlossen sind, liefert Proposition \ref{prop:cartesianclosed}, dass man \textsc{Kantor}-Würfel als abgeschlossene Teilräume von \textsc{Hilbert}-Würfeln auffassen kann. 
+  Da in \textsc{Hausdorff}\hyp{}Räumen insbesondere das T1\hyp{}Axiom gilt und damit Einpunktmengen abgeschlossen sind, liefert Proposition \ref{prop:cartesianclosed}, dass man \textsc{Kantor}\hyp{}Würfel als abgeschlossene Teilräume von \textsc{Hilbert}\hyp{}Würfeln auffassen kann. 
   Als solche sind sie aber auch kompakt.
 
   (5) $\Rightarrow$ (6):
@@ -689,10 +689,11 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   abgeschlossene Einbettungen.
   Denn, da alle $X_i$ nach Voraussetzung diskrete Räume sind, folgt die Stetigkeit der $f_i$ automatisch.
   Bezüglich der Produkttopologie auf $X$ ist nach Konstruktion dann auch $f$ stetig.
-  Zudem sind alle $f_i$ abgeschlossen, da jede abgeschlossene Teilmenge $A \subseteq X_i$ insbesondere endlich und damit kompakt ist, andererseits jedoch das Bild einer kompakten Menge unter einer stetigen Abbildung wiederum kompakt und als kompakte Teilmenge eines \textsc{Hausdorff}-Raumes abgeschlossen ist.  
+  Zudem sind alle $f_i$ abgeschlossen, da jede abgeschlossene Teilmenge $A \subseteq X_i$ insbesondere endlich und damit kompakt ist, andererseits jedoch das Bild einer kompakten Menge unter einer stetigen Abbildung wiederum kompakt und als kompakte Teilmenge eines \textsc{Hausdorff}\hyp{}Raumes abgeschlossen ist.  
   Mit demselben Argument sieht man auch die Abgeschlossenheit von $f$ ein.
   Ist nämlich $A \subseteq X$ eine abgeschlossene Menge, so besteht sie nach Konstruktion aus einem kartesischen Produkt endlicher, also kompakter Mengen.
-  Nach dem vorangehenden Argument ist das Bild jedes einzelnen der Faktoren des kartesischen Produkts eine kompakte, also auch abgeschlossene Menge.
+
+  Nach dem vorangehenden Argument ist das Bild jedes einzelnen Faktors des kartesischen Produkts eine kompakte, also auch abgeschlossene Menge.
   Dann ist aber auch $f(A)$ als kartesisches Produkt abgeschlossener Mengen nach Proposition \ref{prop:cartesianclosed}.
   Die Injektivität der $f_i$ ist klar, denn man kann, falls $y,z \in X_i$ mit $y \neq z$, eine Abbildung $c \in C(X_i,\mathbf{2})$ definieren durch $c(y) = 1$ und $c(z) = 0$ und $c(a)$ beliebig für alle $a \in X_i \setminus \{y,z\}$.
   Damit ist auch klar, dass $f$ injektiv ist.
@@ -752,7 +753,7 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   \begin{displaymath}
     x_{B(a \land b)}(a) = x_{B(a)}(a),
   \end{displaymath}
-  da nach Voraussetzung $x$ im Schnitt aller $M(A,B)$, insbesondere also auch in $M(B(a),B(a \land b))$ enthalten ist, da $B(a) \subseteq B(a \land b)$.
+  da nach Voraussetzung $x$ im Schnitt aller $M(A,B)$, insbesondere also auch in der Menge $M(B(a),B(a \land b))$ enthalten ist, da $B(a) \subseteq B(a \land b)$.
   Damit folgt
   \begin{displaymath}
     f(a \land b) 

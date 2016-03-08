@@ -1,4 +1,4 @@
-%\section{Der \textsc{Áscoli}-Satz und das Auswahlaxiom}
+%\section{Der \textsc{Ascoli}-Satz und das Auswahlaxiom}
 \chapter{Der \textsc{Ascoli}-Satz und das Auswahlaxiom}
 
 \textsc{Ascoli}-Sätze gelten bezeichnend für Aussagen, die es gestatten Kompaktheit von Teilmengen von Funktionenräumen bezüglich starker Topologien aus der Kompaktheit bezüglich einer schwächeren Topologie unter zusätzlichen Annahmen zu folgern. 
@@ -9,14 +9,14 @@ Dieser Abschnitt ist eine ausgestaltete Darstellung des Kapitels
   \textit{Disasters in Topology III: Function Spaces (The Ascoli Theorem)}
 \end{addmargin}
 aus \cite{herrlich2006axiom}.
-Weitere allgemeinere Versionen des \textsc{Ascoli}-Satzes finden sich in \cite{bartsch2015allgemeine} oder \cite{poppe1974compactness}.
+Weitere allgemeinere Versionen des \textsc{Ascoli}\hyp{}Satzes finden sich in \cite{bartsch2015allgemeine} oder \cite{poppe1974compactness}.
 
-Ziel dieses Kapitels ist es zu untersuchen inwieweit sich \textsc{Ascoli}-Sätze im Rahmen von \ZF beweisen lassen und welche Erweiterungen des Axiomensystems \ZF gegebenenfalls für den Beweis benötigt werden.
+Ziel dieses Kapitels ist es zu untersuchen inwieweit sich \textsc{Ascoli}\hyp{}Sätze im Rahmen von \ZF beweisen lassen und welche Erweiterungen des Axiomensystems \ZF gegebenenfalls für den Beweis benötigt werden.
 Eine wichtige Rolle für diese Beweise wird der \textsc{Boole}sche Primidealsatz \PIT spielen, dessen Gültigkeit, wie im vorangehenden Kapitel gezeigt, zu unterschiedlichen Kompaktheitsaussagen äquivalent ist.
 
 \section{Der topologische \textsc{Ascoli}-Satz}
 
-In diesem Abschnitt soll eine allgemeine topologische Version des \textsc{Ascoli}-Satzes behandelt werden.
+In diesem Abschnitt soll eine allgemeine topologische Version des \textsc{Ascoli}\hyp{}Satzes behandelt werden.
 
 \begin{defn}
   Es sei $(X,\tau)$ ein topologischer Raum und $(Y,d)$ ein metrischer Raum versehen mit der durch die Metrik induzierte Topologie $\tau_d$. Eine Teilmenge $F \subseteq Y^X$ heißt \textit{gleichgradig stetig}, wenn gilt:
@@ -26,17 +26,17 @@ In diesem Abschnitt soll eine allgemeine topologische Version des \textsc{Ascoli
   \end{addmargin}
 \end{defn}
 
-Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden $C_{\co}(X,Y)$ den topologischen Funktionenraum $(C(X,Y),\tau_{\co})$ der stetigen Funktionen von $X$ nach $Y$ ausgestattet mit der \textit{kompakt-offenen} Topologie.
+Für zwei topologische Räume $(X,\tau)$ und $(Y,\sigma)$ bezeichne im Folgenden $C_{\co}(X,Y)$ den topologischen Funktionenraum $(C(X,Y),\tau_{\co})$ der stetigen Funktionen von $X$ nach $Y$ ausgestattet mit der \textit{kompakt\hyp{}offenen} Topologie.
 Diese Topologie wird erzeugt von Subbasiselementen der Form
 \begin{displaymath}
   (K,O) := \{f \in C(X,Y) \mid K \subseteq X \text{ ist kompakt und } O \in \sigma\}.
 \end{displaymath}
 
 \begin{defn}[Topologischer \textsc{Ascoli}-Satz]
-  Sei $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
+  Sei $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}\hyp{}Raum und $(Y,d)$ ein metrischer Raum.
   Für jeden Teilraum $(F,\tau_{\co})$ von $C_{\co}(X,Y)$ sind äquivalent:
   \begin{enumerate}
-    \item[(a)] $F$ ist $\tau_{\co}$-kompakt.
+    \item[(a)] $F$ ist $\tau_{\co}$\hyp{}kompakt.
     \item[(b)] \begin{enumerate}
         \item[($\alpha$)] Für alle $x \in X$ ist die Menge $F(x) = \{f(x) \mid f \in F \}$ kompakt in $Y$.
         \item[($\beta$)]  $F$ ist abgeschlossen in $Y^X$ bezüglich der Topologie der punktweisen Konvergenz $\tau_p$.
@@ -45,9 +45,9 @@ Diese Topologie wird erzeugt von Subbasiselementen der Form
   \end{enumerate}
 \end{defn}
 
-Die Hauptaussage des Satzes ist also die Folgerung der Kompaktheit einer Menge stetiger Funktionen bezüglich einer starken Topologie, in diesem Fall der kompakt-offenen Topologie, aus der Kompaktheit bezüglich der schwächeren punktweisen Topologie.
+Die Hauptaussage des Satzes ist also die Folgerung der Kompaktheit einer Menge stetiger Funktionen bezüglich einer starken Topologie, in diesem Fall der kompakt\hyp{}offenen Topologie, aus der Kompaktheit bezüglich der schwächeren punktweisen Topologie.
 Eine verbreitete Variation des Satzes verzichtet auf Teil (b,$\beta$) und ersetzt die Kompaktheit in (a) durch relative Kompaktheit.
-Man beachte, dass die auf dem Teilraum $F$ verwendete Topologie $\tau_{\co}$ die Spur der kompakt-offenen Topologie auf $C(X,Y)$ ist.
+Man beachte, dass die auf dem Teilraum $F$ verwendete Topologie $\tau_{\co}$ die Spur der kompakt\hyp{}offenen Topologie auf $C(X,Y)$ ist.
 Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \textsc{Boole}schen Primidealsatz (\PIT) ist.
 
 \begin{thm}
@@ -69,16 +69,16 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen bezüglich jeder Topologie, also insbesondere auch bezüglich der punktweisen Topologie $\tau_p$.
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind und man daher für alle $x \in X$ und $\varepsilon > 0$ die Menge $\{x\}$ als offene Umgebung von $x$ wählen kann.
   Dann gilt nämlich für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 < \varepsilon$.
-  Damit sind alle Bedingungen aus $(b)$ des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt bezüglich der kompakt-offenen Topologie ist.
-  Da die kompakt-offene Topologie stärker als die punktweise Topologie ist, folgt damit die Kompaktheit von $\mathbf{2}^X$ bezüglich der punktweisen Topologie.
+  Damit sind alle Bedingungen aus $(b)$ des \textsc{Ascoli}\hyp{}Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ kompakt bezüglich der kompakt\hyp{}offenen Topologie ist.
+  Da die kompakt\hyp{}offene Topologie stärker als die punktweise Topologie ist, folgt damit die Kompaktheit von $\mathbf{2}^X$ bezüglich der punktweisen Topologie.
   Dies ist nach Satz \ref{thm:pitequivalence} äquivalent zu \PIT.
 
-  (2) $\Rightarrow$ (1): Es seien $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}-Raum und $(Y,d)$ ein metrischer Raum.
+  (2) $\Rightarrow$ (1): Es seien $(X,\tau)$ ein lokalkompakter \textsc{Hausdorff}\hyp{}Raum und $(Y,d)$ ein metrischer Raum.
   Des Weiteren sei $F$ ein Teilraum vom $C_{\co}(X,Y)$.
 
   (a) $\Rightarrow$ (b, $\alpha$): 
-  Nach Voraussetzung ist $F$ ein bezüglich der kompakt-offenen Topologie $\tau_{\co}$ kompakter Teilraum von $C(X,Y)$.
-  Somit ist er insbesondere bezüglich der Spur der schwächeren Topologie der punktweisen Konvergenz $\tau_p$ ein kompakter Teilraum des \textsc{Hausdorff}-Raumes $Y^X$.
+  Nach Voraussetzung ist $F$ ein bezüglich der kompakt\hyp{}offenen Topologie $\tau_{\co}$ kompakter Teilraum von $C(X,Y)$.
+  Somit ist er insbesondere bezüglich der Spur der schwächeren Topologie der punktweisen Konvergenz $\tau_p$ ein kompakter Teilraum des \textsc{Hausdorff}\hyp{}Raumes $Y^X$.
   Die Topologie der punktweisen Konvergenz lässt sich als Initialtopologie bezüglich der für alle $x \in X$ definierten kanonischen Projektionen 
   \begin{displaymath}
     \pi_x : Y^X \to Y, \quad f \mapsto f(x)
@@ -87,7 +87,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Als stetiges Bild eines Kompaktums ist somit auch $\pi_x(F) = F(x)$ kompakt in $(Y,\tau_d)$.
 
   (a) $\Rightarrow$ (b, $\beta$):  
-  Als kompakter Teilraum eines \textsc{Hausdorff}-Raumes ist $F$ bezüglich $\tau_p$ auch abgeschlossen in $Y^X$.
+  Als kompakter Teilraum eines \textsc{Hausdorff}\hyp{}Raumes ist $F$ bezüglich $\tau_p$ auch abgeschlossen in $Y^X$.
 
   (a) $\Rightarrow$ (b, $\gamma$):
   Es soll gezeigt werden, dass $F$ gleichgradig stetig ist.
@@ -143,20 +143,20 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Folglich ist $F$ gleichgradig stetig.
 
   (b) $\Rightarrow$ (a)
-  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y$ kompakt und besitzt zudem als metrischer Raum die \textsc{Hausdorff}-Eigenschaft.
+  Nach Voraussetzung ist $F(x)$ als Teilraum von $Y$ kompakt und besitzt zudem als metrischer Raum die \textsc{Hausdorff}\hyp{}Eigenschaft.
   %%%%%%%% PIT %%%%%%%%
-  Der \textsc{Tychonoff}-Satz für \textsc{Hausdorff}-Räume \ref{thm:pitequivalence}(3) besagt, dass dann auch $\prod_{x \in X} F(x) \subseteq Y^X$ kompakt ist.
+  Der \textsc{Tychonoff}\hyp{}Satz für \textsc{Hausdorff}\hyp{}Räume \ref{thm:pitequivalence}(3) besagt, dass dann auch $\prod_{x \in X} F(x) \subseteq Y^X$ kompakt ist.
   %%%%%%%%%%%%%%%%%%%%%
   Die Voraussetzung, dass $F$ abgeschlossen in $Y^X$ bezüglich der Produkttopologie $\tau_p$ ist, liefert, dass $F$ auch abgeschlossen im Teilraum $\prod_{x \in X} F(x)$ ist, da $F \subseteq \prod_{x \in X} F(x)$ gilt.
   Als abgeschlossene Teilmenge eines Kompaktums ist somit $F$ auch kompakt bezüglich der Topologie der punktweisen Konvergenz.
 
-  Es fehlt zu zeigen, dass $F$ ebenfalls bezüglich der kompakt-offenen Topologie $\tau_{\co}$ kompakt ist.
+  Es fehlt zu zeigen, dass $F$ ebenfalls bezüglich der kompakt\hyp{}offenen Topologie $\tau_{\co}$ kompakt ist.
   Hierfür soll die Inklusion $\tau_{\co} \subseteq \tau_p$ nachgewiesen werden.
   Dazu betrachte man ein Subbasiselement 
   \begin{displaymath}
     V := (K,U) \cap F \in \tau_{\co}
   \end{displaymath}
-  der kompakt-offenen Topologie auf dem Teilraum $F$ und ein $f \in V$.
+  der kompakt\hyp{}offenen Topologie auf dem Teilraum $F$ und ein $f \in V$.
   Es gilt nun zu zeigen, dass $V$ auch in $\tau_p$ offen ist.
   Da $f(K) \subseteq U$ und $U \in \sigma$ gilt, folgt für alle $x \in K$
   \begin{displaymath}
@@ -215,19 +215,19 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
 \section{Alternative Kompaktheitsbegriffe im \textsc{Ascoli}-Satz}
 
 Betrachtet man den Beweis von Satz \ref{thm:ascoliPIT}, so fällt auf, dass die Implikation ((a) $\Rightarrow$ (b)) in Satz \ref{thm:ascoliPIT} bereits im Rahmen von \ZF gültig ist.
-Der Beweis dieses Satzes verwendet lediglich einer Stelle der Beweisrichtung ((b) $\Rightarrow$ (a)) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}-Satz für kompakte \textsc{Hausdorff}-Räume.
+Der Beweis dieses Satzes verwendet lediglich einer Stelle der Beweisrichtung ((b) $\Rightarrow$ (a)) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}\hyp{}Satz für kompakte \textsc{Hausdorff}\hyp{}Räume.
 Unter der Verwendung des Kompaktheitsbegriffes der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
-Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}-Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält und ob sich diese Versionen des \textsc{Ascoli}-Satzes bereits in \ZF beweisen lassen.
+Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}\hyp{}Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält und ob sich diese Versionen des \textsc{Ascoli}\hyp{}Satzes bereits in \ZF beweisen lassen.
 
 \begin{lem}
   \label{lem:filterclusterpoint}
-  Es sei $(X,\tau)$ ein topologischer Raum, sodass die darin offen-abgeschlossenen Mengen einen Basis für die Topologie $\tau$ bilden.
+  Es sei $(X,\tau)$ ein topologischer Raum, sodass die darin offen\hyp{}abgeschlossenen Mengen einen Basis für die Topologie $\tau$ bilden.
   \begin{itemize}
-    \item[(1)] Ist $\mathcal{F}$ ein Filter ohne Adhärenzpunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen-abgeschlossenen Elemente von $\mathcal{F}$
+    \item[(1)] Ist $\mathcal{F}$ ein Filter ohne Adhärenzpunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen\hyp{}abgeschlossenen Elemente von $\mathcal{F}$
      \begin{displaymath}
        \bigcap_{A \in \mathfrak{A}} A = \emptyset.
      \end{displaymath}
-   \item[(2)] Erfüllt $(X,\tau)$ zusätzlich das $T1$-Axiom, so existiert zu je zwei unterschiedlichen Punkten $x,y \in X$ ein $A_{(x,y)} \in \mathfrak{A}$ mit 
+   \item[(2)] Erfüllt $(X,\tau)$ zusätzlich das T1\hyp{}Axiom, so existiert zu je zwei unterschiedlichen Punkten $x,y \in X$ ein $A_{(x,y)} \in \mathfrak{A}$ mit 
      \begin{displaymath}
        \{x,y\} \cap A_{(x,y)} = \{y\}.
      \end{displaymath}
@@ -242,26 +242,26 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   Für alle $x \in X$ gilt damit, dass ein $F \in \mathcal{F}$ existiert, sodass $x \not\in \overline{F}$.
   Das bedeutet, dass $X \setminus \overline{F}$ eine offene Umgebung von $x$ ist.
 
-  Da die offen-abgeschlossenen Mengen nach Voraussetzung eine Basis für $\tau$ bilden, existiert eine offen-abgeschlossene Umgebung $U$ von $x$, mit $U \subseteq X \setminus \overline{F}$ und damit $ U \cap F = \emptyset$.
+  Da die offen\hyp{}abgeschlossenen Mengen nach Voraussetzung eine Basis für $\tau$ bilden, existiert eine offen\hyp{}abgeschlossene Umgebung $U$ von $x$, mit $U \subseteq X \setminus \overline{F}$ und damit $ U \cap F = \emptyset$.
   Folglich ist $X \setminus U \supseteq F$ und wegen des Abschlusses gegen Obermengenbildung $X \setminus U \in \mathcal{F}$.
-  Es existiert also eine offen-abgeschlossene Menge in $\mathcal{F}$, die $x$ nicht enthält. 
+  Es existiert also eine offen\hyp{}abgeschlossene Menge in $\mathcal{F}$, die $x$ nicht enthält. 
   Dies impliziert $ x \not\in \bigcap_{A \in \mathfrak{A}} A$.
   Da $x$ beliebig gewählt war, folgt $\bigcap_{A \in \mathfrak{A}} A = \emptyset$ und damit die Behauptung.
 
   (2):
   Seien nun $x,y \in X$ mit $x \neq y$ gegeben.
-  Unter der Voraussetzung, dass $(X,\tau)$ das T1-Axiom erfüllt, lässt sich zur offenen Umgebung $X \setminus \overline{F}$ aus Teil (1) des Beweises eine offene Umgebung 
+  Unter der Voraussetzung, dass $(X,\tau)$ das T1\hyp{}Axiom erfüllt, lässt sich zur offenen Umgebung $X \setminus \overline{F}$ aus Teil (1) des Beweises eine offene Umgebung 
   \begin{displaymath}
     U_x \subseteq X \setminus \overline{F}
   \end{displaymath}
   von $x$ finden, die zusätzlich $y$ nicht enthält. 
-  Da die offen-abgeschlossenen Mengen eine Basis von $\tau$ bilden, kann man zudem annehmen, dass $U_x$ offen-abgeschlossen ist.
+  Da die offen\hyp{}abgeschlossenen Mengen eine Basis von $\tau$ bilden, kann man zudem annehmen, dass $U_x$ offen\hyp{}abgeschlossen ist.
   Man prüft nach, dass für
   \begin{displaymath}
     A_{(x,y)} := X \setminus U_x
   \end{displaymath}
   die in (2) geforderten Eigenschaften erfüllt sind:
-  Als Komplement einer offen-abgeschlossenen Menge, ist auch $A_{(x,y)}$ offen und abgeschlossen.
+  Als Komplement einer offen\hyp{}abgeschlossenen Menge, ist auch $A_{(x,y)}$ offen und abgeschlossen.
   Nach Konstruktion ist 
   \begin{displaymath}
     x \not\in A_{(x,y)} \text{ sowie } y \in A_{(x,y)}.
@@ -306,25 +306,25 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 \end{thm}
 
 \begin{proof}
-  $(1) \Rightarrow(2) $: Nach Satz \ref{thm:pitequivalence} reicht es aus zu zeigen, dass $(1)$ bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
+  $(1) \Rightarrow(2) $: Nach Satz \ref{thm:pitequivalence} reicht es aus zu zeigen, dass $(1)$ bereits impliziert, dass die \textsc{Kantor}\hyp{}Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
 
   Angenommen, es existiere eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
   Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
   Dann existiert nach Satz \ref{thm:compactness} ein Filter $\mathcal{F}$ auf $P$ ohne Adhärenzpunkt.
 
-  Der mit der Produkttopologie ausgestattete Raum $P$ besitzt eine Basis aus offen-ab\-ge\-schlossenen Mengen.
+  Der mit der Produkttopologie ausgestattete Raum $P$ besitzt eine Basis aus offen\hyp{}abgeschlossenen Mengen.
   Dies folgt daraus, dass bereits jedes Subbasiselement $S$ per Definition offen ist und, da $\mathbf{2}$ diskret ist, auch ein offenes Komplement besitzt.
   Damit ist $S$ aber als Komplement einer offenen Menge definitionsgemäß abgeschlossen.
-  Insgesamt ist $S$ also offen-abgeschlossen.
-  Da die Menge der offen-abgeschlossenen Mengen die endliche Durchschnittseigenschaft besitzt, ist auch jedes von der Subbasis erzeugte Basiselement eine offen-abgeschlossene Menge.
+  Insgesamt ist $S$ also offen\hyp{}abgeschlossen.
+  Da die Menge der offen\hyp{}abgeschlossenen Mengen die endliche Durchschnittseigenschaft besitzt, ist auch jedes von der Subbasis erzeugte Basiselement eine offen\hyp{}abgeschlossene Menge.
 
   Hiermit lässt sich nun Lemma \ref{lem:filterclusterpoint}(1) auf $\mathcal{F}$ anwenden.
-  Damit folgt für die Menge $\mathfrak{A}$ aller offen-abgeschlossenen Elemente von $\mathcal{F}$
+  Damit folgt für die Menge $\mathfrak{A}$ aller offen\hyp{}abgeschlossenen Elemente von $\mathcal{F}$
   \begin{displaymath}
-    \bigcap_{A \in \mathfrak{A}} A = \emptyset \tag{$\ast$}.
+    \bigcap_{A \in \mathfrak{A}} A = \emptyset \tag{$\star$}.
   \end{displaymath}
 
-  Man kann nun für alle $A \in \mathfrak{A}$ eine Funktion
+  Man kann nun für alle $A \in \mathfrak{A}$ die charakteristische Funktion
   \begin{equation}
     \label{eq:clopenmap}
     f_A \colon P \to \mathbf{2}, \quad
@@ -335,17 +335,21 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
     \end{cases}
   \end{equation}
   definieren.
-  Da alle $A$ offen-abgeschlossen sind, folgt sofort die Stetigkeit von $f_A$ für alle $A \in \mathfrak{A}$.
+  Da alle $A$ offen\hyp{}abgeschlossen sind, folgt sofort die Stetigkeit von $f_A$ für alle $A \in \mathfrak{A}$.
   Somit induziert die Familie $(f_A)_{A \in \mathfrak{A}}$ eine Abbildung 
   \begin{displaymath}
     f \colon P \to \mathbf{2}^\mathfrak{A}, \quad
     x \mapsto (f_A(x))_{A \in \mathfrak{A}},
   \end{displaymath}
-  welche bezüglich der Produkttopologie, der initialen Topologie bezüglich der kanonischen Projektionen, auf $P$ stetig ist.
+  welche bezüglich der Produkttopologie auf $\mathbf{2}^\mathfrak{A}$ auf $P$ stetig ist.
 
-  Es bezeichne $F := f(P)$ das Bild von $P$ unter der obigen Abbildung $f$.
+  Es bezeichne 
+  \begin{displaymath}
+    F := f(P)
+  \end{displaymath}
+  das Bild von $P$ unter obiger Abbildung $f$.
   Es soll nun gezeigt werden, dass $f$ eine Einbettung ist, also ein Homöomorphismus auf $F$:
-  Die Abbildung $f$ ist injektiv, denn für $x,y \in P$ mit $x \neq y$ gilt, da $P$ als \textsc{Hausdorff}-Raum insbesondere das $T1$-Axiom erfüllt,
+  Die Abbildung $f$ ist injektiv, denn für $x,y \in P$ mit $x \neq y$ gilt, da $P$ als \textsc{Hausdorff}\hyp{}Raum insbesondere das T1\hyp{}Axiom erfüllt,
   \begin{displaymath}
     f_{A_{(x,y)}}(x) = 0 \neq 1 = f_{A_{(x,y)}}(y),
   \end{displaymath}
@@ -353,7 +357,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 
   Zudem ist $f$ offen bezüglich der Spurtopologie auf $F$, wie sich mit Lemma \ref{lem:openmap} beweisen lässt. 
   Dazu sei nun $O = \pi_{i_0}^{-1}(\{j\})$ mit $i_0 \in I$ und $j \in \{0,1\}$ eine beliebige offene Subbasismenge der Produkttopologie auf $P$,  wobei die kanonischen Projektionen des Produktraumes mit $\pi_i$ bezeichnet seien.
-  Man erkennt $O$ als eine offen-abgeschlossene Menge aufgrund der Stetigkeit der kanonischen Projektionen.
+  Man erkennt $O$ als eine offen\hyp{}abgeschlossene Menge aufgrund der Stetigkeit der kanonischen Projektionen.
 
   Gilt $O \in \mathcal{F}$, also insbesondere $O \in \mathfrak{A}$, so ist für alle $x \in O$
   \begin{displaymath}
@@ -361,22 +365,22 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   \end{displaymath}
   Daraus folgt 
   \begin{displaymath}
-    f(O) = \pi_O^{-1}(\{1\}) \cap f(P)
+    f(O) = \pi_O^{-1}(\{1\}) \cap F
   \end{displaymath}
-  und folglich ist $f(O)$ offen bezüglich der Teilraumtopologie auf $f(P)$.
+  und folglich ist $f(O)$ offen bezüglich der Teilraumtopologie auf $F$.
 
   Ist andernfalls $O \not\in \mathcal{F}$, so gilt für alle $M \in \mathcal{F}$ entweder
   \begin{displaymath}
     M \cap O \neq \emptyset
   \end{displaymath}
   oder $P \setminus O \in \mathcal{F}$.
-  Im zweiten Fall ist damit insbesondere $P \setminus O \in \mathfrak{A}$ und analog zum ersten Teil folgt für alle $x \in O$
+  Im zweiten Fall gilt damit insbesondere $P \setminus O \in \mathfrak{A}$, da $O$ offen\hyp{}abgeschlossen ist, und analog zum ersten Teil folgt für alle $x \in O$
   \begin{displaymath}
     \pi_{P \setminus O}(f(x)) = 0
   \end{displaymath}
   und damit 
   \begin{displaymath}
-    f(O) = \pi_{P \setminus O}^{-1}(\{0\}) \cap f(P).
+    f(O) = \pi_{P \setminus O}^{-1}(\{0\}) \cap F.
   \end{displaymath}
   Im anderen Fall gilt zudem für alle $M \in \mathcal{F}$
   \begin{displaymath}
@@ -384,18 +388,19 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   \end{displaymath}
   und damit 
   \begin{displaymath}
-    f(O) = f(P),
+    f(O) = F,
   \end{displaymath}
-  denn in $O$ existiert zu jedem $A \in \mathfrak{A}$ ein $x_1 \in O$ mit $f_A(x) = 1$ sowie ein $x_2 \in O$ mit$f_A(x) = 0$
-
+  denn in $O$ existiert zu jedem $A \in \mathfrak{A}$ ein $x_1 \in O$ mit $f_A(x) = 1$ sowie ein $x_2 \in O$ mit $f_A(x) = 0$.
+  Also ist $f(O)$ auch in diesem Fall offen bezüglich Spurtopologie.  
   Damit ist Lemma \ref{lem:openmap} anwendbar und impliziert, dass $f$ eine offene Abbildung auf ihr Bild ist.
-  Folglich ist $f$ ein Homöomorphismus auf $f(P)$.
+  Folglich ist $f$ ein Homöomorphismus auf $F$.
 
   Jeder endliche diskrete Raum ist ultrafilterkompakt, da dort die einzigen Ultrafilter, die Einpunktfilter sind, welche immer konvergieren.
   Es ist daher $P$ nach Satz \ref{lem:uftprod} als Produkt ultrafilterkompakter Räume wiederum ultrafilterkompakt.
-  Es folgt, dass $F = f(P)$ als homöomorphes Bild eines ultrafilterkompakten Raumes ebenso ultrafilterkompakt ist.
+  Es folgt, dass $F$ als homöomorphes Bild eines ultrafilterkompakten Raumes ebenso ultrafilterkompakt ist.
 
-  Wendet man nun den \textsc{Ascoli}-Satz bezüglich Ultrafilterkompaktheit auf $F$ an, wobei $\mathfrak{A}$ als diskreter topologischer Raum und $\mathbf{2}$ als diskreter metrischer Raum betrachtet werden, so ist Bedingung (a) von Satz \ref{thm:ascoliPIT} erfüllt.
+  Es soll nun den \textsc{Ascoli}\hyp{}Satz bezüglich Ultrafilterkompaktheit auf $F$ angewendet werden.
+  Betrachtet man $\mathfrak{A}$ als diskreten topologischen Raum und $\mathbf{2}$ als diskreten metrischer Raum, so ist Bedingung (a) von Satz \ref{thm:ascoliPIT} erfüllt, denn, da in diskreten Räumen eine Teilmenge genau dann kompakt ist, wenn sie endlich ist, folgt, dass die Subbasis der kompakt\hyp{}offenen Topologie auf $\mathbf{2}^\mathfrak{A}$ genau mit der Subbasis der punktweisen Topologie übereinstimmt. 
   Andererseits ist die Aussage $(b, \beta)$ nicht erfüllt:
   Es ist zwar $p := (1)_{A \in \mathfrak{A}} \in \mathbf{2}^\mathfrak{A}$ im Abschluss von $F$ in $\mathbf{2}^\mathfrak{A}$ enthalten, denn für eine beliebige Umgebung $U_p \subseteq \mathbf{2}^\mathfrak{A}$ von $p$, existieren Subbasiselemente $B_{A_1},\dots,B_{A_n}$ mit 
   \begin{displaymath}
@@ -410,51 +415,52 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   \begin{displaymath}
     x \in \bigcap_{i=1}^n A_i \in \mathcal{F}
   \end{displaymath}
-  gilt $f_{A_i}(x) = 1$, weil letzlich offen-abgeschlossene Mengen sowie Filter die endliche Durchschnittseigenschaft besitzen.
+  gilt $f_{A_i}(x) = 1$, weil letzlich offen\hyp{}abgeschlossene Mengen sowie Filter die endliche Durchschnittseigenschaft besitzen.
+  Also gilt auch $U_p \cap F \neq \emptyset$ und damit $p \in \overline F$.
   
   Andererseits ist $p$ jedoch nicht in $F$ enthalten. 
   Gälte nämlich $p \in F$, so existiert ein $x \in P$ mit $f_A(x) = 1$ für alle $A \in \mathfrak{A}$, was gleichbedeutend ist mit $x \in \bigcap_{A \in \mathfrak{A}} A$.
-  Dies steht jedoch im Widerspruch dazu, dass nach ($\ast$) der Schnitt über alle in $\mathcal{F}$ enthaltenen offen-abgeschlossenen Mengen leer ist.
-  Also gilt $F \neq \overline{F}$, ein Widerspruch zum \textsc{Áscoli}-Satz bezüglich Ultrafilterkompaktheit.
+  Dies steht jedoch im Widerspruch dazu, dass nach ($\star$) der Schnitt über alle in $\mathcal{F}$ enthaltenen offen\hyp{}abgeschlossenen Mengen leer ist.
+  Also gilt $F \neq \overline{F}$, ein Widerspruch zum \textsc{Ascoli}\hyp{}Satz bezüglich Ultrafilterkompaktheit.
   Die Annahme, dass $\mathbf{2}^I$ nicht kompakt ist, muss also verworfen werden.
 
   (2) $\Rightarrow$ (1): \PIT impliziert nach Satz \ref{thm:uftcompact} die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der Ultrafilterkompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
-Ähnliches gilt nun auch für den nächsten Kompaktheitsbegriff der \textsc{Tychonoff}-Kompaktheit wie der folgende Satz zeigt.
+Ähnliches gilt nun auch für den nächsten Kompaktheitsbegriff der \textsc{Tychonoff}\hyp{}Kompaktheit wie der folgende Satz zeigt.
 
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item[(1)] Der \textsc{Ascoli}-Satz bezüglich \textsc{\textsc{Tychonoff}}-Kompaktheit.
+    \item[(1)] Der \textsc{Ascoli}-Satz bezüglich \textsc{\textsc{Tychonoff}}\hyp{}Kompaktheit.
     \item[(2)] \PIT.
   \end{enumerate}
 \end{thm}
 
 \begin{proof}
-  (1) $\Rightarrow$ (2): Es reicht aus zu zeigen, dass (1) bereits impliziert, dass die Kantor-Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
+  (1) $\Rightarrow$ (2): Es reicht aus zu zeigen, dass (1) bereits impliziert, dass die \textsc{Kantor}\hyp{}Würfel $\mathbf{2}^I$ im gewöhnlichen Sinne kompakt sind.
   Angenommen, es existiert eine Menge $I$, sodass $P:= \mathbf{2}^I$ nicht kompakt ist.
   Man betrachte $I$ als einen mit der diskreten Topologie ausgestatteten topologischen Raum und $\mathbf{2}$ als diskreten metrischen Raum.
   Dann existiert ein Filter $\mathcal{F}$ auf $P$ ohne Adhärenzpunkt.
 
-  Da das Intervall $[0,1]$ ausgestattet mit euklidischer Topologie insbesondere ein $T1$-Raum ist, sind Einpunktmengen abgeschlossen.
-  Betrachtet man nun $P$ als Teilraum des \textsc{Hilbert}-Würfels $[0,1]^I$, so folgt nach Proposition \ref{prop:cartesianclosed}, dass $P$ abgeschlossen im \textsc{Hilbert}-Würfel ist.
-  Definitionsgemäß ist also $P$ \textsc{Tychonoff}-kompakt.
+  Da das Intervall $[0,1]$ ausgestattet mit euklidischer Topologie insbesondere ein T1\hyp{}Raum ist, sind Einpunktmengen abgeschlossen.
+  Betrachtet man nun $P$ als Teilraum des \textsc{Hilbert}\hyp{}Würfels $[0,1]^I$, so folgt nach Proposition \ref{prop:cartesianclosed}, dass $P$ abgeschlossen im \textsc{Hilbert}\hyp{}Würfel ist.
+  Definitionsgemäß ist also $P$ \textsc{Tychonoff}\hyp{}kompakt.
 
-  Wie aus dem Beweis von Satz \ref{thm:ultrafiltercompact} folgt, ist $P$ homöomorph zu $F:= f(P)$, wobei $f$ die auf der Menge der offen-abgeschlossenen Elemente von $\mathcal{F}$ definierte Funktion aus Gleichung (\ref{eq:clopenmap}) sei.
-  Somit ist $F$ ebenfalls \textsc{Tychonoff}-kompakt.
+  Wie aus dem Beweis von Satz \ref{thm:ultrafiltercompact} folgt, ist $P$ homöomorph zu $F:= f(P)$, wobei $f$ die auf der Menge der offen\hyp{}abgeschlossenen Elemente von $\mathcal{F}$ definierte Funktion aus Gleichung (\ref{eq:clopenmap}) sei.
+  Somit ist $F$ ebenfalls \textsc{Tychonoff}\hyp{}kompakt.
 
-  Wendet man nun den \textsc{Ascoli}-Satz bezüglich \textsc{Tychonoff}-Kompaktheit auf $F$ an, so folgt anlog zu Satz \ref{thm:ultrafiltercompact}, dass zwar die Bedingung (a) gilt aber die Aussage (b, $\beta$) nicht erfüllt ist.
+  Wendet man nun den \textsc{Ascoli}\hyp{}Satz bezüglich \textsc{Tychonoff}\hyp{}Kompaktheit auf $F$ an, so folgt anlog zu Satz \ref{thm:ultrafiltercompact}, dass zwar die Bedingung (a) gilt aber die Aussage (b, $\beta$) nicht erfüllt ist.
 
-  (2) $\Rightarrow$ (1): \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}-Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
+  (2) $\Rightarrow$ (1): \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}\hyp{}Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
-Die Substitution der Kompaktheit durch \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit führt sogar zu einer Verschärfung der benötigten Bedingungen für die Gültigkeit des \textsc{Ascoli}-Satzes man im nächsten Satz sieht.
+Die Substitution der Kompaktheit durch \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit führt sogar zu einer Verschärfung der benötigten Bedingungen für die Gültigkeit des \textsc{Ascoli}\hyp{}Satzes man im nächsten Satz sieht.
 
 \begin{thm}
   Äquivalent sind:
   \begin{enumerate}
-    \item[(1)] Der \textsc{Ascoli}-Satz bezüglich \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit.
+    \item[(1)] Der \textsc{Ascoli}-Satz bezüglich \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit.
     \item[(2)] $\mathbf{AC}$.
   \end{enumerate}
 \end{thm}
@@ -465,18 +471,18 @@ Die Substitution der Kompaktheit durch \textsc{Alexandroff}-\textsc{Urysohn}-Kom
 
   Es sei $F := C(X, \mathbf{2})$.
   Dann gilt $C(X, \mathbf{2}) = \mathbf{2}^X$, da $X$ nach Voraussetzung diskret ist.
-  Da $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum keine unendliche Teilmenge besitzt, folgt sofort die \textsc{Alexandroff}-\textsc{Urysohn}-Kompaktheit von $F(x)$.
+  Da $\mathbf{2} = F(x)$ für alle $x \in X$ als endlicher Raum keine unendliche Teilmenge besitzt, folgt sofort die \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit von $F(x)$.
   Nach Definition ist $\mathbf{2}^X$ als Gesamtraum abgeschlossen bezüglich jeder Topologie, also insbesondere auch bezüglich der punktweisen Topologie $\tau_p$.
   Zuletzt ist $F$ auch gleichgradig stetig, da $X$ diskret und somit Einpunktmengen offen sind, d.h. für alle $x \in X$ und $\varepsilon > 0$ wähle man $\{x\}$ als offene Umgebung in $X$. Dann gilt für alle $f \in F$, aufgrund der Definitheit der Metrik für  $d(f(x),f(x)) = 0 \leq \varepsilon$.
-  Damit sind die Bedingungen (b) des \textsc{Ascoli}-Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}-\textsc{Urysohn}-kompakt ist. Dies ist äquivalent zum Auswahlaxiom nach Satz \ref{thm:comparablecardinal}.
+  Damit sind die Bedingungen (b) des \textsc{Ascoli}\hyp{}Satzes erfüllt und es folgt, dass $\mathbf{2}^X$ \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}kompakt ist. Dies ist äquivalent zum Auswahlaxiom nach Satz \ref{thm:comparablecardinal}.
 
   (2) $\Rightarrow$ (1): Das Auswahlaxiom impliziert nach Satz \ref{thm:alexandroffUrysohnCompactAC} die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
-\section{Der klassische \textsc{Ascoli}-Satz und eine Modifikation}
+\section{Der klassische \textsc{Ascoli}\hyp{}Satz und eine Modifikation}
 
-Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}-Satz bei allen vorgestellten Versionen von Kompaktheit, falls lediglich \ZF vorausgesetzt wird. 
-Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}-Satzes die Anforderungen senkt.
+Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}\hyp{}Satz bei allen vorgestellten Versionen von Kompaktheit, falls lediglich \ZF vorausgesetzt wird. 
+Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}\hyp{}Satzes die Anforderungen senkt.
 
 \begin{defn}[Klassischer \textsc{Ascoli}-Satz] 
   \label{def:klassisch}
@@ -584,10 +590,9 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
     | f_n(x_n) - f(x_n) | + | f(x_n) - f(x) | 
     \leq \varepsilon \text{ für alle $n \geq n'$}. \qedhere
   \end{displaymath}
-
 \end{proof}
 
-Für die anschließende mengentheoretische Charakterisierung des klassischen \textsc{Ascoli}-Satzes wird folgender Satz benötigt.
+Für die anschließende mengentheoretische Charakterisierung des klassischen \textsc{Ascoli}\hyp{}Satzes wird folgender Satz benötigt.
 
 \begin{thm}
   \label{thm:unboundedsubsetofR}
@@ -675,8 +680,8 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Dazu sei $B \subseteq \R$ unbeschränkt.
   Für ein $b \in B$ lassen sich die konstante Abbildung $f_b \colon \R \to \R, f(x):= b$ und die Menge $F := \{f_b \mid b \in B\}$ definieren.
   Für $x \in \R$ gilt $F(x) = \{f_b(x) \mid b \in B\} = B$ und diese Menge ist nach Voraussetzung unbeschränkt.
-  Also ist Teil (b, $\alpha$) des klassischen \textsc{Ascoli}-Satzes verletzt.
-  Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Ascoli}-Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ mit $f_{b_n} = b_n$ ohne stetig konvergente Teilfolge.
+  Also ist Teil (b, $\alpha$) des klassischen \textsc{Ascoli}\hyp{}Satzes verletzt.
+  Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Ascoli}\hyp{}Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ mit $f_{b_n} = b_n$ ohne stetig konvergente Teilfolge.
   Daraus folgt, dass die Folge $(b_n)_{n \in \N}$ unbeschränkt ist.
 
   (2) $\Rightarrow$ (1):
@@ -778,7 +783,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   für alle $f \in G$ gilt.
   Da $\Q$ dicht in $\R$ liegt existiert ein $y \in U \cap \Q$.
   Nach Konstruktion konvergiert für alle $g_m^m \in G$ die Folge $g_m^m(y)$.
-  Sie ist damit also insbesondere eine \textsc{Cauchy}-Folge.
+  Sie ist damit also insbesondere eine \textsc{Cauchy}\hyp{}Folge.
   Es existiert also ein $N \in \N$, sodass für alle $m,n \geq N$
   \begin{displaymath}
     | g_m^m(y) - g_n^n(y) | \leq \frac{\varepsilon}{3}
@@ -792,13 +797,13 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
     \leq
     \frac{\varepsilon}{3}.
   \end{displaymath}
-  Also ist $s$ eine lokal gleichmäßige \textsc{Cauchy}-Folge auf $\R$.
+  Also ist $s$ eine lokal gleichmäßige \textsc{Cauchy}\hyp{}Folge auf $\R$.
   Da $\R$ vollständig ist, konvergiert $s$ auch lokal gleichmäßig auf $\R$. 
   Aufgrund von Proposition \ref{prop:stetigkonv}(c) konvergiert $s$ auch stetig gegen eine Abbildung $g \colon \R \to \R$ mit $g(r_n) = a_n$ für alle $n \in \N$.
   Daraus folgt $(a)$.
 \end{proof}
 
-Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}-Satz noch der klassische \textsc{Ascoli} Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}-Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt.
+Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}\hyp{}Satz noch der klassische \textsc{Ascoli} Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}\hyp{}Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt.
 
 \begin{thm}[Modifizierter \textsc{Ascoli}-Satz]
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
@@ -822,7 +827,7 @@ Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{A
     \nu(n) := \min \{ m \in \N \mid n < |f_m(x)| \}
   \end{displaymath}
   definieren, da zu jeder nichtleeren Teilmenge natürlicher Zahlen ein Minimum existiert.
-  Dann ist jedoch die Folge $(f_{\nu(n)})_{n \in \N}$ dergestalt, dass keine der Teilfolgen von $(f_{\nu(n)}(x))_{n \in \N}$ konvergiert.
+  Dann ist jedoch die Folge $(f_{\nu(n)})_{n \in \N}$ dergestalt, dass keine Teilfolge von $(f_{\nu(n)}(x))_{n \in \N}$ konvergiert.
   Die Folge $(f_{\nu(n)})_{n \in \N}$ konvergiert somit in $x$ nicht punktweise also nach Proposition \ref{prop:stetigkonv}(1) auch nicht stetig.
   Dies widerspricht jedoch (1).
 
@@ -835,7 +840,7 @@ Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{A
   \end{displaymath}
   Für alle $n \in \N$ lassen sich nun
   \begin{align*}
-    \nu(n) &:= \min \{ m \in \N \mid \text{ Es existiert ein } y \in [x - 2^{-n}, x + 2^{-n}] \text{ mit } |f_m(x) - f_m(y)| \geq \varepsilon\}, \\
+    \nu(n) &:= \min \{ m \in \N \mid \text{ Es gibt ein } y \in [x - 2^{-n}, x + 2^{-n}] \text{ mit } |f_m(x) - f_m(y)| \geq \varepsilon\}, \\
     g_n &:= f_{\nu(n)} \quad\text{und}\\
     x_n &:= \min\{ y \in [x - 2^{-n}, x + 2^{-n}] \mid |f_m(x) - f_m(y)| \geq \varepsilon \}
   \end{align*}
