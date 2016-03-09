@@ -48,11 +48,12 @@ Diese Topologie wird erzeugt von Subbasiselementen der Form
 Die Hauptaussage des Satzes ist also die Folgerung der Kompaktheit einer Menge stetiger Funktionen bezüglich einer starken Topologie, in diesem Fall der kompakt\hyp{}offenen Topologie, aus der Kompaktheit bezüglich der schwächeren punktweisen Topologie.
 Eine verbreitete Variation des Satzes verzichtet auf Teil (b,$\beta$) und ersetzt die Kompaktheit in (a) durch relative Kompaktheit.
 Man beachte, dass die auf dem Teilraum $F$ verwendete Topologie $\tau_{\co}$ die Spur der kompakt\hyp{}offenen Topologie auf $C(X,Y)$ ist.
+
 Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \textsc{Boole}schen Primidealsatz (\PIT) ist.
 
 \begin{thm}
   \label{thm:ascoliPIT}
-  Äquivalent sind
+  Äquivalent sind:
   \begin{enumerate}
     \item[(1)] Der topologische \textsc{Ascoli}-Satz.
     \item[(2)] \PIT.
@@ -142,7 +143,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   und damit auch $f(U) \subseteq U_\varepsilon(f(x))$.
   Folglich ist $F$ gleichgradig stetig.
 
-  (b) $\Rightarrow$ (a)
+  (b) $\Rightarrow$ (a):
   Nach Voraussetzung ist $F(x)$ als Teilraum von $Y$ kompakt und besitzt zudem als metrischer Raum die \textsc{Hausdorff}\hyp{}Eigenschaft.
   %%%%%%%% PIT %%%%%%%%
   Der \textsc{Tychonoff}\hyp{}Satz für \textsc{Hausdorff}\hyp{}Räume \ref{thm:pitequivalence}(3) besagt, dass dann auch $\prod_{x \in X} F(x) \subseteq Y^X$ kompakt ist.
@@ -217,7 +218,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
 Betrachtet man den Beweis von Satz \ref{thm:ascoliPIT}, so fällt auf, dass die Implikation ((a) $\Rightarrow$ (b)) in Satz \ref{thm:ascoliPIT} bereits im Rahmen von \ZF gültig ist.
 Der Beweis dieses Satzes verwendet lediglich einer Stelle der Beweisrichtung ((b) $\Rightarrow$ (a)) den laut Satz \ref{thm:pitequivalence} zu \PIT äquivalenten \textsc{Tychonoff}\hyp{}Satz für kompakte \textsc{Hausdorff}\hyp{}Räume.
 Unter der Verwendung des Kompaktheitsbegriffes der Ultrafilterkompaktheit ist diese Schlussweise gemäß Lemma \ref{lem:uftprod} jedoch bereits in \ZF möglich.  
-Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}\hyp{}Satz unter Verwendung anderer Kompaktheitsbegriffe seine Gültigkeit behält und ob sich diese Versionen des \textsc{Ascoli}\hyp{}Satzes bereits in \ZF beweisen lassen.
+Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{Ascoli}\hyp{}Satz unter Verwendung anderer Kompaktheitsbegriffe, insbesondere der in Definition \ref{def:compactness} aufgeführten Begriffe, seine Gültigkeit behält und ob sich diese Versionen des \textsc{Ascoli}\hyp{}Satzes bereits in \ZF beweisen lassen.
 
 \begin{lem}
   \label{lem:filterclusterpoint}
@@ -295,6 +296,8 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   für eine beliebige Familie offener Mengen.
   Damit ist auch $f(O)$ offen und die Behauptung folgt.
 \end{proof}
+
+Als erste alternative Formulierung des \textsc{Ascoli}\hyp{}Satzes, wird in dieser Kompaktheitsaussage statt der üblichen Überdeckungskompaktheit der Begriff der Ultrafilterkompaktheit verwendet.
 
 \begin{thm}
   \label{thm:ultrafiltercompact}
@@ -455,7 +458,7 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
   (2) $\Rightarrow$ (1): \PIT impliziert die Übereinstimmung des gewöhnlichen Kompaktheitsbegriffes mit dem Begriff der \textsc{Tychonoff}\hyp{}Kompaktheit. Somit folgt (1) direkt aus Satz \ref{thm:ascoliPIT}.
 \end{proof}
 
-Die Substitution der Kompaktheit durch \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit führt sogar zu einer Verschärfung der benötigten Bedingungen für die Gültigkeit des \textsc{Ascoli}\hyp{}Satzes wie der nächste Satz zeigt.
+Die Substitution der Kompaktheit durch \textsc{Alexandroff}\hyp{}\textsc{Urysohn}\hyp{}Kompaktheit im \textsc{Ascoli}\hyp{}Satz führt sogar zu einer Verschärfung der benötigten Bedingungen für die Gültigkeit des \textsc{Ascoli}\hyp{}Satzes wie der nächste Satz zeigt.
 
 \begin{thm}
   Äquivalent sind:
@@ -517,8 +520,8 @@ Die Substitution der Kompaktheit durch \textsc{Alexandroff}\hyp{}\textsc{Urysohn
 
 \section{Der klassische \textsc{Ascoli}\hyp{}Satz und eine Modifikation}
 
-Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}\hyp{}Satz bei allen vorgestellten Versionen von Kompaktheit, falls lediglich \ZF vorausgesetzt wird. 
-Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulierung des \textsc{Ascoli}\hyp{}Satzes die Anforderungen senkt.
+Wie die vorangehenden Ausführungen gezeigt haben, versagt der \textsc{Ascoli}\hyp{}Satz bei allen im Rahmen von Definition \ref{def:compactness} vorgestellten Versionen von Kompaktheit, falls lediglich \ZF vorausgesetzt wird. 
+Es soll im Folgenden untersucht werden, inwiefern eine schwächere Formulierung des \textsc{Ascoli}\hyp{}Satzes die Anforderungen senkt.
 
 \begin{defn}[Klassischer \textsc{Ascoli}-Satz] 
   \label{def:klassisch}
@@ -713,6 +716,8 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Man erkennt, dass im Beweis von Satz \ref{thm:unboundedsubsetofR}((1) $\Leftrightarrow$ (2)) keine Eigenschaften der reellen Zahlen verwendet wurden. Der Äquivalenzbeweis von \CC und \PCC für beliebige abzählbare Mengenfamilien erfolgt daher analog.
 \end{bem}
 
+Nun wird die Gültigkeit des klassischen \textsc{Ascoli}-Satzes charakterisiert.
+
 \begin{thm}
   \label{thm:classicalascoli}
   Äquivalent sind:
@@ -856,6 +861,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
 
 Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}\hyp{}Satz noch der klassische \textsc{Ascoli}\hyp{}Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}\hyp{}Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt.
 
+\newpage
 \begin{thm}[Modifizierter \textsc{Ascoli}-Satz \cite{Rhineghost2001}]
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
