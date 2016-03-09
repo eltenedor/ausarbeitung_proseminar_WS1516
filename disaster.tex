@@ -856,7 +856,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
 
 Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{Ascoli}\hyp{}Satz noch der klassische \textsc{Ascoli}\hyp{}Satz in $\mathbf{ZF}$ gelten. Man kann jedoch eine modifizierte Variante des klassischen \textsc{Ascoli}\hyp{}Satzes angeben, welcher sich im Rahmen von $\mathbf{ZF}$ beweisen lässt.
 
-\begin{thm}[Modifizierter \textsc{Ascoli}-Satz]
+\begin{thm}[Modifizierter \textsc{Ascoli}-Satz \cite{Rhineghost2001}]
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
     \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{\nu(n)})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert.
@@ -880,28 +880,39 @@ Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{A
   definieren, da zu jeder nichtleeren Teilmenge natürlicher Zahlen ein Minimum existiert.
   Dann ist jedoch die Folge $(f_{\nu(n)})_{n \in \N}$ dergestalt, dass keine Teilfolge von $(f_{\nu(n)}(x))_{n \in \N}$ konvergiert.
   Die Folge $(f_{\nu(n)})_{n \in \N}$ konvergiert somit in $x$ nicht punktweise also nach Proposition \ref{prop:stetigkonv}(1) auch nicht stetig.
-  Dies widerspricht jedoch (1).
+  Dies widerspricht jedoch (a).
 
   (a) $\Rightarrow$ (b,$\beta$):
-  Es sei $G$ die der Folge $(f_n)_{n \in \N}$ in $F$ zugrunde liegende Menge.
-  Angenommen, $G$ für ein $x \in \R$ nicht gleichgradig stetig.
+  Es sei $G := \{ f_n \in F \mid n \in \N\}$ eine abzählbare Teilmenge von $F$.
+  Angenommen, $G$ sei für ein $x \in \R$ nicht gleichgradig stetig.
   Dann existiert ein $\varepsilon > 0$, sodass für alle $\delta > 0$ ein $n \in \N$ und $y \in \R$ existiert mit
   \begin{displaymath}
      |x - y| < \delta \quad\text{und}\quad |f_n(x) - f_n(y)| \geq \varepsilon.
   \end{displaymath}
-  Für alle $n \in \N$ lassen sich nun
-  \begin{align*}
-    \nu(n) &:= \min \left\{ m \in \N \mid \text{ Es gibt ein } y \in [x - 2^{-n}, x + 2^{-n}] \text{ mit } |f_m(x) - f_m(y)| \geq \varepsilon\right\}, \\
-    g_n &:= f_{\nu(n)} \quad\text{und}\\
-    x_n &:= \min\left\{ y \in [x - 2^{-n}, x + 2^{-n}] \mid |f_m(x) - f_m(y)| \geq \varepsilon \right\}
-  \end{align*}
-  definieren.
-  Dann gelten
+  Für alle $n \in \N$ lässt sich nun
   \begin{displaymath}
-    \lim_{n \in \N} x_n = x \quad\text{und}\quad|g_n(x) - g_n(x_n)| \geq \varepsilon
+    \nu(n) := \min \left\{ m \in \N \mid \text{ Es gibt ein } y \in [x - 2^{-n}, x + 2^{-n}] \text{ mit } |f_m(x) - f_m(y)| \geq \varepsilon \right\}
   \end{displaymath}
-  für alle $n \in \N$.
-  Somit kann keine Teilfolge von $(g_n)_{n \in \N}$ stetig in $x$ konvergieren, was jedoch (1) widerspricht.
+  definieren.
+  Des Weiteren sei 
+  \begin{displaymath}
+    M := \left\{ y \in [x - 2^{-n}, x + 2^{-n}] \mid |g_n(x) - g_n(y)| \geq \varepsilon \right\}.
+  \end{displaymath}
+  Für alle $n \in \N$ setze man $g_n := f_{\nu(n)}$ und definiere  
+  \begin{displaymath}
+    x_n := \min (M).
+  \end{displaymath}
+  Dieses Minimum existiert, da $M$ eine bezüglich der Teilraumtopologie auf $[x - 2^{-n}, x + 2^{-n}]$ abgeschlossene Menge ist.
+  Das mengentheoretische Komplement zu $M$ in diesem Teilraum ist 
+  \begin{displaymath}
+    \{y \in [x - 2^{-n}, x + 2^{-n}] \mid |g_n(x) - g_n(y)| < \varepsilon\} 
+    = g^{-1}(U_\varepsilon(g(x))) \cap [x - 2^{-n}, x + 2^{-n}]
+  \end{displaymath}
+  und damit offen bezüglich der Teilraumtopologie.
+  Als abgeschlossene Teilmenge einer kompakten Menge ist $M$ wiederum kompakt und enthält somit ein Minimum.
+
+  Damit gelten $\lim_{n \in \N} x_n = x$ und $|g_n(x) - g_n(x_n)| \geq \varepsilon$ für alle $n \in \N$.
+  Somit kann keine Teilfolge von $(g_n)_{n \in \N}$ stetig in $x$ konvergieren, was jedoch (a) widerspricht.
 
   (b) $\Rightarrow$ (a):
   Dies folgt bereits aus der entsprechenden Implikation in Satz \ref{thm:classicalascoli}.
