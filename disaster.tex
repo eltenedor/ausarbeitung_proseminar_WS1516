@@ -94,7 +94,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Sei dazu $x \in X$ und $\varepsilon > 0$.
   Für jedes $f \in F$ ist die Menge
   \begin{displaymath}
-    B_f := B_{\frac{\varepsilon}{2}} = \left\{ y \in Y \mid d(f(x),y) < \tfrac{\varepsilon}{2}\right\} 
+    B_f := B_{\frac{\varepsilon}{2}} = \left\{ y \in Y \mid d(f(x),y) < \frac{\varepsilon}{2}\right\} 
   \end{displaymath}
   offen bezüglich der von der Metrik $d$ auf $Y$ induzierten Topologie.
   Da $F \subseteq C(X,Y)$, ist das Urbild $f^{-1}(B_f)$ ebenfalls offen bezüglich $\tau$.
@@ -133,8 +133,8 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   \begin{displaymath}
     f(y) = \omega(y,f) \in \omega(U \times U_i) \subseteq \omega(K_i \times U_i) \subseteq B_{f_i},
   \end{displaymath}
-  also $d(f_i(x),f(y)) < \tfrac{\varepsilon}{2}$.
-  Insbesondere gilt für $x \in U$, da nach Voraussetzung $x \in K_i$ für alle $i \in \{ 1,\dots,n\}$, dass $d(f_i(x),f(x)) < \tfrac{\varepsilon}{2}$.
+  also $d(f_i(x),f(y)) < \frac{\varepsilon}{2}$.
+  Insbesondere gilt für $x \in U$, da nach Voraussetzung $x \in K_i$ für alle $i \in \{ 1,\dots,n\}$, dass $d(f_i(x),f(x)) < \frac{\varepsilon}{2}$.
   Unter Verwendung der Dreiecksungleichung folgt letztlich
   \begin{displaymath}
     d(f(x),f(y)) \leq d(f(x),f_i(x)) + d(f_i(x),f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
@@ -160,14 +160,14 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Es gilt nun zu zeigen, dass $V$ auch in $\tau_p$ offen ist.
   Da $f(K) \subseteq U$ und $U \in \sigma$ gilt, folgt für alle $x \in K$
   \begin{displaymath}
-    r_x := \inf\{d(f(x),y) \mid y \in (Y \setminus U) \} > 0.
+    r_x := \inf\left\{d(f(x),y) \mid y \in (Y \setminus U) \right\} > 0.
   \end{displaymath}
   Dann ist 
   \begin{displaymath}
-    U_x := \{ z \in X \mid d(f(x),f(z)) < \tfrac{r_x}{2}\} = f^{-1}\left( U_{\tfrac{r_x}{2}}(f(x))\right)
+    U_x := \left\{ z \in X \mid d(f(x),f(z)) < \frac{r_x}{2}\right\} = f^{-1}\left( U_{\frac{r_x}{2}}(f(x))\right)
   \end{displaymath} 
   eine offene Umgebung von $x \in X$ aufgrund der Stetigkeit von $f$.
-% Denn für alle $z \in U_x$ mit $\varepsilon := \tfrac{r_x}{2} - d(f(x),f(z)) > 0$ gilt, dass aufgrund der Stetigkeit von $f$ eine Umgebung $U' \in \tau$ von $z$ existiert, sodass $f(U') \subseteq U_\varepsilon(f(z))$ gilt.
+% Denn für alle $z \in U_x$ mit $\varepsilon := \frac{r_x}{2} - d(f(x),f(z)) > 0$ gilt, dass aufgrund der Stetigkeit von $f$ eine Umgebung $U' \in \tau$ von $z$ existiert, sodass $f(U') \subseteq U_\varepsilon(f(z))$ gilt.
 % Daraus folgt für alle $u \in U'$ mit der Dreiecksungleichung
 % \begin{align*}
 %   d(f(x),f(u)) &\leq d(f(x),f(z)) + d(f(z),f(u)) \\
@@ -177,12 +177,12 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Zudem bildet $\mathfrak{U} := \{U_x \mid x \in K\}$ eine offene Überdeckung von $K$. 
   Nach Voraussetzung ist $K$ kompakt, daher existieren $x_1,\dots,x_n \in K$, sodass $K \subseteq \bigcup_{i=1}^n U_{x_i}$.
   Es sei $r:= \min\{r_{x_1},\dots,r_{x_n}\}$. 
-  Damit ergibt sich für alle $x \in K$ und alle $y \in (Y \setminus U)$ die Ungleichung $d(f(x),y) \geq \tfrac{r}{2}$.
-  Ist andererseits $x \in K$ und $d(f(x),y) < \tfrac{r}{2}$, so folgt daraus $y \in U$.
+  Damit ergibt sich für alle $x \in K$ und alle $y \in (Y \setminus U)$ die Ungleichung $d(f(x),y) \geq \frac{r}{2}$.
+  Ist andererseits $x \in K$ und $d(f(x),y) < \frac{r}{2}$, so folgt daraus $y \in U$.
 
   Da $F$ nach Voraussetzung gleichgradig stetig auf $X$ ist, existiert insbesondere für alle $x \in K$ eine offene Umgebung $W$ von $x$, sodass 
   \begin{displaymath}
-    d(g(x),g(z)) < \tfrac{r}{4}, \quad \text{für alle $g \in F$ und $z \in W$}.
+    d(g(x),g(z)) < \frac{r}{4}, \quad \text{für alle $g \in F$ und $z \in W$}.
   \end{displaymath}
   Betrachtet man nun die auf obige Weise erzeugte Menge $\mathcal{C}$ aller geordneten Paare $(x,W)$, so bildet
   \begin{displaymath}
@@ -193,7 +193,7 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Für alle $i \in \{ 1,\dots,m\}$ wähle man entsprechend der Definition $\mathfrak{W}$ ein $x_i$ mit $(x_i,W_i) \in \mathcal{C}$.
   Dann ist
   \begin{displaymath}
-    B_f := \{ g \in F \mid d(f(x_i),g(x_i)) < \tfrac{r}{4} \text{ für } i \in \{ 1,\dots,m\}\}
+    B_f := \left\{ g \in F \mid d(f(x_i),g(x_i)) < \frac{r}{4} \text{ für } i \in \{ 1,\dots,m\}\right\}
   \end{displaymath}
   als Basisumgebung von $\tau_p$ insbesondere eine offene Umgebung von $f$.
 
@@ -201,8 +201,8 @@ Es soll nun gezeigt werden, dass die Gültigkeit dieses Satzes äquivalent zum \
   Dann ist nämlich $V = \bigcup_{f \in V} B_f$ als Vereinigung offener Mengen offen bezüglich $\tau_p$ und die Behauptung $\tau_{\co} \subseteq \tau_p$ folgt, da $V$ beliebig war.
   Sei dazu also $g \in B_f$.
   Für jedes $x \in K$ existiert ein $i \in \{1,\dots,m\}$ mit $x \in W_i$.
-  Nach Konstruktion der $W_i$ gilt $d(g(x_i),g(x)) < \tfrac{r}{4}$.
-  Da $g \in B_f$ gilt zudem die Ungleichung $d(f(x_i),g(x_i)) < \tfrac{r}{4}$.
+  Nach Konstruktion der $W_i$ gilt $d(g(x_i),g(x)) < \frac{r}{4}$.
+  Da $g \in B_f$ gilt zudem die Ungleichung $d(f(x_i),g(x_i)) < \frac{r}{4}$.
   Daraus folgert man
   \begin{displaymath}
     d(f(x_i),g(x)) \leq d(f(x_i),g(x_i)) + d(g(x_i),g(x)) < \frac{r}{2},
@@ -222,16 +222,16 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 \begin{lem}
   \label{lem:filterclusterpoint}
   Es sei $(X,\tau)$ ein topologischer Raum, sodass die darin offen\hyp{}abgeschlossenen Mengen einen Basis für die Topologie $\tau$ bilden.
-  \begin{itemize}
-    \item[(1)] Ist $\mathcal{F}$ ein Filter ohne Adhärenzpunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen\hyp{}abgeschlossenen Elemente von $\mathcal{F}$
+  \begin{enumerate}[(1)]
+    \item Ist $\mathcal{F}$ ein Filter ohne Adhärenzpunkt, so gilt für die Menge $\mathfrak{A} \subseteq \mathcal{F}$ aller offen\hyp{}abgeschlossenen Elemente von $\mathcal{F}$
      \begin{displaymath}
        \bigcap_{A \in \mathfrak{A}} A = \emptyset.
      \end{displaymath}
-   \item[(2)] Erfüllt $(X,\tau)$ zusätzlich das T1\hyp{}Axiom, so existiert zu je zwei unterschiedlichen Punkten $x,y \in X$ ein $A_{(x,y)} \in \mathfrak{A}$ mit 
+   \item Erfüllt $(X,\tau)$ zusätzlich das T1\hyp{}Axiom, so existiert zu je zwei unterschiedlichen Punkten $x,y \in X$ ein $A_{(x,y)} \in \mathfrak{A}$ mit 
      \begin{displaymath}
        \{x,y\} \cap A_{(x,y)} = \{y\}.
      \end{displaymath}
-  \end{itemize}
+  \end{enumerate}
   %FUNKTIONIERT AUCH BEREITS MIT T0!!! S.a. Bartsch S.246
 \end{lem}
 
@@ -299,9 +299,9 @@ Dies motiviert den Versuch zu untersuchen, inwiefern der topologische \textsc{As
 \begin{thm}
   \label{thm:ultrafiltercompact}
   Äquivalent sind:
-  \begin{enumerate}
-    \item[(1)] Der \textsc{Ascoli}-Satz bezüglich Ultrafilterkompaktheit.
-    \item[(2)] \PIT.
+  \begin{enumerate}[(1)]
+    \item Der \textsc{Ascoli}-Satz bezüglich Ultrafilterkompaktheit.
+    \item \PIT.
   \end{enumerate}
 \end{thm}
 
@@ -524,7 +524,7 @@ Es soll im Folgenden untersucht werden, inwiefern eine eingeschränkte Formulier
   \label{def:klassisch}
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
-    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$, die \textit{stetig gegen} eine nicht notwendig in $F$ liegende Funktion $g$ \textit{konvergiert}. Das bedeutet:
+    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{\nu(n)})_{n \in \N}$, die \textit{stetig gegen} eine nicht notwendig in $F$ liegende Funktion $g$ \textit{konvergiert}. Das bedeutet:
       \begin{addmargin}[2em]{2em}% 1em left, 2em right
         Für alle $x \in \R$ und alle $(x_n)_{n \in \N} \in \R^\N$ gilt: \\
         Aus $\lim_{n \to \infty} x_n = x$ folgt $\lim_{n \to \infty} f_{\nu(n)}(x_n) = g(x)$.
@@ -559,11 +559,11 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \label{prop:stetigkonv}
   Es sei $(f_n)_{n \in \N}$ eine Folge stetiger Abbildungen von $\R$ nach $\R$ und $g$ eine stetige Abbildung mit demselben Definitionsbereich und derselben Zielmenge.
   Dann gelten folgende Aussagen:
-  \begin{itemize}
-    \item[(1)] Falls $(f_n)_{n \in \N}$ stetig gegen $f$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch punktweise gegen $f$.
-    \item[(2)] Falls $(f_n)_{n \in \N}$ stetig gegen $f$ konvergiert, so ist auch $f$ stetig.
-    \item[(3)] Falls $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $f$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch stetig gegen $f$.
-  \end{itemize}
+  \begin{enumerate}[(1)]
+    \item Falls $(f_n)_{n \in \N}$ stetig gegen $f$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch punktweise gegen $f$.
+    \item Falls $(f_n)_{n \in \N}$ stetig gegen $f$ konvergiert, so ist auch $f$ stetig.
+    \item Falls $(f_n)_{n \in \N}$ lokal gleichmäßig gegen $f$ konvergiert, so konvergiert $(f_n)_{n \in \N}$ auch stetig gegen $f$.
+  \end{enumerate}
 \end{prop}
 
 \begin{proof}
@@ -582,7 +582,7 @@ Es sollen zunächst einige Eigenschaften von Funktionenfolgen in Bezug auf die s
   \begin{displaymath}
     | f_{n}(x_1) - f(x_1) | \leq \frac{\varepsilon}{2}, \text{ für alle $n \geq n_1$}.
   \end{displaymath}
-  Analog findet man für $x_k$ ein $n_k > n_{k-1}$ mit einer analogen Eigenschaft.
+  Für $x_k$ findet man ein $n_k > n_{k-1}$ mit einer analogen Eigenschaft.
 
   Die so konstruierte Teilfolge besitzt nach wie vor denselben Grenzwert
   \begin{displaymath}
@@ -658,7 +658,7 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
 \begin{proof}
   (1) $\Leftrightarrow$ (2):
   Es ist klar, dass aus \CCR die Aussage \PCCR folgt.
-  Sei umgekehrt eine Folge $(X_n)_{n \in \N}$ nichtleerer Teilmengen der reellen Zahlen gegeben.
+  Sei umgekehrt eine Folge $(X_n)_{n \in \N}$ nichtleerer Teilmengen reeller Zahlen gegeben.
   Man definiere nun $Y_n := \prod_{m \leq n} X_m$.
   Da endliche kartesische Produkte nichtleerer Mengen wiederum nichtleer sind, ist $(Y_n)_{n \in \N}$ eine Folge nichtleerer Mengen.
   Nach \PCCR existiert eine unendliche Teilmenge $M \subseteq \N$ und ein Element $(y_m)_{m \in \N} \in \prod_{m \in M} Y_m$.
@@ -695,13 +695,16 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   \begin{displaymath}
     M := \{m \in \N \mid \text{Es existiert ein } n \in \N \text{ mit } y_n \in Y_m\}
   \end{displaymath}
-  Es ist $M$ eine unendliche Teilmenge natürlicher Zahlen.
+  eine unendliche Teilmenge natürlicher Zahlen:
   Angenommen, $M$ wäre endlich.
-  Dann würde ein $m = \max(M)$ existieren, sodass $m + 1$ eine obere Schranke für die Folge $(y_n)_{n \in \N}$ ist, was jedoch der Unbeschränktheit der Folge widerspricht.
-  Zudem ist $\N$ mit der natürlichen Ordnungsrelation wohlgeordnet.
-  Daraus folgt $Y := \prod_{m \in M} Y_m \neq \emptyset$, indem man $g(m) := \min\{n \in \N \mid y_n \in Y_m\}$ setzt.
-  Es bezeichne $(\tilde{y}_m)_{m \in M}$ ein Element aus $Y$.
-  Aufgrund der Injektivität von $f$ und $\sigma_m$ existiert ein eindeutig bestimmtes Element $x_m \in X_m$ mit $\sigma_m(f(x_m)) = \tilde{y}_m$.
+  Dann existiert ein $m = \max(M)$, sodass $m + 1$ eine obere Schranke für die Folge $(y_n)_{n \in \N}$ ist, was jedoch der Unbeschränktheit der Folge widerspricht.
+  Daraus folgt 
+  \begin{displaymath}
+    Y' := \prod_{m \in M} Y_m \neq \emptyset. 
+  \end{displaymath}
+  Setzt man nämlich $g(m) := \min\{n \in \N \mid y_n \in Y_m\}$, so gilt $(y_{\nu(m)})_{m \in M} \in Y'$.
+  Die Abbildung $\nu$ ist wegen der natürlichen Wohlordnung von $\N$ wohldefiniert.
+  Aufgrund der Injektivität von $f$ und $\sigma_m$ existiert ein eindeutig bestimmtes Element $x_m \in X_m$ mit $\sigma_m(f(x_m)) =   y_{\nu(m)}$.
   Dann ist $(x_m)_{m \in M} \in \prod_{m \in M} X_m$.
   Dies ist jedoch gerade die Aussage von \PCCR.
 \end{proof}
@@ -726,29 +729,29 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   Für ein $b \in B$ lassen sich die konstante Abbildung $f_b \colon \R \to \R, f(x):= b$ und die Menge $F := \{f_b \mid b \in B\}$ definieren.
   Für $x \in \R$ gilt $F(x) = \{f_b(x) \mid b \in B\} = B$ und diese Menge ist nach Voraussetzung unbeschränkt.
   Also ist Teil (b, $\alpha$) des klassischen \textsc{Ascoli}\hyp{}Satzes verletzt.
-  Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Ascoli}\hyp{}Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ mit $f_{b_n} = b_n$ ohne stetig konvergente Teilfolge.
-  Daraus folgt, dass die Folge $(b_n)_{n \in \N}$ unbeschränkt ist.
+  Mit (1) folgt sogleich, dass auch Teil (a) des klassischen \textsc{Ascoli}\hyp{}Satzes nicht gelten kann und somit die Existenz einer Folge $(f_{b_n})_{n \in \N}$ in $F$ ohne stetig konvergente Teilfolge.
+  Da nach Konstruktion $f_{b_n}(x) = b_n$ gilt,  folgt, dass die Folge $(b_n)_{n \in \N}$ unbeschränkt ist.
 
   (2) $\Rightarrow$ (1):
   Es sei $F$ eine Menge stetiger Abbildungen $f \colon \R \to \R$.
 
   (a) $\Rightarrow$ (b,$\alpha$):
-  Angenommen (b,$\alpha$) gelte nicht. So existiert ein $x \in \R$, sodass $F(x)$ unbeschränkt ist.
+  Angenommen, (b,$\alpha$) gelte nicht. So existiert ein $x \in \R$, sodass $F(x)$ unbeschränkt ist.
   Nach Definition existiert also für alle $C \in \R$ ein $f \in F$ mit $|f(x)| \geq C$.
   Insbesondere sind also die Mengen 
   \begin{displaymath}
-    F_n := \{ f \in F \mid |f(x)| \geq m \}
+    F_n := \{ f \in F \mid |f(x)| \geq n \}
   \end{displaymath}
   für alle $n \in \N$ nichtleer.
   \CCR impliziert folglich die Existenz einer Folge 
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in \N} F_n.
   \end{displaymath}
-  Für obiges $x \in \R$ gilt also insbesondere $|f_{n_k}(x)| \geq n_k \geq n$ für alle $k \in \N$, sodass die Funktionenfolge $(f_n)_{n \in \N}$ in $x$ nicht punktweise, folglich auch nicht stetig konvergiert.
+  Für obiges $x \in \R$ gilt also insbesondere $|f_{n_k}(x)| \geq n_k \geq n$ für alle $k \in \N$, sodass die Funktionenfolge $(f_n)_{n \in \N}$ in $x$ nicht punktweise und damit nach Proposition \ref{prop:stetigkonv}(1) auch nicht stetig konvergiert.  
   Dies widerspricht jedoch Bedingung (a).
 
   (a) $\Rightarrow$ (b,$\beta$):
-  Angenommen (b, $\beta$) gelte nicht.
+  Angenommen, (b, $\beta$) gelte nicht.
   So existiert ein $x \in \R$ und $\varepsilon > 0$, sodass das Bild keiner offenen Umgebung von $x$ in $U_\varepsilon(f(x))$ enthalten ist.
   Insbesondere gilt also auch, dass für kein $\delta > 0$ gilt, dass
   \begin{displaymath}
@@ -756,19 +759,20 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   \end{displaymath}
   Schließlich gilt für alle $n \in \N$, dass die Mengen
   \begin{displaymath}
-    F_n := \{ f \in F \mid \text{Es existiert ein } y \in U_{\frac{1}{n+1}}(x) \text{ mit } f(y) \not\in U_\varepsilon(f(x)) \}
+    F_n := \left\{ f \in F \mid \text{Es existiert ein } y \in U_{\frac{1}{n+1}}(x) \text{ mit } f(y) \not\in U_\varepsilon(f(x)) \right\}
   \end{displaymath}
   nichtleer sind.
   Wie zuvor impliziert \CCR die Existenz einer Folge 
   \begin{displaymath}
     (f_n)_{n \in \N} \in \prod_{n \in \N} F_n.
   \end{displaymath}
-  Nimmt man an, dass diese Folge eine stetig konvergente Teilfolge $(f_{\nu(n)})_{n \in \N}$ besitzt, so konvergiert diese nach Proposition \ref{prop:stetigkonv}(a) auch punktweise.
+  Nach Voraussetzung (a) besitzt diese Folge eine gegen eine Funktion $g$ stetig konvergente Teilfolge $(f_{\nu(n)})_{n \in \N}$. 
+  Nach Proposition \ref{prop:stetigkonv}(1) konvergiert diese auch punktweise.
   Zu dem anfangs gegebenen $x$ und $\varepsilon > 0$ existiert also insbesondere ein $N \in \N$, sodass
   \begin{displaymath}
     | f_{\nu(n)}(x) - g(x) | \leq \frac{\varepsilon}{2}.
   \end{displaymath}
-  Andererseits existiert nach der Definition von $F_n$ eine Folge $(y_n)_{n \in \N}$ mit Grenzwert $x$ und
+  Andererseits existiert nach der Definition der $F_n$ und erneuter Anwendung von \CCR eine Folge $(y_n)_{n \in \N} \in \prod_{n \in \N} U_{\frac{1}{n+1}}(x)$ mit Grenzwert $x$ und
   \begin{displaymath}
     | f_{\nu(n)}(x) -  f_{\nu(n)}(y_n) | \geq \varepsilon.
   \end{displaymath}
@@ -784,7 +788,8 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
   (b) $\Rightarrow$ (a):
   Sei $(f_n)_{n \in \N}$ eine Folge in $F$.
   Des Weiteren sei $(r_n)_{n \in \N}$ eine Abzählung der rationalen Zahlen.
-  Im Folgenden soll induktiv eine Folge von geordneten Paaren $(a_n, s_n)_{n \in \N}$ mit $a_n \in \R$ für alle $n \in \N$ und eine Folge $s_n = (g_m^n)_{m \in \N}$ in $F$ definiert werden:
+
+  Im Folgenden soll induktiv eine Folge geordneter Paare $(a_n, s_n)_{n \in \N}$ bestehend aus $a_n \in \R$ für alle $n \in \N$ und einer Folge $s_n = (g_m^n)_{m \in \N}$ in $F$ definiert werden:
   \begin{enumerate}
     \item 
       Nach $(b)$ ist $F(x)$ für alle $x \in \R$ beschränkt. 
@@ -797,12 +802,12 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
       Weiterhin definiere man $s_0 = (g_n^0)_{n \in \N}$ induktiv als Teilfolge $(f_{\nu(n)})_{n \in \N}$ von $(f_n)_{n \in \N}$:
       \begin{itemize}
 
-        \item[$a)$] $\nu(0) := \min\{m \in \N \mid |f_m(r_0) - a_0 | < 1\}$
+        \item[$a)$] $\nu(0) := \min\left\{m \in \N \mid |f_m(r_0) - a_0 | < 1\right\}$
 
-          $\nu(0)$ ist wohldefiniert, denn die Menge auf der rechten Seite der Gleicheit ist nichtleer, da nach Voraussetzung $a_0$ ein Häufungspunkt von $(f_n(r_0))_{n \in \N}$ ist und somit eine gegen $r_0$ konvergente Teilfolge existiert.
-          Daher besitzt sie aufgrund der natürlichen Wohlordnung der natürlichen Zahlen als nichtleere Teilmenge ein Minimum.
+          Der Wert $\nu(0)$ ist wohldefiniert, denn die Menge auf der rechten Seite der Gleicheit ist nach Definition des $\liminf$ nichtleer, da nach Voraussetzung $a_0$ ein Häufungspunkt der Folge $(f_n(r_0))_{n \in \N}$ ist.
+          Daher besitzt sie aufgrund der natürlichen Wohlordnung der natürlichen Zahlen ein Minimum.
 
-        \item[$b)$] $\nu(n+1) :=  \min\{m \in \N \mid \nu(n) < m \text{ und }  |f_m(r_0) - a_0| < \frac{1}{n+1}\}$
+        \item[$b)$] $\nu(n+1) :=  \min\left\{m \in \N \mid \nu(n) < m \text{ und }  |f_m(r_0) - a_0| < \frac{1}{n+1}\right\}$
 
           Wie in $a)$ sieht man ein, dass $\nu(n+1)$ wohldefiniert ist.
       \end{itemize}
@@ -821,30 +826,31 @@ Für die anschließende mengentheoretische Charakterisierung des klassischen \te
 
   Es soll nun gezeigt werden, dass $s$ lokal gleichmäßig auf $\R$ konvergiert.
   Sei dazu $x \in \R$ und $\varepsilon > 0$ gegeben.
-  Da $G$ gleichgradig stetig ist, existiert eine offene Umgebung $U$ von $x$, sodass
+  Da $F$ gleichgradig stetig ist, existiert eine offene Umgebung $U$ von $x$, sodass
   \begin{displaymath}
-    f(U) \subseteq U_\frac{\varepsilon}{3}(f(x))
+    f(U) \subseteq U_\frac{\varepsilon}{6}(f(x))
   \end{displaymath}
-  für alle $f \in G$ gilt.
-  Da $\Q$ dicht in $\R$ liegt existiert ein $y \in U \cap \Q$.
-  Nach Konstruktion konvergiert für alle $g_m^m \in G$ die Folge $g_m^m(y)$.
+  für alle $f \in F$ gilt.
+  Da des Weiteren $\Q$ dicht in $\R$ liegt existiert ein $y \in U \cap \Q$.
+  Nach Konstruktion konvergiert für alle $g_m^m \in F$ die Folge $g_m^m(y)$.
   Sie ist damit also insbesondere eine \textsc{Cauchy}\hyp{}Folge.
   Es existiert also ein $N \in \N$, sodass für alle $m,n \geq N$
   \begin{displaymath}
     | g_m^m(y) - g_n^n(y) | \leq \frac{\varepsilon}{3}
   \end{displaymath}
   gilt.
-  Damit gilt für alle $m, n \geq N$
+  Damit gilt für alle $z \in U$ und $m, n \geq N$
   \begin{displaymath}
-    | g_m^m(x) - g_n^n(x) |
+    | g_m^m(z) - g_n^n(z) |
     \leq 
-    | g_m^m(x) - g_m^m(y) | +  | g_m^m(y) - g_n^n(y) | +  | g_n^n(y) - g_n^n(x) |
+    | g_m^m(z) - g_m^m(y) | +  | g_m^m(y) - g_n^n(y) | +  | g_n^n(y) - g_n^n(z) |
     \leq
-    \frac{\varepsilon}{3}.
+    \varepsilon.
   \end{displaymath}
   Also ist $s$ eine lokal gleichmäßige \textsc{Cauchy}\hyp{}Folge auf $\R$.
-  Da $\R$ vollständig ist, konvergiert $s$ auch lokal gleichmäßig auf $\R$. 
-  Aufgrund von Proposition \ref{prop:stetigkonv}(c) konvergiert $s$ auch stetig gegen eine Abbildung $g \colon \R \to \R$ mit $g(r_n) = a_n$ für alle $n \in \N$.
+  Da $\R$ vollständig ist, konvergiert $s$ auch lokal gleichmäßig auf $\R$ gegen eine Abbildung $g \colon \R \to \R$ mit $g(r_n) = a_n$ für alle $n \in \N$. 
+  Aufgrund von Proposition \ref{prop:stetigkonv}(3) konvergiert $s$ auch stetig gegen $g$, insbesondere ist also nach Proposition \ref{prop:stetigkonv}(2) die Grenzfunktion $g$ stetig.
+  Man beachte, dass $g$ als stetige Funktion durch ihre Werte auf der in $\R$ dichten Teilmenge $\Q$ bereits eindeutig festgelegt ist.
   Daraus folgt $(a)$.
 \end{proof}
 
@@ -853,7 +859,7 @@ Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{A
 \begin{thm}[Modifizierter \textsc{Ascoli}-Satz]
   Für eine Funktionenmenge $F$ stetiger Abbildungen $f \colon \R \to \R$ sind die folgenden Bedingungen äquivalent:
   \begin{itemize}
-    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{(\nu(n))})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert.
+    \item[(a)] Jede Folge $(f_n)_{n \in \N}$ in $F$ besitzt eine Teilfolge $(f_{\nu(n)})_{n \in \N}$ die stetig gegen eine nicht notwendig in $F$ liegende Funktion $g$ konvergiert.
 
     \item[(b)]
       \begin{itemize}
@@ -866,7 +872,7 @@ Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{A
 \begin{proof}
   (a) $\Rightarrow$ (b,$\alpha$):
   Sei $G := \{f_n \in F \mid n \in \N\}$ eine abzählbare Teilmenge von $F$.
-  Angenommen $G(x)$ sei unbeschränkt für ein $x \in X$.
+  Angenommen, $G(x)$ sei unbeschränkt für ein $x \in X$.
   Dann lässt sich für alle $n \in \N$
   \begin{displaymath}
     \nu(n) := \min \{ m \in \N \mid n < |f_m(x)| \}
@@ -878,16 +884,16 @@ Zusammenfassend lässt sich also erkennen, dass weder der topologische \textsc{A
 
   (a) $\Rightarrow$ (b,$\beta$):
   Es sei $G$ die der Folge $(f_n)_{n \in \N}$ in $F$ zugrunde liegende Menge.
-  Angenommen $G$ für ein $x \in \R$ nicht gleichgradig stetig.
+  Angenommen, $G$ für ein $x \in \R$ nicht gleichgradig stetig.
   Dann existiert ein $\varepsilon > 0$, sodass für alle $\delta > 0$ ein $n \in \N$ und $y \in \R$ existiert mit
   \begin{displaymath}
      |x - y| < \delta \quad\text{und}\quad |f_n(x) - f_n(y)| \geq \varepsilon.
   \end{displaymath}
   Für alle $n \in \N$ lassen sich nun
   \begin{align*}
-    \nu(n) &:= \min \{ m \in \N \mid \text{ Es gibt ein } y \in [x - 2^{-n}, x + 2^{-n}] \text{ mit } |f_m(x) - f_m(y)| \geq \varepsilon\}, \\
+    \nu(n) &:= \min \left\{ m \in \N \mid \text{ Es gibt ein } y \in [x - 2^{-n}, x + 2^{-n}] \text{ mit } |f_m(x) - f_m(y)| \geq \varepsilon\right\}, \\
     g_n &:= f_{\nu(n)} \quad\text{und}\\
-    x_n &:= \min\{ y \in [x - 2^{-n}, x + 2^{-n}] \mid |f_m(x) - f_m(y)| \geq \varepsilon \}
+    x_n &:= \min\left\{ y \in [x - 2^{-n}, x + 2^{-n}] \mid |f_m(x) - f_m(y)| \geq \varepsilon \right\}
   \end{align*}
   definieren.
   Dann gelten
