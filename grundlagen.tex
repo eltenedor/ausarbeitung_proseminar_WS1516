@@ -7,7 +7,7 @@ Es soll in allen aufgeführten Aussagen und den dazugehörigen Beweisen stets vo
 
 Das Auswahlaxiom oder Abschwächungen davon dienen oftmals als Bindeglied zwischen unterschiedlichen Konzepten in der Mathematik, da sie oft eine zentrale Rolle im Beweis der Äquivalenz dieser Konzepte einnehmen. 
 Ein für die vorliegende Ausarbeitung zentrales Konzept ist das der Kompaktheit topologischer Räume. 
-Es exisiteren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \ZF nicht notwendig äquivalent sind.
+Es existieren unterschiedliche Kompaktheitsbegriffe, die im Rahmen von \ZF nicht notwendig äquivalent sind.
 Diese Konzepte sollen zunächst unabhängig voneinander eingeführt werden. 
 Anschließend wird basierend auf \cite{herrlich2006axiom} dargestellt, unter welchen Bedingungen die Äquivalenz der Konzepte gegeben ist.
 Zuvor werden die im Folgenden benötigten Begriffe definiert. 
@@ -197,7 +197,7 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
   Falls nämlich für $y,z \in Y$ gilt, dass $g(y) = g(z)$, so folgt daraus zunächst $f^{-1}(\{y\}) = f^{-1}(\{z\})$ und daraus über die Surjektivität von $f$, dass auch $\{y\} = \{z\}$ gilt.
 
 
-  Es bezeiche nun $\aleph$ die nach dem \textit{Satz von \textsc{Hartogs} }
+  Es bezeichne nun $\aleph$ die nach dem \textit{Satz von \textsc{Hartogs} }
   \begin{addmargin}[2em]{2em}% 1em left, 2em right
     \textit{Zu jeder Menge $A$ gibt es wenigstens eine wohlgeordnete Menge $B$, deren Kardinalität nicht durch die Kardinalität von $A$ beschränkt wird.} 
   \end{addmargin}
@@ -240,12 +240,12 @@ Um die nächste Beziehung zwischen Kompaktheitsbegriffen herzustellen, benötigt
 
   (3) $\Rightarrow$ (1):
   Seien $X,Y$ Mengen. Nach (3) lassen sich $X$ und $Y$ wohlordnen.
-  Als wohlgeordnete Mengen sind sie nach dem Vergleichbarkeitssatz (DEISER ZITAT) entweder ordnungsisomorph oder es ist eine der Mengen isomorph zu einem initialen Intervall der anderen Menge.
+  Als wohlgeordnete Mengen sind sie nach dem \textit{Vergleichbarkeitssatz} \cite[S. 28]{bartsch2015allgemeine} entweder ordnungsisomorph oder es ist eine der Mengen isomorph zu einem initialen Intervall der anderen Menge.
   Im Ersten Fall gilt $|X| = |Y|$.
   Ist $X$ isomorph zu einem initialen Intervall von $Y$, so gilt $|X| \leq |Y|$ oder, falls $Y$ isomorph zu einem initialen Intervall von $X$ ist, gilt $|Y| \leq |X|$.
 \end{proof}
 
-%\newpage
+\newpage
 \begin{thm}
   \label{thm:alexandroffUrysohnCompactAC}
   Es sind äquivalent:
@@ -366,7 +366,7 @@ beziehungsweise durch die Halbordnungsrelation
 \begin{displaymath}
   x \leq y \quad \text{gilt genau dann, wenn} \quad x \land y = x.
 \end{displaymath}
-Zusätlich gilt 
+Zusätzlich gilt 
 \begin{displaymath}
   x \land y = x \quad \text{genau dann, wenn} \quad x \lor y = y,
 \end{displaymath}
@@ -538,7 +538,7 @@ In \textsc{Boole}schen Algebren existiert das zum Ideal \textit{duale} Konzept d
   \end{enumerate}
 \end{defn}
 
-Es sollen als nächstes Ultrafilter in \textsc{Boole}schen Algebren charakterisiert und ihr Verhalten im Hinblick auf \textsc{Boolesche} Homorphismen beschrieben werden.
+Es sollen als nächstes Ultrafilter in \textsc{Boole}schen Algebren charakterisiert und ihr Verhalten im Hinblick auf \textsc{Boolesche} Homomorphismen beschrieben werden.
 
 \begin{prop}
   \label{prop:ultrafilterchar}
@@ -629,8 +629,9 @@ Bevor der für das Folgekapitel zentrale Satz vorgestellt wird, soll eine in die
   Folglich ist $\mathcal{A}$ abgeschlossen.
 \end{proof}
 
-Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über topologische Produkträume in Verbindung setzt.
+Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitsaussagen über topologische Produkträume in Verbindung setzt.
 
+\newpage
 \begin{thm}
   \label{thm:pitequivalence}
   Die folgenden Aussagen sind äquivalent:
@@ -676,7 +677,7 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   \begin{displaymath}
     f_i \colon X_i \to \mathbf{2}^{C(X_i,\mathbf{2})}
   \end{displaymath}
-  die kanonische Einbettung, die jedem  $y \in X_i$ die enstprechende Evaluationsabbildung
+  die kanonische Einbettung, die jedem  $y \in X_i$ die entsprechende Evaluationsabbildung
   \begin{displaymath}
     \omega_i(y,\cdot) \colon C(X_i,\mathbf{2}) \to \mathbf{2}, \quad \omega_i(y,g) := g(y)
   \end{displaymath}
@@ -732,7 +733,7 @@ Nun zu dem Satz, welcher \PIT mit unterschiedlichen Kompaktheitssaussagen über 
   Nach Voraussetzung ist auch $Y := \prod_{A \in \mathcal{A}} Y_A$ kompakt.
   Für alle $A \in \mathcal{A}$ ist die das Urbild $U_A = \pi_A^{-1}(X_A)$ unter der kanonischen Projektion $\pi_A$ eine nichtleere, abgeschlossene Teilmenge von $Y$.
   Es ist nämlich $U_A = \prod_{i \in \mathcal{A}} Z_i$ mit $Z_A = X_A$ und $Z_i = Y_i$ für alle $i \in \mathcal{A} \setminus \{A\}$.
-  In $U_A$ ist daher insbesondere eine Abbildung $f$ mit $f(i) = \infty$ für alle $i \in \mathcal{A} \setminus \{A\}$ und $f(A) \in X_A$ enhalten, da $X_A$ nach Voraussetzung nichtleer ist.
+  In $U_A$ ist daher insbesondere eine Abbildung $f$ mit $f(i) = \infty$ für alle $i \in \mathcal{A} \setminus \{A\}$ und $f(A) \in X_A$ enthalten, da $X_A$ nach Voraussetzung nichtleer ist.
   Die Familie $\mathfrak{U} := \{U_A \mid A \in \mathcal{A}\}$ besitzt die endliche Durchschnittseigenschaft, wie man mit demselben Argument zeigt.
   Da $Y$ kompakt ist, folgt daraus $\bigcap_{A \in \mathcal{A}} U_A \neq \emptyset$.
   Zudem gilt $X = \bigcap_{A \in \mathcal{A}} U_A$, also ist auch $X$ nichtleer.
